@@ -19,17 +19,19 @@ class LoginPresenter: NSObject, LoginModuleInput, LoginInteractorOutput {
 
 extension LoginPresenter : LoginViewOutput{
     
-    func viewDidAppear() {
-        view.focusLoginField()
-    }
-    
+   
     func viewIsReady() {
     }
     
-    func loginTapped(login: String?, password: String?) {
-        
-        view.showLoginProgress(enabled: true) { [unowned self] in
-            
+    func loginWithIosAccountTapped() {
+        view.displayProgres(enabled: true) { [unowned self] in
+            self.interactor.loginWithIOSAccountRequested()
+        }
+    }
+    
+    func loginWithPasswordTapped() {
+        view.displayProgres(enabled: true) { [unowned self] in
+            self.interactor.loginWithPasswordRequested()
         }
     }
 }

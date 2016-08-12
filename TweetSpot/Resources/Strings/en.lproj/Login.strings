@@ -1,3 +1,2 @@
-"login_login_field_placeholder" = "Login";
-"login_password_field_placeholder" = "Password";
-"login_enter_button_title" = "Enter";
+"login_with_ios_button_title" = "Login with iOS account";
+"login_with_pass_button_title" = "Login with password";

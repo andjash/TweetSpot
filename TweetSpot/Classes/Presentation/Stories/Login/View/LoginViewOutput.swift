@@ -16,6 +16,8 @@ import Foundation
     */
 
     func viewIsReady()
-    func viewDidAppear()
-    func loginTapped(login: String?, password: String?)
+    
+    func loginWithIosAccountTapped()
+    func loginWithPasswordTapped()
+    
 }

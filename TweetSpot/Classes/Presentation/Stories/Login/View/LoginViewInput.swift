@@ -16,7 +16,6 @@ import Foundation
     */
 
     func setupInitialState()
+    func displayProgres(enabled enabled: Bool, completion: () -> ())
     
-    func focusLoginField()
-   func showLoginProgress(enabled enabled: Bool, completion: () -> ())
 }

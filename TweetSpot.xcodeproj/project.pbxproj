@@ -30,7 +30,6 @@
 		553F7B861D5DBAD700541F38 /* NavigationRootViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553F7B701D5DBAD700541F38 /* NavigationRootViewOutput.swift */; };
 		553F7B871D5DBAD700541F38 /* TyphoonDefinition+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553F7B731D5DBAD700541F38 /* TyphoonDefinition+Extensions.swift */; };
 		553F7B881D5DBAD700541F38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 553F7B761D5DBAD700541F38 /* Assets.xcassets */; };
-		553F7B891D5DBAD700541F38 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 553F7B781D5DBAD700541F38 /* Info.plist */; };
 		553F7B8B1D5DBB3100541F38 /* ApplicationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553F7B8A1D5DBB3100541F38 /* ApplicationAssembly.swift */; };
 		553F7B8E1D5DBB5900541F38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553F7B8D1D5DBB5900541F38 /* AppDelegate.swift */; };
 		553F7B901D5DBF2D00541F38 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553F7B8F1D5DBF2D00541F38 /* UIColor+Extensions.swift */; };
@@ -40,6 +39,11 @@
 		553F7B9B1D5DCA0700541F38 /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 553F7B9A1D5DCA0700541F38 /* LoginStoryboard.storyboard */; };
 		553F7B9F1D5DD0C500541F38 /* Login.strings in Resources */ = {isa = PBXBuildFile; fileRef = 553F7BA11D5DD0C500541F38 /* Login.strings */; };
 		553F7BA41D5DD0EE00541F38 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553F7BA31D5DD0EE00541F38 /* String+Extensions.swift */; };
+		553F7BB01D5DE7D800541F38 /* TwitterSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553F7BAE1D5DE7D800541F38 /* TwitterSession.swift */; };
+		553F7BB11D5DE7D800541F38 /* TwitterSessionImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553F7BAF1D5DE7D800541F38 /* TwitterSessionImpl.swift */; };
+		553F7BB41D5DE7EE00541F38 /* SocialAccountsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553F7BB31D5DE7EE00541F38 /* SocialAccountsService.swift */; };
+		553F7BB61D5DE85B00541F38 /* SocialAccountsServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553F7BB51D5DE85B00541F38 /* SocialAccountsServiceImpl.swift */; };
+		553F7BB81D5DE94300541F38 /* CoreServicesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553F7BB71D5DE94200541F38 /* CoreServicesAssembly.swift */; };
 		5E1C4BE8DA3AF9D19CF00FB5 /* LoginViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34178EC6BAD21268D642847C /* LoginViewOutput.swift */; };
 		63D4587548BBE2D1980ED093 /* LoginModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CA2E1B4D8C00A745E46D00 /* LoginModuleInput.swift */; };
 		A8668A4869942910B58DD3B7 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFA1CFD2DBF26E79CEFB095 /* LoginInteractor.swift */; };
@@ -93,6 +97,11 @@
 		553F7BA01D5DD0C500541F38 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Login.strings; sourceTree = "<group>"; };
 		553F7BA21D5DD0D200541F38 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Login.strings; sourceTree = "<group>"; };
 		553F7BA31D5DD0EE00541F38 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		553F7BAE1D5DE7D800541F38 /* TwitterSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterSession.swift; sourceTree = "<group>"; };
+		553F7BAF1D5DE7D800541F38 /* TwitterSessionImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterSessionImpl.swift; sourceTree = "<group>"; };
+		553F7BB31D5DE7EE00541F38 /* SocialAccountsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialAccountsService.swift; sourceTree = "<group>"; };
+		553F7BB51D5DE85B00541F38 /* SocialAccountsServiceImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialAccountsServiceImpl.swift; sourceTree = "<group>"; };
+		553F7BB71D5DE94200541F38 /* CoreServicesAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreServicesAssembly.swift; sourceTree = "<group>"; };
 		6AADD66E20488720C9693357 /* Pods-TweetSpot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TweetSpot.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TweetSpot/Pods-TweetSpot.debug.xcconfig"; sourceTree = "<group>"; };
 		73E57FCA510F2E64268DFFB1 /* LoginViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginViewInput.swift; sourceTree = "<group>"; };
 		925AB2EC06AA8DF3F1E9FAA4 /* LoginViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -175,8 +184,9 @@
 			isa = PBXGroup;
 			children = (
 				553F7B711D5DBAD700541F38 /* Utils */,
-				553F7B581D5DBAD700541F38 /* Application */,
 				553F7B5A1D5DBAD700541F38 /* Presentation */,
+				553F7B581D5DBAD700541F38 /* Application */,
+				553F7BA51D5DE54A00541F38 /* Core */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -353,6 +363,42 @@
 			path = Strings;
 			sourceTree = "<group>";
 		};
+		553F7BA51D5DE54A00541F38 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				553F7BB71D5DE94200541F38 /* CoreServicesAssembly.swift */,
+				553F7BB21D5DE7E400541F38 /* SocialAccountsService */,
+				553F7BAC1D5DE7D800541F38 /* Domain */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		553F7BAC1D5DE7D800541F38 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				553F7BAD1D5DE7D800541F38 /* TwitterSession */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		553F7BAD1D5DE7D800541F38 /* TwitterSession */ = {
+			isa = PBXGroup;
+			children = (
+				553F7BAE1D5DE7D800541F38 /* TwitterSession.swift */,
+				553F7BAF1D5DE7D800541F38 /* TwitterSessionImpl.swift */,
+			);
+			path = TwitterSession;
+			sourceTree = "<group>";
+		};
+		553F7BB21D5DE7E400541F38 /* SocialAccountsService */ = {
+			isa = PBXGroup;
+			children = (
+				553F7BB31D5DE7EE00541F38 /* SocialAccountsService.swift */,
+				553F7BB51D5DE85B00541F38 /* SocialAccountsServiceImpl.swift */,
+			);
+			path = SocialAccountsService;
+			sourceTree = "<group>";
+		};
 		5DF0C569B6AB1E1F306F1C51 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -506,7 +552,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				553F7B891D5DBAD700541F38 /* Info.plist in Resources */,
 				553F7B9B1D5DCA0700541F38 /* LoginStoryboard.storyboard in Resources */,
 				553F7B7A1D5DBAD700541F38 /* LaunchScreen.storyboard in Resources */,
 				553F7B881D5DBAD700541F38 /* Assets.xcassets in Resources */,
@@ -580,8 +625,10 @@
 				553F7B951D5DC98600541F38 /* FadeInSegue.swift in Sources */,
 				553F7B7F1D5DBAD700541F38 /* NavigationRootInteractorOutput.swift in Sources */,
 				553F7B901D5DBF2D00541F38 /* UIColor+Extensions.swift in Sources */,
+				553F7BB01D5DE7D800541F38 /* TwitterSession.swift in Sources */,
 				553F7B831D5DBAD700541F38 /* NavigationRootRouterInput.swift in Sources */,
 				553F7B821D5DBAD700541F38 /* NavigationRootRouter.swift in Sources */,
+				553F7BB81D5DE94300541F38 /* CoreServicesAssembly.swift in Sources */,
 				553F7B8B1D5DBB3100541F38 /* ApplicationAssembly.swift in Sources */,
 				553F7B8E1D5DBB5900541F38 /* AppDelegate.swift in Sources */,
 				553F7B871D5DBAD700541F38 /* TyphoonDefinition+Extensions.swift in Sources */,
@@ -594,6 +641,7 @@
 				553F7B841D5DBAD700541F38 /* NavigationRootViewController.swift in Sources */,
 				553F7B861D5DBAD700541F38 /* NavigationRootViewOutput.swift in Sources */,
 				553F7B851D5DBAD700541F38 /* NavigationRootViewInput.swift in Sources */,
+				553F7BB61D5DE85B00541F38 /* SocialAccountsServiceImpl.swift in Sources */,
 				553F7B7D1D5DBAD700541F38 /* NavigationRootInteractor.swift in Sources */,
 				D606B5C4423C7A5C906D18E4 /* LoginAssembly.swift in Sources */,
 				0C600FEF96A9DAA29AFE29DA /* LoginViewInput.swift in Sources */,
@@ -604,9 +652,11 @@
 				553F7B981D5DC9B900541F38 /* FadeAnimator.swift in Sources */,
 				43D39CCE68291FA56D85DCD9 /* LoginInteractorInput.swift in Sources */,
 				2F6B9B3145F852C644E231A5 /* LoginInteractorOutput.swift in Sources */,
+				553F7BB11D5DE7D800541F38 /* TwitterSessionImpl.swift in Sources */,
 				A8668A4869942910B58DD3B7 /* LoginInteractor.swift in Sources */,
 				00ED40C1B3A1B86EC86EED9E /* LoginRouterInput.swift in Sources */,
 				3CB6F2D1B911272743922AEB /* LoginRouter.swift in Sources */,
+				553F7BB41D5DE7EE00541F38 /* SocialAccountsService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -697,6 +747,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "-DDEBUG";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -735,6 +786,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_SWIFT_FLAGS = "-DRELEASE";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};

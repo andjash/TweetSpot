@@ -9,5 +9,8 @@
 import Foundation
 
 @objc protocol LoginInteractorInput {
-
+    
+    func loginWithIOSAccountRequested()
+    func loginWithPasswordRequested()
+    
 }
