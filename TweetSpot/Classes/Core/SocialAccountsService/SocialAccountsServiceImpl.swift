@@ -15,7 +15,6 @@ class SocialAccountsServiceImpl: NSObject, SocialAccountsService {
     
     override init() {
         accountStore = ACAccountStore()
-        
         super.init()
     }
     
@@ -37,6 +36,16 @@ class SocialAccountsServiceImpl: NSObject, SocialAccountsService {
                 }
             })
         }
+    }
+    
+    func requestAccountWithId(accountId: String) -> ACAccount? {
+        for account in accountStore.accounts {
+            if account.identifier == accountId {
+                return account as? ACAccount
+            }
+        }
+        
+        return nil
     }
 
 }

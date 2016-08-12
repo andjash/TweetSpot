@@ -8,4 +8,5 @@ target 'TweetSpot' do
     pod "ViperMcFlurry", '~> 1.2.0' 
     pod 'STTwitter', '~> 0.2.5'
   	pod 'XCGLogger', '~> 3.3'
+	pod 'SAMKeychain', :git => 'https://github.com/soffes/SAMKeychain.git', :commit => '80714c22e0f43de0be2134f99c0a0841f9ef066c'
 end
