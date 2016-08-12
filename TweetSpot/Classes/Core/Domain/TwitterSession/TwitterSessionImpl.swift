@@ -31,12 +31,18 @@ class TwitterSessionImpl: NSObject, TwitterSession {
     
     var pendingSuccessCallback: (() -> ())?
     var pendingErrorCallback: ((NSError) -> ())?
+    var handlingWebAuth = false
     
     init(socAccountsSvc: SocialAccountsService) {
         state = .Progress
         self.socAccountsSvc = socAccountsSvc
         super.init()
         self.restoreSessionState()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(TwitterSessionImpl.appBecomeActive), name: UIApplicationDidBecomeActiveNotification, object: nil)
+    }
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
     func openSessionWihtIOSAccount(account: ACAccount, success: () -> (), error: (NSError) -> ()) {
@@ -68,6 +74,12 @@ class TwitterSessionImpl: NSObject, TwitterSession {
         twitterApi = nil
         state = .Closed
     }
+    
+    func wrapInnerError(error: NSError) -> NSError {
+        return NSError(domain: TwitterSessionConstants.errorDomain,
+                       code: TwitterSessionError.SessionCreationInnerError.rawValue,
+                       userInfo: [TwitterSessionConstants.innerErrorUserInfoKey : error])
+    }
 }
 
 
@@ -88,6 +100,7 @@ extension TwitterSessionImpl {
         twitterApi?.postTokenRequest({[unowned self] (url, oauthToken) in
             self.pendingSuccessCallback = success
             self.pendingErrorCallback = error
+            self.handlingWebAuth = true
             UIApplication.sharedApplication().openURL(url)
             },
                                      authenticateInsteadOfAuthorize: false,
@@ -99,7 +112,13 @@ extension TwitterSessionImpl {
             })
     }
     
-    func handleWebAuthCallback(url: NSURL) {
+    func handleWebAuthCallback(url: NSURL) -> Bool {
+        if !handlingWebAuth {
+            log.severe("Web auth canceled")
+            return false
+        }
+        self.handlingWebAuth = false
+        
         let params = parametersDictFromWebAuthCallback(url.query)
         
         let oToken = params["oauth_token"]
@@ -114,7 +133,7 @@ extension TwitterSessionImpl {
         
         guard let _ = oToken, ver = oVer else {
             errCallback()
-            return
+            return false
         }
         
         twitterApi?.postAccessTokenRequestWithPIN(ver, successBlock: {[unowned self] (oauthToken, oauthSecret, userId, screenName) in
@@ -126,15 +145,11 @@ extension TwitterSessionImpl {
             self.pendingSuccessCallback?()
             self.pendingSuccessCallback = nil
             self.pendingErrorCallback = nil
-            }, errorBlock: { (error) in
-                errCallback()
+        }, errorBlock: { (error) in
+            errCallback()
         })
-    }
-    
-   func wrapInnerError(error: NSError) -> NSError {
-        return NSError(domain: TwitterSessionConstants.errorDomain,
-                       code: TwitterSessionError.SessionCreationInnerError.rawValue,
-                       userInfo: [TwitterSessionConstants.innerErrorUserInfoKey : error])
+        
+        return true
     }
     
     func parametersDictFromWebAuthCallback(query: String?) -> [String : String] {
@@ -153,6 +168,17 @@ extension TwitterSessionImpl {
             result[pair[0]] = pair[1]
         }
         return result
+    }
+    
+    func appBecomeActive() {
+        if handlingWebAuth {
+            log.severe("App opened while web auth in progress. Discard auth flow")
+            self.state = .Closed
+            self.pendingErrorCallback?(NSError(domain: TwitterSessionConstants.errorDomain, code: TwitterSessionError.WebAuthFailed.rawValue, userInfo: nil))
+            self.pendingSuccessCallback = nil
+            self.pendingErrorCallback = nil
+            self.handlingWebAuth = false
+        }
     }
     
 }

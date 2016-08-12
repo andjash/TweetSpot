@@ -42,8 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool {
         if url.scheme == "tssession" {
-            twitterSession.handleWebAuthCallback(url)
-            return true
+            return twitterSession.handleWebAuthCallback(url)
         }        
         return false
     }
