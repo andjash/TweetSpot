@@ -8,7 +8,7 @@
 
 import Foundation
 
-class NavigationRootPresenter: NSObject, NavigationRootModuleInput, NavigationRootInteractorOutput {
+class NavigationRootPresenter: NSObject, NavigationRootModuleInput {
 
     weak var view: NavigationRootViewInput!
     var interactor: NavigationRootInteractorInput!
@@ -26,10 +26,22 @@ extension NavigationRootPresenter : NavigationRootViewOutput {
     
     func viewIsAppeared() {
         if !viewIsAppearedOnce {
-            view.showAppLaunchAnimation({ 
-                
+            view.showAppLaunchAnimation({ [unowned self] in
+                self.interactor.decideNextModuleToShow()
             })
             viewIsAppearedOnce = true
         }
+    }
+}
+
+
+extension NavigationRootPresenter : NavigationRootInteractorOutput {
+    
+    func loginModuleRequired() {
+        router.routeToLogin()
+    }
+    
+    func timeLineModuleRequired() {
+        
     }
 }

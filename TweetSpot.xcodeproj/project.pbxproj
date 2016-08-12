@@ -7,7 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00ED40C1B3A1B86EC86EED9E /* LoginRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29201C8450BEB5508DF0EFB8 /* LoginRouterInput.swift */; };
+		0C600FEF96A9DAA29AFE29DA /* LoginViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E57FCA510F2E64268DFFB1 /* LoginViewInput.swift */; };
 		10DE3B91554135AC09E28FDA /* Pods_TweetSpot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC908E15534B9C55897CC48D /* Pods_TweetSpot.framework */; };
+		2F6B9B3145F852C644E231A5 /* LoginInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C492B261654B8E581FA4DA1 /* LoginInteractorOutput.swift */; };
+		3CB6F2D1B911272743922AEB /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAA5A84F566ADC6C923BB15 /* LoginRouter.swift */; };
+		43D39CCE68291FA56D85DCD9 /* LoginInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A352E74613D34DF29C9D509E /* LoginInteractorInput.swift */; };
+		4D2AE8BBF63A3ECA88039CF5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925AB2EC06AA8DF3F1E9FAA4 /* LoginViewController.swift */; };
 		553F7B471D5DB71200541F38 /* TweetSpotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553F7B461D5DB71200541F38 /* TweetSpotTests.swift */; };
 		553F7B7A1D5DBAD700541F38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 553F7B5B1D5DBAD700541F38 /* LaunchScreen.storyboard */; };
 		553F7B7B1D5DBAD700541F38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 553F7B5D1D5DBAD700541F38 /* Main.storyboard */; };
@@ -28,6 +34,17 @@
 		553F7B8B1D5DBB3100541F38 /* ApplicationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553F7B8A1D5DBB3100541F38 /* ApplicationAssembly.swift */; };
 		553F7B8E1D5DBB5900541F38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553F7B8D1D5DBB5900541F38 /* AppDelegate.swift */; };
 		553F7B901D5DBF2D00541F38 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553F7B8F1D5DBF2D00541F38 /* UIColor+Extensions.swift */; };
+		553F7B921D5DC8E800541F38 /* CAGradientLayer+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553F7B911D5DC8E800541F38 /* CAGradientLayer+Extensions.swift */; };
+		553F7B951D5DC98600541F38 /* FadeInSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553F7B941D5DC98600541F38 /* FadeInSegue.swift */; };
+		553F7B981D5DC9B900541F38 /* FadeAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553F7B971D5DC9B900541F38 /* FadeAnimator.swift */; };
+		553F7B9B1D5DCA0700541F38 /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 553F7B9A1D5DCA0700541F38 /* LoginStoryboard.storyboard */; };
+		553F7B9F1D5DD0C500541F38 /* Login.strings in Resources */ = {isa = PBXBuildFile; fileRef = 553F7BA11D5DD0C500541F38 /* Login.strings */; };
+		553F7BA41D5DD0EE00541F38 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553F7BA31D5DD0EE00541F38 /* String+Extensions.swift */; };
+		5E1C4BE8DA3AF9D19CF00FB5 /* LoginViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34178EC6BAD21268D642847C /* LoginViewOutput.swift */; };
+		63D4587548BBE2D1980ED093 /* LoginModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CA2E1B4D8C00A745E46D00 /* LoginModuleInput.swift */; };
+		A8668A4869942910B58DD3B7 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFA1CFD2DBF26E79CEFB095 /* LoginInteractor.swift */; };
+		C2B66D6AF2DCD980C2338BA7 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2C826A2427286160339FEE /* LoginPresenter.swift */; };
+		D606B5C4423C7A5C906D18E4 /* LoginAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = C854C7EC496D353EA5482B82 /* LoginAssembly.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +58,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C492B261654B8E581FA4DA1 /* LoginInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginInteractorOutput.swift; sourceTree = "<group>"; };
+		29201C8450BEB5508DF0EFB8 /* LoginRouterInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginRouterInput.swift; sourceTree = "<group>"; };
+		2DAA5A84F566ADC6C923BB15 /* LoginRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
+		31CA2E1B4D8C00A745E46D00 /* LoginModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginModuleInput.swift; sourceTree = "<group>"; };
+		34178EC6BAD21268D642847C /* LoginViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginViewOutput.swift; sourceTree = "<group>"; };
 		553F7B2E1D5DB71200541F38 /* TweetSpot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TweetSpot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		553F7B421D5DB71200541F38 /* TweetSpotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TweetSpotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		553F7B461D5DB71200541F38 /* TweetSpotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetSpotTests.swift; sourceTree = "<group>"; };
@@ -64,8 +86,21 @@
 		553F7B8A1D5DBB3100541F38 /* ApplicationAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationAssembly.swift; sourceTree = "<group>"; };
 		553F7B8D1D5DBB5900541F38 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		553F7B8F1D5DBF2D00541F38 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		553F7B911D5DC8E800541F38 /* CAGradientLayer+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CAGradientLayer+Extensions.swift"; sourceTree = "<group>"; };
+		553F7B941D5DC98600541F38 /* FadeInSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeInSegue.swift; sourceTree = "<group>"; };
+		553F7B971D5DC9B900541F38 /* FadeAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeAnimator.swift; sourceTree = "<group>"; };
+		553F7B9A1D5DCA0700541F38 /* LoginStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginStoryboard.storyboard; sourceTree = "<group>"; };
+		553F7BA01D5DD0C500541F38 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Login.strings; sourceTree = "<group>"; };
+		553F7BA21D5DD0D200541F38 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Login.strings; sourceTree = "<group>"; };
+		553F7BA31D5DD0EE00541F38 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		6AADD66E20488720C9693357 /* Pods-TweetSpot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TweetSpot.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TweetSpot/Pods-TweetSpot.debug.xcconfig"; sourceTree = "<group>"; };
+		73E57FCA510F2E64268DFFB1 /* LoginViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginViewInput.swift; sourceTree = "<group>"; };
+		925AB2EC06AA8DF3F1E9FAA4 /* LoginViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A352E74613D34DF29C9D509E /* LoginInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginInteractorInput.swift; sourceTree = "<group>"; };
+		AB2C826A2427286160339FEE /* LoginPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		C854C7EC496D353EA5482B82 /* LoginAssembly.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginAssembly.swift; sourceTree = "<group>"; };
 		EC908E15534B9C55897CC48D /* Pods_TweetSpot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TweetSpot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDFA1CFD2DBF26E79CEFB095 /* LoginInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
 		FEEBF983C6D999B04D27BE91 /* Pods-TweetSpot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TweetSpot.release.xcconfig"; path = "Pods/Target Support Files/Pods-TweetSpot/Pods-TweetSpot.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -169,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				553F7B601D5DBAD700541F38 /* NavigationRoot */,
+				A1E4A9681499E3A34BA17852 /* Login */,
 			);
 			path = Stories;
 			sourceTree = "<group>";
@@ -235,6 +271,8 @@
 			isa = PBXGroup;
 			children = (
 				553F7B721D5DBAD700541F38 /* Extensionns */,
+				553F7B931D5DC97D00541F38 /* Segues */,
+				553F7B961D5DC9AB00541F38 /* Animators */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -244,6 +282,8 @@
 			children = (
 				553F7B731D5DBAD700541F38 /* TyphoonDefinition+Extensions.swift */,
 				553F7B8F1D5DBF2D00541F38 /* UIColor+Extensions.swift */,
+				553F7B911D5DC8E800541F38 /* CAGradientLayer+Extensions.swift */,
+				553F7BA31D5DD0EE00541F38 /* String+Extensions.swift */,
 			);
 			path = Extensionns;
 			sourceTree = "<group>";
@@ -251,6 +291,7 @@
 		553F7B741D5DBAD700541F38 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				553F7B9C1D5DD07100541F38 /* Strings */,
 				553F7B751D5DBAD700541F38 /* Images */,
 			);
 			path = Resources;
@@ -280,12 +321,103 @@
 			path = AppDelegate;
 			sourceTree = "<group>";
 		};
+		553F7B931D5DC97D00541F38 /* Segues */ = {
+			isa = PBXGroup;
+			children = (
+				553F7B941D5DC98600541F38 /* FadeInSegue.swift */,
+			);
+			path = Segues;
+			sourceTree = "<group>";
+		};
+		553F7B961D5DC9AB00541F38 /* Animators */ = {
+			isa = PBXGroup;
+			children = (
+				553F7B971D5DC9B900541F38 /* FadeAnimator.swift */,
+			);
+			path = Animators;
+			sourceTree = "<group>";
+		};
+		553F7B991D5DC9FC00541F38 /* Stroryboard */ = {
+			isa = PBXGroup;
+			children = (
+				553F7B9A1D5DCA0700541F38 /* LoginStoryboard.storyboard */,
+			);
+			path = Stroryboard;
+			sourceTree = "<group>";
+		};
+		553F7B9C1D5DD07100541F38 /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				553F7BA11D5DD0C500541F38 /* Login.strings */,
+			);
+			path = Strings;
+			sourceTree = "<group>";
+		};
 		5DF0C569B6AB1E1F306F1C51 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				EC908E15534B9C55897CC48D /* Pods_TweetSpot.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		828C968F17755E240CD399AC /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				29201C8450BEB5508DF0EFB8 /* LoginRouterInput.swift */,
+				2DAA5A84F566ADC6C923BB15 /* LoginRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		98428096C66F8C9C53A48047 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				A352E74613D34DF29C9D509E /* LoginInteractorInput.swift */,
+				0C492B261654B8E581FA4DA1 /* LoginInteractorOutput.swift */,
+				EDFA1CFD2DBF26E79CEFB095 /* LoginInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		9E57476CF744D16066EA6DBA /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				31CA2E1B4D8C00A745E46D00 /* LoginModuleInput.swift */,
+				AB2C826A2427286160339FEE /* LoginPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		A1E4A9681499E3A34BA17852 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				A9C186A9A3243CE327A14B85 /* Assembly */,
+				D08A3CA01F560D0A3EA83B51 /* View */,
+				9E57476CF744D16066EA6DBA /* Presenter */,
+				98428096C66F8C9C53A48047 /* Interactor */,
+				828C968F17755E240CD399AC /* Router */,
+				553F7B991D5DC9FC00541F38 /* Stroryboard */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		A9C186A9A3243CE327A14B85 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				C854C7EC496D353EA5482B82 /* LoginAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		D08A3CA01F560D0A3EA83B51 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				73E57FCA510F2E64268DFFB1 /* LoginViewInput.swift */,
+				34178EC6BAD21268D642847C /* LoginViewOutput.swift */,
+				925AB2EC06AA8DF3F1E9FAA4 /* LoginViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -356,6 +488,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 553F7B251D5DB71200541F38;
 			productRefGroup = 553F7B2F1D5DB71200541F38 /* Products */;
@@ -374,8 +507,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				553F7B891D5DBAD700541F38 /* Info.plist in Resources */,
+				553F7B9B1D5DCA0700541F38 /* LoginStoryboard.storyboard in Resources */,
 				553F7B7A1D5DBAD700541F38 /* LaunchScreen.storyboard in Resources */,
 				553F7B881D5DBAD700541F38 /* Assets.xcassets in Resources */,
+				553F7B9F1D5DD0C500541F38 /* Login.strings in Resources */,
 				553F7B7B1D5DBAD700541F38 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -442,6 +577,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				553F7B951D5DC98600541F38 /* FadeInSegue.swift in Sources */,
 				553F7B7F1D5DBAD700541F38 /* NavigationRootInteractorOutput.swift in Sources */,
 				553F7B901D5DBF2D00541F38 /* UIColor+Extensions.swift in Sources */,
 				553F7B831D5DBAD700541F38 /* NavigationRootRouterInput.swift in Sources */,
@@ -449,7 +585,9 @@
 				553F7B8B1D5DBB3100541F38 /* ApplicationAssembly.swift in Sources */,
 				553F7B8E1D5DBB5900541F38 /* AppDelegate.swift in Sources */,
 				553F7B871D5DBAD700541F38 /* TyphoonDefinition+Extensions.swift in Sources */,
+				553F7B921D5DC8E800541F38 /* CAGradientLayer+Extensions.swift in Sources */,
 				553F7B7E1D5DBAD700541F38 /* NavigationRootInteractorInput.swift in Sources */,
+				553F7BA41D5DD0EE00541F38 /* String+Extensions.swift in Sources */,
 				553F7B7C1D5DBAD700541F38 /* NavigationRootAssembly.swift in Sources */,
 				553F7B801D5DBAD700541F38 /* NavigationRootModuleInput.swift in Sources */,
 				553F7B811D5DBAD700541F38 /* NavigationRootPresenter.swift in Sources */,
@@ -457,6 +595,18 @@
 				553F7B861D5DBAD700541F38 /* NavigationRootViewOutput.swift in Sources */,
 				553F7B851D5DBAD700541F38 /* NavigationRootViewInput.swift in Sources */,
 				553F7B7D1D5DBAD700541F38 /* NavigationRootInteractor.swift in Sources */,
+				D606B5C4423C7A5C906D18E4 /* LoginAssembly.swift in Sources */,
+				0C600FEF96A9DAA29AFE29DA /* LoginViewInput.swift in Sources */,
+				5E1C4BE8DA3AF9D19CF00FB5 /* LoginViewOutput.swift in Sources */,
+				4D2AE8BBF63A3ECA88039CF5 /* LoginViewController.swift in Sources */,
+				63D4587548BBE2D1980ED093 /* LoginModuleInput.swift in Sources */,
+				C2B66D6AF2DCD980C2338BA7 /* LoginPresenter.swift in Sources */,
+				553F7B981D5DC9B900541F38 /* FadeAnimator.swift in Sources */,
+				43D39CCE68291FA56D85DCD9 /* LoginInteractorInput.swift in Sources */,
+				2F6B9B3145F852C644E231A5 /* LoginInteractorOutput.swift in Sources */,
+				A8668A4869942910B58DD3B7 /* LoginInteractor.swift in Sources */,
+				00ED40C1B3A1B86EC86EED9E /* LoginRouterInput.swift in Sources */,
+				3CB6F2D1B911272743922AEB /* LoginRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,6 +643,15 @@
 				553F7B5E1D5DBAD700541F38 /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		553F7BA11D5DD0C500541F38 /* Login.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				553F7BA01D5DD0C500541F38 /* en */,
+				553F7BA21D5DD0D200541F38 /* ru */,
+			);
+			name = Login.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

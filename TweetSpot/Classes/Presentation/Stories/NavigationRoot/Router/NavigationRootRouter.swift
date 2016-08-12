@@ -12,5 +12,11 @@ import ViperMcFlurry
 class NavigationRootRouter: NSObject, NavigationRootRouterInput {
 
 	weak var transitionHandler: RamblerViperModuleTransitionHandlerProtocol!
+    
+    func routeToLogin() {
+        transitionHandler.openModuleUsingSegue?("RootToLoginSegue").thenChainUsingBlock { (input) -> RamblerViperModuleOutput! in
+            return nil
+        }
+    }
 
 }

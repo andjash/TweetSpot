@@ -9,5 +9,8 @@
 import Foundation
 
 @objc protocol NavigationRootInteractorOutput {
-
+    
+    func loginModuleRequired()
+    func timeLineModuleRequired()
+    
 }

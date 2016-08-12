@@ -1,5 +1,5 @@
 //
-//  NavigationRootNavigationRootInteractorInput.swift
+//  LoginLoginModuleInput.swift
 //  TweetSpot
 //
 //  Created by Andrey Yashnev on 12/08/2016.
@@ -8,8 +8,6 @@
 
 import Foundation
 
-@objc protocol NavigationRootInteractorInput {
-    
-    func decideNextModuleToShow()
+@objc protocol LoginModuleInput {
 
 }

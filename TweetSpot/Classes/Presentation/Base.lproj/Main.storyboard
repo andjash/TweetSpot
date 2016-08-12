@@ -51,10 +51,19 @@
                         <outlet property="birdLabelHorizontalAlign" destination="E2T-eI-dhO" id="z0y-e5-MQu"/>
                         <outlet property="gradientView" destination="1CC-Vx-Pwf" id="qNE-05-ecl"/>
                         <outlet property="titleLabel" destination="RHF-dm-8x9" id="DfQ-37-f9B"/>
+                        <segue destination="caw-C4-LcB" kind="custom" identifier="RootToLoginSegue" customClass="FadeInSegue" customModule="TweetSpot" customModuleProvider="target" id="cz0-bT-aPb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--LoginStoryboard-->
+        <scene sceneID="UQD-RG-7tz">
+            <objects>
+                <viewControllerPlaceholder storyboardName="LoginStoryboard" id="caw-C4-LcB" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kHH-D4-eLR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1056" y="237"/>
         </scene>
     </scenes>
 </document>

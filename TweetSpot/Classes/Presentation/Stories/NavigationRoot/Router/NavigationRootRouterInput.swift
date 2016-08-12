@@ -9,5 +9,7 @@
 import Foundation
 
 @objc protocol NavigationRootRouterInput {
+    
+    func routeToLogin()
 
 }

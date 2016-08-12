@@ -18,7 +18,6 @@ class NavigationRootViewController: UIViewController  {
     
     @IBOutlet weak var gradientView: UIView!
     
-    
     weak var gradientLayer: CAGradientLayer!
     
     // MARK: Life cycle
@@ -26,11 +25,7 @@ class NavigationRootViewController: UIViewController  {
         super.viewDidLoad()
         view.backgroundColor = UIColor.ts_applicationPrimaryColor
         
-        let gLayer = CAGradientLayer()
-        gLayer.colors = [UIColor.ts_applicationSecondaryColor, UIColor.ts_applicationPrimaryColor.CGColor]
-        gLayer.locations = [0.0 , 1.0]
-        gLayer.startPoint = CGPoint(x: 0, y: 0)
-        gLayer.endPoint = CGPoint(x: 0, y: 2)
+        let gLayer = CAGradientLayer.ts_applicationPrimaryGradient
         gradientView.layer.addSublayer(gLayer)
         gradientLayer = gLayer
         output.viewIsReady()
@@ -54,7 +49,7 @@ extension NavigationRootViewController : NavigationRootViewInput {
     }
     
     func showAppLaunchAnimation(completion: () -> ()) {
-        UIView.animateWithDuration(0.3, animations: { 
+        UIView.animateWithDuration(0.5, animations: {
             self.gradientView.alpha = 1
             self.titleLabel.alpha = 0
         }) { (completed) in

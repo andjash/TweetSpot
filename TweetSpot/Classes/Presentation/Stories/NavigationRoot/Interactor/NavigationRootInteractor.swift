@@ -12,4 +12,9 @@ class NavigationRootInteractor: NSObject, NavigationRootInteractorInput {
 
     weak var output: NavigationRootInteractorOutput!
 
+    func decideNextModuleToShow() {
+        output.loginModuleRequired()
+    }
+    
 }
+

@@ -1,5 +1,5 @@
 //
-//  NavigationRootNavigationRootInteractorInput.swift
+//  LoginLoginInteractor.swift
 //  TweetSpot
 //
 //  Created by Andrey Yashnev on 12/08/2016.
@@ -8,8 +8,8 @@
 
 import Foundation
 
-@objc protocol NavigationRootInteractorInput {
-    
-    func decideNextModuleToShow()
+class LoginInteractor: NSObject, LoginInteractorInput {
+
+    weak var output: LoginInteractorOutput!
 
 }
