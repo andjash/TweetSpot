@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Root View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="NavigationRootViewController" customModule="TweetSpot" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1CC-Vx-Pwf" userLabel="Gradient view">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tweet 🕊 Spot" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RHF-dm-8x9">
+                                <rect key="frame" x="211" y="282" width="179" height="36"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tweet 🕊 Spot" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UlD-AF-G7x">
+                                <rect key="frame" x="210" y="282" width="179" height="36"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="30"/>
+                                <color key="textColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.74509803919999995" green="0.34509803919999998" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="1CC-Vx-Pwf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="5qM-gQ-wB4"/>
+                            <constraint firstItem="1CC-Vx-Pwf" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="7MH-Pg-VyP"/>
+                            <constraint firstItem="UlD-AF-G7x" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="E2T-eI-dhO"/>
+                            <constraint firstAttribute="bottom" secondItem="1CC-Vx-Pwf" secondAttribute="bottom" id="Eim-PB-pjX"/>
+                            <constraint firstItem="RHF-dm-8x9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Odx-v6-Xof"/>
+                            <constraint firstItem="UlD-AF-G7x" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="V5N-jm-BAh"/>
+                            <constraint firstAttribute="trailing" secondItem="1CC-Vx-Pwf" secondAttribute="trailing" id="fWA-s7-7HD"/>
+                            <constraint firstItem="RHF-dm-8x9" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="g8a-Ga-bnX"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="birdLabel" destination="UlD-AF-G7x" id="6mb-Gb-QMs"/>
+                        <outlet property="birdLabelHorizontalAlign" destination="E2T-eI-dhO" id="z0y-e5-MQu"/>
+                        <outlet property="gradientView" destination="1CC-Vx-Pwf" id="qNE-05-ecl"/>
+                        <outlet property="titleLabel" destination="RHF-dm-8x9" id="DfQ-37-f9B"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>

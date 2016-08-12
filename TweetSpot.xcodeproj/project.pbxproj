@@ -8,12 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		10DE3B91554135AC09E28FDA /* Pods_TweetSpot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC908E15534B9C55897CC48D /* Pods_TweetSpot.framework */; };
-		553F7B321D5DB71200541F38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553F7B311D5DB71200541F38 /* AppDelegate.swift */; };
-		553F7B341D5DB71200541F38 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553F7B331D5DB71200541F38 /* ViewController.swift */; };
-		553F7B371D5DB71200541F38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 553F7B351D5DB71200541F38 /* Main.storyboard */; };
-		553F7B391D5DB71200541F38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 553F7B381D5DB71200541F38 /* Assets.xcassets */; };
-		553F7B3C1D5DB71200541F38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 553F7B3A1D5DB71200541F38 /* LaunchScreen.storyboard */; };
 		553F7B471D5DB71200541F38 /* TweetSpotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553F7B461D5DB71200541F38 /* TweetSpotTests.swift */; };
+		553F7B7A1D5DBAD700541F38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 553F7B5B1D5DBAD700541F38 /* LaunchScreen.storyboard */; };
+		553F7B7B1D5DBAD700541F38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 553F7B5D1D5DBAD700541F38 /* Main.storyboard */; };
+		553F7B7C1D5DBAD700541F38 /* NavigationRootAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553F7B621D5DBAD700541F38 /* NavigationRootAssembly.swift */; };
+		553F7B7D1D5DBAD700541F38 /* NavigationRootInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553F7B641D5DBAD700541F38 /* NavigationRootInteractor.swift */; };
+		553F7B7E1D5DBAD700541F38 /* NavigationRootInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553F7B651D5DBAD700541F38 /* NavigationRootInteractorInput.swift */; };
+		553F7B7F1D5DBAD700541F38 /* NavigationRootInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553F7B661D5DBAD700541F38 /* NavigationRootInteractorOutput.swift */; };
+		553F7B801D5DBAD700541F38 /* NavigationRootModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553F7B681D5DBAD700541F38 /* NavigationRootModuleInput.swift */; };
+		553F7B811D5DBAD700541F38 /* NavigationRootPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553F7B691D5DBAD700541F38 /* NavigationRootPresenter.swift */; };
+		553F7B821D5DBAD700541F38 /* NavigationRootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553F7B6B1D5DBAD700541F38 /* NavigationRootRouter.swift */; };
+		553F7B831D5DBAD700541F38 /* NavigationRootRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553F7B6C1D5DBAD700541F38 /* NavigationRootRouterInput.swift */; };
+		553F7B841D5DBAD700541F38 /* NavigationRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553F7B6E1D5DBAD700541F38 /* NavigationRootViewController.swift */; };
+		553F7B851D5DBAD700541F38 /* NavigationRootViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553F7B6F1D5DBAD700541F38 /* NavigationRootViewInput.swift */; };
+		553F7B861D5DBAD700541F38 /* NavigationRootViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553F7B701D5DBAD700541F38 /* NavigationRootViewOutput.swift */; };
+		553F7B871D5DBAD700541F38 /* TyphoonDefinition+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553F7B731D5DBAD700541F38 /* TyphoonDefinition+Extensions.swift */; };
+		553F7B881D5DBAD700541F38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 553F7B761D5DBAD700541F38 /* Assets.xcassets */; };
+		553F7B891D5DBAD700541F38 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 553F7B781D5DBAD700541F38 /* Info.plist */; };
+		553F7B8B1D5DBB3100541F38 /* ApplicationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553F7B8A1D5DBB3100541F38 /* ApplicationAssembly.swift */; };
+		553F7B8E1D5DBB5900541F38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553F7B8D1D5DBB5900541F38 /* AppDelegate.swift */; };
+		553F7B901D5DBF2D00541F38 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553F7B8F1D5DBF2D00541F38 /* UIColor+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,15 +42,28 @@
 
 /* Begin PBXFileReference section */
 		553F7B2E1D5DB71200541F38 /* TweetSpot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TweetSpot.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		553F7B311D5DB71200541F38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		553F7B331D5DB71200541F38 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		553F7B361D5DB71200541F38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		553F7B381D5DB71200541F38 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		553F7B3B1D5DB71200541F38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		553F7B3D1D5DB71200541F38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		553F7B421D5DB71200541F38 /* TweetSpotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TweetSpotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		553F7B461D5DB71200541F38 /* TweetSpotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetSpotTests.swift; sourceTree = "<group>"; };
 		553F7B481D5DB71200541F38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		553F7B5C1D5DBAD700541F38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		553F7B5E1D5DBAD700541F38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		553F7B621D5DBAD700541F38 /* NavigationRootAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationRootAssembly.swift; sourceTree = "<group>"; };
+		553F7B641D5DBAD700541F38 /* NavigationRootInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationRootInteractor.swift; sourceTree = "<group>"; };
+		553F7B651D5DBAD700541F38 /* NavigationRootInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationRootInteractorInput.swift; sourceTree = "<group>"; };
+		553F7B661D5DBAD700541F38 /* NavigationRootInteractorOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationRootInteractorOutput.swift; sourceTree = "<group>"; };
+		553F7B681D5DBAD700541F38 /* NavigationRootModuleInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationRootModuleInput.swift; sourceTree = "<group>"; };
+		553F7B691D5DBAD700541F38 /* NavigationRootPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationRootPresenter.swift; sourceTree = "<group>"; };
+		553F7B6B1D5DBAD700541F38 /* NavigationRootRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationRootRouter.swift; sourceTree = "<group>"; };
+		553F7B6C1D5DBAD700541F38 /* NavigationRootRouterInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationRootRouterInput.swift; sourceTree = "<group>"; };
+		553F7B6E1D5DBAD700541F38 /* NavigationRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationRootViewController.swift; sourceTree = "<group>"; };
+		553F7B6F1D5DBAD700541F38 /* NavigationRootViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationRootViewInput.swift; sourceTree = "<group>"; };
+		553F7B701D5DBAD700541F38 /* NavigationRootViewOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationRootViewOutput.swift; sourceTree = "<group>"; };
+		553F7B731D5DBAD700541F38 /* TyphoonDefinition+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TyphoonDefinition+Extensions.swift"; sourceTree = "<group>"; };
+		553F7B761D5DBAD700541F38 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		553F7B781D5DBAD700541F38 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		553F7B8A1D5DBB3100541F38 /* ApplicationAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationAssembly.swift; sourceTree = "<group>"; };
+		553F7B8D1D5DBB5900541F38 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		553F7B8F1D5DBF2D00541F38 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		6AADD66E20488720C9693357 /* Pods-TweetSpot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TweetSpot.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TweetSpot/Pods-TweetSpot.debug.xcconfig"; sourceTree = "<group>"; };
 		EC908E15534B9C55897CC48D /* Pods_TweetSpot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TweetSpot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEEBF983C6D999B04D27BE91 /* Pods-TweetSpot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TweetSpot.release.xcconfig"; path = "Pods/Target Support Files/Pods-TweetSpot/Pods-TweetSpot.release.xcconfig"; sourceTree = "<group>"; };
@@ -93,12 +120,9 @@
 		553F7B301D5DB71200541F38 /* TweetSpot */ = {
 			isa = PBXGroup;
 			children = (
-				553F7B311D5DB71200541F38 /* AppDelegate.swift */,
-				553F7B331D5DB71200541F38 /* ViewController.swift */,
-				553F7B351D5DB71200541F38 /* Main.storyboard */,
-				553F7B381D5DB71200541F38 /* Assets.xcassets */,
-				553F7B3A1D5DB71200541F38 /* LaunchScreen.storyboard */,
-				553F7B3D1D5DB71200541F38 /* Info.plist */,
+				553F7B571D5DBAD700541F38 /* Classes */,
+				553F7B741D5DBAD700541F38 /* Resources */,
+				553F7B771D5DBAD700541F38 /* SupportingFiles */,
 			);
 			path = TweetSpot;
 			sourceTree = "<group>";
@@ -110,6 +134,150 @@
 				553F7B481D5DB71200541F38 /* Info.plist */,
 			);
 			path = TweetSpotTests;
+			sourceTree = "<group>";
+		};
+		553F7B571D5DBAD700541F38 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				553F7B711D5DBAD700541F38 /* Utils */,
+				553F7B581D5DBAD700541F38 /* Application */,
+				553F7B5A1D5DBAD700541F38 /* Presentation */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		553F7B581D5DBAD700541F38 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				553F7B8A1D5DBB3100541F38 /* ApplicationAssembly.swift */,
+				553F7B8C1D5DBB4D00541F38 /* AppDelegate */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		553F7B5A1D5DBAD700541F38 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				553F7B5F1D5DBAD700541F38 /* Stories */,
+				553F7B5B1D5DBAD700541F38 /* LaunchScreen.storyboard */,
+				553F7B5D1D5DBAD700541F38 /* Main.storyboard */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		553F7B5F1D5DBAD700541F38 /* Stories */ = {
+			isa = PBXGroup;
+			children = (
+				553F7B601D5DBAD700541F38 /* NavigationRoot */,
+			);
+			path = Stories;
+			sourceTree = "<group>";
+		};
+		553F7B601D5DBAD700541F38 /* NavigationRoot */ = {
+			isa = PBXGroup;
+			children = (
+				553F7B611D5DBAD700541F38 /* Assembly */,
+				553F7B631D5DBAD700541F38 /* Interactor */,
+				553F7B671D5DBAD700541F38 /* Presenter */,
+				553F7B6A1D5DBAD700541F38 /* Router */,
+				553F7B6D1D5DBAD700541F38 /* View */,
+			);
+			path = NavigationRoot;
+			sourceTree = "<group>";
+		};
+		553F7B611D5DBAD700541F38 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				553F7B621D5DBAD700541F38 /* NavigationRootAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		553F7B631D5DBAD700541F38 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				553F7B641D5DBAD700541F38 /* NavigationRootInteractor.swift */,
+				553F7B651D5DBAD700541F38 /* NavigationRootInteractorInput.swift */,
+				553F7B661D5DBAD700541F38 /* NavigationRootInteractorOutput.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		553F7B671D5DBAD700541F38 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				553F7B681D5DBAD700541F38 /* NavigationRootModuleInput.swift */,
+				553F7B691D5DBAD700541F38 /* NavigationRootPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		553F7B6A1D5DBAD700541F38 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				553F7B6B1D5DBAD700541F38 /* NavigationRootRouter.swift */,
+				553F7B6C1D5DBAD700541F38 /* NavigationRootRouterInput.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		553F7B6D1D5DBAD700541F38 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				553F7B6E1D5DBAD700541F38 /* NavigationRootViewController.swift */,
+				553F7B6F1D5DBAD700541F38 /* NavigationRootViewInput.swift */,
+				553F7B701D5DBAD700541F38 /* NavigationRootViewOutput.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		553F7B711D5DBAD700541F38 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				553F7B721D5DBAD700541F38 /* Extensionns */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		553F7B721D5DBAD700541F38 /* Extensionns */ = {
+			isa = PBXGroup;
+			children = (
+				553F7B731D5DBAD700541F38 /* TyphoonDefinition+Extensions.swift */,
+				553F7B8F1D5DBF2D00541F38 /* UIColor+Extensions.swift */,
+			);
+			path = Extensionns;
+			sourceTree = "<group>";
+		};
+		553F7B741D5DBAD700541F38 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				553F7B751D5DBAD700541F38 /* Images */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		553F7B751D5DBAD700541F38 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				553F7B761D5DBAD700541F38 /* Assets.xcassets */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		553F7B771D5DBAD700541F38 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				553F7B781D5DBAD700541F38 /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		553F7B8C1D5DBB4D00541F38 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				553F7B8D1D5DBB5900541F38 /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
 			sourceTree = "<group>";
 		};
 		5DF0C569B6AB1E1F306F1C51 /* Frameworks */ = {
@@ -173,6 +341,7 @@
 				TargetAttributes = {
 					553F7B2D1D5DB71200541F38 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 7FQDGGDR62;
 					};
 					553F7B411D5DB71200541F38 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -204,9 +373,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				553F7B3C1D5DB71200541F38 /* LaunchScreen.storyboard in Resources */,
-				553F7B391D5DB71200541F38 /* Assets.xcassets in Resources */,
-				553F7B371D5DB71200541F38 /* Main.storyboard in Resources */,
+				553F7B891D5DBAD700541F38 /* Info.plist in Resources */,
+				553F7B7A1D5DBAD700541F38 /* LaunchScreen.storyboard in Resources */,
+				553F7B881D5DBAD700541F38 /* Assets.xcassets in Resources */,
+				553F7B7B1D5DBAD700541F38 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,8 +442,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				553F7B341D5DB71200541F38 /* ViewController.swift in Sources */,
-				553F7B321D5DB71200541F38 /* AppDelegate.swift in Sources */,
+				553F7B7F1D5DBAD700541F38 /* NavigationRootInteractorOutput.swift in Sources */,
+				553F7B901D5DBF2D00541F38 /* UIColor+Extensions.swift in Sources */,
+				553F7B831D5DBAD700541F38 /* NavigationRootRouterInput.swift in Sources */,
+				553F7B821D5DBAD700541F38 /* NavigationRootRouter.swift in Sources */,
+				553F7B8B1D5DBB3100541F38 /* ApplicationAssembly.swift in Sources */,
+				553F7B8E1D5DBB5900541F38 /* AppDelegate.swift in Sources */,
+				553F7B871D5DBAD700541F38 /* TyphoonDefinition+Extensions.swift in Sources */,
+				553F7B7E1D5DBAD700541F38 /* NavigationRootInteractorInput.swift in Sources */,
+				553F7B7C1D5DBAD700541F38 /* NavigationRootAssembly.swift in Sources */,
+				553F7B801D5DBAD700541F38 /* NavigationRootModuleInput.swift in Sources */,
+				553F7B811D5DBAD700541F38 /* NavigationRootPresenter.swift in Sources */,
+				553F7B841D5DBAD700541F38 /* NavigationRootViewController.swift in Sources */,
+				553F7B861D5DBAD700541F38 /* NavigationRootViewOutput.swift in Sources */,
+				553F7B851D5DBAD700541F38 /* NavigationRootViewInput.swift in Sources */,
+				553F7B7D1D5DBAD700541F38 /* NavigationRootInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,20 +479,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		553F7B351D5DB71200541F38 /* Main.storyboard */ = {
+		553F7B5B1D5DBAD700541F38 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				553F7B361D5DB71200541F38 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		553F7B3A1D5DB71200541F38 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				553F7B3B1D5DB71200541F38 /* Base */,
+				553F7B5C1D5DBAD700541F38 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		553F7B5D1D5DBAD700541F38 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				553F7B5E1D5DBAD700541F38 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -403,11 +586,15 @@
 			baseConfigurationReference = 6AADD66E20488720C9693357 /* Pods-TweetSpot.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = TweetSpot/Info.plist;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/TweetSpot/SupportingFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.andjash.TweetSpot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -416,11 +603,15 @@
 			baseConfigurationReference = FEEBF983C6D999B04D27BE91 /* Pods-TweetSpot.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = TweetSpot/Info.plist;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/TweetSpot/SupportingFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.andjash.TweetSpot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
