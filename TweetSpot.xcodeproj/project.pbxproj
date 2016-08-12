@@ -10,6 +10,7 @@
 		00ED40C1B3A1B86EC86EED9E /* LoginRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29201C8450BEB5508DF0EFB8 /* LoginRouterInput.swift */; };
 		0C600FEF96A9DAA29AFE29DA /* LoginViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E57FCA510F2E64268DFFB1 /* LoginViewInput.swift */; };
 		10DE3B91554135AC09E28FDA /* Pods_TweetSpot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC908E15534B9C55897CC48D /* Pods_TweetSpot.framework */; };
+		26948A3752703CA02E0F26F3 /* SpotAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1533EF6AD255C678255946D /* SpotAssembly.swift */; };
 		2F6B9B3145F852C644E231A5 /* LoginInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C492B261654B8E581FA4DA1 /* LoginInteractorOutput.swift */; };
 		3CB6F2D1B911272743922AEB /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAA5A84F566ADC6C923BB15 /* LoginRouter.swift */; };
 		43D39CCE68291FA56D85DCD9 /* LoginInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A352E74613D34DF29C9D509E /* LoginInteractorInput.swift */; };
@@ -44,11 +45,24 @@
 		553F7BB41D5DE7EE00541F38 /* SocialAccountsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553F7BB31D5DE7EE00541F38 /* SocialAccountsService.swift */; };
 		553F7BB61D5DE85B00541F38 /* SocialAccountsServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553F7BB51D5DE85B00541F38 /* SocialAccountsServiceImpl.swift */; };
 		553F7BB81D5DE94300541F38 /* CoreServicesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553F7BB71D5DE94200541F38 /* CoreServicesAssembly.swift */; };
+		55B061BB1D5E1DA000490B44 /* Common.strings in Resources */ = {isa = PBXBuildFile; fileRef = 55B061BD1D5E1DA000490B44 /* Common.strings */; };
+		55DF60A01D5E0EB9006B7BFD /* SpotStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55DF609F1D5E0EB9006B7BFD /* SpotStoryboard.storyboard */; };
+		55DF60A31D5E1305006B7BFD /* Root.strings in Resources */ = {isa = PBXBuildFile; fileRef = 55DF60A51D5E1305006B7BFD /* Root.strings */; };
+		5A1475A3FE5EACDCE10FE72C /* SpotPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5502AA9DE96ADBACD2C9FA /* SpotPresenter.swift */; };
 		5E1C4BE8DA3AF9D19CF00FB5 /* LoginViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34178EC6BAD21268D642847C /* LoginViewOutput.swift */; };
 		63D4587548BBE2D1980ED093 /* LoginModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CA2E1B4D8C00A745E46D00 /* LoginModuleInput.swift */; };
+		6CE3F3A2AEEB632F21896C52 /* SpotInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BBE4A0DEABAC414A12DEE4 /* SpotInteractor.swift */; };
+		7D2FC4F9704577721D05786D /* SpotRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFD46A8040FA8173AF67C04 /* SpotRouterInput.swift */; };
+		89A5EA3E8FB2B71C188BCBC2 /* SpotViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A5CFB753636A2A51814640 /* SpotViewInput.swift */; };
+		8B0BB1BC173A2621710BD1E5 /* SpotRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56550706EB12ABDBF670E767 /* SpotRouter.swift */; };
 		A8668A4869942910B58DD3B7 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFA1CFD2DBF26E79CEFB095 /* LoginInteractor.swift */; };
+		ADA98A49BE72D177873B5AAA /* SpotViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8A1BFAC036269E32C63A58 /* SpotViewOutput.swift */; };
+		BC54F40AE5A8825639068669 /* SpotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F613BFCD7AC396EEAF3620 /* SpotViewController.swift */; };
+		BFCC38F19671FC8CBDF46812 /* SpotInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1890C23C6A5E68AD70AC51 /* SpotInteractorInput.swift */; };
 		C2B66D6AF2DCD980C2338BA7 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2C826A2427286160339FEE /* LoginPresenter.swift */; };
 		D606B5C4423C7A5C906D18E4 /* LoginAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = C854C7EC496D353EA5482B82 /* LoginAssembly.swift */; };
+		DAE1C8871E14774C4D355249 /* SpotModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477AC3ACCB25F4E2FB31112C /* SpotModuleInput.swift */; };
+		EDE8915DBE0DAC09F17619DD /* SpotInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6080CD2E4CAF76E04B9E8C /* SpotInteractorOutput.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,10 +77,13 @@
 
 /* Begin PBXFileReference section */
 		0C492B261654B8E581FA4DA1 /* LoginInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginInteractorOutput.swift; sourceTree = "<group>"; };
+		16A5CFB753636A2A51814640 /* SpotViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SpotViewInput.swift; sourceTree = "<group>"; };
 		29201C8450BEB5508DF0EFB8 /* LoginRouterInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginRouterInput.swift; sourceTree = "<group>"; };
 		2DAA5A84F566ADC6C923BB15 /* LoginRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
+		2FFD46A8040FA8173AF67C04 /* SpotRouterInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SpotRouterInput.swift; sourceTree = "<group>"; };
 		31CA2E1B4D8C00A745E46D00 /* LoginModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginModuleInput.swift; sourceTree = "<group>"; };
 		34178EC6BAD21268D642847C /* LoginViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginViewOutput.swift; sourceTree = "<group>"; };
+		477AC3ACCB25F4E2FB31112C /* SpotModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SpotModuleInput.swift; sourceTree = "<group>"; };
 		553F7B2E1D5DB71200541F38 /* TweetSpot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TweetSpot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		553F7B421D5DB71200541F38 /* TweetSpotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TweetSpotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		553F7B461D5DB71200541F38 /* TweetSpotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetSpotTests.swift; sourceTree = "<group>"; };
@@ -102,13 +119,26 @@
 		553F7BB31D5DE7EE00541F38 /* SocialAccountsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialAccountsService.swift; sourceTree = "<group>"; };
 		553F7BB51D5DE85B00541F38 /* SocialAccountsServiceImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialAccountsServiceImpl.swift; sourceTree = "<group>"; };
 		553F7BB71D5DE94200541F38 /* CoreServicesAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreServicesAssembly.swift; sourceTree = "<group>"; };
+		55B061BC1D5E1DA000490B44 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Common.strings; sourceTree = "<group>"; };
+		55B061BE1D5E1DA200490B44 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Common.strings; sourceTree = "<group>"; };
+		55DF609F1D5E0EB9006B7BFD /* SpotStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SpotStoryboard.storyboard; sourceTree = "<group>"; };
+		55DF60A41D5E1305006B7BFD /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Root.strings; sourceTree = "<group>"; };
+		55DF60A61D5E1309006B7BFD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Root.strings; sourceTree = "<group>"; };
+		56550706EB12ABDBF670E767 /* SpotRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SpotRouter.swift; sourceTree = "<group>"; };
+		5C1890C23C6A5E68AD70AC51 /* SpotInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SpotInteractorInput.swift; sourceTree = "<group>"; };
 		6AADD66E20488720C9693357 /* Pods-TweetSpot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TweetSpot.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TweetSpot/Pods-TweetSpot.debug.xcconfig"; sourceTree = "<group>"; };
 		73E57FCA510F2E64268DFFB1 /* LoginViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginViewInput.swift; sourceTree = "<group>"; };
 		925AB2EC06AA8DF3F1E9FAA4 /* LoginViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A352E74613D34DF29C9D509E /* LoginInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginInteractorInput.swift; sourceTree = "<group>"; };
 		AB2C826A2427286160339FEE /* LoginPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		C5F613BFCD7AC396EEAF3620 /* SpotViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SpotViewController.swift; sourceTree = "<group>"; };
 		C854C7EC496D353EA5482B82 /* LoginAssembly.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginAssembly.swift; sourceTree = "<group>"; };
+		D1533EF6AD255C678255946D /* SpotAssembly.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SpotAssembly.swift; sourceTree = "<group>"; };
+		D7BBE4A0DEABAC414A12DEE4 /* SpotInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SpotInteractor.swift; sourceTree = "<group>"; };
+		DA5502AA9DE96ADBACD2C9FA /* SpotPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SpotPresenter.swift; sourceTree = "<group>"; };
+		DA8A1BFAC036269E32C63A58 /* SpotViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SpotViewOutput.swift; sourceTree = "<group>"; };
 		EC908E15534B9C55897CC48D /* Pods_TweetSpot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TweetSpot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED6080CD2E4CAF76E04B9E8C /* SpotInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SpotInteractorOutput.swift; sourceTree = "<group>"; };
 		EDFA1CFD2DBF26E79CEFB095 /* LoginInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
 		FEEBF983C6D999B04D27BE91 /* Pods-TweetSpot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TweetSpot.release.xcconfig"; path = "Pods/Target Support Files/Pods-TweetSpot/Pods-TweetSpot.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -139,6 +169,45 @@
 				FEEBF983C6D999B04D27BE91 /* Pods-TweetSpot.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		0DD28DA4FF14D9B7FFD5EB13 /* Spot */ = {
+			isa = PBXGroup;
+			children = (
+				33F82352914B3644AF6F83C4 /* Assembly */,
+				ACF99832BD108FA63541BB11 /* View */,
+				42EF396A6229174720316E7A /* Presenter */,
+				B28A989935F981E65FE9027D /* Interactor */,
+				108245B72894E04D6ADC73D6 /* Router */,
+				55DF609E1D5E0EAB006B7BFD /* Storyboard */,
+			);
+			path = Spot;
+			sourceTree = "<group>";
+		};
+		108245B72894E04D6ADC73D6 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				2FFD46A8040FA8173AF67C04 /* SpotRouterInput.swift */,
+				56550706EB12ABDBF670E767 /* SpotRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		33F82352914B3644AF6F83C4 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				D1533EF6AD255C678255946D /* SpotAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		42EF396A6229174720316E7A /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				477AC3ACCB25F4E2FB31112C /* SpotModuleInput.swift */,
+				DA5502AA9DE96ADBACD2C9FA /* SpotPresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		553F7B251D5DB71200541F38 = {
@@ -215,6 +284,7 @@
 			children = (
 				553F7B601D5DBAD700541F38 /* NavigationRoot */,
 				A1E4A9681499E3A34BA17852 /* Login */,
+				0DD28DA4FF14D9B7FFD5EB13 /* Spot */,
 			);
 			path = Stories;
 			sourceTree = "<group>";
@@ -359,6 +429,8 @@
 			isa = PBXGroup;
 			children = (
 				553F7BA11D5DD0C500541F38 /* Login.strings */,
+				55DF60A51D5E1305006B7BFD /* Root.strings */,
+				55B061BD1D5E1DA000490B44 /* Common.strings */,
 			);
 			path = Strings;
 			sourceTree = "<group>";
@@ -397,6 +469,14 @@
 				553F7BB51D5DE85B00541F38 /* SocialAccountsServiceImpl.swift */,
 			);
 			path = SocialAccountsService;
+			sourceTree = "<group>";
+		};
+		55DF609E1D5E0EAB006B7BFD /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				55DF609F1D5E0EB9006B7BFD /* SpotStoryboard.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 		5DF0C569B6AB1E1F306F1C51 /* Frameworks */ = {
@@ -454,6 +534,26 @@
 				C854C7EC496D353EA5482B82 /* LoginAssembly.swift */,
 			);
 			path = Assembly;
+			sourceTree = "<group>";
+		};
+		ACF99832BD108FA63541BB11 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				16A5CFB753636A2A51814640 /* SpotViewInput.swift */,
+				DA8A1BFAC036269E32C63A58 /* SpotViewOutput.swift */,
+				C5F613BFCD7AC396EEAF3620 /* SpotViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B28A989935F981E65FE9027D /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				5C1890C23C6A5E68AD70AC51 /* SpotInteractorInput.swift */,
+				ED6080CD2E4CAF76E04B9E8C /* SpotInteractorOutput.swift */,
+				D7BBE4A0DEABAC414A12DEE4 /* SpotInteractor.swift */,
+			);
+			path = Interactor;
 			sourceTree = "<group>";
 		};
 		D08A3CA01F560D0A3EA83B51 /* View */ = {
@@ -555,8 +655,11 @@
 				553F7B9B1D5DCA0700541F38 /* LoginStoryboard.storyboard in Resources */,
 				553F7B7A1D5DBAD700541F38 /* LaunchScreen.storyboard in Resources */,
 				553F7B881D5DBAD700541F38 /* Assets.xcassets in Resources */,
+				55DF60A01D5E0EB9006B7BFD /* SpotStoryboard.storyboard in Resources */,
 				553F7B9F1D5DD0C500541F38 /* Login.strings in Resources */,
 				553F7B7B1D5DBAD700541F38 /* Main.storyboard in Resources */,
+				55DF60A31D5E1305006B7BFD /* Root.strings in Resources */,
+				55B061BB1D5E1DA000490B44 /* Common.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -657,6 +760,17 @@
 				00ED40C1B3A1B86EC86EED9E /* LoginRouterInput.swift in Sources */,
 				3CB6F2D1B911272743922AEB /* LoginRouter.swift in Sources */,
 				553F7BB41D5DE7EE00541F38 /* SocialAccountsService.swift in Sources */,
+				26948A3752703CA02E0F26F3 /* SpotAssembly.swift in Sources */,
+				89A5EA3E8FB2B71C188BCBC2 /* SpotViewInput.swift in Sources */,
+				ADA98A49BE72D177873B5AAA /* SpotViewOutput.swift in Sources */,
+				BC54F40AE5A8825639068669 /* SpotViewController.swift in Sources */,
+				DAE1C8871E14774C4D355249 /* SpotModuleInput.swift in Sources */,
+				5A1475A3FE5EACDCE10FE72C /* SpotPresenter.swift in Sources */,
+				BFCC38F19671FC8CBDF46812 /* SpotInteractorInput.swift in Sources */,
+				EDE8915DBE0DAC09F17619DD /* SpotInteractorOutput.swift in Sources */,
+				6CE3F3A2AEEB632F21896C52 /* SpotInteractor.swift in Sources */,
+				7D2FC4F9704577721D05786D /* SpotRouterInput.swift in Sources */,
+				8B0BB1BC173A2621710BD1E5 /* SpotRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -702,6 +816,24 @@
 				553F7BA21D5DD0D200541F38 /* ru */,
 			);
 			name = Login.strings;
+			sourceTree = "<group>";
+		};
+		55B061BD1D5E1DA000490B44 /* Common.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				55B061BC1D5E1DA000490B44 /* ru */,
+				55B061BE1D5E1DA200490B44 /* en */,
+			);
+			name = Common.strings;
+			sourceTree = "<group>";
+		};
+		55DF60A51D5E1305006B7BFD /* Root.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				55DF60A41D5E1305006B7BFD /* ru */,
+				55DF60A61D5E1309006B7BFD /* en */,
+			);
+			name = Root.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

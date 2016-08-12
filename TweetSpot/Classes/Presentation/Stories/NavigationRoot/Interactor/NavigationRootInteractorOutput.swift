@@ -11,6 +11,7 @@ import Foundation
 @objc protocol NavigationRootInteractorOutput {
     
     func loginModuleRequired()
-    func timeLineModuleRequired()
+    func spotModuleRequired()
+    func accountVerifyingUIRequired()
     
 }

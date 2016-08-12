@@ -10,6 +10,6 @@ import Foundation
 import Accounts
 
 @objc protocol SocialAccountsService {
-    func requestIOSTwitterAccouns(completion: ([ACAccount]) -> (), error: (NSError?) -> ())
+    func requestIOSTwitterAccouns(completion: ([ACAccount]) -> (), error: (NSError) -> ())
     func requestAccountWithId(accountId: String) -> ACAccount?
 }

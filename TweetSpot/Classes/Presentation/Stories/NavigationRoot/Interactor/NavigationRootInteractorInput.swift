@@ -10,6 +10,6 @@ import Foundation
 
 @objc protocol NavigationRootInteractorInput {
     
-    func decideNextModuleToShow()
+    func trackSessionToDecideNextModule()
 
 }

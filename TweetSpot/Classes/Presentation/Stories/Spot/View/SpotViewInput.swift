@@ -1,5 +1,5 @@
 //
-//  NavigationRootNavigationRootViewInput.swift
+//  SpotSpotViewInput.swift
 //  TweetSpot
 //
 //  Created by Andrey Yashnev on 12/08/2016.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-@objc protocol NavigationRootViewInput {
+@objc protocol SpotViewInput {
 
     /**
         @author Andrey Yashnev
@@ -16,6 +16,4 @@ import Foundation
     */
 
     func setupInitialState()
-    func showAppLaunchAnimation(completion: () -> ())
-    func showAccountVerifyingUI()
 }

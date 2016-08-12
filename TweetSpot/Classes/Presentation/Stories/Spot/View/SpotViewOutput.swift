@@ -1,5 +1,5 @@
 //
-//  LoginLoginViewOutput.swift
+//  SpotSpotViewOutput.swift
 //  TweetSpot
 //
 //  Created by Andrey Yashnev on 12/08/2016.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-@objc protocol LoginViewOutput {
+@objc protocol SpotViewOutput {
 
     /**
         @author Andrey Yashnev
@@ -17,8 +17,5 @@ import Foundation
 
     func viewIsReady()
     
-    func loginWithIosAccountTapped()
-    func loginWithPasswordTapped()
-    func choosenAccount(name: String?)
-    
+    func quitRequested()
 }

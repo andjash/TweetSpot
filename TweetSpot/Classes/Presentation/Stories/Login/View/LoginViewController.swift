@@ -81,7 +81,26 @@ extension LoginViewController : LoginViewInput {
                 })
             }
         }
+    }
+    
+    func displayError(error: NSError) {
         
+    }
+    
+    func displayAccountChooser(accounts: [String]) {
+        let alert = UIAlertController(title: "login_account_chooser_title".ts_localized("Login"), message: nil, preferredStyle: .ActionSheet)
+        
+        for name in accounts {
+            let action = UIAlertAction(title: name, style: .Default, handler: {(action) in
+                self.output.choosenAccount(name)
+            })
+            alert.addAction(action)
+        }
+        let cancelAction = UIAlertAction(title: "common_cancel".ts_localized("Common"), style: .Cancel, handler: {(action) in
+            self.output.choosenAccount(nil)
+        })
+        alert.addAction(cancelAction)        
+        self.presentViewController(alert, animated: true, completion: nil)
     }
 }
 

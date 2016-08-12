@@ -13,24 +13,33 @@ import SAMKeychain
 
 class TwitterSessionImpl: NSObject, TwitterSession {
     
+    let consumerKey = "cmHKRFTgcsFGVMFb5JKMo68Qg"
+    let consumerSecret = "SW0fWVXir1DEKvo0tKxVqE3Q5piYge9WT8ien8juEzVgCgY3hr"
+    
     let socAccountsSvc: SocialAccountsService?
     
-    var state: TwitterSessionState
+    var state: TwitterSessionState {
+        didSet {
+            dispatch_async(dispatch_get_main_queue()) { 
+                NSNotificationCenter.defaultCenter().postNotificationName(TwitterSessionConstants.stateChangedNotificaton, object: self)
+            }
+        }
+    }
     var twitterApi: STTwitterAPI?
     var oAuthAccessToken: String?
     var oAuthAccessTokenSecret: String?
     
     var pendingSuccessCallback: (() -> ())?
-    var pendingErrorCallback: ((NSError?) -> ())?
+    var pendingErrorCallback: ((NSError) -> ())?
     
     init(socAccountsSvc: SocialAccountsService) {
-        state = .Closed
+        state = .Progress
         self.socAccountsSvc = socAccountsSvc
         super.init()
         self.restoreSessionState()
     }
     
-    func openSessionWihtIOSAccount(account: ACAccount, success: () -> (), error: (NSError?) -> ()) {
+    func openSessionWihtIOSAccount(account: ACAccount, success: () -> (), error: (NSError) -> ()) {
         
         switch state {
         case .Opened, .Progress:
@@ -45,21 +54,27 @@ class TwitterSessionImpl: NSObject, TwitterSession {
         twitterApi = STTwitterAPI.twitterAPIOSWithAccount(account, delegate: self)
         twitterApi?.verifyCredentialsWithUserSuccessBlock({[unowned self] (username, userID) in
             self.state = .Opened
+            self.clearStoredTokens()
             self.storeAccountId(account.identifier)
-            
             success()
         }, errorBlock: {[unowned self] (err) in
             error(self.wrapInnerError(err))
         })
     }
    
+    
+    func closeSession() {
+        clearStoredTokens()
+        twitterApi = nil
+        state = .Closed
+    }
 }
 
 
 // MARK: Web auth flow
 extension TwitterSessionImpl {
     
-    func openSessionWihtLoginPassword(success: () -> (), error: (NSError?) -> ()) {
+    func openSessionWihtLoginPassword(success: () -> (), error: (NSError) -> ()) {
         switch state {
         case .Opened, .Progress:
             log.error("Trying to open Twitter session while session is in invalid state")
@@ -69,7 +84,7 @@ extension TwitterSessionImpl {
             break
         }
         state = .Progress
-        twitterApi = STTwitterAPI(OAuthConsumerKey: "cmHKRFTgcsFGVMFb5JKMo68Qg", consumerSecret: "SW0fWVXir1DEKvo0tKxVqE3Q5piYge9WT8ien8juEzVgCgY3hr")
+        twitterApi = STTwitterAPI(OAuthConsumerKey: consumerKey, consumerSecret: consumerSecret)
         twitterApi?.postTokenRequest({[unowned self] (url, oauthToken) in
             self.pendingSuccessCallback = success
             self.pendingErrorCallback = error
@@ -105,6 +120,7 @@ extension TwitterSessionImpl {
         twitterApi?.postAccessTokenRequestWithPIN(ver, successBlock: {[unowned self] (oauthToken, oauthSecret, userId, screenName) in
             self.oAuthAccessToken = oauthToken
             self.oAuthAccessTokenSecret = oauthSecret
+            self.clearStoredTokens()
             self.storeTokens(oauthToken, secret: oauthSecret)
             self.state = .Opened
             self.pendingSuccessCallback?()
@@ -170,7 +186,6 @@ private extension TwitterSessionImpl {
     }
     
     func tryToRestoreLocalAccount(success: () -> (), error: () -> ()) {
-        print("\(socAccountsSvc)")
         if let accountId = self.restoreAccountId(), account = self.socAccountsSvc?.requestAccountWithId(accountId) {
             twitterApi = STTwitterAPI.twitterAPIOSWithAccount(account, delegate: self)
             success()
@@ -183,8 +198,8 @@ private extension TwitterSessionImpl {
         state = .Progress
         let (token, secret) = self.restoreTokens()
         if let token = token, secret = secret {
-            twitterApi = STTwitterAPI(OAuthConsumerKey: "cmHKRFTgcsFGVMFb5JKMo68Qg",
-                                      consumerSecret: "SW0fWVXir1DEKvo0tKxVqE3Q5piYge9WT8ien8juEzVgCgY3hr",
+            twitterApi = STTwitterAPI(OAuthConsumerKey: consumerKey,
+                                      consumerSecret: consumerSecret,
                                       oauthToken: token, oauthTokenSecret: secret)
             success()
         } else {

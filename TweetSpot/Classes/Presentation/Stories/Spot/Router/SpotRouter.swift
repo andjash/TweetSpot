@@ -1,5 +1,5 @@
 //
-//  LoginLoginRouter.swift
+//  SpotSpotRouter.swift
 //  TweetSpot
 //
 //  Created by Andrey Yashnev on 12/08/2016.
@@ -9,11 +9,12 @@
 import Foundation
 import ViperMcFlurry
 
-class LoginRouter: NSObject, LoginRouterInput {
+class SpotRouter: NSObject, SpotRouterInput {
 
 	weak var transitionHandler: RamblerViperModuleTransitionHandlerProtocol!
-
+    
     func closeModule() {
         transitionHandler.closeCurrentModule?(true)
     }
+
 }

@@ -17,5 +17,6 @@ import Foundation
 
     func setupInitialState()
     func displayProgres(enabled enabled: Bool, completion: () -> ())
-    
+    func displayError(error: NSError)
+    func displayAccountChooser(accounts: [String])
 }

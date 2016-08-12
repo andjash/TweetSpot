@@ -15,7 +15,8 @@ class NavigationRootPresenter: NSObject, NavigationRootModuleInput {
     var router: NavigationRootRouterInput!
     
     private var viewIsAppearedOnce = false
-
+    private var verifyinaccountShown = false
+    
 }
 
 
@@ -27,9 +28,11 @@ extension NavigationRootPresenter : NavigationRootViewOutput {
     func viewIsAppeared() {
         if !viewIsAppearedOnce {
             view.showAppLaunchAnimation({ [unowned self] in
-                self.interactor.decideNextModuleToShow()
+                self.interactor.trackSessionToDecideNextModule()
             })
             viewIsAppearedOnce = true
+        } else {
+            interactor.trackSessionToDecideNextModule()
         }
     }
 }
@@ -38,10 +41,29 @@ extension NavigationRootPresenter : NavigationRootViewOutput {
 extension NavigationRootPresenter : NavigationRootInteractorOutput {
     
     func loginModuleRequired() {
-        router.routeToLogin()
+        if verifyinaccountShown {
+            let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(0.5 * Double(NSEC_PER_SEC)))
+            dispatch_after(delayTime, dispatch_get_main_queue()) {
+               self.router.routeToLogin()
+            }
+        } else {
+            router.routeToLogin()
+        }
     }
     
-    func timeLineModuleRequired() {
-        
+    func spotModuleRequired() {
+        if verifyinaccountShown {
+            let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(0.5 * Double(NSEC_PER_SEC)))
+            dispatch_after(delayTime, dispatch_get_main_queue()) {
+                self.router.routeToSpot()
+            }
+        } else {
+            router.routeToSpot()
+        }
+    }
+    
+    func accountVerifyingUIRequired() {
+        verifyinaccountShown = true
+        view.showAccountVerifyingUI()
     }
 }

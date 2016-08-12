@@ -8,7 +8,7 @@
 
 import Foundation
 
-class LoginPresenter: NSObject, LoginModuleInput, LoginInteractorOutput {
+class LoginPresenter: NSObject, LoginModuleInput {
 
     weak var view: LoginViewInput!
     var interactor: LoginInteractorInput!
@@ -19,7 +19,6 @@ class LoginPresenter: NSObject, LoginModuleInput, LoginInteractorOutput {
 
 extension LoginPresenter : LoginViewOutput{
     
-   
     func viewIsReady() {
     }
     
@@ -34,4 +33,33 @@ extension LoginPresenter : LoginViewOutput{
             self.interactor.loginWithPasswordRequested()
         }
     }
+    
+    func choosenAccount(name: String?) {
+        if let username = name {
+            interactor.loginWithChoosenAccount(username)
+        } else {
+            view.displayProgres(enabled: false, completion: {                 
+            })
+        }
+    }
+}
+
+extension LoginPresenter : LoginInteractorOutput {
+    
+    func loginSuccess() {
+        router.closeModule()
+    }
+    
+    func loginFailed(error: NSError) {
+        view.displayProgres(enabled: false) { [unowned self] in
+            self.view.displayError(error)
+        }
+    }
+    
+    func chooseFromLocalAccountsWithNames(names: [String]) {
+        self.view.displayAccountChooser(names)
+    }
+    
+    
+
 }

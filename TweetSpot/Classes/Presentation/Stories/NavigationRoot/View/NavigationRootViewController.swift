@@ -15,6 +15,10 @@ class NavigationRootViewController: UIViewController  {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var birdLabel: UILabel!
     @IBOutlet weak var birdLabelHorizontalAlign: NSLayoutConstraint!
+    @IBOutlet weak var verifyingLabel: UILabel!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    
     
     @IBOutlet weak var gradientView: UIView!
     
@@ -24,6 +28,7 @@ class NavigationRootViewController: UIViewController  {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.ts_applicationPrimaryColor
+        self.verifyingLabel.text = "root_verifying_account".ts_localized("Root")
         
         let gLayer = CAGradientLayer.ts_applicationPrimaryGradient
         gradientView.layer.addSublayer(gLayer)
@@ -34,6 +39,12 @@ class NavigationRootViewController: UIViewController  {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         output.viewIsAppeared()
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        verifyingLabel.alpha = 0
+        activityIndicator.alpha = 0
     }
     
     override func viewDidLayoutSubviews() {
@@ -60,6 +71,14 @@ extension NavigationRootViewController : NavigationRootViewInput {
             }, completion: { (completed) in
                     completion()
             })
+        }
+    }
+    
+    func showAccountVerifyingUI() {
+        activityIndicator.startAnimating()
+        UIView.animateWithDuration(0.3) {
+            self.verifyingLabel.alpha = 1
+            self.activityIndicator.alpha = 1
         }
     }
 }

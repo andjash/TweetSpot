@@ -18,7 +18,7 @@ class SocialAccountsServiceImpl: NSObject, SocialAccountsService {
         super.init()
     }
     
-    func requestIOSTwitterAccouns(completion: ([ACAccount]) -> (), error: (NSError?) -> ()) {
+    func requestIOSTwitterAccouns(completion: ([ACAccount]) -> (), error: (NSError) -> ()) {
         
         let accountType = accountStore.accountTypeWithAccountTypeIdentifier(ACAccountTypeIdentifierTwitter)
         

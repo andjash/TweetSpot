@@ -18,5 +18,11 @@ class NavigationRootRouter: NSObject, NavigationRootRouterInput {
             return nil
         }
     }
+    
+    func routeToSpot() {
+        transitionHandler.openModuleUsingSegue?("RootToSpotSegue").thenChainUsingBlock { (input) -> RamblerViperModuleOutput! in
+            return nil
+        }
+    }
 
 }

@@ -33,25 +33,41 @@
                                 <color key="textColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verifying account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cv8-Pr-C6A">
+                                <rect key="frame" x="215" y="288" width="141" height="24"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView opaque="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="Nce-fj-gay">
+                                <rect key="frame" x="366" y="290" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.74509803919999995" green="0.34509803919999998" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="Cv8-Pr-C6A" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="0ij-0e-8Gc"/>
                             <constraint firstItem="1CC-Vx-Pwf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="5qM-gQ-wB4"/>
                             <constraint firstItem="1CC-Vx-Pwf" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="7MH-Pg-VyP"/>
                             <constraint firstItem="UlD-AF-G7x" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="E2T-eI-dhO"/>
                             <constraint firstAttribute="bottom" secondItem="1CC-Vx-Pwf" secondAttribute="bottom" id="Eim-PB-pjX"/>
                             <constraint firstItem="RHF-dm-8x9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Odx-v6-Xof"/>
                             <constraint firstItem="UlD-AF-G7x" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="V5N-jm-BAh"/>
+                            <constraint firstItem="Cv8-Pr-C6A" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-15" id="Xel-vu-01E"/>
                             <constraint firstAttribute="trailing" secondItem="1CC-Vx-Pwf" secondAttribute="trailing" id="fWA-s7-7HD"/>
                             <constraint firstItem="RHF-dm-8x9" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="g8a-Ga-bnX"/>
+                            <constraint firstItem="Nce-fj-gay" firstAttribute="centerY" secondItem="Cv8-Pr-C6A" secondAttribute="centerY" id="hjQ-ce-KFv"/>
+                            <constraint firstItem="Nce-fj-gay" firstAttribute="leading" secondItem="Cv8-Pr-C6A" secondAttribute="trailing" constant="10" id="xkq-k4-fbr"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="Nce-fj-gay" id="y8l-eb-YFo"/>
                         <outlet property="birdLabel" destination="UlD-AF-G7x" id="6mb-Gb-QMs"/>
                         <outlet property="birdLabelHorizontalAlign" destination="E2T-eI-dhO" id="z0y-e5-MQu"/>
                         <outlet property="gradientView" destination="1CC-Vx-Pwf" id="qNE-05-ecl"/>
                         <outlet property="titleLabel" destination="RHF-dm-8x9" id="DfQ-37-f9B"/>
+                        <outlet property="verifyingLabel" destination="Cv8-Pr-C6A" id="x5e-Xj-qaR"/>
                         <segue destination="caw-C4-LcB" kind="custom" identifier="RootToLoginSegue" customClass="FadeInSegue" customModule="TweetSpot" customModuleProvider="target" id="cz0-bT-aPb"/>
+                        <segue destination="GD2-SO-K6W" kind="custom" identifier="RootToSpotSegue" customClass="FadeInSegue" customModule="TweetSpot" customModuleProvider="target" id="Ahv-5E-3i2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -63,7 +79,15 @@
                 <viewControllerPlaceholder storyboardName="LoginStoryboard" id="caw-C4-LcB" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kHH-D4-eLR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1056" y="237"/>
+            <point key="canvasLocation" x="1056" y="295"/>
+        </scene>
+        <!--SpotStoryboard-->
+        <scene sceneID="BJ3-0V-IMx">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SpotStoryboard" id="GD2-SO-K6W" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hxs-Nc-xzQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1053.5" y="471"/>
         </scene>
     </scenes>
 </document>

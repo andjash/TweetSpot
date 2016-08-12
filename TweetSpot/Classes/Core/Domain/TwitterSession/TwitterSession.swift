@@ -13,7 +13,6 @@ import Accounts
     case Closed
     case Progress
     case Opened
-    case Expired
 }
 
 @objc enum TwitterSessionError : Int {
@@ -25,6 +24,7 @@ import Accounts
 struct TwitterSessionConstants {
     static let errorDomain = "TwitterSessionConstants.errorDomain"
     static let innerErrorUserInfoKey = "TwitterSessionConstants.innerErrorUserInfoKey"
+    static let stateChangedNotificaton = "TwitterSessionConstants.stateChangedNotificaton"    
 }
 
 
@@ -32,8 +32,9 @@ struct TwitterSessionConstants {
     
     var state: TwitterSessionState { get }
     
-    func openSessionWihtIOSAccount(account: ACAccount, success: () -> (), error: (NSError?) -> ())
-    func openSessionWihtLoginPassword(success: () -> (), error: (NSError?) -> ())    
+    func openSessionWihtIOSAccount(account: ACAccount, success: () -> (), error: (NSError) -> ())
+    func openSessionWihtLoginPassword(success: () -> (), error: (NSError) -> ())
+    func closeSession()
     
     func handleWebAuthCallback(url: NSURL)
 }

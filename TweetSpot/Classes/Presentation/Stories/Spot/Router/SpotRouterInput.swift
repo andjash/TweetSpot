@@ -1,5 +1,5 @@
 //
-//  NavigationRootNavigationRootRouterInput.swift
+//  SpotSpotRouterInput.swift
 //  TweetSpot
 //
 //  Created by Andrey Yashnev on 12/08/2016.
@@ -8,9 +8,8 @@
 
 import Foundation
 
-@objc protocol NavigationRootRouterInput {
+@objc protocol SpotRouterInput {
     
-    func routeToLogin()
-    func routeToSpot()
+    func closeModule()
 
 }
