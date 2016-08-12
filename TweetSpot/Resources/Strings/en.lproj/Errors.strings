@@ -1,0 +1,10 @@
+"error_common_unknown" = "Unknown error occured";
+
+"error_twitter_session_invalid_state" = "Unable to open session. Session in invalid state";
+"error_twitter_web_auth_failed" = "Web auth failed";
+"error_twitter_session_creation_inner_error" = "Unable to create session. Inner error occured";
+"error_twitter_unknown" = "Unknown error occured while working twitter session";
+
+"error_socacc_access_denied" = "Access to iOS accounts denied";
+"error_socacc_inner_error" = "Unable to retrieve accounts. Inner error occured";
+"error_socacc_unknown_error" = "Unknown error occured while working with iOS accounts";

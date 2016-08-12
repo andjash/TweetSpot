@@ -46,6 +46,8 @@
 		553F7BB61D5DE85B00541F38 /* SocialAccountsServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553F7BB51D5DE85B00541F38 /* SocialAccountsServiceImpl.swift */; };
 		553F7BB81D5DE94300541F38 /* CoreServicesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553F7BB71D5DE94200541F38 /* CoreServicesAssembly.swift */; };
 		55B061BB1D5E1DA000490B44 /* Common.strings in Resources */ = {isa = PBXBuildFile; fileRef = 55B061BD1D5E1DA000490B44 /* Common.strings */; };
+		55B061C01D5E241300490B44 /* NSError+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B061BF1D5E241300490B44 /* NSError+Extensions.swift */; };
+		55B061C31D5E26E800490B44 /* Errors.strings in Resources */ = {isa = PBXBuildFile; fileRef = 55B061C51D5E26E800490B44 /* Errors.strings */; };
 		55DF60A01D5E0EB9006B7BFD /* SpotStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55DF609F1D5E0EB9006B7BFD /* SpotStoryboard.storyboard */; };
 		55DF60A31D5E1305006B7BFD /* Root.strings in Resources */ = {isa = PBXBuildFile; fileRef = 55DF60A51D5E1305006B7BFD /* Root.strings */; };
 		5A1475A3FE5EACDCE10FE72C /* SpotPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5502AA9DE96ADBACD2C9FA /* SpotPresenter.swift */; };
@@ -121,6 +123,9 @@
 		553F7BB71D5DE94200541F38 /* CoreServicesAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreServicesAssembly.swift; sourceTree = "<group>"; };
 		55B061BC1D5E1DA000490B44 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Common.strings; sourceTree = "<group>"; };
 		55B061BE1D5E1DA200490B44 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Common.strings; sourceTree = "<group>"; };
+		55B061BF1D5E241300490B44 /* NSError+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSError+Extensions.swift"; sourceTree = "<group>"; };
+		55B061C41D5E26E800490B44 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Errors.strings; sourceTree = "<group>"; };
+		55B061C61D5E26EB00490B44 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Errors.strings; sourceTree = "<group>"; };
 		55DF609F1D5E0EB9006B7BFD /* SpotStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SpotStoryboard.storyboard; sourceTree = "<group>"; };
 		55DF60A41D5E1305006B7BFD /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Root.strings; sourceTree = "<group>"; };
 		55DF60A61D5E1309006B7BFD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Root.strings; sourceTree = "<group>"; };
@@ -364,6 +369,7 @@
 				553F7B8F1D5DBF2D00541F38 /* UIColor+Extensions.swift */,
 				553F7B911D5DC8E800541F38 /* CAGradientLayer+Extensions.swift */,
 				553F7BA31D5DD0EE00541F38 /* String+Extensions.swift */,
+				55B061BF1D5E241300490B44 /* NSError+Extensions.swift */,
 			);
 			path = Extensionns;
 			sourceTree = "<group>";
@@ -431,6 +437,7 @@
 				553F7BA11D5DD0C500541F38 /* Login.strings */,
 				55DF60A51D5E1305006B7BFD /* Root.strings */,
 				55B061BD1D5E1DA000490B44 /* Common.strings */,
+				55B061C51D5E26E800490B44 /* Errors.strings */,
 			);
 			path = Strings;
 			sourceTree = "<group>";
@@ -659,6 +666,7 @@
 				553F7B9F1D5DD0C500541F38 /* Login.strings in Resources */,
 				553F7B7B1D5DBAD700541F38 /* Main.storyboard in Resources */,
 				55DF60A31D5E1305006B7BFD /* Root.strings in Resources */,
+				55B061C31D5E26E800490B44 /* Errors.strings in Resources */,
 				55B061BB1D5E1DA000490B44 /* Common.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -760,6 +768,7 @@
 				00ED40C1B3A1B86EC86EED9E /* LoginRouterInput.swift in Sources */,
 				3CB6F2D1B911272743922AEB /* LoginRouter.swift in Sources */,
 				553F7BB41D5DE7EE00541F38 /* SocialAccountsService.swift in Sources */,
+				55B061C01D5E241300490B44 /* NSError+Extensions.swift in Sources */,
 				26948A3752703CA02E0F26F3 /* SpotAssembly.swift in Sources */,
 				89A5EA3E8FB2B71C188BCBC2 /* SpotViewInput.swift in Sources */,
 				ADA98A49BE72D177873B5AAA /* SpotViewOutput.swift in Sources */,
@@ -825,6 +834,15 @@
 				55B061BE1D5E1DA200490B44 /* en */,
 			);
 			name = Common.strings;
+			sourceTree = "<group>";
+		};
+		55B061C51D5E26E800490B44 /* Errors.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				55B061C41D5E26E800490B44 /* ru */,
+				55B061C61D5E26EB00490B44 /* en */,
+			);
+			name = Errors.strings;
 			sourceTree = "<group>";
 		};
 		55DF60A51D5E1305006B7BFD /* Root.strings */ = {

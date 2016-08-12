@@ -84,7 +84,10 @@ extension LoginViewController : LoginViewInput {
     }
     
     func displayError(error: NSError) {
-        
+        let alert = UIAlertController(title: "common_error".ts_localized("Common"), message: error.ts_userFriendlyDescription, preferredStyle: .Alert)
+        let okActinon = UIAlertAction(title: "common_ok".ts_localized("Common"), style: .Cancel, handler: nil)
+        alert.addAction(okActinon)
+        self.presentViewController(alert, animated: true, completion: nil)
     }
     
     func displayAccountChooser(accounts: [String]) {

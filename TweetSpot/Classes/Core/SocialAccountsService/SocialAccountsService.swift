@@ -9,6 +9,17 @@
 import Foundation
 import Accounts
 
+
+@objc enum SocialAccountsServiceError : Int {
+    case AccessDenied
+    case InnerError    
+}
+
+struct SocialAccountsServiceConstants {
+    static let errorDomain = "SocialAccountsService.errorDomain"
+    static let innerErrorUserInfoKey = "SocialAccountsServiceConstants.innerErrorUserInfoKey"
+}
+
 @objc protocol SocialAccountsService {
     func requestIOSTwitterAccouns(completion: ([ACAccount]) -> (), error: (NSError) -> ())
     func requestAccountWithId(accountId: String) -> ACAccount?
