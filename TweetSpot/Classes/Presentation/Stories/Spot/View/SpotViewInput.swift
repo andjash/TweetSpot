@@ -16,4 +16,9 @@ import Foundation
     */
 
     func setupInitialState()
+    func displayItemsAbove(items: [SpotTweetItem])
+    func displayItemsBelow(items: [SpotTweetItem])
+    
+    func showForwardLoading(enabled enabled: Bool)
+    func showBackwardLoading(enabled enabled: Bool)
 }

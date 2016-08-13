@@ -23,6 +23,8 @@ class BusinesLogicAssembly: TyphoonAssembly, RamblerInitialAssembly {
                 initializer.injectParameterWith(self.twitterDAO())
             }
             
+            definition.injectProperty("timelineStorage", with: self.homeTimelineStorage())
+            
             definition.scope = TyphoonScope.Singleton
         }
     }
@@ -78,6 +80,12 @@ class BusinesLogicAssembly: TyphoonAssembly, RamblerInitialAssembly {
     
     dynamic func tweetDTODeserializer() -> AnyObject {
         return TyphoonDefinition.withClass(TweetDTODictionaryDeserializer.self) {
+            (definition) in
+        }
+    }
+    
+    dynamic func homeTimelineStorage() -> AnyObject {
+        return TyphoonDefinition.withClass(InMemoryHomeTimelineStorage.self) {
             (definition) in
         }
     }

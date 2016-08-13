@@ -20,12 +20,34 @@ class SpotInteractor: NSObject, SpotInteractorInput {
     }
     
     func loadForwardRequested() {
-        homeTimelineModel.loadBackward({ (dtos) in
-            log.debug("Load backward success")
-            for dto in self.homeTimelineModel.homeLineTweets {
-                log.debug("\(dto.id) \(dto.text)")
+        homeTimelineModel.loadForward({ (dtos) in
+            var result: [SpotTweetItem] = []
+            for dto in dtos {
+                let item = SpotTweetItem(formattedPostDate: dto.creationDateStr,
+                    text: dto.text,
+                    userName: dto.userName,
+                    screenName: "@todo",
+                    avatar: nil)
+                result.append(item)
             }
-            log.debug("Total count: \(self.homeTimelineModel.homeLineTweets.count)")
+            self.output.forwardItemsLoaded(result)
+        }) { (error) in
+            log.debug("Error while loading backward")
+        }
+    }
+    
+    func loadBackwardRequested() {
+        homeTimelineModel.loadBackward({ (dtos) in
+            var result: [SpotTweetItem] = []
+            for dto in dtos {
+                let item = SpotTweetItem(formattedPostDate: dto.creationDateStr,
+                    text: dto.text,
+                    userName: dto.userName,
+                    screenName: "@todo",
+                    avatar: nil)
+                result.append(item)
+            }
+            self.output.backwardItemsLoaded(result)            
         }) { (error) in
             log.debug("Error while loading backward")
         }

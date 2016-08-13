@@ -11,6 +11,16 @@ import Foundation
 class HomeTimelineModelImpl: NSObject, HomeTimelineModel {
     
     let twitterDAO: TwitterDAO
+    var timelineStorage: HomeTimelineStorage? {
+        didSet {
+            loadingDirection = .Both
+            timelineStorage?.restore({[weak self] (dtos) in
+                guard let sself = self else { return }
+                sself.homeLineTweets = dtos
+                sself.loadingDirection = .None
+            })
+        }
+    }
     
     init(twitterDAO: TwitterDAO) {
         self.twitterDAO = twitterDAO
@@ -42,6 +52,7 @@ class HomeTimelineModelImpl: NSObject, HomeTimelineModel {
             guard let strongSelf = self else { return }
             strongSelf.completeWithLoadingDirection(.Forward)
             if dtos.count > 0 {
+                strongSelf.timelineStorage?.storeItemsAbove(dtos)
                 strongSelf.homeLineTweets = dtos + strongSelf.homeLineTweets
             }
             success?(dtos)
@@ -66,6 +77,7 @@ class HomeTimelineModelImpl: NSObject, HomeTimelineModel {
                 if (dtos.first == strongSelf.homeLineTweets.last) {
                     resultDtos = Array(dtos[1...dtos.count - 1])
                 }
+                strongSelf.timelineStorage?.storeItemsBelow(dtos)
                 strongSelf.homeLineTweets += resultDtos
             }
             success?(resultDtos)

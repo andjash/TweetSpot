@@ -12,5 +12,6 @@ import Foundation
     
     func sessionCloseRequested()
     func loadForwardRequested()
+    func loadBackwardRequested()    
 
 }
