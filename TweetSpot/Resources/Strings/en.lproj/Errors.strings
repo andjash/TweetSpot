@@ -8,3 +8,9 @@
 "error_socacc_access_denied" = "Access to iOS accounts denied";
 "error_socacc_inner_error" = "Unable to retrieve accounts. Inner error occured";
 "error_socacc_unknown_error" = "Unknown error occured while working with iOS accounts";
+
+"error_twitter_dao_invalid_session" = "Invalid twitter session";
+"error_twitter_dao_session_not_open" = "Twitter session is not opened";
+"error_twitter_dao_unable_parse_response" = "Unable to parse response from server";
+"error_twitter_dao_inner_error" = "Unable to perform request. Inner error occured";
+"error_twitter_dao_unknown" = "Unknown error occured while requesting twitter entities";

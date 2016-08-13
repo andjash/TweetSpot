@@ -8,3 +8,9 @@
 "error_socacc_access_denied" = "Доступ к аккаунтам iOS запрещен";
 "error_socacc_inner_error" = "Не удалось получить аккаунты. Произошла внутренняя ошибка";
 "error_socacc_unknown_error" = "Неизвестная ошибка произошла при работе с iOS аккаунтами";
+
+"error_twitter_dao_invalid_session" = "Невалидная twitter сессия";
+"error_twitter_dao_session_not_open" = "Twitter сессия не открыта";
+"error_twitter_dao_unable_parse_response" = "Не удалось разобрать ответ сервера";
+"error_twitter_dao_inner_error" = "Не удалось выполнить запрос. Произошла внутренняя ошибка";
+"error_twitter_dao_unknown" = "Неизвестная ошибка произошла при запросе сущностей";

@@ -474,9 +474,9 @@
 		55B061DD1D5F1C7100490B44 /* TwitterDAO */ = {
 			isa = PBXGroup;
 			children = (
-				55B061DE1D5F1C7100490B44 /* Serialization */,
 				55B061E11D5F1C7100490B44 /* TwitterDAO.swift */,
 				55B061E21D5F1C7100490B44 /* TwitterDAOImpl.swift */,
+				55B061DE1D5F1C7100490B44 /* Serialization */,
 			);
 			path = TwitterDAO;
 			sourceTree = "<group>";
@@ -493,9 +493,9 @@
 		55B061E31D5F1C7100490B44 /* TwitterSession */ = {
 			isa = PBXGroup;
 			children = (
-				55B061E41D5F1C7100490B44 /* CredentialsStorage */,
 				55B061E71D5F1C7100490B44 /* TwitterSession.swift */,
 				55B061E81D5F1C7100490B44 /* TwitterSessionImpl.swift */,
+				55B061E41D5F1C7100490B44 /* CredentialsStorage */,
 				55B061E91D5F1C7100490B44 /* WebAuthHandler */,
 			);
 			path = TwitterSession;
