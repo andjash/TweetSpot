@@ -9,15 +9,19 @@
 import Foundation
 import Accounts
 import STTwitter
-import SAMKeychain
 
 class TwitterSessionImpl: NSObject, TwitterSession {
     
     let consumerKey = "cmHKRFTgcsFGVMFb5JKMo68Qg"
     let consumerSecret = "SW0fWVXir1DEKvo0tKxVqE3Q5piYge9WT8ien8juEzVgCgY3hr"
     
-    let socAccountsSvc: SocialAccountsService?
-    
+    var tokenStorage: TwitterSessionCredentialsStorage? {
+        didSet {
+            if state != .Opened {
+                restoreSessionState()
+            }
+        }
+    }
     var state: TwitterSessionState {
         didSet {
             dispatch_async(dispatch_get_main_queue()) { 
@@ -33,11 +37,9 @@ class TwitterSessionImpl: NSObject, TwitterSession {
     var pendingErrorCallback: ((NSError) -> ())?
     var handlingWebAuth = false
     
-    init(socAccountsSvc: SocialAccountsService) {
+    override init() {
         state = .Progress
-        self.socAccountsSvc = socAccountsSvc
         super.init()
-        self.restoreSessionState()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(TwitterSessionImpl.appBecomeActive), name: UIApplicationDidBecomeActiveNotification, object: nil)
     }
     
@@ -60,8 +62,8 @@ class TwitterSessionImpl: NSObject, TwitterSession {
         twitterApi = STTwitterAPI.twitterAPIOSWithAccount(account, delegate: self)
         twitterApi?.verifyCredentialsWithUserSuccessBlock({[unowned self] (username, userID) in
             self.state = .Opened
-            self.clearStoredTokens()
-            self.storeAccountId(account.identifier)
+            self.tokenStorage?.clearStorage()
+            self.tokenStorage?.storeIOSAccount(account)
             success()
         }, errorBlock: {[unowned self] (err) in
             error(self.wrapInnerError(err))
@@ -70,7 +72,7 @@ class TwitterSessionImpl: NSObject, TwitterSession {
    
     
     func closeSession() {
-        clearStoredTokens()
+        tokenStorage?.clearStorage()
         twitterApi = nil
         state = .Closed
     }
@@ -139,8 +141,9 @@ extension TwitterSessionImpl {
         twitterApi?.postAccessTokenRequestWithPIN(ver, successBlock: {[unowned self] (oauthToken, oauthSecret, userId, screenName) in
             self.oAuthAccessToken = oauthToken
             self.oAuthAccessTokenSecret = oauthSecret
-            self.clearStoredTokens()
-            self.storeTokens(oauthToken, secret: oauthSecret)
+            self.tokenStorage?.clearStorage()
+            self.tokenStorage?.storeOAuthToken(oauthToken)
+            self.tokenStorage?.storeOAuthTokenSecret(oauthSecret)
             self.state = .Opened
             self.pendingSuccessCallback?()
             self.pendingSuccessCallback = nil
@@ -212,7 +215,7 @@ private extension TwitterSessionImpl {
     }
     
     func tryToRestoreLocalAccount(success: () -> (), error: () -> ()) {
-        if let accountId = self.restoreAccountId(), account = self.socAccountsSvc?.requestAccountWithId(accountId) {
+        if let account = tokenStorage?.restoreIOSAccount() {
             twitterApi = STTwitterAPI.twitterAPIOSWithAccount(account, delegate: self)
             success()
         } else {
@@ -222,70 +225,13 @@ private extension TwitterSessionImpl {
     
     func tryToRestorePasswordAccount(success: () -> (), error: () -> ()) {
         state = .Progress
-        let (token, secret) = self.restoreTokens()
-        if let token = token, secret = secret {
+        if let token = tokenStorage?.restoreOAuthToken(), secret = tokenStorage?.restoreOAuthTokenSecret() {
             twitterApi = STTwitterAPI(OAuthConsumerKey: consumerKey,
                                       consumerSecret: consumerSecret,
                                       oauthToken: token, oauthTokenSecret: secret)
             success()
         } else {
             error()
-        }
-    }
-}
-
-// MARK: Tokens storing
-private extension TwitterSessionImpl {
-    
-    var oauthStoringKey: String {
-        return "TwitterSessionImplOauthTokenStoringKey"
-    }
-    
-    var oauthSecretStoringKey: String {
-        return "TwitterSessionImplOauthTokenSecretStoringKey"
-    }
-    
-    var accountIdStoringKey: String {
-        return "TwitterSessionImplAccountIdStoringKey"
-    }
-    
-    func storeTokens(token: String, secret: String) {
-        if let bundleId = NSBundle.mainBundle().objectForInfoDictionaryKey(String(kCFBundleIdentifierKey)) as? String {
-            SAMKeychain.setPassword(token, forService: bundleId, account: oauthStoringKey)
-            SAMKeychain.setPassword(secret, forService: bundleId, account: oauthSecretStoringKey)
-        }
-    }
-    
-    func restoreTokens() -> (String?, String?) {
-        if let bundleId = NSBundle.mainBundle().objectForInfoDictionaryKey(String(kCFBundleIdentifierKey)) as? String {
-            if let token = SAMKeychain.passwordForService(bundleId, account: oauthStoringKey),
-                   secret = SAMKeychain.passwordForService(bundleId, account: oauthSecretStoringKey){
-                return (token, secret)
-            }
-        }
-        return (nil, nil)
-    }
-    
-    func storeAccountId(accountId: String) {
-        if let bundleId = NSBundle.mainBundle().objectForInfoDictionaryKey(String(kCFBundleIdentifierKey)) as? String {
-            SAMKeychain.setPassword(accountId, forService: bundleId, account: accountIdStoringKey)
-        }
-    }
-    
-    func restoreAccountId() -> String? {
-        if let bundleId = NSBundle.mainBundle().objectForInfoDictionaryKey(String(kCFBundleIdentifierKey)) as? String {
-            if let accId = SAMKeychain.passwordForService(bundleId, account: accountIdStoringKey) {
-                return accId
-            }
-        }
-        return nil
-    }
-    
-    func clearStoredTokens() {
-        if let bundleId = NSBundle.mainBundle().objectForInfoDictionaryKey(String(kCFBundleIdentifierKey)) as? String {
-            SAMKeychain.deletePasswordForService(bundleId, account: oauthStoringKey)
-            SAMKeychain.deletePasswordForService(bundleId, account: oauthSecretStoringKey)
-            SAMKeychain.deletePasswordForService(bundleId, account: accountIdStoringKey)
         }
     }
 }
