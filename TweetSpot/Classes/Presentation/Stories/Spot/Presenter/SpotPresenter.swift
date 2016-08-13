@@ -14,13 +14,16 @@ class SpotPresenter: NSObject, SpotModuleInput  {
     var interactor: SpotInteractorInput!
     var router: SpotRouterInput!
 
-    func viewIsReady() {
-
-    }
+   
 }
 
 
 extension SpotPresenter : SpotViewOutput {
+    
+    func viewIsReady() {
+        view.showAboveLoading(enabled: true)
+        interactor.loadForwardRequested()
+    }
     
     func quitRequested() {
         interactor.sessionCloseRequested()
@@ -31,7 +34,7 @@ extension SpotPresenter : SpotViewOutput {
         interactor.loadForwardRequested()
     }
     
-    func loadAboveRequsted() {
+    func loadAboveRequested() {
         interactor.loadForwardRequested()
     }
     func loadBelowRequested() {
@@ -51,11 +54,11 @@ extension SpotPresenter : SpotInteractorOutput {
     }
         
     func forwardProgressUpdated(enabled enabled: Bool) {
-        view.showForwardLoading(enabled: enabled)
+        view.showAboveLoading(enabled: enabled)
     }
     
     func backwardProgressUpdated(enabled enabled: Bool) {
-        view.showBackwardLoading(enabled: enabled)
+        view.showBelowLoading(enabled: enabled)
     }
     
 }

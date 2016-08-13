@@ -15,6 +15,15 @@ class SpotInteractor: NSObject, SpotInteractorInput {
     weak var homeTimelineModel: HomeTimelineModel!
     weak var imagesService: ImagesService!
     
+    let dateFormatter: NSDateFormatter
+    
+    override init() {
+        self.dateFormatter = NSDateFormatter()
+        self.dateFormatter.dateStyle = .ShortStyle
+        super.init()
+    }
+    
+    
     func sessionCloseRequested() {
         session.closeSession()
     }
@@ -23,7 +32,7 @@ class SpotInteractor: NSObject, SpotInteractorInput {
         homeTimelineModel.loadForward({ (dtos) in
             var result: [SpotTweetItem] = []
             for dto in dtos {
-                let item = SpotTweetItem(formattedPostDate: dto.creationDateStr,
+                let item = SpotTweetItem(formattedPostDate: self.dateStringFromDTODate(dto.creationDate),
                     text: dto.text,
                     userName: dto.userName,
                     screenName: "@todo")
@@ -32,7 +41,8 @@ class SpotInteractor: NSObject, SpotInteractorInput {
             }
             self.output.forwardItemsLoaded(result)
         }) { (error) in
-            log.debug("Error while loading backward")
+            self.output.forwardProgressUpdated(enabled: false)
+            log.debug("Error while loading forward")
         }
     }
     
@@ -40,7 +50,7 @@ class SpotInteractor: NSObject, SpotInteractorInput {
         homeTimelineModel.loadBackward({ (dtos) in
             var result: [SpotTweetItem] = []
             for dto in dtos {
-                let item = SpotTweetItem(formattedPostDate: dto.creationDateStr,
+                let item = SpotTweetItem(formattedPostDate: self.dateStringFromDTODate(dto.creationDate),
                     text: dto.text,
                     userName: dto.userName,
                     screenName: "@todo")
@@ -49,6 +59,7 @@ class SpotInteractor: NSObject, SpotInteractorInput {
             }
             self.output.backwardItemsLoaded(result)            
         }) { (error) in
+            self.output.backwardProgressUpdated(enabled: false)
             log.debug("Error while loading backward")
         }
     }
@@ -63,6 +74,16 @@ class SpotInteractor: NSObject, SpotInteractorInput {
                 }
             }
         }
+    }
+    
+    private func dateStringFromDTODate(dtoDate: NSDate) -> String {
+        if dtoDate.ts_isToday {
+            dateFormatter.dateFormat = "HH:mm"
+        } else {
+            dateFormatter.dateFormat = nil
+        }
+        
+        return dateFormatter.stringFromDate(dtoDate)
     }
 
 }

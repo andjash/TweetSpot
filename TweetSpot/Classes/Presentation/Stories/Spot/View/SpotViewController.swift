@@ -25,7 +25,7 @@ class SpotViewController: UIViewController {
         self.tableView.tableFooterView = UIView()
         
         tableView.ts_configurePullToRefresh {
-            self.output.loadAboveRequsted()
+            self.output.loadAboveRequested()
         }
         
         tableView.addInfiniteScrollingWithActionHandler { 
@@ -86,12 +86,12 @@ extension SpotViewController : SpotViewInput {
         tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: .Bottom)
     }
     
-    func showForwardLoading(enabled enabled: Bool) {
-        
+    func showAboveLoading(enabled enabled: Bool) {
+        enabled ? tableView.pullToRefreshView.startAnimating() : tableView.pullToRefreshView.stopAnimating()
     }
     
-    func showBackwardLoading(enabled enabled: Bool) {
-        
+    func showBelowLoading(enabled enabled: Bool) {
+        enabled ? tableView.infiniteScrollingView.startAnimating() : tableView.infiniteScrollingView.stopAnimating()
     }
 }
 

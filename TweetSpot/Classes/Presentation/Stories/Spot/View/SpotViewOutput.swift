@@ -20,7 +20,7 @@ import Foundation
     func quitRequested()
     func settingsRequested()
     
-    func loadAboveRequsted()
+    func loadAboveRequested()
     func loadBelowRequested()
     
 }

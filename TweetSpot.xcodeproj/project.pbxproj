@@ -72,6 +72,7 @@
 		55FB49991D5F797900D0869C /* Common.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55FB49981D5F797900D0869C /* Common.xcassets */; };
 		55FB499C1D5F7C8200D0869C /* ImagesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FB499B1D5F7C8200D0869C /* ImagesService.swift */; };
 		55FB499E1D5F81DE00D0869C /* ImagesServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FB499D1D5F81DE00D0869C /* ImagesServiceImpl.swift */; };
+		55FB49A61D5FA02B00D0869C /* NSDate+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FB49A51D5FA02B00D0869C /* NSDate+Extensions.swift */; };
 		5A1475A3FE5EACDCE10FE72C /* SpotPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5502AA9DE96ADBACD2C9FA /* SpotPresenter.swift */; };
 		5E1C4BE8DA3AF9D19CF00FB5 /* LoginViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34178EC6BAD21268D642847C /* LoginViewOutput.swift */; };
 		63D4587548BBE2D1980ED093 /* LoginModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CA2E1B4D8C00A745E46D00 /* LoginModuleInput.swift */; };
@@ -173,6 +174,7 @@
 		55FB49981D5F797900D0869C /* Common.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Common.xcassets; sourceTree = "<group>"; };
 		55FB499B1D5F7C8200D0869C /* ImagesService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagesService.swift; sourceTree = "<group>"; };
 		55FB499D1D5F81DE00D0869C /* ImagesServiceImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagesServiceImpl.swift; sourceTree = "<group>"; };
+		55FB49A51D5FA02B00D0869C /* NSDate+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Extensions.swift"; sourceTree = "<group>"; };
 		56550706EB12ABDBF670E767 /* SpotRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SpotRouter.swift; sourceTree = "<group>"; };
 		5C1890C23C6A5E68AD70AC51 /* SpotInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SpotInteractorInput.swift; sourceTree = "<group>"; };
 		6AADD66E20488720C9693357 /* Pods-TweetSpot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TweetSpot.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TweetSpot/Pods-TweetSpot.debug.xcconfig"; sourceTree = "<group>"; };
@@ -417,6 +419,7 @@
 				553F7BA31D5DD0EE00541F38 /* String+Extensions.swift */,
 				55B061BF1D5E241300490B44 /* NSError+Extensions.swift */,
 				55FB49961D5F77C700D0869C /* UIView+Extensions.swift */,
+				55FB49A51D5FA02B00D0869C /* NSDate+Extensions.swift */,
 			);
 			path = Extensionns;
 			sourceTree = "<group>";
@@ -922,6 +925,7 @@
 				D606B5C4423C7A5C906D18E4 /* LoginAssembly.swift in Sources */,
 				55B061F61D5F1C7100490B44 /* KeychainSessionCredentialsStorage.swift in Sources */,
 				0C600FEF96A9DAA29AFE29DA /* LoginViewInput.swift in Sources */,
+				55FB49A61D5FA02B00D0869C /* NSDate+Extensions.swift in Sources */,
 				5E1C4BE8DA3AF9D19CF00FB5 /* LoginViewOutput.swift in Sources */,
 				55FB499E1D5F81DE00D0869C /* ImagesServiceImpl.swift in Sources */,
 				4D2AE8BBF63A3ECA88039CF5 /* LoginViewController.swift in Sources */,

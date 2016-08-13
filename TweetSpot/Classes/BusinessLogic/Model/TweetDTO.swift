@@ -10,14 +10,14 @@ import Foundation
 
 class TweetDTO : NSObject {
     let id: String
-    let creationDateStr: String
+    let creationDate: NSDate
     let text: String
     let userName: String
     let avatarUrlStr: String
     
-    init(id: String, creationDateSting: String, text: String, userName: String, avatarUrlString: String) {
+    init(id: String, creationDate: NSDate, text: String, userName: String, avatarUrlString: String) {
         self.id = id
-        self.creationDateStr = creationDateSting
+        self.creationDate = creationDate
         self.text = text
         self.userName = userName
         self.avatarUrlStr = avatarUrlString
