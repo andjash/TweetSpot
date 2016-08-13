@@ -16,5 +16,11 @@ class SpotRouter: NSObject, SpotRouterInput {
     func closeModule() {
         transitionHandler.closeCurrentModule?(true)
     }
+    
+    func routeToSettingsModule() {
+        transitionHandler.openModuleUsingSegue?("SpotToSettingsSegue").thenChainUsingBlock { (input) -> RamblerViperModuleOutput! in
+            return nil
+        }
+    }
 
 }

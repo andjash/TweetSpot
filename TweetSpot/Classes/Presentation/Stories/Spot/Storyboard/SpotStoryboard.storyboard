@@ -153,11 +153,20 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="SDg-Xm-gRG" id="s2u-u8-5Wz"/>
+                        <segue destination="9en-tn-HMo" kind="show" identifier="SpotToSettingsSegue" id="N9O-IN-ioP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QaF-in-4zK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="300" y="-23"/>
+        </scene>
+        <!--SettingsStoryboard-->
+        <scene sceneID="wsc-Su-Lsu">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SettingsStoryboard" id="9en-tn-HMo" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fQN-87-Sgd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="814.5" y="-241"/>
         </scene>
     </scenes>
 </document>

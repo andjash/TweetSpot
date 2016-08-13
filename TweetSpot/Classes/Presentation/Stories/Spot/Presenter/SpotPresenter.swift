@@ -31,7 +31,7 @@ extension SpotPresenter : SpotViewOutput {
     }
     
     func settingsRequested() {
-        interactor.loadForwardRequested()
+        router.routeToSettingsModule()
     }
     
     func loadAboveRequested() {

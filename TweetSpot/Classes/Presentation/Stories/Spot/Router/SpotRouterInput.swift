@@ -11,5 +11,5 @@ import Foundation
 @objc protocol SpotRouterInput {
     
     func closeModule()
-
+    func routeToSettingsModule()
 }
