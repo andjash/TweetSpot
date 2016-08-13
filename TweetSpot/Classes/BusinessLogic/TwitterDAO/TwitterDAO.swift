@@ -25,19 +25,3 @@ struct TwitterDAOConstants {
 @objc protocol TwitterDAO {
     func getHomeTweets(maxId maxId: String?, minId: String?, count: Int, success: ([TweetDTO]) -> (), error: (NSError) -> ())
 }
-
-class TweetDTO : NSObject {
-    let id: String
-    let creationDateStr: String
-    let text: String
-    let userName: String
-    let avatarUrlStr: String
-    
-    init(id: String, creationDateSting: String, text: String, userName: String, avatarUrlString: String) {
-        self.id = id
-        self.creationDateStr = creationDateSting
-        self.text = text
-        self.userName = userName
-        self.avatarUrlStr = avatarUrlString
-    }
-}

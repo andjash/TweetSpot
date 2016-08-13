@@ -14,7 +14,20 @@ class BusinesLogicAssembly: TyphoonAssembly, RamblerInitialAssembly {
     
     var coreServices: CoreServicesAssembly!
     
-    dynamic func twitterSessionService() -> AnyObject {        
+    dynamic func homeTimelineModel() -> AnyObject {
+        return TyphoonDefinition.withClass(HomeTimelineModelImpl.self) {
+            (definition) in
+            definition.useInitializer(NSSelectorFromString("initWithTwitterDAO:")) {
+                (initializer) in
+                
+                initializer.injectParameterWith(self.twitterDAO())
+            }
+            
+            definition.scope = TyphoonScope.Singleton
+        }
+    }
+    
+    dynamic func twitterSessionService() -> AnyObject {
         return TyphoonDefinition.withClass(TwitterSessionImpl.self) {
             (definition) in
             definition.useInitializer(NSSelectorFromString("initWithWebAuthHandler:")) {

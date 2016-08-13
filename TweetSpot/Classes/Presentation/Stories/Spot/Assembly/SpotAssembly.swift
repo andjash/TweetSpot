@@ -27,7 +27,7 @@ class SpotAssembly: TyphoonAssembly, RamblerInitialAssembly {
             (definition) in
             definition.injectProperty("output", with: self.presenterSpotModule())
             definition.injectProperty("session", with: self.businessLogicAssembly.twitterSessionService())
-            definition.injectProperty("twitterDAO", with: self.businessLogicAssembly.twitterDAO())
+            definition.injectProperty("homeTimelineModel", with: self.businessLogicAssembly.homeTimelineModel())
         }
     }
 

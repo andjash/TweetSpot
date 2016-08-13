@@ -12,7 +12,7 @@ class SpotInteractor: NSObject, SpotInteractorInput {
 
     weak var output: SpotInteractorOutput!
     weak var session: TwitterSession!
-    weak var twitterDAO: TwitterDAO!
+    weak var homeTimelineModel: HomeTimelineModel!
     
     
     func sessionCloseRequested() {
@@ -20,10 +20,14 @@ class SpotInteractor: NSObject, SpotInteractorInput {
     }
     
     func loadForwardRequested() {
-        twitterDAO.getHomeTweets(maxId: nil, minId: nil, count: 20, success: { (dtos) in
-            log.debug("SUCCESS")
-        }) { (err) in
-            log.debug("ERROR: \(err)")
+        homeTimelineModel.loadBackward({ (dtos) in
+            log.debug("Load backward success")
+            for dto in self.homeTimelineModel.homeLineTweets {
+                log.debug("\(dto.id) \(dto.text)")
+            }
+            log.debug("Total count: \(self.homeTimelineModel.homeLineTweets.count)")
+        }) { (error) in
+            log.debug("Error while loading backward")
         }
     }
 

@@ -31,7 +31,7 @@ struct TwitterSessionConstants {
 @objc protocol TwitterSession {
     
     var state: TwitterSessionState { get }
-    var apiAccessObject: AnyObject? { get }
+    optional var apiAccessObject: AnyObject? { get }
     
     func openSessionWihtIOSAccount(account: ACAccount, success: () -> (), error: (NSError) -> ())
     func openSessionWihtLoginPassword(success: () -> (), error: (NSError) -> ())
