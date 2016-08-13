@@ -11,5 +11,6 @@ import Foundation
 @objc protocol SpotInteractorInput {
     
     func sessionCloseRequested()
+    func loadForwardRequested()
 
 }

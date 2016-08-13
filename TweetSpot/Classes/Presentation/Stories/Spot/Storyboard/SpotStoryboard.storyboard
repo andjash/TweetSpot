@@ -22,7 +22,7 @@
             </objects>
             <point key="canvasLocation" x="-462" y="-23"/>
         </scene>
-        <!--Spot View Controller-->
+        <!--🕊-->
         <scene sceneID="Cw6-NM-6iw">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="jub-qS-gcD" customClass="SpotViewController" customModule="TweetSpot" customModuleProvider="target" sceneMemberID="viewController">
@@ -47,11 +47,17 @@
                             <constraint firstItem="A48-5y-lgh" firstAttribute="top" secondItem="SDg-Xm-gRG" secondAttribute="bottom" id="xyL-Qc-R0w"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="S05-9j-Igl">
+                    <navigationItem key="navigationItem" title="🕊" id="S05-9j-Igl">
                         <barButtonItem key="leftBarButtonItem" systemItem="stop" id="rnj-MJ-Fnb">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="quitAction:" destination="jub-qS-gcD" id="8OI-mV-z57"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title=". . ." id="8vH-ge-JbR">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="settingsAction:" destination="jub-qS-gcD" id="O3i-IB-KxL"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

@@ -52,6 +52,10 @@
 		55B061CB1D5E611900490B44 /* KeychainSessionCredentialsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B061CA1D5E611900490B44 /* KeychainSessionCredentialsStorage.swift */; };
 		55B061CE1D5EFF4F00490B44 /* TwitterWebAuthHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B061CD1D5EFF4F00490B44 /* TwitterWebAuthHandler.swift */; };
 		55B061D01D5EFFF500490B44 /* SafariTwitterWebAuthHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B061CF1D5EFFF500490B44 /* SafariTwitterWebAuthHandler.swift */; };
+		55B061D31D5F071400490B44 /* TwitterDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B061D21D5F071400490B44 /* TwitterDAO.swift */; };
+		55B061D51D5F088700490B44 /* TwitterDAOImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B061D41D5F088700490B44 /* TwitterDAOImpl.swift */; };
+		55B061D81D5F106B00490B44 /* TweetDTODeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B061D71D5F106B00490B44 /* TweetDTODeserializer.swift */; };
+		55B061DA1D5F12CE00490B44 /* TweetDTODictionaryDeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B061D91D5F12CE00490B44 /* TweetDTODictionaryDeserializer.swift */; };
 		55DF60A01D5E0EB9006B7BFD /* SpotStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55DF609F1D5E0EB9006B7BFD /* SpotStoryboard.storyboard */; };
 		55DF60A31D5E1305006B7BFD /* Root.strings in Resources */ = {isa = PBXBuildFile; fileRef = 55DF60A51D5E1305006B7BFD /* Root.strings */; };
 		5A1475A3FE5EACDCE10FE72C /* SpotPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5502AA9DE96ADBACD2C9FA /* SpotPresenter.swift */; };
@@ -134,6 +138,10 @@
 		55B061CA1D5E611900490B44 /* KeychainSessionCredentialsStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainSessionCredentialsStorage.swift; sourceTree = "<group>"; };
 		55B061CD1D5EFF4F00490B44 /* TwitterWebAuthHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterWebAuthHandler.swift; sourceTree = "<group>"; };
 		55B061CF1D5EFFF500490B44 /* SafariTwitterWebAuthHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafariTwitterWebAuthHandler.swift; sourceTree = "<group>"; };
+		55B061D21D5F071400490B44 /* TwitterDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterDAO.swift; sourceTree = "<group>"; };
+		55B061D41D5F088700490B44 /* TwitterDAOImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterDAOImpl.swift; sourceTree = "<group>"; };
+		55B061D71D5F106B00490B44 /* TweetDTODeserializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetDTODeserializer.swift; sourceTree = "<group>"; };
+		55B061D91D5F12CE00490B44 /* TweetDTODictionaryDeserializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetDTODictionaryDeserializer.swift; sourceTree = "<group>"; };
 		55DF609F1D5E0EB9006B7BFD /* SpotStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SpotStoryboard.storyboard; sourceTree = "<group>"; };
 		55DF60A41D5E1305006B7BFD /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Root.strings; sourceTree = "<group>"; };
 		55DF60A61D5E1309006B7BFD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Root.strings; sourceTree = "<group>"; };
@@ -463,6 +471,7 @@
 		553F7BAC1D5DE7D800541F38 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				55B061D11D5F070000490B44 /* TwitterDAO */,
 				553F7BAD1D5DE7D800541F38 /* TwitterSession */,
 			);
 			path = Domain;
@@ -504,6 +513,25 @@
 				55B061CF1D5EFFF500490B44 /* SafariTwitterWebAuthHandler.swift */,
 			);
 			path = WebAuthHandler;
+			sourceTree = "<group>";
+		};
+		55B061D11D5F070000490B44 /* TwitterDAO */ = {
+			isa = PBXGroup;
+			children = (
+				55B061D21D5F071400490B44 /* TwitterDAO.swift */,
+				55B061D41D5F088700490B44 /* TwitterDAOImpl.swift */,
+				55B061D61D5F104300490B44 /* Serialization */,
+			);
+			path = TwitterDAO;
+			sourceTree = "<group>";
+		};
+		55B061D61D5F104300490B44 /* Serialization */ = {
+			isa = PBXGroup;
+			children = (
+				55B061D71D5F106B00490B44 /* TweetDTODeserializer.swift */,
+				55B061D91D5F12CE00490B44 /* TweetDTODictionaryDeserializer.swift */,
+			);
+			path = Serialization;
 			sourceTree = "<group>";
 		};
 		55DF609E1D5E0EAB006B7BFD /* Storyboard */ = {
@@ -771,18 +799,21 @@
 				553F7B8B1D5DBB3100541F38 /* ApplicationAssembly.swift in Sources */,
 				55B061D01D5EFFF500490B44 /* SafariTwitterWebAuthHandler.swift in Sources */,
 				553F7B8E1D5DBB5900541F38 /* AppDelegate.swift in Sources */,
+				55B061D51D5F088700490B44 /* TwitterDAOImpl.swift in Sources */,
 				553F7B871D5DBAD700541F38 /* TyphoonDefinition+Extensions.swift in Sources */,
 				553F7B921D5DC8E800541F38 /* CAGradientLayer+Extensions.swift in Sources */,
 				553F7B7E1D5DBAD700541F38 /* NavigationRootInteractorInput.swift in Sources */,
 				553F7BA41D5DD0EE00541F38 /* String+Extensions.swift in Sources */,
 				55B061CB1D5E611900490B44 /* KeychainSessionCredentialsStorage.swift in Sources */,
 				553F7B7C1D5DBAD700541F38 /* NavigationRootAssembly.swift in Sources */,
+				55B061DA1D5F12CE00490B44 /* TweetDTODictionaryDeserializer.swift in Sources */,
 				553F7B801D5DBAD700541F38 /* NavigationRootModuleInput.swift in Sources */,
 				553F7B811D5DBAD700541F38 /* NavigationRootPresenter.swift in Sources */,
 				553F7B841D5DBAD700541F38 /* NavigationRootViewController.swift in Sources */,
 				553F7B861D5DBAD700541F38 /* NavigationRootViewOutput.swift in Sources */,
 				553F7B851D5DBAD700541F38 /* NavigationRootViewInput.swift in Sources */,
 				553F7BB61D5DE85B00541F38 /* SocialAccountsServiceImpl.swift in Sources */,
+				55B061D31D5F071400490B44 /* TwitterDAO.swift in Sources */,
 				553F7B7D1D5DBAD700541F38 /* NavigationRootInteractor.swift in Sources */,
 				D606B5C4423C7A5C906D18E4 /* LoginAssembly.swift in Sources */,
 				0C600FEF96A9DAA29AFE29DA /* LoginViewInput.swift in Sources */,
@@ -795,6 +826,7 @@
 				2F6B9B3145F852C644E231A5 /* LoginInteractorOutput.swift in Sources */,
 				55B061CE1D5EFF4F00490B44 /* TwitterWebAuthHandler.swift in Sources */,
 				553F7BB11D5DE7D800541F38 /* TwitterSessionImpl.swift in Sources */,
+				55B061D81D5F106B00490B44 /* TweetDTODeserializer.swift in Sources */,
 				A8668A4869942910B58DD3B7 /* LoginInteractor.swift in Sources */,
 				00ED40C1B3A1B86EC86EED9E /* LoginRouterInput.swift in Sources */,
 				3CB6F2D1B911272743922AEB /* LoginRouter.swift in Sources */,

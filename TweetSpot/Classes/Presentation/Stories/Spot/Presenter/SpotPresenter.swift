@@ -26,6 +26,10 @@ extension SpotPresenter : SpotViewOutput {
         interactor.sessionCloseRequested()
         router.closeModule()
     }
+    
+    func settingsRequested() {
+        interactor.loadForwardRequested()
+    }
 }
 
   

@@ -28,4 +28,9 @@ class SpotViewController: UIViewController, SpotViewInput {
     @IBAction func quitAction(sender: AnyObject?) {
         output.quitRequested()
     }
+    
+    @IBAction func settingsAction(sender: AnyObject?) {
+        output.settingsRequested()
+    }
+
 }

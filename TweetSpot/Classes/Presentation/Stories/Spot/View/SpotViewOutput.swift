@@ -18,4 +18,5 @@ import Foundation
     func viewIsReady()
     
     func quitRequested()
+    func settingsRequested()
 }

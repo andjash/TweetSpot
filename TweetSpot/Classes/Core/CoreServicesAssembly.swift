@@ -35,6 +35,21 @@ class CoreServicesAssembly: TyphoonAssembly, RamblerInitialAssembly {
         }
     }
     
+    dynamic func twitterDAO() -> AnyObject {
+        return TyphoonDefinition.withClass(TwitterDAOImpl.self) {
+            (definition) in
+            definition.useInitializer(NSSelectorFromString("initWithDeserializer:queue:")) {
+                (initializer) in
+                
+                initializer.injectParameterWith(self.tweetDTODeserializer())
+                initializer.injectParameterWith(dispatch_queue_create("TwitterDAOImpl.queue", DISPATCH_QUEUE_CONCURRENT))
+            }
+                        
+            definition.injectProperty("session", with: self.twitterSessionService())
+            definition.scope = TyphoonScope.Singleton
+        }
+    }
+    
     dynamic func twitterSessionCredentialsStorage() -> AnyObject {
         return TyphoonDefinition.withClass(KeychainSessionCredentialsStorage.self) {
             (definition) in
@@ -52,6 +67,12 @@ class CoreServicesAssembly: TyphoonAssembly, RamblerInitialAssembly {
             (definition) in
             
             definition.scope = TyphoonScope.Singleton
+        }
+    }
+    
+    dynamic func tweetDTODeserializer() -> AnyObject {
+        return TyphoonDefinition.withClass(TweetDTODictionaryDeserializer.self) {
+            (definition) in
         }
     }
     

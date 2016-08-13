@@ -30,7 +30,12 @@ class TwitterSessionImpl: NSObject, TwitterSession {
             }
         }
     }
-    var twitterApi: STTwitterAPI?
+    var twitterApi: STTwitterAPI? {
+        didSet {
+            apiAccessObject = twitterApi
+        }
+    }
+    var apiAccessObject: AnyObject?
     var oAuthAccessToken: String?
     var oAuthAccessTokenSecret: String?
     
