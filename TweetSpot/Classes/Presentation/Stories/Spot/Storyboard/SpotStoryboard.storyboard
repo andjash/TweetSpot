@@ -47,25 +47,25 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PBC-EC-e9Y" userLabel="Avatar container">
-                                                    <rect key="frame" x="10" y="5" width="60" height="50"/>
+                                                    <rect key="frame" x="10" y="5" width="46" height="36"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="919-pX-ehp">
-                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="36" height="36"/>
                                                             <color key="backgroundColor" white="0.66666666666666663" alpha="0.50344827586206897" colorSpace="calibratedWhite"/>
                                                         </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="919-pX-ehp" secondAttribute="trailing" constant="10" id="Bdt-fA-LiB"/>
                                                         <constraint firstItem="919-pX-ehp" firstAttribute="top" secondItem="PBC-EC-e9Y" secondAttribute="top" id="LSt-u2-Mem"/>
-                                                        <constraint firstAttribute="bottom" secondItem="919-pX-ehp" secondAttribute="bottom" id="QVA-Np-YR5"/>
-                                                        <constraint firstAttribute="trailing" secondItem="919-pX-ehp" secondAttribute="trailing" constant="10" id="TG0-XI-DfC"/>
-                                                        <constraint firstAttribute="width" constant="60" id="il3-Sj-0Fl"/>
-                                                        <constraint firstAttribute="height" constant="50" id="suB-dK-sC3"/>
+                                                        <constraint firstAttribute="bottom" secondItem="919-pX-ehp" secondAttribute="bottom" id="MTA-fd-AKa"/>
+                                                        <constraint firstAttribute="width" constant="46" id="il3-Sj-0Fl"/>
+                                                        <constraint firstAttribute="height" constant="36" id="suB-dK-sC3"/>
                                                         <constraint firstItem="919-pX-ehp" firstAttribute="leading" secondItem="PBC-EC-e9Y" secondAttribute="leading" id="wVV-6I-9th"/>
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem Ipsum " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DXR-OE-5OS">
-                                                    <rect key="frame" x="70" y="5" width="89" height="17"/>
+                                                    <rect key="frame" x="56" y="5" width="89" height="17"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="17" id="IAt-cy-qKP"/>
                                                     </constraints>
@@ -89,7 +89,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vpR-Rf-y0y">
-                                                    <rect key="frame" x="70" y="22" width="520" height="68"/>
+                                                    <rect key="frame" x="56" y="22" width="534" height="68"/>
                                                     <string key="text">Donec ac accumsan enim. Integer rhoncus, tortor nec facilisis fermentum, arcu ante feugiat orci, ut ullamcorper tortor quam ut nisi. Aliquam ac suscipit arcu, quis dapibus leo. In rutrum risus quis elit commodo, ac luctus justo sollicitudin. Vivamus interdum nisl id nunc pretium posuere. Praesent pulvinar dolor fermentum mollis tristique. Maecenas enim risus, fermentum blandit leo id, varius dapibus turpis. Nunc quis nibh leo. Fusce quis malesuada quam. Maecenas non libero nec diam cursus accumsan. Aliquam vitae erat ultrices, imperdiet felis eget, sodales erat. Suspendisse tris</string>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -115,7 +115,7 @@
                                         <connections>
                                             <outlet property="avatarContainerWidth" destination="il3-Sj-0Fl" id="mOo-2f-okh"/>
                                             <outlet property="avatarImageView" destination="919-pX-ehp" id="oK4-J0-aO6"/>
-                                            <outlet property="avatarRightSpace" destination="TG0-XI-DfC" id="i3a-ag-yOO"/>
+                                            <outlet property="avatarRightSpace" destination="Bdt-fA-LiB" id="02m-Q0-TOC"/>
                                             <outlet property="dateLabel" destination="R58-uL-a10" id="6RX-ym-TYR"/>
                                             <outlet property="nameLabel" destination="DXR-OE-5OS" id="MxD-XO-v48"/>
                                             <outlet property="screenNameLabel" destination="0UI-hP-3X5" id="eYn-Q3-EEQ"/>

@@ -13,6 +13,7 @@ import Typhoon
 class SpotAssembly: TyphoonAssembly, RamblerInitialAssembly {
 
     weak var businessLogicAssembly: BusinesLogicAssembly!
+    weak var coreServices: CoreServicesAssembly!
     
     dynamic func viewSpotModule() -> AnyObject {
         return TyphoonDefinition.withClass(SpotViewController.self) {
@@ -28,6 +29,8 @@ class SpotAssembly: TyphoonAssembly, RamblerInitialAssembly {
             definition.injectProperty("output", with: self.presenterSpotModule())
             definition.injectProperty("session", with: self.businessLogicAssembly.twitterSessionService())
             definition.injectProperty("homeTimelineModel", with: self.businessLogicAssembly.homeTimelineModel())
+            definition.injectProperty("imagesService", with: self.coreServices.imagesService())            
+            
         }
     }
 

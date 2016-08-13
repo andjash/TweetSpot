@@ -22,7 +22,7 @@ class TweetDTODictionaryDeserializer: NSObject, TweetDTODeserializer {
             
             guard let userDict = dict["user"] as? NSDictionary  else { continue }
             guard let userName = userDict["name"] as? String else { continue }
-            guard let avatarUrlStr = userDict["profile_image_url"] as? String else { continue }
+            guard let avatarUrlStr = userDict["profile_image_url_https"] as? String else { continue }
             
             let dto = TweetDTO(id: id, creationDateSting: creationDateStr, text: text, userName: userName, avatarUrlString: avatarUrlStr)
             result.append(dto)

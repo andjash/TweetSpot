@@ -13,13 +13,14 @@ class SpotTweetItem: NSObject {
     let text: String
     let userName: String
     let screenName: String
-    let avatar: UIImage?
     
-    init(formattedPostDate: String, text: String, userName: String, screenName: String, avatar: UIImage?) {
+    var avatar: UIImage?
+    var avatarRetrievedCallback: (() -> ())?
+    
+    init(formattedPostDate: String, text: String, userName: String, screenName: String) {
         self.formattedPostDate = formattedPostDate
         self.text = text
         self.userName = userName
         self.screenName = screenName
-        self.avatar = avatar
     }
 }

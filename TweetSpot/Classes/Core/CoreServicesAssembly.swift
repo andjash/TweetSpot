@@ -20,5 +20,13 @@ class CoreServicesAssembly: TyphoonAssembly, RamblerInitialAssembly {
         }
     }
     
+    dynamic func imagesService() -> AnyObject {
+        return TyphoonDefinition.withClass(ImagesServiceImpl.self) {
+            (definition) in
+            
+            definition.scope = TyphoonScope.Singleton
+        }
+    }
+    
 }
 
