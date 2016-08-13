@@ -48,7 +48,7 @@ class HomeTimelineModelImpl: NSObject, HomeTimelineModel {
         if !proceedWithLoadingDirection(.Forward) {
             return
         }
-        twitterDAO.getHomeTweets(maxId: nil, minId: homeLineTweets.first?.id, count: 10, success: {[weak self] (dtos) in
+        twitterDAO.getHomeTweets(maxId: nil, minId: homeLineTweets.first?.id, count: 20, success: {[weak self] (dtos) in
             guard let strongSelf = self else { return }
             strongSelf.completeWithLoadingDirection(.Forward)
             if dtos.count > 0 {
@@ -68,8 +68,8 @@ class HomeTimelineModelImpl: NSObject, HomeTimelineModel {
         if !proceedWithLoadingDirection(.Backward) {
             return
         }
-        let count = homeLineTweets.count > 0 ? 11 : 10
-        twitterDAO.getHomeTweets(maxId: homeLineTweets.last?.id, minId: nil, count: count, success: {[weak self] (dtos) in
+    
+        twitterDAO.getHomeTweets(maxId: homeLineTweets.last?.id, minId: nil, count: 20, success: {[weak self] (dtos) in
             guard let strongSelf = self else { return }
             strongSelf.completeWithLoadingDirection(.Backward)
             var resultDtos = dtos

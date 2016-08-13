@@ -35,7 +35,7 @@ class SpotInteractor: NSObject, SpotInteractorInput {
                 let item = SpotTweetItem(formattedPostDate: self.dateStringFromDTODate(dto.creationDate),
                     text: dto.text,
                     userName: dto.userName,
-                    screenName: "@todo")
+                    screenName: dto.screenName)
                 self.promiseImageLoad(item, urlString: dto.avatarUrlStr)
                 result.append(item)
             }

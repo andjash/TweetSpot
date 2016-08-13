@@ -46,7 +46,7 @@ class SpotTweetItemCell: UITableViewCell {
         currentItem = item
         dateLabel.text = item.formattedPostDate
         nameLabel.text = item.userName
-        screenNameLabel.text = item.screenName
+        screenNameLabel.text = "@\(item.screenName)"
         tweetTextLabel.text = item.text
         avatarImageView.image = nil
         
