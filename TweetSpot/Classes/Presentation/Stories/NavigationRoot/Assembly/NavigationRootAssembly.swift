@@ -12,8 +12,8 @@ import Typhoon
 
 class NavigationRootAssembly: TyphoonAssembly, RamblerInitialAssembly {
     
-    weak var coreServices: CoreServicesAssembly!
-
+    weak var businessLogicAssembly: BusinesLogicAssembly!
+   
     dynamic func viewNavigationRootModule() -> AnyObject {
         return TyphoonDefinition.withClass(NavigationRootViewController.self) {
             (definition) in
@@ -26,7 +26,7 @@ class NavigationRootAssembly: TyphoonAssembly, RamblerInitialAssembly {
         return TyphoonDefinition.withClass(NavigationRootInteractor.self) {
             (definition) in
             definition.injectProperty("output", with: self.presenterNavigationRootModule())
-            definition.injectProperty("session", with: self.coreServices.twitterSessionService())
+            definition.injectProperty("session", with: self.businessLogicAssembly.twitterSessionService())
         }
     }
 

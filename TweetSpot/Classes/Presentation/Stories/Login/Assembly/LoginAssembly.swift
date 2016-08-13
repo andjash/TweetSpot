@@ -13,7 +13,8 @@ import Typhoon
 class LoginAssembly: TyphoonAssembly, RamblerInitialAssembly {
     
     weak var coreServices: CoreServicesAssembly!
-
+    weak var businessLogicAssembly: BusinesLogicAssembly!
+    
     dynamic func viewLoginModule() -> AnyObject {
         return TyphoonDefinition.withClass(LoginViewController.self) {
             (definition) in
@@ -27,7 +28,7 @@ class LoginAssembly: TyphoonAssembly, RamblerInitialAssembly {
             (definition) in
             definition.injectProperty("output", with: self.presenterLoginModule())       
             definition.injectProperty("socAccountsService", with: self.coreServices.socialAccountsService())
-            definition.injectProperty("twitterSession", with: self.coreServices.twitterSessionService())
+            definition.injectProperty("twitterSession", with: self.businessLogicAssembly.twitterSessionService())
         }
     }
 

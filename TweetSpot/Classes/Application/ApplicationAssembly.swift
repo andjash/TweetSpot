@@ -11,12 +11,12 @@ import RamblerTyphoonUtils
 
 class ApplicationAssembly: TyphoonAssembly, RamblerInitialAssembly {
     
-    weak var coreServices: CoreServicesAssembly!
+    weak var businessLogicAssembly: BusinesLogicAssembly!
     
     dynamic func appDelegate() -> AnyObject {
         return TyphoonDefinition.withClass(AppDelegate.self) {
             (definition) in
-            definition.injectProperty("twitterSessionWebAuthHandler", with: self.coreServices.twitterWebAuthHandler())
+            definition.injectProperty("twitterSessionWebAuthHandler", with: self.businessLogicAssembly.twitterWebAuthHandler())
         }
     }
 }

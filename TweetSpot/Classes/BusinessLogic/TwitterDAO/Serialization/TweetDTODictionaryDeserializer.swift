@@ -10,7 +10,6 @@ import Foundation
 
 class TweetDTODictionaryDeserializer: NSObject, TweetDTODeserializer {
     func deserializeTweetDTOsFromObject(object: AnyObject) -> [TweetDTO]? {
-        log.debug("\(object.dynamicType)")
         guard let arrayOfDicts = object as? NSArray else { return nil }
         
         var result: [TweetDTO] = []
