@@ -35,6 +35,4 @@ struct TwitterSessionConstants {
     func openSessionWihtIOSAccount(account: ACAccount, success: () -> (), error: (NSError) -> ())
     func openSessionWihtLoginPassword(success: () -> (), error: (NSError) -> ())
     func closeSession()
-    
-    func handleWebAuthCallback(url: NSURL) -> Bool
 }

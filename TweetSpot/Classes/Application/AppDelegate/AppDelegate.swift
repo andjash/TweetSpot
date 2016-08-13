@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-    weak var twitterSession: TwitterSession!
+    weak var twitterSessionWebAuthHandler: TwitterWebAuthHandler!
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         setupLoger()
@@ -42,7 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool {
         if url.scheme == "tssession" {
-            return twitterSession.handleWebAuthCallback(url)
+            return twitterSessionWebAuthHandler.handleWebAuthCallback(url)
         }        
         return false
     }

@@ -16,7 +16,7 @@ class ApplicationAssembly: TyphoonAssembly, RamblerInitialAssembly {
     dynamic func appDelegate() -> AnyObject {
         return TyphoonDefinition.withClass(AppDelegate.self) {
             (definition) in
-            definition.injectProperty("twitterSession", with: self.coreServices.twitterSessionService())
+            definition.injectProperty("twitterSessionWebAuthHandler", with: self.coreServices.twitterWebAuthHandler())
         }
     }
 }

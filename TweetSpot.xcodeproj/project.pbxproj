@@ -50,6 +50,8 @@
 		55B061C31D5E26E800490B44 /* Errors.strings in Resources */ = {isa = PBXBuildFile; fileRef = 55B061C51D5E26E800490B44 /* Errors.strings */; };
 		55B061C91D5E607000490B44 /* TwitterSessionCredentialsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B061C81D5E607000490B44 /* TwitterSessionCredentialsStorage.swift */; };
 		55B061CB1D5E611900490B44 /* KeychainSessionCredentialsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B061CA1D5E611900490B44 /* KeychainSessionCredentialsStorage.swift */; };
+		55B061CE1D5EFF4F00490B44 /* TwitterWebAuthHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B061CD1D5EFF4F00490B44 /* TwitterWebAuthHandler.swift */; };
+		55B061D01D5EFFF500490B44 /* SafariTwitterWebAuthHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B061CF1D5EFFF500490B44 /* SafariTwitterWebAuthHandler.swift */; };
 		55DF60A01D5E0EB9006B7BFD /* SpotStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55DF609F1D5E0EB9006B7BFD /* SpotStoryboard.storyboard */; };
 		55DF60A31D5E1305006B7BFD /* Root.strings in Resources */ = {isa = PBXBuildFile; fileRef = 55DF60A51D5E1305006B7BFD /* Root.strings */; };
 		5A1475A3FE5EACDCE10FE72C /* SpotPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5502AA9DE96ADBACD2C9FA /* SpotPresenter.swift */; };
@@ -130,6 +132,8 @@
 		55B061C61D5E26EB00490B44 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Errors.strings; sourceTree = "<group>"; };
 		55B061C81D5E607000490B44 /* TwitterSessionCredentialsStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterSessionCredentialsStorage.swift; sourceTree = "<group>"; };
 		55B061CA1D5E611900490B44 /* KeychainSessionCredentialsStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainSessionCredentialsStorage.swift; sourceTree = "<group>"; };
+		55B061CD1D5EFF4F00490B44 /* TwitterWebAuthHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterWebAuthHandler.swift; sourceTree = "<group>"; };
+		55B061CF1D5EFFF500490B44 /* SafariTwitterWebAuthHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafariTwitterWebAuthHandler.swift; sourceTree = "<group>"; };
 		55DF609F1D5E0EB9006B7BFD /* SpotStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SpotStoryboard.storyboard; sourceTree = "<group>"; };
 		55DF60A41D5E1305006B7BFD /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Root.strings; sourceTree = "<group>"; };
 		55DF60A61D5E1309006B7BFD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Root.strings; sourceTree = "<group>"; };
@@ -470,6 +474,7 @@
 				553F7BAE1D5DE7D800541F38 /* TwitterSession.swift */,
 				553F7BAF1D5DE7D800541F38 /* TwitterSessionImpl.swift */,
 				55B061C71D5E605300490B44 /* CredentialsStorage */,
+				55B061CC1D5EFF3B00490B44 /* WebAuthHandler */,
 			);
 			path = TwitterSession;
 			sourceTree = "<group>";
@@ -490,6 +495,15 @@
 				55B061CA1D5E611900490B44 /* KeychainSessionCredentialsStorage.swift */,
 			);
 			path = CredentialsStorage;
+			sourceTree = "<group>";
+		};
+		55B061CC1D5EFF3B00490B44 /* WebAuthHandler */ = {
+			isa = PBXGroup;
+			children = (
+				55B061CD1D5EFF4F00490B44 /* TwitterWebAuthHandler.swift */,
+				55B061CF1D5EFFF500490B44 /* SafariTwitterWebAuthHandler.swift */,
+			);
+			path = WebAuthHandler;
 			sourceTree = "<group>";
 		};
 		55DF609E1D5E0EAB006B7BFD /* Storyboard */ = {
@@ -755,6 +769,7 @@
 				553F7B821D5DBAD700541F38 /* NavigationRootRouter.swift in Sources */,
 				553F7BB81D5DE94300541F38 /* CoreServicesAssembly.swift in Sources */,
 				553F7B8B1D5DBB3100541F38 /* ApplicationAssembly.swift in Sources */,
+				55B061D01D5EFFF500490B44 /* SafariTwitterWebAuthHandler.swift in Sources */,
 				553F7B8E1D5DBB5900541F38 /* AppDelegate.swift in Sources */,
 				553F7B871D5DBAD700541F38 /* TyphoonDefinition+Extensions.swift in Sources */,
 				553F7B921D5DC8E800541F38 /* CAGradientLayer+Extensions.swift in Sources */,
@@ -778,6 +793,7 @@
 				553F7B981D5DC9B900541F38 /* FadeAnimator.swift in Sources */,
 				43D39CCE68291FA56D85DCD9 /* LoginInteractorInput.swift in Sources */,
 				2F6B9B3145F852C644E231A5 /* LoginInteractorOutput.swift in Sources */,
+				55B061CE1D5EFF4F00490B44 /* TwitterWebAuthHandler.swift in Sources */,
 				553F7BB11D5DE7D800541F38 /* TwitterSessionImpl.swift in Sources */,
 				A8668A4869942910B58DD3B7 /* LoginInteractor.swift in Sources */,
 				00ED40C1B3A1B86EC86EED9E /* LoginRouterInput.swift in Sources */,

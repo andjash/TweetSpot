@@ -24,8 +24,13 @@ class CoreServicesAssembly: TyphoonAssembly, RamblerInitialAssembly {
     dynamic func twitterSessionService() -> AnyObject {        
         return TyphoonDefinition.withClass(TwitterSessionImpl.self) {
             (definition) in
-            definition.injectProperty("tokenStorage", with: self.twitterSessionCredentialsStorage())
+            definition.useInitializer(NSSelectorFromString("initWithWebAuthHandler:")) {
+                (initializer) in
+                
+                initializer.injectParameterWith(self.twitterWebAuthHandler())
+            }
             
+            definition.injectProperty("tokenStorage", with: self.twitterSessionCredentialsStorage())
             definition.scope = TyphoonScope.Singleton
         }
     }
@@ -38,6 +43,14 @@ class CoreServicesAssembly: TyphoonAssembly, RamblerInitialAssembly {
                 
                 initializer.injectParameterWith(self.socialAccountsService())
             }
+            definition.scope = TyphoonScope.Singleton
+        }
+    }
+    
+    dynamic func twitterWebAuthHandler() -> AnyObject {
+        return TyphoonDefinition.withClass(SafariTwitterWebAuthHandler.self) {
+            (definition) in
+            
             definition.scope = TyphoonScope.Singleton
         }
     }
