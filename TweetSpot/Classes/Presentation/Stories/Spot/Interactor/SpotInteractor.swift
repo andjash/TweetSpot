@@ -165,6 +165,9 @@ class SpotInteractor: NSObject, SpotInteractorInput {
     }
 
     private func promiseImageLoad(item: SpotTweetItem, urlString: String) {
+        if !self.settingsSvc.shouldDisplayUserAvatarsOnSpot {
+            return
+        }
         let promise = imagesService.imagePromiseForUrl(urlString.stringByReplacingOccurrencesOfString("_normal", withString: "_bigger"))
         promise.notifyCall = { (img, error) in
             if let image = img {
