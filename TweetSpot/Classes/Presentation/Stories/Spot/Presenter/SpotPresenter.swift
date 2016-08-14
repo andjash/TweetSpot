@@ -14,6 +14,7 @@ class SpotPresenter: NSObject, SpotModuleInput  {
     var interactor: SpotInteractorInput!
     var router: SpotRouterInput!
     var hasItemsAtPast = true
+    var prefetchedItems: [SpotTweetItem] = []
 }
 
 
@@ -27,6 +28,11 @@ extension SpotPresenter : SpotViewOutput {
     
     func viewIsAboutToAppear() {
         interactor.requestIfNeedToShowAvatars()
+        interactor.setPrefetchingEnabled(true)
+    }
+    
+    func viewIsAboutToDisappear() {
+        interactor.setPrefetchingEnabled(false)        
     }
     
     func quitRequested() {
@@ -49,10 +55,19 @@ extension SpotPresenter : SpotViewOutput {
     func didSelectItem(item: SpotTweetItem) {
         interactor.requestDTOForItem(item)
     }
+    
+    func showMoreItemsRequested() {
+        interactor.loadForwardRequested()
+    }
 }
 
 
 extension SpotPresenter : SpotInteractorOutput {
+    
+    func prefetchedItemsAvailable(prefetchedItems: [SpotTweetItem]) {
+        self.prefetchedItems += prefetchedItems
+        view.showMoreItemsAvailable()
+    }
     
     func dtoFoundForItem(item: SpotTweetItem, dto: AnyObject?) {
         if let udto = dto {
@@ -68,7 +83,8 @@ extension SpotPresenter : SpotInteractorOutput {
         if items.count > 0 && hasItemsAtPast {
             view.setInfiniteScrollingEnabled(true)
         }
-        view.displayItemsAbove(items)
+        view.displayItemsAbove(items + prefetchedItems)
+        prefetchedItems.removeAll()
     }
     
     func backwardItemsLoaded(items: [SpotTweetItem]) {

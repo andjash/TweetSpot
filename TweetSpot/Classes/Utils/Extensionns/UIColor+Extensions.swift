@@ -15,6 +15,6 @@ extension UIColor {
     }
 
     static var ts_applicationSecondaryColor: UIColor {
-        return UIColor(red: 64, green: 58, blue: 62, alpha: 1)
+        return UIColor(red: 64 / 255.0, green: 58 / 255.0, blue: 62 / 255.0, alpha: 1)
     }
 }

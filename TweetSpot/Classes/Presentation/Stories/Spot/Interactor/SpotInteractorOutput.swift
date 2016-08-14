@@ -16,5 +16,7 @@ import Foundation
     func forwardItemsLoaded(items: [SpotTweetItem])
     func backwardItemsLoaded(items: [SpotTweetItem])
     
+    func prefetchedItemsAvailable(prefetchedItems: [SpotTweetItem])
+    
     func handleNoMoreItemsAtBackward()
 }

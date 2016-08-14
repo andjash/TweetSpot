@@ -16,10 +16,25 @@ class SpotViewController: UIViewController {
     var tableDataManager: SpotTableDataManager!
     
     @IBOutlet weak var tableView: UITableView!
- 
+    @IBOutlet weak var newTweetsButton: UIButton!
+    @IBOutlet weak var newTweetsButtonTopSpace: NSLayoutConstraint!
+    
     // MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "spot_title".ts_localized("Spot")
+        newTweetsButton.setTitle("spot_new_tweet_available".ts_localized("Spot"), forState: .Normal)
+        newTweetsButton.layoutIfNeeded()
+        newTweetsButton.backgroundColor = UIColor.ts_applicationPrimaryColor
+        newTweetsButton.layer.cornerRadius = newTweetsButton.frame.height / 2
+       
+        newTweetsButton.layer.shadowColor = UIColor.blackColor().CGColor
+        newTweetsButton.layer.shadowOffset = CGSize(width: 0, height: 5);
+        newTweetsButton.layer.shadowRadius = 5;
+        newTweetsButton.layer.shadowOpacity = 0.3;
+        newTweetsButton.layer.shadowPath = CGPathCreateWithRoundedRect(newTweetsButton.bounds, newTweetsButton.frame.height / 2, newTweetsButton.frame.height / 2, nil)
+        newTweetsButtonTopSpace.constant = -newTweetsButton.frame.height - newTweetsButton.layer.shadowOffset.height - newTweetsButton.layer.shadowRadius
+        
         tableDataManager.attachTo(tableView)
         tableDataManager.spotDelegate = self
         tableDataManager.delegate = self
@@ -29,6 +44,11 @@ class SpotViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         output.viewIsAboutToAppear()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        output.viewIsAboutToDisappear()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -47,10 +67,25 @@ class SpotViewController: UIViewController {
     @IBAction func settingsAction(sender: AnyObject?) {
         output.settingsRequested()
     }
+    
+    @IBAction func showNewTweetsAction(sender: AnyObject?) {
+        UIView.animateWithDuration(0.3, animations: {
+            self.tableView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
+            self.newTweetsButtonTopSpace.constant = -self.newTweetsButton.frame.height - self.newTweetsButton.layer.shadowOffset.height - self.newTweetsButton.layer.shadowRadius
+            self.view.layoutIfNeeded()
+        }) { _ in
+            self.tableDataManager.showPullToRefreshAnimation(true)
+            self.output.showMoreItemsRequested()
+        }
+    }
 }
 
 extension SpotViewController : SpotTableDataMangerDelegate {
     func triggeredPullToRefresh() {
+        UIView.animateWithDuration(0.3, animations: {
+            self.newTweetsButtonTopSpace.constant = -self.newTweetsButton.frame.height - self.newTweetsButton.layer.shadowOffset.height - self.newTweetsButton.layer.shadowRadius
+            self.view.layoutIfNeeded()
+        })
         output.loadAboveRequested()
     }
     
@@ -74,7 +109,7 @@ extension SpotViewController : SpotViewInput {
     }  
     
     func setInfiniteScrollingEnabled(enabled: Bool) {
-        
+        tableDataManager.infiniteScrollEnabled = enabled
     }
     
     func updateCellWithAvatars(displayRequired displayRequired: Bool) {
@@ -102,5 +137,12 @@ extension SpotViewController : SpotViewInput {
     
     func showBelowLoading(enabled enabled: Bool) {
         tableDataManager.showInfiniteScrollAnimation(enabled)
+    }
+    
+    func showMoreItemsAvailable() {
+        UIView.animateWithDuration(0.3, animations: {
+            self.newTweetsButtonTopSpace.constant = 10
+            self.view.layoutIfNeeded()
+        })
     }
 }

@@ -9,7 +9,7 @@
         <scene sceneID="b4t-oS-ebO">
             <objects>
                 <navigationController id="6Pe-fd-hIq" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QlO-3m-3Xk">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="QlO-3m-3Xk">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.74509803919999995" green="0.34509803919999998" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -31,11 +31,11 @@
                         <viewControllerLayoutGuide type="bottom" id="A48-5y-lgh"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="UK3-A2-CIc">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="167" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SDg-Xm-gRG">
-                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
@@ -124,9 +124,26 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qwQ-Du-R3u">
+                                <rect key="frame" x="214" y="10" width="173" height="30"/>
+                                <color key="backgroundColor" red="0.74509803919999995" green="0.34509803919999998" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="HNE-w7-R6G"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                                <state key="normal" title="Доступные новые твиты">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showNewTweetsAction:" destination="jub-qS-gcD" eventType="touchUpInside" id="xox-bd-Qbh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="qwQ-Du-R3u" firstAttribute="top" secondItem="UK3-A2-CIc" secondAttribute="top" constant="10" id="Omv-GA-3ff"/>
+                            <constraint firstItem="qwQ-Du-R3u" firstAttribute="centerX" secondItem="UK3-A2-CIc" secondAttribute="centerX" id="QfK-aW-Feg"/>
                             <constraint firstItem="SDg-Xm-gRG" firstAttribute="leading" secondItem="UK3-A2-CIc" secondAttribute="leading" id="V2s-6Z-vL5"/>
                             <constraint firstItem="SDg-Xm-gRG" firstAttribute="top" secondItem="wvS-xD-mA0" secondAttribute="bottom" id="mHz-rC-h25"/>
                             <constraint firstAttribute="trailing" secondItem="SDg-Xm-gRG" secondAttribute="trailing" id="vKX-My-o7R"/>
@@ -148,6 +165,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="newTweetsButton" destination="qwQ-Du-R3u" id="0jZ-QV-LiX"/>
+                        <outlet property="newTweetsButtonTopSpace" destination="Omv-GA-3ff" id="mM8-Ys-2vf"/>
                         <outlet property="tableView" destination="SDg-Xm-gRG" id="s2u-u8-5Wz"/>
                         <segue destination="9en-tn-HMo" kind="presentation" identifier="SpotToSettingsSegue" id="N9O-IN-ioP"/>
                         <segue destination="yyz-ln-APm" kind="show" identifier="SpotToTweetDetailsSegue" id="mrt-RU-TA7"/>

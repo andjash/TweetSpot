@@ -17,13 +17,14 @@ import Foundation
 
     func viewIsReady()
     func viewIsAboutToAppear()
+    func viewIsAboutToDisappear()
     
     func quitRequested()
     func settingsRequested()
+    func showMoreItemsRequested()
     
     func loadAboveRequested()
     func loadBelowRequested()
     
     func didSelectItem(item: SpotTweetItem)
-    
 }
