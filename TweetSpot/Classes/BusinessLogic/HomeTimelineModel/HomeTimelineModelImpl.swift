@@ -58,7 +58,11 @@ class HomeTimelineModelImpl: NSObject, HomeTimelineModel {
             var resultDtos = dtos
             if dtos.count > 0 {
                 if (dtos.last == strongSelf.homeLineTweets.last) {
-                    resultDtos = Array(dtos[0...dtos.count - 2])
+                    if dtos.count > 1 {
+                       resultDtos = Array(dtos[0...dtos.count - 2])
+                    } else {
+                        resultDtos = []
+                    }
                     //TODO: there are more tweets on server, load them
                 }
                 strongSelf.timelineStorage?.storeItemsAbove(dtos)
@@ -88,7 +92,11 @@ class HomeTimelineModelImpl: NSObject, HomeTimelineModel {
             var resultDtos = dtos
             if dtos.count > 0 {
                 if (dtos.first == strongSelf.homeLineTweets.last) {
-                    resultDtos = Array(dtos[1...dtos.count - 1])
+                    if dtos.count > 1 {
+                        resultDtos = Array(dtos[1...dtos.count - 1])
+                    } else {
+                        resultDtos = []
+                    }
                 }
                 strongSelf.timelineStorage?.storeItemsBelow(dtos)
                 strongSelf.homeLineTweets += resultDtos

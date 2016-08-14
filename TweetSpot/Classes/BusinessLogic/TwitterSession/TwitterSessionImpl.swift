@@ -23,8 +23,11 @@ class TwitterSessionImpl: NSObject, TwitterSession {
             }
         }
     }
-    var state: TwitterSessionState {
+    var state: TwitterSessionState = .Closed {
         didSet {
+            if state == oldValue {
+                return
+            }
             NSNotificationCenter.defaultCenter().postNotificationName(TwitterSessionConstants.stateChangedNotificaton,
                                                                       object: self,
                                                                       userInfo: [TwitterSessionConstants.stateOldUserInfoKey : oldValue.rawValue,
@@ -43,7 +46,6 @@ class TwitterSessionImpl: NSObject, TwitterSession {
     var oAuthAccessTokenSecret: String?
     
     init(webAuthHandler: TwitterWebAuthHandler) {
-        state = .Progress
         self.webAuthHandler = webAuthHandler
         super.init()
     }

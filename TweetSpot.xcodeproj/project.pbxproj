@@ -17,7 +17,6 @@
 		3DEBFDCD70C031FE145759FB /* TweetDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE01D010498E276BCAFB5AF0 /* TweetDetailsViewController.swift */; };
 		43D39CCE68291FA56D85DCD9 /* LoginInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A352E74613D34DF29C9D509E /* LoginInteractorInput.swift */; };
 		4D2AE8BBF63A3ECA88039CF5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925AB2EC06AA8DF3F1E9FAA4 /* LoginViewController.swift */; };
-		553F7B471D5DB71200541F38 /* TweetSpotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553F7B461D5DB71200541F38 /* TweetSpotTests.swift */; };
 		553F7B7A1D5DBAD700541F38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 553F7B5B1D5DBAD700541F38 /* LaunchScreen.storyboard */; };
 		553F7B7B1D5DBAD700541F38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 553F7B5D1D5DBAD700541F38 /* Main.storyboard */; };
 		553F7B7C1D5DBAD700541F38 /* NavigationRootAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553F7B621D5DBAD700541F38 /* NavigationRootAssembly.swift */; };
@@ -124,16 +123,6 @@
 		FFD93E55F00C1AFE64DAF9BE /* SettingsViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA03D2B2CD415B41F7F28CF8 /* SettingsViewInput.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		553F7B431D5DB71200541F38 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 553F7B261D5DB71200541F38 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 553F7B2D1D5DB71200541F38;
-			remoteInfo = TweetSpot;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		0416FB27715EFF75EB667CD9 /* TweetDetailsModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TweetDetailsModuleInput.swift; sourceTree = "<group>"; };
 		0C492B261654B8E581FA4DA1 /* LoginInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginInteractorOutput.swift; sourceTree = "<group>"; };
@@ -154,9 +143,6 @@
 		496428D9201872AC52459D45 /* SettingsAssembly.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsAssembly.swift; sourceTree = "<group>"; };
 		49DD815CE826943688925EBF /* SettingsInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsInteractorInput.swift; sourceTree = "<group>"; };
 		553F7B2E1D5DB71200541F38 /* TweetSpot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TweetSpot.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		553F7B421D5DB71200541F38 /* TweetSpotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TweetSpotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		553F7B461D5DB71200541F38 /* TweetSpotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetSpotTests.swift; sourceTree = "<group>"; };
-		553F7B481D5DB71200541F38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		553F7B5C1D5DBAD700541F38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		553F7B5E1D5DBAD700541F38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		553F7B621D5DBAD700541F38 /* NavigationRootAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationRootAssembly.swift; sourceTree = "<group>"; };
@@ -273,13 +259,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		553F7B3F1D5DB71200541F38 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -366,7 +345,6 @@
 			isa = PBXGroup;
 			children = (
 				553F7B301D5DB71200541F38 /* TweetSpot */,
-				553F7B451D5DB71200541F38 /* TweetSpotTests */,
 				553F7B2F1D5DB71200541F38 /* Products */,
 				01391CF6D41992F62BB91700 /* Pods */,
 				5DF0C569B6AB1E1F306F1C51 /* Frameworks */,
@@ -377,7 +355,6 @@
 			isa = PBXGroup;
 			children = (
 				553F7B2E1D5DB71200541F38 /* TweetSpot.app */,
-				553F7B421D5DB71200541F38 /* TweetSpotTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -390,15 +367,6 @@
 				553F7B771D5DBAD700541F38 /* SupportingFiles */,
 			);
 			path = TweetSpot;
-			sourceTree = "<group>";
-		};
-		553F7B451D5DB71200541F38 /* TweetSpotTests */ = {
-			isa = PBXGroup;
-			children = (
-				553F7B461D5DB71200541F38 /* TweetSpotTests.swift */,
-				553F7B481D5DB71200541F38 /* Info.plist */,
-			);
-			path = TweetSpotTests;
 			sourceTree = "<group>";
 		};
 		553F7B571D5DBAD700541F38 /* Classes */ = {
@@ -1033,24 +1001,6 @@
 			productReference = 553F7B2E1D5DB71200541F38 /* TweetSpot.app */;
 			productType = "com.apple.product-type.application";
 		};
-		553F7B411D5DB71200541F38 /* TweetSpotTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 553F7B4E1D5DB71200541F38 /* Build configuration list for PBXNativeTarget "TweetSpotTests" */;
-			buildPhases = (
-				553F7B3E1D5DB71200541F38 /* Sources */,
-				553F7B3F1D5DB71200541F38 /* Frameworks */,
-				553F7B401D5DB71200541F38 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				553F7B441D5DB71200541F38 /* PBXTargetDependency */,
-			);
-			name = TweetSpotTests;
-			productName = TweetSpotTests;
-			productReference = 553F7B421D5DB71200541F38 /* TweetSpotTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -1064,10 +1014,6 @@
 					553F7B2D1D5DB71200541F38 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 7FQDGGDR62;
-					};
-					553F7B411D5DB71200541F38 = {
-						CreatedOnToolsVersion = 7.3.1;
-						TestTargetID = 553F7B2D1D5DB71200541F38;
 					};
 				};
 			};
@@ -1086,7 +1032,6 @@
 			projectRoot = "";
 			targets = (
 				553F7B2D1D5DB71200541F38 /* TweetSpot */,
-				553F7B411D5DB71200541F38 /* TweetSpotTests */,
 			);
 		};
 /* End PBXProject section */
@@ -1111,13 +1056,6 @@
 				55DF60A31D5E1305006B7BFD /* Root.strings in Resources */,
 				55B061C31D5E26E800490B44 /* Errors.strings in Resources */,
 				55B061BB1D5E1DA000490B44 /* Common.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		553F7B401D5DB71200541F38 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1277,23 +1215,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		553F7B3E1D5DB71200541F38 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				553F7B471D5DB71200541F38 /* TweetSpotTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		553F7B441D5DB71200541F38 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 553F7B2D1D5DB71200541F38 /* TweetSpot */;
-			targetProxy = 553F7B431D5DB71200541F38 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		553F7B5B1D5DBAD700541F38 /* LaunchScreen.storyboard */ = {
@@ -1488,30 +1410,6 @@
 			};
 			name = Release;
 		};
-		553F7B4F1D5DB71200541F38 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = TweetSpotTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.andjash.TweetSpotTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TweetSpot.app/TweetSpot";
-			};
-			name = Debug;
-		};
-		553F7B501D5DB71200541F38 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = TweetSpotTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.andjash.TweetSpotTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TweetSpot.app/TweetSpot";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1529,15 +1427,6 @@
 			buildConfigurations = (
 				553F7B4C1D5DB71200541F38 /* Debug */,
 				553F7B4D1D5DB71200541F38 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		553F7B4E1D5DB71200541F38 /* Build configuration list for PBXNativeTarget "TweetSpotTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				553F7B4F1D5DB71200541F38 /* Debug */,
-				553F7B501D5DB71200541F38 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
