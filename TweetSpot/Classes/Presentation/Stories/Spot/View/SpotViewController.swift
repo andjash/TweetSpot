@@ -64,7 +64,7 @@ class SpotViewController: UIViewController {
         if let paths = tableView.indexPathsForVisibleRows {
             for ip in paths {
                 if let cell = tableView.cellForRowAtIndexPath(ip) {
-                    if cell.frame.minY >= tableView.contentOffset.y {
+                    if cell.frame.minY >= tableView.contentOffset.y + tableView.contentInset.top {
                         return ip
                     }
                 }
@@ -86,50 +86,52 @@ extension SpotViewController : SpotViewInput {
             return
         }
         displayingAvatars = displayRequired
-        
-        let topVisibleIp = self.topmostVisibleIndexPath()
-        var desiredOffset: CGFloat?
-        if let indexPath = topVisibleIp {
-             desiredOffset = tableView.cellForRowAtIndexPath(indexPath)!.frame.minY - tableView.contentOffset.y
-            
-        }
-        
-        tableView.reloadData()
-        
-        if let indexPath = topVisibleIp {
-            tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Top, animated: false)
-            tableView.contentOffset = CGPoint(x: tableView.contentOffset.x, y: tableView.contentOffset.y - desiredOffset!)
-        }
+        displayItemsWithoutScrolling(nil, newItemsAtBottom: nil, prevItems: allItems)
     }
 
     func displayItemsAbove(items: [SpotTweetItem]) {
-        self.tableView.pullToRefreshView.stopAnimating()
-        var indexPaths : [NSIndexPath] = []
-        for index in 0..<items.count {
-            indexPaths.append(NSIndexPath(forRow: index, inSection: 0))
-        }
-        allItems = items + (allItems ?? [])
-        if items.count > 0 {
-            self.tableView.infiniteScrollingView.enabled = true
+        if items.count == 0 {
+            tableView.pullToRefreshView.stopAnimating()
+            return
         }
         
-        tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: .Top)
+        let contentOffsetBefore = tableView.contentOffset
+        let contentInsetBefore = tableView.contentInset
+        self.tableView.pullToRefreshView.stopAnimating()
+        let contentInsetAfter = tableView.contentInset
+        
+        tableView.layer.removeAllAnimations()
+        tableView.contentInset = contentInsetBefore
+        tableView.setContentOffset(contentOffsetBefore, animated: false)
+        
+        displayItemsWithoutScrolling(items, newItemsAtBottom: nil, prevItems: allItems)
+
+        tableView.contentInset = contentInsetAfter
+        self.tableView.infiniteScrollingView.enabled = true
     }
     
     func displayItemsBelow(items: [SpotTweetItem]) {
-        self.tableView.infiniteScrollingView.stopAnimating()
-        var indexPaths : [NSIndexPath] = []
-        let existingItemsCount = allItems?.count ?? 0
+        tableView.infiniteScrollingView.stopAnimating()
+        displayItemsWithoutScrolling(nil, newItemsAtBottom: items, prevItems: allItems)
+    }
+    
+    
+    func displayItemsWithoutScrolling(newItemsAtTop: [SpotTweetItem]?, newItemsAtBottom: [SpotTweetItem]?, prevItems: [SpotTweetItem]?) {
+        let topVisibleIp = topmostVisibleIndexPath()
+        var desiredOffset: CGFloat?
+        if let indexPath = topVisibleIp {
+            desiredOffset = tableView.cellForRowAtIndexPath(indexPath)!.frame.minY - tableView.contentOffset.y - tableView.contentInset.top
+        }
         
-        for index in existingItemsCount..<(existingItemsCount + items.count) {
-            indexPaths.append(NSIndexPath(forRow: index, inSection: 0))
+        allItems = (newItemsAtTop ?? []) + (prevItems ?? []) + (newItemsAtBottom ?? [])
+        
+        tableView.reloadData()
+        
+        if let oldIp = topVisibleIp {
+            let newIp = NSIndexPath(forRow: oldIp.row + (newItemsAtTop?.count ?? 0), inSection: 0)
+            tableView.scrollToRowAtIndexPath(newIp, atScrollPosition: .Top, animated: false)
+            tableView.contentOffset = CGPoint(x: tableView.contentOffset.x, y: tableView.contentOffset.y - desiredOffset!)
         }
-        allItems = (allItems ?? []) + items
-        if items.count == 0 {
-            self.tableView.infiniteScrollingView.enabled = false
-        }
-
-        tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: .Bottom)
     }
     
     func showAboveLoading(enabled enabled: Bool) {

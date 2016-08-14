@@ -47,7 +47,7 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="755" verticalCompressionResistancePriority="755" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7JP-FU-PAc">
-                                                <rect key="frame" x="10" y="250" width="580" height="236"/>
+                                                <rect key="frame" x="10" y="255" width="580" height="236"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <string key="text">Maecenas ut nulla id lacus eleifend viverra quis sed turpis. Vivamus vitae vulputate libero, vel lobortis nisi. Nulla rutrum magna ut gravida fringilla. Aliquam a efficitur sapien, ac aliquam odio. Duis nisi mi, imperdiet nec laoreet eu, faucibus vel sem. Nulla id blandit nulla. Quisque elementum dignissim nisi. Ut placerat nisi nec ante vehicula ultrices. Donec ut interdum dui, vel imperdiet diam. Quisque lobortis, leo in bibendum scelerisque, nisi elit dictum enim, ac consequat sem augue in justo.
 
@@ -57,7 +57,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23:44 12.12.12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZqW-3n-Wgc">
-                                                <rect key="frame" x="10" y="230" width="580" height="20"/>
+                                                <rect key="frame" x="10" y="235" width="580" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="ObA-RX-fde"/>
                                                 </constraints>
@@ -66,11 +66,11 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem Ipsum" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="T7t-FF-Mto">
-                                                <rect key="frame" x="10" y="200" width="580" height="30"/>
+                                                <rect key="frame" x="10" y="200" width="580" height="35"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="xpV-jw-O4O"/>
+                                                    <constraint firstAttribute="height" constant="35" id="xpV-jw-O4O"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="30"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="30"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
