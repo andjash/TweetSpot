@@ -24,4 +24,6 @@ struct TwitterDAOConstants {
 
 @objc protocol TwitterDAO {
     func getHomeTweets(maxId maxId: String?, minId: String?, count: Int, success: ([TweetDTO]) -> (), error: (NSError) -> ())
+    
+    func cancelAllRequests()
 }

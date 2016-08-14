@@ -24,6 +24,7 @@ class BusinesLogicAssembly: TyphoonAssembly, RamblerInitialAssembly {
             }
             
             definition.injectProperty("timelineStorage", with: self.homeTimelineStorage())
+            definition.injectProperty("session", with: self.twitterSessionService())
             
             definition.scope = TyphoonScope.Singleton
         }

@@ -10,6 +10,8 @@ import Foundation
 
 class HomeTimelineModelImpl: NSObject, HomeTimelineModel {
     
+    weak var session: TwitterSession?
+    
     let twitterDAO: TwitterDAO
     var timelineStorage: HomeTimelineStorage? {
         didSet {
@@ -25,6 +27,12 @@ class HomeTimelineModelImpl: NSObject, HomeTimelineModel {
     init(twitterDAO: TwitterDAO) {
         self.twitterDAO = twitterDAO
         super.init()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(HomeTimelineModelImpl.sessionStateChanged),
+                                                         name: TwitterSessionConstants.stateChangedNotificaton, object: nil)
+    }
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
     var homeLineTweets: [TweetDTO] = [] {
@@ -50,6 +58,8 @@ class HomeTimelineModelImpl: NSObject, HomeTimelineModel {
         }
         twitterDAO.getHomeTweets(maxId: nil, minId: homeLineTweets.first?.id, count: 20, success: {[weak self] (dtos) in
             guard let strongSelf = self else { return }
+            if strongSelf.session?.state != .Opened { return }
+            
             strongSelf.completeWithLoadingDirection(.Forward)
             if dtos.count > 0 {
                 strongSelf.timelineStorage?.storeItemsAbove(dtos)
@@ -58,6 +68,8 @@ class HomeTimelineModelImpl: NSObject, HomeTimelineModel {
             success?(dtos)
         }) {[weak self]  (err) in
             guard let strongSelf = self else { return }
+            if strongSelf.session?.state != .Opened { return }
+            
             strongSelf.completeWithLoadingDirection(.Backward)
             error?(err)
         }
@@ -71,6 +83,8 @@ class HomeTimelineModelImpl: NSObject, HomeTimelineModel {
     
         twitterDAO.getHomeTweets(maxId: homeLineTweets.last?.id, minId: nil, count: 20, success: {[weak self] (dtos) in
             guard let strongSelf = self else { return }
+            if strongSelf.session?.state != .Opened { return }
+            
             strongSelf.completeWithLoadingDirection(.Backward)
             var resultDtos = dtos
             if dtos.count > 0 {
@@ -83,8 +97,17 @@ class HomeTimelineModelImpl: NSObject, HomeTimelineModel {
             success?(resultDtos)
         }) {[weak self]  (err) in
             guard let strongSelf = self else { return }
+            if strongSelf.session?.state != .Opened { return }
+            
             strongSelf.completeWithLoadingDirection(.Backward)
             error?(err)
+        }
+    }
+    
+    func sessionStateChanged() {
+        if self.session?.state == .Closed {
+            homeLineTweets = []
+            twitterDAO.cancelAllRequests()
         }
     }
     

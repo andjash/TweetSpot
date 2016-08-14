@@ -14,6 +14,7 @@ class TwitterDAOImpl: NSObject, TwitterDAO {
     weak var session: TwitterSession!
     let deserializer: TweetDTODeserializer
     let workingQueue: dispatch_queue_t
+    var cancelationTokens: [String : STTwitterRequestProtocol] = [:]
     
     init(deserializer: TweetDTODeserializer, queue: dispatch_queue_t) {
         self.deserializer = deserializer
@@ -48,14 +49,16 @@ class TwitterDAOImpl: NSObject, TwitterDAO {
 //        return
         
         log.verbose("Requesting tweets: \n\tmaxId: \(maxId)\n\tminId: \(minId)\n\tcount: \(count)")
-        twitterApi.getStatusesHomeTimelineWithCount(String(count),
-                                                    sinceID: minId,
-                                                    maxID: maxId,
-                                                    trimUser: false,
-                                                    excludeReplies: true,
-                                                    contributorDetails: false,
-                                                    includeEntities: false,
+        let uuid = NSUUID().UUIDString
+        let token = twitterApi.getStatusesHomeTimelineWithCount(String(count),
+                                                                sinceID: minId,
+                                                                maxID: maxId,
+                                                                trimUser: false,
+                                                                excludeReplies: true,
+                                                                contributorDetails: false,
+                                                                includeEntities: false,
         successBlock: { (statuses) in
+            self.cancelationTokens[uuid] = nil
             log.verbose("Loaded \(statuses.count)")
             
             dispatch_async(self.workingQueue, {
@@ -64,6 +67,7 @@ class TwitterDAOImpl: NSObject, TwitterDAO {
                 log.verbose("Parsed \(tweets?.count)")
               
                 dispatch_async(dispatch_get_main_queue(), {
+                    
                     if let tweetDTOs = tweets {
                         success(tweetDTOs)
                     } else {
@@ -77,5 +81,13 @@ class TwitterDAOImpl: NSObject, TwitterDAO {
                             code: TwitterDAOError.InnerError.rawValue,
                         userInfo: [TwitterDAOConstants.innerErrorUserInfoKey : err]))
         }
+        cancelationTokens[uuid] = token
+    }
+    
+    func cancelAllRequests() {
+        for (_, token) in cancelationTokens {
+            token.cancel()
+        }
+        cancelationTokens.removeAll()
     }
 }

@@ -1,6 +1,6 @@
 "error_common_unknown" = "Произошла неизвестная ошибка";
 
-"error_twitter_session_invalid_state" = "Не удалось открыть сессия. Сессия в ошибочном состоянии";
+"error_twitter_session_invalid_state" = "Не удалось открыть сессию. Сессия в ошибочном состоянии";
 "error_twitter_web_auth_failed" = "Аутентификация через сайт не удалась";
 "error_twitter_session_creation_inner_error" = "Не удалось создать сессию. Внутренняя ошибка";
 "error_twitter_unknown" = "Неизвестная ошибка произошла при работе с twitter сессией";

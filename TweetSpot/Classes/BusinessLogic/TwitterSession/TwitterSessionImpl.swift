@@ -104,6 +104,7 @@ extension TwitterSessionImpl {
                                      screenName: nil,
                                      oauthCallback: "tssession://twitter_access_tokens/",
                                      errorBlock: { (err) in
+                                        self.state = .Closed
                                         error(self.wrapInnerError(err))
                                      })
     }
