@@ -17,12 +17,15 @@ import UIKit
     weak var spotDelegate: SpotTableDataMangerDelegate? {get set}
     var displayingAvatars: Bool { get set }
     var allItems: [SpotTweetItem]? { get }
+    var infiniteScrollEnabled: Bool { get set }
     
     func insertItemsAtTop(items: [SpotTweetItem])
     func insertItemsAtBottom(items: [SpotTweetItem])
     
     func showPullToRefreshAnimation(enabled: Bool)
     func showInfiniteScrollAnimation(enabled: Bool)
+    
+    
 }
 
 
@@ -32,6 +35,12 @@ class SpotTableDataManagerImpl: NSObject, SpotTableDataManager {
     weak var delegate: CommonTableDataManagerDelegate?
     weak var spotDelegate: SpotTableDataMangerDelegate?
     weak var tableView: UITableView!
+    var infiniteScrollEnabled: Bool = false {
+        didSet {
+            tableView.infiniteScrollingView.enabled = infiniteScrollEnabled
+            tableView.infiniteScrollingView.stopAnimating()
+        }
+    }
     
     var allItems: [SpotTweetItem]?
     var displayingAvatars = true
@@ -48,16 +57,11 @@ class SpotTableDataManagerImpl: NSObject, SpotTableDataManager {
         tableView.addInfiniteScrollingWithActionHandler {
             self.spotDelegate?.triggeredInfiteScroll()
         }
-        tableView.infiniteScrollingView.enabled = false
     }
     
     func reloadWithData(data: [AnyObject]) {
         allItems = data as? [SpotTweetItem]
         displayItemsWithoutScrolling(nil, newItemsAtBottom: nil, prevItems: allItems)
-    }
-    
-    func setInfiniteScrollEnabled(enabled: Bool) {
-        tableView?.infiniteScrollingView.enabled = enabled
     }
     
     func insertItemsAtTop(items: [SpotTweetItem]) {
@@ -78,7 +82,6 @@ class SpotTableDataManagerImpl: NSObject, SpotTableDataManager {
         displayItemsWithoutScrolling(items, newItemsAtBottom: nil, prevItems: allItems)
         
         tableView.contentInset = contentInsetAfter
-        self.tableView.infiniteScrollingView.enabled = true
     }
     
     func insertItemsAtBottom(items: [SpotTweetItem]) {

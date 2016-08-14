@@ -73,7 +73,12 @@ class SpotInteractor: NSObject, SpotInteractorInput {
                 self.promiseImageLoad(item, urlString: dto.avatarUrlStr)
                 result.append(item)
             }
-            self.output.backwardItemsLoaded(result)            
+            
+            if result.count == 0 {
+                self.output.handleNoMoreItemsAtBackward()
+            } else {
+                self.output.backwardItemsLoaded(result)
+            }
         }) { (error) in
             self.output.backwardItemsLoaded([])
             log.debug("Error while loading backward")

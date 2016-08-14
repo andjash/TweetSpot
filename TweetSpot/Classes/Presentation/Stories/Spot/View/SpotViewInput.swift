@@ -24,4 +24,6 @@ import Foundation
     
     func showAboveLoading(enabled enabled: Bool)
     func showBelowLoading(enabled enabled: Bool)
+    
+    func setInfiniteScrollingEnabled(enabled: Bool)
 }

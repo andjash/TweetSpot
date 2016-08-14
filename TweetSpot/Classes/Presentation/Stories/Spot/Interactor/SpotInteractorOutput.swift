@@ -16,4 +16,5 @@ import Foundation
     func forwardItemsLoaded(items: [SpotTweetItem])
     func backwardItemsLoaded(items: [SpotTweetItem])
     
+    func handleNoMoreItemsAtBackward()
 }

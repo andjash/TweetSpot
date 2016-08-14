@@ -13,14 +13,14 @@ class SpotPresenter: NSObject, SpotModuleInput  {
     weak var view: SpotViewInput!
     var interactor: SpotInteractorInput!
     var router: SpotRouterInput!
-
-   
+    var hasItemsAtPast = true
 }
 
 
 extension SpotPresenter : SpotViewOutput {
     
     func viewIsReady() {
+        view.setInfiniteScrollingEnabled(false)
         view.showAboveLoading(enabled: true)
         interactor.loadForwardRequested()
     }
@@ -65,11 +65,19 @@ extension SpotPresenter : SpotInteractorOutput {
     }
     
     func forwardItemsLoaded(items: [SpotTweetItem]) {
+        if items.count > 0 && hasItemsAtPast {
+            view.setInfiniteScrollingEnabled(true)
+        }
         view.displayItemsAbove(items)
     }
     
     func backwardItemsLoaded(items: [SpotTweetItem]) {
         view.displayItemsBelow(items)
+    }
+    
+    func handleNoMoreItemsAtBackward() {
+        hasItemsAtPast = false
+        view.setInfiniteScrollingEnabled(false)
     }
     
 }

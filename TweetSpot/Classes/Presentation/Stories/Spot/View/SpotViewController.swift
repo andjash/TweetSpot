@@ -73,6 +73,10 @@ extension SpotViewController : SpotViewInput {
     func setupInitialState() {
     }  
     
+    func setInfiniteScrollingEnabled(enabled: Bool) {
+        
+    }
+    
     func updateCellWithAvatars(displayRequired displayRequired: Bool) {
         if displayRequired == tableDataManager.displayingAvatars {
             return
