@@ -41,13 +41,24 @@ extension SpotPresenter : SpotViewOutput {
     func loadAboveRequested() {
         interactor.loadForwardRequested()
     }
+    
     func loadBelowRequested() {
         interactor.loadBackwardRequested()
+    }
+    
+    func didSelectItem(item: SpotTweetItem) {
+        interactor.requestDTOForItem(item)
     }
 }
 
 
 extension SpotPresenter : SpotInteractorOutput {
+    
+    func dtoFoundForItem(item: SpotTweetItem, dto: AnyObject?) {
+        if let udto = dto {
+            router.routeToTweetDetails(udto)
+        }
+    }
     
     func avatarsDisplay(required required: Bool) {
         view.updateCellWithAvatars(displayRequired:required)

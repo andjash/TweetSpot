@@ -24,4 +24,6 @@ import Foundation
     func loadAboveRequested()
     func loadBelowRequested()
     
+    func didSelectItem(item: SpotTweetItem)
+    
 }

@@ -10,6 +10,7 @@ import Foundation
 
 @objc protocol SpotInteractorOutput {
     
+    func dtoFoundForItem(item: SpotTweetItem, dto: AnyObject?)
     func avatarsDisplay(required required: Bool)
     
     func forwardItemsLoaded(items: [SpotTweetItem])

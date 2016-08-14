@@ -13,6 +13,7 @@ import Foundation
     func requestIfNeedToShowAvatars()
     func sessionCloseRequested()
     func loadForwardRequested()
-    func loadBackwardRequested()    
+    func loadBackwardRequested()
+    func requestDTOForItem(item: SpotTweetItem)
 
 }

@@ -22,5 +22,14 @@ class SpotRouter: NSObject, SpotRouterInput {
             return nil
         }
     }
+    
+    func routeToTweetDetails(withDTO: AnyObject) {
+        transitionHandler.openModuleUsingSegue?("SpotToTweetDetailsSegue").thenChainUsingBlock { (input) -> RamblerViperModuleOutput! in
+            if let tweetModuleInput = input as? TweetDetailsModuleInput {
+                tweetModuleInput.configureWithDTO(withDTO)
+            }
+            return nil
+        }
+    }
 
 }

@@ -40,6 +40,13 @@ class SpotViewController: UIViewController {
         super.viewWillAppear(animated)
         output.viewIsAboutToAppear()
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        if let selected = tableView.indexPathForSelectedRow {
+            tableView.deselectRowAtIndexPath(selected, animated: true)
+        }
+    }
 
     // MARK: Actions
     
@@ -150,5 +157,9 @@ extension SpotViewController : UITableViewDelegate {
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return SpotTweetItemCell.cellHeight(withItem: allItems![indexPath.row], displayingAvatar: displayingAvatars, tableWidth: tableView.frame.width)
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        output.didSelectItem(allItems![indexPath.row])
     }
 }

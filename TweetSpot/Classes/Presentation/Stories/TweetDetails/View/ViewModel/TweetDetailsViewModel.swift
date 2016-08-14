@@ -1,21 +1,24 @@
 //
-//  SpotTweetItem.swift
+//  TweetDetailsViewModel.swift
 //  TweetSpot
 //
-//  Created by Andrey Yashnev on 13/08/16.
+//  Created by Andrey Yashnev on 14/08/16.
 //  Copyright © 2016 Andrey Yashnev. All rights reserved.
 //
 
 import UIKit
 
-class SpotTweetItem: NSObject {
+class TweetDetailsViewModel: NSObject {
     let id: String
     let formattedPostDate: String
     let text: String
     let userName: String
     let screenName: String
     
-    var avatar: UIImage?
+    var smallAvatar: UIImage?
+    var smallAvatarRetrievedCallback: (() -> ())?
+    
+    var bigAvatar: UIImage?
     var avatarRetrievedCallback: (() -> ())?
     
     init(id: String, formattedPostDate: String, text: String, userName: String, screenName: String) {

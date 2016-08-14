@@ -30,8 +30,24 @@ class TwitterDAOImpl: NSObject, TwitterDAO {
             error(NSError(domain: TwitterDAOConstants.errorDomain, code: TwitterDAOError.InvalidSession.rawValue, userInfo: nil))
             return
         }
+//        
+//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(3 * Double(NSEC_PER_SEC))), dispatch_get_main_queue()) {
+//            var result: [TweetDTO] = []
+//            for index in 0...100 {
+//                result.append(TweetDTO(id: "\(NSDate().timeIntervalSince1970 + Double(index))",
+//                                       creationDate: NSDate(),
+//                                       text: "Cool concept art from an @H1Z1JustSurvive  intern. https://t.co/dFkZCVPrxN Cool concept art from an @H1Z1JustSurvive  intern. https://t.co/dFkZCVPrxN Cool concept art from an @H1Z1JustSurvive  intern. https://t.co/dFkZCVPrxN",
+//                                        userName: "\(NSDate().timeIntervalSince1970 + Double(index))",
+//                                        screenName: "test",
+//                                        avatarUrlString: "https://pbs.twimg.com/profile_images/699969654530248704/YWXojPmW_normal.jpg"))
+//            
+//            }
+//            
+//            success(result)
+//        }
+//        return
         
-        log.debug("Requesting tweets: \n\tmaxId: \(maxId)\n\tminId: \(minId)\n\tcount: \(count)")
+        log.verbose("Requesting tweets: \n\tmaxId: \(maxId)\n\tminId: \(minId)\n\tcount: \(count)")
         twitterApi.getStatusesHomeTimelineWithCount(String(count),
                                                     sinceID: minId,
                                                     maxID: maxId,
@@ -40,12 +56,12 @@ class TwitterDAOImpl: NSObject, TwitterDAO {
                                                     contributorDetails: false,
                                                     includeEntities: false,
         successBlock: { (statuses) in
-            log.debug("Loaded \(statuses.count)")
+            log.verbose("Loaded \(statuses.count)")
             
             dispatch_async(self.workingQueue, {
                 
                 let tweets = self.deserializer.deserializeTweetDTOsFromObject(statuses)
-                log.debug("Parsed \(tweets?.count)")
+                log.verbose("Parsed \(tweets?.count)")
               
                 dispatch_async(dispatch_get_main_queue(), {
                     if let tweetDTOs = tweets {
@@ -56,7 +72,7 @@ class TwitterDAOImpl: NSObject, TwitterDAO {
                 })
             })
         }) { (err) in
-            log.debug("Error while requestin tweets: \(err)")
+            log.error("Error while requestin tweets: \(err)")
             error(NSError(domain: TwitterDAOConstants.errorDomain,
                             code: TwitterDAOError.InnerError.rawValue,
                         userInfo: [TwitterDAOConstants.innerErrorUserInfoKey : err]))

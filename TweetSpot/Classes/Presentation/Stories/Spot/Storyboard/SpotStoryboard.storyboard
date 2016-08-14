@@ -154,6 +154,7 @@
                     <connections>
                         <outlet property="tableView" destination="SDg-Xm-gRG" id="s2u-u8-5Wz"/>
                         <segue destination="9en-tn-HMo" kind="presentation" identifier="SpotToSettingsSegue" id="N9O-IN-ioP"/>
+                        <segue destination="yyz-ln-APm" kind="show" identifier="SpotToTweetDetailsSegue" id="mrt-RU-TA7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QaF-in-4zK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -166,7 +167,15 @@
                 <viewControllerPlaceholder storyboardName="SettingsStoryboard" id="9en-tn-HMo" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fQN-87-Sgd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="814.5" y="-241"/>
+            <point key="canvasLocation" x="790.5" y="-413"/>
+        </scene>
+        <!--TweetDetailsStoryboard-->
+        <scene sceneID="D8z-Nz-wuO">
+            <objects>
+                <viewControllerPlaceholder storyboardName="TweetDetailsStoryboard" id="yyz-ln-APm" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Maw-RY-WS6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="893.5" y="-23"/>
         </scene>
     </scenes>
 </document>
