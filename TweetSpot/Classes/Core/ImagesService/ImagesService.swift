@@ -8,6 +8,11 @@
 
 import UIKit
 
+struct ImagesServiceConstants {
+    static let didStartRetreivingImageNotification = "ImagesServiceConstants.didStartRetreivingImageNotification"
+    static let didEndRetreivingImageNotification = "ImagesServiceConstants.didEndRetreivingImageNotification"
+}
+
 @objc protocol ImagesService {
     func imagePromiseForUrl(urlString: String) -> ImageRetrievePromise
 }

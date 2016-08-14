@@ -13,11 +13,11 @@ class ImagesServiceImpl: NSObject, ImagesService {
     
     func imagePromiseForUrl(urlString: String) -> ImageRetrievePromise {
         let promise = ImageRetrievePromise(urlString: urlString)
-        
-       
+        NSNotificationCenter.defaultCenter().postNotificationName(ImagesServiceConstants.didStartRetreivingImageNotification, object: self)
         let sgPromise = SGImageCache.getImageForURL(urlString)
         
         sgPromise.swiftThen({ object in
+            NSNotificationCenter.defaultCenter().postNotificationName(ImagesServiceConstants.didEndRetreivingImageNotification, object: self)
             if let image = object as? UIImage {
                 promise.image = image
             }
@@ -25,6 +25,7 @@ class ImagesServiceImpl: NSObject, ImagesService {
         })
         
         sgPromise.onFail = { (error: NSError?, wasFatal: Bool) -> () in
+            NSNotificationCenter.defaultCenter().postNotificationName(ImagesServiceConstants.didEndRetreivingImageNotification, object: self)
             promise.error = error
         }
         

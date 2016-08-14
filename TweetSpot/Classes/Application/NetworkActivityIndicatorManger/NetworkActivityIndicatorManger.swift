@@ -25,7 +25,13 @@ class NetworkActivityIndicatorManagerImpl: NSObject, NetworkActivityIndicatorMan
         NSNotificationCenter.defaultCenter().addObserver(self,
                                                          selector: #selector(NetworkActivityIndicatorManagerImpl.timelineModelStateChanged),
                                                          name: HomeTimelineModelConstants.loadingDirectionChangedNotification, object: nil)
-     
+        
+        NSNotificationCenter.defaultCenter().addObserver(self,
+                                                         selector: #selector(NetworkActivityIndicatorManagerImpl.increaseNetworkActivityIndication),
+                                                         name: ImagesServiceConstants.didStartRetreivingImageNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self,
+                                                         selector: #selector(NetworkActivityIndicatorManagerImpl.decreaseNetworkActivityIndication),
+                                                         name: ImagesServiceConstants.didEndRetreivingImageNotification, object: nil)     
     }
     
     deinit {
@@ -79,6 +85,5 @@ class NetworkActivityIndicatorManagerImpl: NSObject, NetworkActivityIndicatorMan
                 increaseNetworkActivityIndication()
             }
         }
-
     }
 }
