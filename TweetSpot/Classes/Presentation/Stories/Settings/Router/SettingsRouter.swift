@@ -13,4 +13,8 @@ class SettingsRouter: NSObject, SettingsRouterInput {
 
 	weak var transitionHandler: RamblerViperModuleTransitionHandlerProtocol!
 
+    func closeModule() {
+        transitionHandler.closeCurrentModule?(true)
+    }
+    
 }

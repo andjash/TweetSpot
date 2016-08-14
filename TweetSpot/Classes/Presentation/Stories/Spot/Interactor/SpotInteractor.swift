@@ -20,7 +20,7 @@ class SpotInteractor: NSObject, SpotInteractorInput {
     
     override init() {
         self.dateFormatter = NSDateFormatter()
-        self.dateFormatter.dateStyle = .ShortStyle
+        self.dateFormatter.dateFormat = "HH:mm dd.MM.yy"
         super.init()
     }
     
@@ -36,7 +36,7 @@ class SpotInteractor: NSObject, SpotInteractorInput {
         homeTimelineModel.loadForward({ (dtos) in
             var result: [SpotTweetItem] = []
             for dto in dtos {
-                let item = SpotTweetItem(formattedPostDate: self.dateStringFromDTODate(dto.creationDate),
+                let item = SpotTweetItem(formattedPostDate: self.dateFormatter.stringFromDate(dto.creationDate),
                     text: dto.text,
                     userName: dto.userName,
                     screenName: dto.screenName)
@@ -54,7 +54,7 @@ class SpotInteractor: NSObject, SpotInteractorInput {
         homeTimelineModel.loadBackward({ (dtos) in
             var result: [SpotTweetItem] = []
             for dto in dtos {
-                let item = SpotTweetItem(formattedPostDate: self.dateStringFromDTODate(dto.creationDate),
+                let item = SpotTweetItem(formattedPostDate: self.dateFormatter.stringFromDate(dto.creationDate),
                     text: dto.text,
                     userName: dto.userName,
                     screenName: dto.screenName)
@@ -79,15 +79,4 @@ class SpotInteractor: NSObject, SpotInteractorInput {
             }
         }
     }
-    
-    private func dateStringFromDTODate(dtoDate: NSDate) -> String {
-        if dtoDate.ts_isToday {
-            dateFormatter.dateFormat = "HH:mm"
-        } else {
-            dateFormatter.dateFormat = nil
-        }
-        
-        return dateFormatter.stringFromDate(dtoDate)
-    }
-
 }

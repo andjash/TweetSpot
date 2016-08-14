@@ -13,6 +13,7 @@ class SettingsViewController: UIViewController, SettingsViewInput {
     var output: SettingsViewOutput!
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var closeButton: UIBarButtonItem!    
     
     var sections: [SettingsSection]?
     var switchToItemMapping: [UISwitch : SettingsItem]?
@@ -23,12 +24,20 @@ class SettingsViewController: UIViewController, SettingsViewInput {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+        navigationController?.navigationBar.barTintColor = UIColor.ts_applicationPrimaryColor
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
         title = "settings_title".ts_localized("Settings")
+        closeButton.title = "common_close".ts_localized("Common")
         tableView.tableFooterView = UIView()
         output.viewIsReady()
     }
 
+    // MARK: Actions
+    
+    @IBAction func closeAction(sender: AnyObject?) {
+        output.closeRequested()
+    }
+    
     
     // MARK Private
     

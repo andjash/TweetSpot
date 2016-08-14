@@ -34,4 +34,8 @@ extension SettingsPresenter : SettingsViewOutput {
         interactor.changeRequestForItem(item)
     }
     
+    
+    func closeRequested() {
+        router.closeModule()
+    }
 }
