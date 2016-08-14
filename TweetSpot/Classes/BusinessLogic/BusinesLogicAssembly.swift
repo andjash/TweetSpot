@@ -43,6 +43,18 @@ class BusinesLogicAssembly: TyphoonAssembly, RamblerInitialAssembly {
         }
     }
     
+    dynamic func settingsService() -> AnyObject {
+        return TyphoonDefinition.withClass(UserDefaultsSettingsService.self) {
+            (definition) in
+            definition.useInitializer(NSSelectorFromString("initWithUserDefaults:")) {
+                (initializer) in
+                
+                initializer.injectParameterWith(NSUserDefaults.standardUserDefaults())
+            }
+            definition.scope = TyphoonScope.Singleton
+        }
+    }
+    
     dynamic func twitterDAO() -> AnyObject {
         return TyphoonDefinition.withClass(TwitterDAOImpl.self) {
             (definition) in

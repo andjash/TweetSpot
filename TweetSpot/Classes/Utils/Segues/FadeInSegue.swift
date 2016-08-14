@@ -12,8 +12,8 @@ class FadeInSegue: UIStoryboardSegue, UIViewControllerTransitioningDelegate {
     
     override func perform() {
         objc_setAssociatedObject(self, "FadeInSegue.DismissAnimator", self, .OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-        self.destinationViewController.transitioningDelegate = self
-        self.sourceViewController.presentViewController(self.destinationViewController, animated: true, completion: nil)
+        destinationViewController.transitioningDelegate = self
+        sourceViewController.presentViewController(self.destinationViewController, animated: true, completion: nil)
     }
     
     // MARK: UIViewControllerTransitioningDelegate

@@ -35,13 +35,13 @@ class SpotViewController: UIViewController {
         
         output.viewIsReady()
     }
-
-
-    // MARK: SpotViewInput
-    func setupInitialState() {
-    }
     
-    // MARK: Action
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        output.viewIsAboutToAppear()
+    }
+
+    // MARK: Actions
     
     @IBAction func quitAction(sender: AnyObject?) {
         output.quitRequested()
@@ -55,6 +55,18 @@ class SpotViewController: UIViewController {
 
 
 extension SpotViewController : SpotViewInput {
+    
+    func setupInitialState() {
+        
+    }
+    
+    func updateCellWithAvatars(displayRequired displayRequired: Bool) {
+        if displayingAvatars == displayRequired {
+            return
+        }
+        displayingAvatars = displayRequired
+        tableView.reloadData()
+    }
 
     func displayItemsAbove(items: [SpotTweetItem]) {
         self.tableView.pullToRefreshView.stopAnimating()

@@ -1,3 +1,4 @@
 "settings_title" = "Настройки";
 
-"settings_item_show_avatars_on_spot" = "Отображать аватарки в домашней ленте";
+"settings_spot_section_title" = "Настройки Spot";
+"settings_spot_show_avatars" = "Отображать аватарки на экране Spot";

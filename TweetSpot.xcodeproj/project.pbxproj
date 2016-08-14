@@ -43,7 +43,6 @@
 		553F7BA41D5DD0EE00541F38 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553F7BA31D5DD0EE00541F38 /* String+Extensions.swift */; };
 		5554CE3A1D5FA99400F82966 /* SettingsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5554CE391D5FA99400F82966 /* SettingsStoryboard.storyboard */; };
 		5554CE3D1D5FAC0F00F82966 /* Settings.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5554CE3F1D5FAC0F00F82966 /* Settings.strings */; };
-		5554CE431D5FAD4F00F82966 /* infoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5554CE451D5FAD4F00F82966 /* infoPlist.strings */; };
 		55B061BB1D5E1DA000490B44 /* Common.strings in Resources */ = {isa = PBXBuildFile; fileRef = 55B061BD1D5E1DA000490B44 /* Common.strings */; };
 		55B061C01D5E241300490B44 /* NSError+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B061BF1D5E241300490B44 /* NSError+Extensions.swift */; };
 		55B061C31D5E26E800490B44 /* Errors.strings in Resources */ = {isa = PBXBuildFile; fileRef = 55B061C51D5E26E800490B44 /* Errors.strings */; };
@@ -68,6 +67,11 @@
 		55B0620B1D5F4ED100490B44 /* InMemoryHomeTimelineStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B0620A1D5F4ED100490B44 /* InMemoryHomeTimelineStorage.swift */; };
 		55B0620E1D5F517400490B44 /* SpotTweetItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B0620D1D5F517400490B44 /* SpotTweetItem.swift */; };
 		55B062111D5F53B400490B44 /* SpotTweetItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B062101D5F53B400490B44 /* SpotTweetItemCell.swift */; };
+		55C5ABCC1D6042EC00CC5880 /* SettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C5ABCB1D6042EC00CC5880 /* SettingsService.swift */; };
+		55C5ABCE1D60437500CC5880 /* UserDefaultsSettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C5ABCD1D60437500CC5880 /* UserDefaultsSettingsService.swift */; };
+		55C5ABD11D60452700CC5880 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C5ABD01D60452700CC5880 /* SettingsCell.swift */; };
+		55C5ABD41D60479500CC5880 /* SettingsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C5ABD31D60479500CC5880 /* SettingsItem.swift */; };
+		55C5ABDA1D6052E200CC5880 /* SettingsSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C5ABD91D6052E200CC5880 /* SettingsSwitch.swift */; };
 		55DF60A01D5E0EB9006B7BFD /* SpotStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55DF609F1D5E0EB9006B7BFD /* SpotStoryboard.storyboard */; };
 		55DF60A31D5E1305006B7BFD /* Root.strings in Resources */ = {isa = PBXBuildFile; fileRef = 55DF60A51D5E1305006B7BFD /* Root.strings */; };
 		55FB49931D5F760900D0869C /* CustomPullToRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FB49921D5F760900D0869C /* CustomPullToRefreshView.swift */; };
@@ -161,8 +165,6 @@
 		5554CE391D5FA99400F82966 /* SettingsStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SettingsStoryboard.storyboard; sourceTree = "<group>"; };
 		5554CE3E1D5FAC0F00F82966 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Settings.strings; sourceTree = "<group>"; };
 		5554CE401D5FAC1200F82966 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Settings.strings; sourceTree = "<group>"; };
-		5554CE471D5FAD5300F82966 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/infoPlist.strings; sourceTree = "<group>"; };
-		5554CE481D5FAD5800F82966 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/infoPlist.strings; sourceTree = "<group>"; };
 		55B061BC1D5E1DA000490B44 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Common.strings; sourceTree = "<group>"; };
 		55B061BE1D5E1DA200490B44 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Common.strings; sourceTree = "<group>"; };
 		55B061BF1D5E241300490B44 /* NSError+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSError+Extensions.swift"; sourceTree = "<group>"; };
@@ -189,6 +191,11 @@
 		55B0620A1D5F4ED100490B44 /* InMemoryHomeTimelineStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InMemoryHomeTimelineStorage.swift; sourceTree = "<group>"; };
 		55B0620D1D5F517400490B44 /* SpotTweetItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotTweetItem.swift; sourceTree = "<group>"; };
 		55B062101D5F53B400490B44 /* SpotTweetItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotTweetItemCell.swift; sourceTree = "<group>"; };
+		55C5ABCB1D6042EC00CC5880 /* SettingsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsService.swift; sourceTree = "<group>"; };
+		55C5ABCD1D60437500CC5880 /* UserDefaultsSettingsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsSettingsService.swift; sourceTree = "<group>"; };
+		55C5ABD01D60452700CC5880 /* SettingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
+		55C5ABD31D60479500CC5880 /* SettingsItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsItem.swift; sourceTree = "<group>"; };
+		55C5ABD91D6052E200CC5880 /* SettingsSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsSwitch.swift; sourceTree = "<group>"; };
 		55DF609F1D5E0EB9006B7BFD /* SpotStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SpotStoryboard.storyboard; sourceTree = "<group>"; };
 		55DF60A41D5E1305006B7BFD /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Root.strings; sourceTree = "<group>"; };
 		55DF60A61D5E1309006B7BFD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Root.strings; sourceTree = "<group>"; };
@@ -258,6 +265,8 @@
 				CA03D2B2CD415B41F7F28CF8 /* SettingsViewInput.swift */,
 				8F80B3961DAB717ADBDE92E7 /* SettingsViewOutput.swift */,
 				7B3F605FE74D6C946DE2BDB2 /* SettingsViewController.swift */,
+				55C5ABD21D60477F00CC5880 /* ViewModel */,
+				55C5ABCF1D6044E500CC5880 /* Cells */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -531,7 +540,6 @@
 				55B061BD1D5E1DA000490B44 /* Common.strings */,
 				55B061C51D5E26E800490B44 /* Errors.strings */,
 				5554CE3F1D5FAC0F00F82966 /* Settings.strings */,
-				5554CE451D5FAD4F00F82966 /* infoPlist.strings */,
 			);
 			path = Strings;
 			sourceTree = "<group>";
@@ -551,6 +559,7 @@
 				55B061DD1D5F1C7100490B44 /* TwitterDAO */,
 				55B061E31D5F1C7100490B44 /* TwitterSession */,
 				55B061FF1D5F204700490B44 /* HomeTimelineModel */,
+				55C5ABCA1D6042D900CC5880 /* SettingsService */,
 				55B062021D5F20C300490B44 /* Model */,
 			);
 			path = BusinessLogic;
@@ -664,6 +673,32 @@
 				55B062101D5F53B400490B44 /* SpotTweetItemCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		55C5ABCA1D6042D900CC5880 /* SettingsService */ = {
+			isa = PBXGroup;
+			children = (
+				55C5ABCB1D6042EC00CC5880 /* SettingsService.swift */,
+				55C5ABCD1D60437500CC5880 /* UserDefaultsSettingsService.swift */,
+			);
+			path = SettingsService;
+			sourceTree = "<group>";
+		};
+		55C5ABCF1D6044E500CC5880 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				55C5ABD01D60452700CC5880 /* SettingsCell.swift */,
+				55C5ABD91D6052E200CC5880 /* SettingsSwitch.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		55C5ABD21D60477F00CC5880 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				55C5ABD31D60479500CC5880 /* SettingsItem.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		55DF609E1D5E0EAB006B7BFD /* Storyboard */ = {
@@ -920,7 +955,6 @@
 				553F7B9B1D5DCA0700541F38 /* LoginStoryboard.storyboard in Resources */,
 				553F7B7A1D5DBAD700541F38 /* LaunchScreen.storyboard in Resources */,
 				553F7B881D5DBAD700541F38 /* Assets.xcassets in Resources */,
-				5554CE431D5FAD4F00F82966 /* infoPlist.strings in Resources */,
 				55DF60A01D5E0EB9006B7BFD /* SpotStoryboard.storyboard in Resources */,
 				553F7B9F1D5DD0C500541F38 /* Login.strings in Resources */,
 				553F7B7B1D5DBAD700541F38 /* Main.storyboard in Resources */,
@@ -1002,6 +1036,7 @@
 				553F7B901D5DBF2D00541F38 /* UIColor+Extensions.swift in Sources */,
 				553F7B831D5DBAD700541F38 /* NavigationRootRouterInput.swift in Sources */,
 				55B061F21D5F1C7100490B44 /* TweetDTODeserializer.swift in Sources */,
+				55C5ABDA1D6052E200CC5880 /* SettingsSwitch.swift in Sources */,
 				55B0620B1D5F4ED100490B44 /* InMemoryHomeTimelineStorage.swift in Sources */,
 				553F7B821D5DBAD700541F38 /* NavigationRootRouter.swift in Sources */,
 				553F7B8B1D5DBB3100541F38 /* ApplicationAssembly.swift in Sources */,
@@ -1044,10 +1079,13 @@
 				55B061F31D5F1C7100490B44 /* TweetDTODictionaryDeserializer.swift in Sources */,
 				55B061F11D5F1C7100490B44 /* BusinesLogicAssembly.swift in Sources */,
 				2F6B9B3145F852C644E231A5 /* LoginInteractorOutput.swift in Sources */,
+				55C5ABD11D60452700CC5880 /* SettingsCell.swift in Sources */,
 				A8668A4869942910B58DD3B7 /* LoginInteractor.swift in Sources */,
 				00ED40C1B3A1B86EC86EED9E /* LoginRouterInput.swift in Sources */,
+				55C5ABCC1D6042EC00CC5880 /* SettingsService.swift in Sources */,
 				55B0620E1D5F517400490B44 /* SpotTweetItem.swift in Sources */,
 				3CB6F2D1B911272743922AEB /* LoginRouter.swift in Sources */,
+				55C5ABCE1D60437500CC5880 /* UserDefaultsSettingsService.swift in Sources */,
 				55B061C01D5E241300490B44 /* NSError+Extensions.swift in Sources */,
 				26948A3752703CA02E0F26F3 /* SpotAssembly.swift in Sources */,
 				89A5EA3E8FB2B71C188BCBC2 /* SpotViewInput.swift in Sources */,
@@ -1064,6 +1102,7 @@
 				6CE3F3A2AEEB632F21896C52 /* SpotInteractor.swift in Sources */,
 				7D2FC4F9704577721D05786D /* SpotRouterInput.swift in Sources */,
 				8B0BB1BC173A2621710BD1E5 /* SpotRouter.swift in Sources */,
+				55C5ABD41D60479500CC5880 /* SettingsItem.swift in Sources */,
 				A25CF1873E3B46F54C608B38 /* SettingsAssembly.swift in Sources */,
 				FFD93E55F00C1AFE64DAF9BE /* SettingsViewInput.swift in Sources */,
 				DEE913AD37DF7D8A886F8449 /* SettingsViewOutput.swift in Sources */,
@@ -1129,15 +1168,6 @@
 				5554CE401D5FAC1200F82966 /* en */,
 			);
 			name = Settings.strings;
-			sourceTree = "<group>";
-		};
-		5554CE451D5FAD4F00F82966 /* infoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5554CE471D5FAD5300F82966 /* ru */,
-				5554CE481D5FAD5800F82966 /* en */,
-			);
-			name = infoPlist.strings;
 			sourceTree = "<group>";
 		};
 		55B061BD1D5E1DA000490B44 /* Common.strings */ = {

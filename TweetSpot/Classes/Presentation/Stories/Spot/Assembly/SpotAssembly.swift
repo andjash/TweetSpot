@@ -30,7 +30,7 @@ class SpotAssembly: TyphoonAssembly, RamblerInitialAssembly {
             definition.injectProperty("session", with: self.businessLogicAssembly.twitterSessionService())
             definition.injectProperty("homeTimelineModel", with: self.businessLogicAssembly.homeTimelineModel())
             definition.injectProperty("imagesService", with: self.coreServices.imagesService())            
-            
+            definition.injectProperty("settingsSvc", with: self.businessLogicAssembly.settingsService())
         }
     }
 

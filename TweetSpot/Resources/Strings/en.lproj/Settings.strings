@@ -1,3 +1,4 @@
 "settings_title" = "Settings";
 
-"settings_item_show_avatars_on_spot" = "Display users avatars on home timeline";
+"settings_spot_section_title" = "Spot settings";
+"settings_spot_show_avatars" = "Display users avatars on Spot";

@@ -10,6 +10,7 @@ import Foundation
 
 @objc protocol SpotInteractorInput {
     
+    func requestIfNeedToShowAvatars()
     func sessionCloseRequested()
     func loadForwardRequested()
     func loadBackwardRequested()    

@@ -14,6 +14,7 @@ class SpotInteractor: NSObject, SpotInteractorInput {
     weak var session: TwitterSession!
     weak var homeTimelineModel: HomeTimelineModel!
     weak var imagesService: ImagesService!
+    weak var settingsSvc: SettignsService!
     
     let dateFormatter: NSDateFormatter
     
@@ -23,6 +24,9 @@ class SpotInteractor: NSObject, SpotInteractorInput {
         super.init()
     }
     
+    func requestIfNeedToShowAvatars() {
+        output.avatarsDisplay(required: self.settingsSvc.shouldDisplayUserAvatarsOnSpot)
+    }
     
     func sessionCloseRequested() {
         session.closeSession()
@@ -53,7 +57,7 @@ class SpotInteractor: NSObject, SpotInteractorInput {
                 let item = SpotTweetItem(formattedPostDate: self.dateStringFromDTODate(dto.creationDate),
                     text: dto.text,
                     userName: dto.userName,
-                    screenName: "@todo")
+                    screenName: dto.screenName)
                 self.promiseImageLoad(item, urlString: dto.avatarUrlStr)
                 result.append(item)
             }

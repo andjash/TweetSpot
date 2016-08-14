@@ -9,5 +9,7 @@
 import Foundation
 
 @objc protocol SettingsInteractorOutput {
+    
+    func needToUpdateWithSections(sections: [SettingsSection])
 
 }

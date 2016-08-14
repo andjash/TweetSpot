@@ -11,6 +11,8 @@ import RamblerTyphoonUtils
 import Typhoon
 
 class SettingsAssembly: TyphoonAssembly, RamblerInitialAssembly {
+    
+    var businessLogic: BusinesLogicAssembly!
 
     dynamic func viewSettingsModule() -> AnyObject {
         return TyphoonDefinition.withClass(SettingsViewController.self) {
@@ -23,8 +25,13 @@ class SettingsAssembly: TyphoonAssembly, RamblerInitialAssembly {
     dynamic func interactorSettingsModule() -> AnyObject {
         return TyphoonDefinition.withClass(SettingsInteractor.self) {
             (definition) in
-            definition.injectProperty("output", with: self.presenterSettingsModule())       
-        }
+            definition.useInitializer(NSSelectorFromString("initWithSettingsSvc:")) {
+                (initializer) in
+                
+                initializer.injectParameterWith(self.businessLogic.settingsService())
+            }
+            definition.injectProperty("output", with: self.presenterSettingsModule())
+        }                              
     }
 
     dynamic func presenterSettingsModule() -> AnyObject {

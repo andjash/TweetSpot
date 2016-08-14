@@ -16,4 +16,5 @@ import Foundation
     */
 
     func setupInitialState()
+    func showSettings(sections: [SettingsSection])
 }

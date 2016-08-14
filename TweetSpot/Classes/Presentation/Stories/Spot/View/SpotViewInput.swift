@@ -16,6 +16,9 @@ import Foundation
     */
 
     func setupInitialState()
+    
+    func updateCellWithAvatars(displayRequired displayRequired: Bool)
+    
     func displayItemsAbove(items: [SpotTweetItem])
     func displayItemsBelow(items: [SpotTweetItem])
     

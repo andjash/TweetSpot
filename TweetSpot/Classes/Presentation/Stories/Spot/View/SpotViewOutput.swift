@@ -16,6 +16,7 @@ import Foundation
     */
 
     func viewIsReady()
+    func viewIsAboutToAppear()
     
     func quitRequested()
     func settingsRequested()

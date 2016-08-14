@@ -8,13 +8,30 @@
 
 import Foundation
 
-class SettingsPresenter: NSObject, SettingsModuleInput, SettingsViewOutput, SettingsInteractorOutput {
-
+class SettingsPresenter: NSObject, SettingsModuleInput {
+  
     weak var view: SettingsViewInput!
     var interactor: SettingsInteractorInput!
     var router: SettingsRouterInput!
+   
+}
 
-    func viewIsReady() {
-
+extension SettingsPresenter : SettingsInteractorOutput {    
+    
+    func needToUpdateWithSections(sections: [SettingsSection]) {
+        view.showSettings(sections)
     }
+    
+}
+
+extension SettingsPresenter : SettingsViewOutput {
+    
+    func viewIsReady() {
+       interactor.requestSettingsSections()
+    }
+    
+    func selectedItem(item: SettingsItem) {
+        interactor.changeRequestForItem(item)
+    }
+    
 }

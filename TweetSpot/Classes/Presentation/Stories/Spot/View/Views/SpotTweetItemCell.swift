@@ -17,7 +17,7 @@ class SpotTweetItemCell: UITableViewCell {
     @IBOutlet weak var avatarContainerWidth: NSLayoutConstraint!
     @IBOutlet weak var avatarRightSpace: NSLayoutConstraint!
     
-    private var currentItem: SpotTweetItem?
+    var currentItem: SpotTweetItem?
     
     static func cellHeight(withItem item: SpotTweetItem, displayingAvatar: Bool, tableWidth: CGFloat) -> CGFloat {
         var result: CGFloat = 0

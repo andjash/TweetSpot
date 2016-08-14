@@ -16,4 +16,5 @@ import Foundation
     */
 
     func viewIsReady()
+    func selectedItem(item: SettingsItem)
 }
