@@ -22,7 +22,7 @@ class SocialAccountsServiceImpl: NSObject, SocialAccountsService {
         
         let accountType = accountStore.accountTypeWithAccountTypeIdentifier(ACAccountTypeIdentifierTwitter)
         
-        accountStore.requestAccessToAccountsWithType(accountType, options: nil) { [unowned self] (granted, err) in
+        accountStore.requestAccessToAccountsWithType(accountType, options: nil) {(granted, err) in
             dispatch_async(dispatch_get_main_queue(), { 
                 if !granted {
                     error(NSError(domain: SocialAccountsServiceConstants.errorDomain, code: SocialAccountsServiceError.AccessDenied.rawValue, userInfo: nil))

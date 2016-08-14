@@ -100,7 +100,9 @@ class SpotInteractor: NSObject, SpotInteractorInput {
                 self.pendingForwardRequest = false
                 self.output.forwardItemsLoaded(result)
             } else {
-                self.output.prefetchedItemsAvailable(result)
+                if result.count > 0 {
+                    self.output.prefetchedItemsAvailable(result)
+                }
             }
             
             self.schedulePrefetchIfNeeded()

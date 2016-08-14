@@ -33,6 +33,7 @@ class TwitterSessionImpl: NSObject, TwitterSession {
     var twitterApi: STTwitterAPI? {
         didSet {
             apiAccessObject = twitterApi
+            twitterApi?.setTimeoutInSeconds(40)
         }
     }
     var apiAccessObject: AnyObject?
@@ -58,12 +59,12 @@ class TwitterSessionImpl: NSObject, TwitterSession {
         
         state = .Progress
         twitterApi = STTwitterAPI.twitterAPIOSWithAccount(account, delegate: self)
-        twitterApi?.verifyCredentialsWithUserSuccessBlock({[unowned self] (username, userID) in
+        twitterApi?.verifyCredentialsWithUserSuccessBlock({ (username, userID) in
             self.state = .Opened
             self.tokenStorage?.clearStorage()
             self.tokenStorage?.storeIOSAccount(account)
             success()
-        }, errorBlock: {[unowned self] (err) in
+        }, errorBlock: { (err) in
             error(self.wrapInnerError(err))
         })
     }
@@ -97,19 +98,19 @@ extension TwitterSessionImpl {
         }
         state = .Progress
         twitterApi = STTwitterAPI(OAuthConsumerKey: consumerKey, consumerSecret: consumerSecret)
-        twitterApi?.postTokenRequest({[unowned self] (url, oauthToken) in self.proceedWithWebAuth(url, success: success, error: error) },
+        twitterApi?.postTokenRequest({ (url, oauthToken) in self.proceedWithWebAuth(url, success: success, error: error) },
                                      authenticateInsteadOfAuthorize: false,
                                      forceLogin: true,
                                      screenName: nil,
                                      oauthCallback: "tssession://twitter_access_tokens/",
-                                     errorBlock: { [unowned self] (err) in
+                                     errorBlock: { (err) in
                                         error(self.wrapInnerError(err))
                                      })
     }
     
     
     func proceedWithWebAuth(url: NSURL, success: () -> (), error: (NSError) -> ()) {
-        self.webAuthHandler.handleWebAuthRequest(url, success: {[unowned self] (tokenVerificator) in
+        webAuthHandler.handleWebAuthRequest(url, success: {(tokenVerificator) in
             self.twitterApi?.postAccessTokenRequestWithPIN(tokenVerificator, successBlock: { (token, secret, userId, userName) in
                 self.oAuthAccessToken = token
                 self.oAuthAccessTokenSecret = secret
@@ -118,11 +119,11 @@ extension TwitterSessionImpl {
                 self.tokenStorage?.storeOAuthTokenSecret(secret)
                 self.state = .Opened
                 success()
-            }, errorBlock: {[unowned self] (err) in
+            }, errorBlock: { (err) in
                 self.state = .Closed
                 error(NSError(domain: TwitterSessionConstants.errorDomain, code: TwitterSessionError.WebAuthFailed.rawValue, userInfo: nil))
             })
-        }) {[unowned self] (err) in
+        }) {(err) in
             self.state = .Closed
             error(err)
         }
@@ -145,16 +146,16 @@ private extension TwitterSessionImpl {
         state = .Progress
         
         let verifyCallback : () -> () = {
-            self.twitterApi?.verifyCredentialsWithUserSuccessBlock({ [unowned self]  (first, second) in
+            self.twitterApi?.verifyCredentialsWithUserSuccessBlock({ (first, second) in
                 self.state = .Opened
-            }, errorBlock: {[unowned self]  (err) in
+            }, errorBlock: { (err) in
                 self.state = .Closed
                 self.twitterApi = nil
             })
         }
         
-        self.tryToRestoreLocalAccount(verifyCallback) { [unowned self] in
-            self.tryToRestorePasswordAccount(verifyCallback , error: { [unowned self] in
+        self.tryToRestoreLocalAccount(verifyCallback) {
+            self.tryToRestorePasswordAccount(verifyCallback , error: {
                     self.state = .Closed
             })
         }

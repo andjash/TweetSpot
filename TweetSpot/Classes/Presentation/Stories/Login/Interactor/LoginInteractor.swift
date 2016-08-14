@@ -18,10 +18,10 @@ class LoginInteractor: NSObject, LoginInteractorInput {
     
     func loginWithIOSAccountRequested() {
         
-        socAccountsService.requestIOSTwitterAccouns({[unowned self] (accounts) in
+        socAccountsService.requestIOSTwitterAccouns({ (accounts) in
             self.accounts = accounts
             self.output.chooseFromLocalAccountsWithNames(accounts.map({$0.username}))            
-        }) {[unowned self] (error) in
+        }) {(error) in
             self.output.loginFailed(error)
         }
         
@@ -40,7 +40,7 @@ class LoginInteractor: NSObject, LoginInteractorInput {
         guard let accs = accounts else { return }
         for acc in accs {
             if acc.username == username {
-                self.twitterSession.openSessionWihtIOSAccount(acc, success: {[unowned self] in
+                self.twitterSession.openSessionWihtIOSAccount(acc, success: {
                     self.output.loginSuccess()
                 }, error: { (error) in
                     self.output.loginFailed(error)

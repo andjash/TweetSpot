@@ -23,13 +23,13 @@ extension LoginPresenter : LoginViewOutput{
     }
     
     func loginWithIosAccountTapped() {
-        view.displayProgres(enabled: true) { [unowned self] in
+        view.displayProgres(enabled: true) {
             self.interactor.loginWithIOSAccountRequested()
         }
     }
     
     func loginWithPasswordTapped() {
-        view.displayProgres(enabled: true) { [unowned self] in
+        view.displayProgres(enabled: true) {
             self.interactor.loginWithPasswordRequested()
         }
     }
@@ -51,7 +51,7 @@ extension LoginPresenter : LoginInteractorOutput {
     }
     
     func loginFailed(error: NSError) {
-        view.displayProgres(enabled: false) { [unowned self] in
+        view.displayProgres(enabled: false) {
             self.view.displayError(error)
         }
     }

@@ -27,7 +27,7 @@ extension NavigationRootPresenter : NavigationRootViewOutput {
     
     func viewIsAppeared() {
         if !viewIsAppearedOnce {
-            view.showAppLaunchAnimation({ [unowned self] in
+            view.showAppLaunchAnimation({
                 self.interactor.trackSessionToDecideNextModule()
             })
             viewIsAppearedOnce = true
