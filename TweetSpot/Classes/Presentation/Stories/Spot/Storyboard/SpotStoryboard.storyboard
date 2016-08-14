@@ -123,10 +123,6 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="jub-qS-gcD" id="Msq-1H-6LW"/>
-                                    <outlet property="delegate" destination="jub-qS-gcD" id="00W-vI-11H"/>
-                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

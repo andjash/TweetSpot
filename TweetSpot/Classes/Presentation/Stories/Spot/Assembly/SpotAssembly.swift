@@ -19,7 +19,8 @@ class SpotAssembly: TyphoonAssembly, RamblerInitialAssembly {
         return TyphoonDefinition.withClass(SpotViewController.self) {
             (definition) in
             definition.injectProperty("output", with: self.presenterSpotModule())
-            definition.injectProperty("moduleInput", with: self.presenterSpotModule())          
+            definition.injectProperty("moduleInput", with: self.presenterSpotModule())
+            definition.injectProperty("tableDataManager", with: self.spotTableDataManger())
         }
     }
 
@@ -47,6 +48,12 @@ class SpotAssembly: TyphoonAssembly, RamblerInitialAssembly {
         return TyphoonDefinition.withClass(SpotRouter.self) {
             (definition) in
             definition.injectProperty("transitionHandler", with: self.viewSpotModule())       
+        }
+    }
+    
+    dynamic func spotTableDataManger() -> AnyObject {
+        return TyphoonDefinition.withClass(SpotTableDataManagerImpl.self) {
+            (definition) in
         }
     }
 }

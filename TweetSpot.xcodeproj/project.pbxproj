@@ -77,6 +77,8 @@
 		55C5ABE21D6065A800CC5880 /* CustomPullToRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C5ABE01D6065A800CC5880 /* CustomPullToRefreshView.swift */; };
 		55C5ABE31D6065A800CC5880 /* CustomPullToRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55C5ABE11D6065A800CC5880 /* CustomPullToRefreshView.xib */; };
 		55C5ABE61D606ABE00CC5880 /* TweetDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C5ABE51D606ABE00CC5880 /* TweetDetailsViewModel.swift */; };
+		55C5ABE91D60972B00CC5880 /* CommonTableDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C5ABE81D60972B00CC5880 /* CommonTableDataManager.swift */; };
+		55C5ABEC1D60975600CC5880 /* SpotTableDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C5ABEB1D60975600CC5880 /* SpotTableDataManager.swift */; };
 		55DF60A01D5E0EB9006B7BFD /* SpotStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55DF609F1D5E0EB9006B7BFD /* SpotStoryboard.storyboard */; };
 		55DF60A31D5E1305006B7BFD /* Root.strings in Resources */ = {isa = PBXBuildFile; fileRef = 55DF60A51D5E1305006B7BFD /* Root.strings */; };
 		55FB49971D5F77C700D0869C /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FB49961D5F77C700D0869C /* UIView+Extensions.swift */; };
@@ -217,6 +219,8 @@
 		55C5ABE01D6065A800CC5880 /* CustomPullToRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPullToRefreshView.swift; sourceTree = "<group>"; };
 		55C5ABE11D6065A800CC5880 /* CustomPullToRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomPullToRefreshView.xib; sourceTree = "<group>"; };
 		55C5ABE51D606ABE00CC5880 /* TweetDetailsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetDetailsViewModel.swift; sourceTree = "<group>"; };
+		55C5ABE81D60972B00CC5880 /* CommonTableDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonTableDataManager.swift; sourceTree = "<group>"; };
+		55C5ABEB1D60975600CC5880 /* SpotTableDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotTableDataManager.swift; sourceTree = "<group>"; };
 		55DF609F1D5E0EB9006B7BFD /* SpotStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SpotStoryboard.storyboard; sourceTree = "<group>"; };
 		55DF60A41D5E1305006B7BFD /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Root.strings; sourceTree = "<group>"; };
 		55DF60A61D5E1309006B7BFD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Root.strings; sourceTree = "<group>"; };
@@ -416,6 +420,7 @@
 		553F7B5A1D5DBAD700541F38 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				55C5ABE71D60971E00CC5880 /* Protocols */,
 				55C5ABDE1D6065A800CC5880 /* CommonViews */,
 				553F7B5F1D5DBAD700541F38 /* Stories */,
 				553F7B5B1D5DBAD700541F38 /* LaunchScreen.storyboard */,
@@ -756,6 +761,7 @@
 			isa = PBXGroup;
 			children = (
 				55C5ABDF1D6065A800CC5880 /* PullToRefreshView */,
+				55C5ABE81D60972B00CC5880 /* CommonTableDataManager.swift */,
 			);
 			path = CommonViews;
 			sourceTree = "<group>";
@@ -775,6 +781,21 @@
 				55C5ABE51D606ABE00CC5880 /* TweetDetailsViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		55C5ABE71D60971E00CC5880 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		55C5ABEA1D60974C00CC5880 /* TableDataManger */ = {
+			isa = PBXGroup;
+			children = (
+				55C5ABEB1D60975600CC5880 /* SpotTableDataManager.swift */,
+			);
+			path = TableDataManger;
 			sourceTree = "<group>";
 		};
 		55DF609E1D5E0EAB006B7BFD /* Storyboard */ = {
@@ -889,6 +910,7 @@
 				C5F613BFCD7AC396EEAF3620 /* SpotViewController.swift */,
 				55B0620C1D5F515900490B44 /* ViewModel */,
 				55B0620F1D5F539C00490B44 /* Views */,
+				55C5ABEA1D60974C00CC5880 /* TableDataManger */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1222,6 +1244,7 @@
 				8B57E6C3F171152B97CBF72E /* SettingsInteractor.swift in Sources */,
 				F69CF8817A032DB34028AB70 /* SettingsRouterInput.swift in Sources */,
 				B170FC28CC725F41329FC907 /* SettingsRouter.swift in Sources */,
+				55C5ABEC1D60975600CC5880 /* SpotTableDataManager.swift in Sources */,
 				58F2E8CC6F9A8469B85CA87B /* TweetDetailsAssembly.swift in Sources */,
 				91AD5F6E11B4005F5CA6C3FA /* TweetDetailsViewInput.swift in Sources */,
 				9EA139DF179D039033C42B5E /* TweetDetailsViewOutput.swift in Sources */,
@@ -1231,6 +1254,7 @@
 				7811E6CEE05ACFD1C67211B6 /* TweetDetailsInteractorInput.swift in Sources */,
 				BD53F9ED1E63C00AF7E2BB0D /* TweetDetailsInteractorOutput.swift in Sources */,
 				AB98F04A505E2A46396142AB /* TweetDetailsInteractor.swift in Sources */,
+				55C5ABE91D60972B00CC5880 /* CommonTableDataManager.swift in Sources */,
 				D84202F7B916307157C3BAAA /* TweetDetailsRouterInput.swift in Sources */,
 				807BE0890FDF402135ECA260 /* TweetDetailsRouter.swift in Sources */,
 			);

@@ -30,10 +30,10 @@ class TwitterDAOImpl: NSObject, TwitterDAO {
             error(NSError(domain: TwitterDAOConstants.errorDomain, code: TwitterDAOError.InvalidSession.rawValue, userInfo: nil))
             return
         }
-//        
-//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(3 * Double(NSEC_PER_SEC))), dispatch_get_main_queue()) {
+        
+//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(1.5 * Double(NSEC_PER_SEC))), dispatch_get_main_queue()) {
 //            var result: [TweetDTO] = []
-//            for index in 0...100 {
+//            for index in 0..<10 {
 //                result.append(TweetDTO(id: "\(NSDate().timeIntervalSince1970 + Double(index))",
 //                                       creationDate: NSDate(),
 //                                       text: "Cool concept art from an @H1Z1JustSurvive  intern. https://t.co/dFkZCVPrxN Cool concept art from an @H1Z1JustSurvive  intern. https://t.co/dFkZCVPrxN Cool concept art from an @H1Z1JustSurvive  intern. https://t.co/dFkZCVPrxN",

@@ -16,6 +16,4 @@ import Foundation
     func forwardItemsLoaded(items: [SpotTweetItem])
     func backwardItemsLoaded(items: [SpotTweetItem])
     
-    func forwardProgressUpdated(enabled enabled: Bool)
-    func backwardProgressUpdated(enabled enabled: Bool)
 }

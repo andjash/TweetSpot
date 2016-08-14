@@ -56,7 +56,7 @@ class SpotInteractor: NSObject, SpotInteractorInput {
             }
             self.output.forwardItemsLoaded(result)
         }) { (error) in
-            self.output.forwardProgressUpdated(enabled: false)
+            self.output.forwardItemsLoaded([])
             log.debug("Error while loading forward")
         }
     }
@@ -75,7 +75,7 @@ class SpotInteractor: NSObject, SpotInteractorInput {
             }
             self.output.backwardItemsLoaded(result)            
         }) { (error) in
-            self.output.backwardProgressUpdated(enabled: false)
+            self.output.backwardItemsLoaded([])
             log.debug("Error while loading backward")
         }
     }

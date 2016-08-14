@@ -71,14 +71,6 @@ extension SpotPresenter : SpotInteractorOutput {
     func backwardItemsLoaded(items: [SpotTweetItem]) {
         view.displayItemsBelow(items)
     }
-        
-    func forwardProgressUpdated(enabled enabled: Bool) {
-        view.showAboveLoading(enabled: enabled)
-    }
-    
-    func backwardProgressUpdated(enabled enabled: Bool) {
-        view.showBelowLoading(enabled: enabled)
-    }
     
 }
 
