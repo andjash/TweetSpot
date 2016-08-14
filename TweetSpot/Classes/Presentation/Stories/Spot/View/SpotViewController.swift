@@ -19,6 +19,10 @@ class SpotViewController: UIViewController {
     @IBOutlet weak var newTweetsButton: UIButton!
     @IBOutlet weak var newTweetsButtonTopSpace: NSLayoutConstraint!
     
+    deinit {
+        log.debug("Deinit on \(self)")
+    }
+    
     // MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -116,6 +120,12 @@ extension SpotViewController : SpotViewInput {
         if displayRequired == tableDataManager.displayingAvatars {
             return
         }
+        if displayRequired {
+            if let allItems = self.tableDataManager.allItems {
+                output.avatarsLoadRequestedForItems(allItems)
+            }
+        }
+        
         tableDataManager.displayingAvatars = displayRequired
         if let all = tableDataManager.allItems {
             tableDataManager.reloadWithData(all)

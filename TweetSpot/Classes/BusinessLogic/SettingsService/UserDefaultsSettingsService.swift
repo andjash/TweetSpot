@@ -20,6 +20,11 @@ class UserDefaultsSettingsService: NSObject {
     
     init(userDefaults: NSUserDefaults) {
         self.userDefaults = userDefaults
+        
+        if userDefaults.objectForKey(Keys.shouldDisplayUserAvatarsOnSpot) == nil {
+            self.userDefaults.setBool(true, forKey: Keys.shouldDisplayUserAvatarsOnSpot)
+        }
+       
         super.init()
     }
     
@@ -29,6 +34,7 @@ class UserDefaultsSettingsService: NSObject {
         }
         set {
             self.userDefaults.setBool(newValue, forKey: Keys.shouldDisplayUserAvatarsOnSpot)
+            self.userDefaults.synchronize()
         }
     }
     

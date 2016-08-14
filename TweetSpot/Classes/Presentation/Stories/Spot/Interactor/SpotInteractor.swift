@@ -31,11 +31,27 @@ class SpotInteractor: NSObject, SpotInteractorInput {
     }
     
     func requestCachedItems(completion: [SpotTweetItem]? -> ()) {
+        let dtos = self.homeTimelineModel.homeLineTweets
         dispatch_async(mappingQueue) { 
-            let result = self.viewModelItemsFromDTOs(self.homeTimelineModel.homeLineTweets)
+            let result = self.viewModelItemsFromDTOs(dtos)
             dispatch_async(dispatch_get_main_queue(), {
                 completion(result)
             })
+        }
+    }
+    
+    func requestImagesForItems(items: [SpotTweetItem]) {
+        let dtos = self.homeTimelineModel.homeLineTweets
+        dispatch_async(mappingQueue) {
+            var dict : [String : String] = [:]
+            for dto in dtos {
+                dict[dto.id] = dto.avatarUrlStr
+            }
+            for item in items {
+                if let url = dict[item.id] {
+                self.promiseImageLoad(item, urlString: url)
+                }
+            }
         }
     }
     
@@ -149,7 +165,7 @@ class SpotInteractor: NSObject, SpotInteractorInput {
     }
 
     private func promiseImageLoad(item: SpotTweetItem, urlString: String) {
-        let promise = self.imagesService.imagePromiseForUrl(urlString.stringByReplacingOccurrencesOfString("_normal", withString: "_bigger"))
+        let promise = imagesService.imagePromiseForUrl(urlString.stringByReplacingOccurrencesOfString("_normal", withString: "_bigger"))
         promise.notifyCall = { (img, error) in
             if let image = img {
                 item.avatar = image
@@ -159,6 +175,7 @@ class SpotInteractor: NSObject, SpotInteractorInput {
             }
         }
     }
+    
     
     private func schedulePrefetchIfNeeded() {
         if prefetchingIsOn {

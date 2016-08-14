@@ -11,6 +11,7 @@ import Foundation
 @objc protocol SpotInteractorInput {
     
     func requestIfNeedToShowAvatars()
+    func requestImagesForItems(items: [SpotTweetItem])
     func sessionCloseRequested()
     func loadForwardRequested()
     func loadBackwardRequested()

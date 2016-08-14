@@ -32,22 +32,6 @@ class TwitterDAOImpl: NSObject, TwitterDAO {
             return
         }
         
-//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(1.5 * Double(NSEC_PER_SEC))), dispatch_get_main_queue()) {
-//            var result: [TweetDTO] = []
-//            for index in 0..<10 {
-//                result.append(TweetDTO(id: "\(NSDate().timeIntervalSince1970 + Double(index))",
-//                                       creationDate: NSDate(),
-//                                       text: "Cool concept art from an @H1Z1JustSurvive  intern. https://t.co/dFkZCVPrxN Cool concept art from an @H1Z1JustSurvive  intern. https://t.co/dFkZCVPrxN Cool concept art from an @H1Z1JustSurvive  intern. https://t.co/dFkZCVPrxN",
-//                                        userName: "\(NSDate().timeIntervalSince1970 + Double(index))",
-//                                        screenName: "test",
-//                                        avatarUrlString: "https://pbs.twimg.com/profile_images/699969654530248704/YWXojPmW_normal.jpg"))
-//            
-//            }
-//            
-//            success(result)
-//        }
-//        return
-        
         log.verbose("Requesting tweets: \n\tmaxId: \(maxId)\n\tminId: \(minId)\n\tcount: \(count)")
         let uuid = NSUUID().UUIDString
         let token = twitterApi.getStatusesHomeTimelineWithCount(String(count),

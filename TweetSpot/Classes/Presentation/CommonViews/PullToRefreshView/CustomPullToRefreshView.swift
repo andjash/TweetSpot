@@ -13,9 +13,9 @@ extension UIScrollView {
     
     func ts_configurePullToRefresh(handler: () -> ()) {
         self.addPullToRefreshWithActionHandler(handler, position: .Top)
-        self.pullToRefreshView .setCustomView(CustomPullToRefreshView.customPullToRefreshViewWithState(.ArrowUp), forState: .Triggered)
-        self.pullToRefreshView .setCustomView(CustomPullToRefreshView.customPullToRefreshViewWithState(.ArrowDown), forState: .Stopped)
-        self.pullToRefreshView .setCustomView(CustomPullToRefreshView.customPullToRefreshViewWithState(.Loading), forState: .Loading)
+        self.pullToRefreshView.setCustomView(CustomPullToRefreshView.customPullToRefreshViewWithState(.ArrowUp), forState: .Triggered)
+        self.pullToRefreshView.setCustomView(CustomPullToRefreshView.customPullToRefreshViewWithState(.ArrowDown), forState: .Stopped)
+        self.pullToRefreshView.setCustomView(CustomPullToRefreshView.customPullToRefreshViewWithState(.Loading), forState: .Loading)
     }
     
 }

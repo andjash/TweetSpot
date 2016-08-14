@@ -16,7 +16,6 @@ class SpotPresenter: NSObject, SpotModuleInput  {
     var hasItemsAtPast = true
     var retrievingCahce = false
     var prefetchedItems: [SpotTweetItem] = []
-
 }
 
 
@@ -70,6 +69,10 @@ extension SpotPresenter : SpotViewOutput {
     
     func showMoreItemsRequested() {
         interactor.loadForwardRequested()
+    }
+    
+    func avatarsLoadRequestedForItems(items: [SpotTweetItem]) {
+        interactor.requestImagesForItems(items)
     }
 }
 
