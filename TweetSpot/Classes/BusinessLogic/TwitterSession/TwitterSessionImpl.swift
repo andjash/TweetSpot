@@ -25,9 +25,11 @@ class TwitterSessionImpl: NSObject, TwitterSession {
     }
     var state: TwitterSessionState {
         didSet {
-            dispatch_async(dispatch_get_main_queue()) { 
-                NSNotificationCenter.defaultCenter().postNotificationName(TwitterSessionConstants.stateChangedNotificaton, object: self)
-            }
+            NSNotificationCenter.defaultCenter().postNotificationName(TwitterSessionConstants.stateChangedNotificaton,
+                                                                      object: self,
+                                                                      userInfo: [TwitterSessionConstants.stateOldUserInfoKey : oldValue.rawValue,
+                                                                                 TwitterSessionConstants.stateNewUserInfoKey : state.rawValue])
+           
         }
     }
     var twitterApi: STTwitterAPI? {

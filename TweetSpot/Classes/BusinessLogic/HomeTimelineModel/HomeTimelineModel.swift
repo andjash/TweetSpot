@@ -15,9 +15,7 @@ import Foundation
     case Both
 }
 
-struct HomeTimelineModelConstants {
-    static let timeLineChangedNotification = "HomeTimelineModelConstants.timeLineChangedNotification"
-    
+struct HomeTimelineModelConstants {    
     static let loadingDirectionChangedNotification = "HomeTimelineModelConstants.loadingDirectionChangedNotification"
     static let loadingDirectionChangedOldDirectionUserInfoKey = "HomeTimelineModelConstants.loadingDirectionChangedOldDirectionUserInfoKey"
     static let loadingDirectionChangedNewDirectionUserInfoKey = "HomeTimelineModelConstants.loadingDirectionChangedNewDirectionUserInfoKey"

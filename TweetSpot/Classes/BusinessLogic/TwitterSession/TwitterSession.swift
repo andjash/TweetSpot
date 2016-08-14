@@ -24,7 +24,10 @@ import Accounts
 struct TwitterSessionConstants {
     static let errorDomain = "TwitterSessionConstants.errorDomain"
     static let innerErrorUserInfoKey = "TwitterSessionConstants.innerErrorUserInfoKey"
-    static let stateChangedNotificaton = "TwitterSessionConstants.stateChangedNotificaton"    
+    
+    static let stateChangedNotificaton = "TwitterSessionConstants.stateChangedNotificaton"
+    static let stateOldUserInfoKey = "TwitterSessionConstants.stateOldUserInfoKey"
+    static let stateNewUserInfoKey = "TwitterSessionConstants.stateNewUserInfoKey"
 }
 
 

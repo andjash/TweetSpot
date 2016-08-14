@@ -19,5 +19,13 @@ class ApplicationAssembly: TyphoonAssembly, RamblerInitialAssembly {
             definition.injectProperty("twitterSessionWebAuthHandler", with: self.businessLogicAssembly.twitterWebAuthHandler())
         }
     }
+    
+    dynamic func networkActivityIndicatorManager() -> AnyObject {
+        return TyphoonDefinition.withClass(NetworkActivityIndicatorManagerImpl.self) {
+            (definition) in
+            
+            definition.scope = TyphoonScope.Singleton
+        }
+    }
 }
 

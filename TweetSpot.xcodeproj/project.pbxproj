@@ -80,6 +80,7 @@
 		55C5ABE91D60972B00CC5880 /* CommonTableDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C5ABE81D60972B00CC5880 /* CommonTableDataManager.swift */; };
 		55C5ABEC1D60975600CC5880 /* SpotTableDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C5ABEB1D60975600CC5880 /* SpotTableDataManager.swift */; };
 		55C5ABEF1D60AF4A00CC5880 /* Spot.strings in Resources */ = {isa = PBXBuildFile; fileRef = 55C5ABF11D60AF4A00CC5880 /* Spot.strings */; };
+		55C5ABF51D60E49400CC5880 /* NetworkActivityIndicatorManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C5ABF41D60E49400CC5880 /* NetworkActivityIndicatorManger.swift */; };
 		55DF60A01D5E0EB9006B7BFD /* SpotStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55DF609F1D5E0EB9006B7BFD /* SpotStoryboard.storyboard */; };
 		55DF60A31D5E1305006B7BFD /* Root.strings in Resources */ = {isa = PBXBuildFile; fileRef = 55DF60A51D5E1305006B7BFD /* Root.strings */; };
 		55FB49971D5F77C700D0869C /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FB49961D5F77C700D0869C /* UIView+Extensions.swift */; };
@@ -224,6 +225,7 @@
 		55C5ABEB1D60975600CC5880 /* SpotTableDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotTableDataManager.swift; sourceTree = "<group>"; };
 		55C5ABF01D60AF4A00CC5880 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Spot.strings; sourceTree = "<group>"; };
 		55C5ABF21D60AF4C00CC5880 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Spot.strings; sourceTree = "<group>"; };
+		55C5ABF41D60E49400CC5880 /* NetworkActivityIndicatorManger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkActivityIndicatorManger.swift; sourceTree = "<group>"; };
 		55DF609F1D5E0EB9006B7BFD /* SpotStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SpotStoryboard.storyboard; sourceTree = "<group>"; };
 		55DF60A41D5E1305006B7BFD /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Root.strings; sourceTree = "<group>"; };
 		55DF60A61D5E1309006B7BFD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Root.strings; sourceTree = "<group>"; };
@@ -416,6 +418,7 @@
 			children = (
 				553F7B8A1D5DBB3100541F38 /* ApplicationAssembly.swift */,
 				553F7B8C1D5DBB4D00541F38 /* AppDelegate */,
+				55C5ABF31D60E48000CC5880 /* NetworkActivityIndicatorManger */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -800,6 +803,14 @@
 				55C5ABEB1D60975600CC5880 /* SpotTableDataManager.swift */,
 			);
 			path = TableDataManger;
+			sourceTree = "<group>";
+		};
+		55C5ABF31D60E48000CC5880 /* NetworkActivityIndicatorManger */ = {
+			isa = PBXGroup;
+			children = (
+				55C5ABF41D60E49400CC5880 /* NetworkActivityIndicatorManger.swift */,
+			);
+			path = NetworkActivityIndicatorManger;
 			sourceTree = "<group>";
 		};
 		55DF609E1D5E0EAB006B7BFD /* Storyboard */ = {
@@ -1204,6 +1215,7 @@
 				4D2AE8BBF63A3ECA88039CF5 /* LoginViewController.swift in Sources */,
 				63D4587548BBE2D1980ED093 /* LoginModuleInput.swift in Sources */,
 				55B061FC1D5F1C7100490B44 /* CoreServicesAssembly.swift in Sources */,
+				55C5ABF51D60E49400CC5880 /* NetworkActivityIndicatorManger.swift in Sources */,
 				C2B66D6AF2DCD980C2338BA7 /* LoginPresenter.swift in Sources */,
 				55B061F51D5F1C7100490B44 /* TwitterDAOImpl.swift in Sources */,
 				55B061FE1D5F1C7100490B44 /* SocialAccountsServiceImpl.swift in Sources */,

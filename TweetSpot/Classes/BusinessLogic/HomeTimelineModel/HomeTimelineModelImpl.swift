@@ -35,14 +35,7 @@ class HomeTimelineModelImpl: NSObject, HomeTimelineModel {
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
-    var homeLineTweets: [TweetDTO] = [] {
-        didSet {
-            NSNotificationCenter.defaultCenter().postNotificationName(HomeTimelineModelConstants.timeLineChangedNotification,
-                                                                      object: self,
-                                                                      userInfo: nil)
-        }
-    }
-    
+    var homeLineTweets: [TweetDTO] = []     
     var loadingDirection: HomeTimelineModelLoadingDirection = .None {
         didSet {
             NSNotificationCenter.defaultCenter().postNotificationName(HomeTimelineModelConstants.loadingDirectionChangedNotification,
