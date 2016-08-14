@@ -64,6 +64,7 @@ extension SettingsViewController : UITableViewDataSource {
         if let item = item as? SwitchSettingsItem {
             cell.valueSwitch.on = item.value
         }
+        cell.selectionStyle = .None
         cell.valueSwitch.associatedItem = item
         cell.valueSwitch.addTarget(self, action: #selector(SettingsViewController.switchChanged), forControlEvents: .ValueChanged)
         return cell

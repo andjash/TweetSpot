@@ -50,7 +50,21 @@ class SpotViewController: UIViewController {
     @IBAction func settingsAction(sender: AnyObject?) {
         output.settingsRequested()
     }
-
+    
+    // MARK: Private
+    
+    private func topmostVisibleIndexPath() -> NSIndexPath? {
+        if let paths = tableView.indexPathsForVisibleRows {
+            for ip in paths {
+                if let cell = tableView.cellForRowAtIndexPath(ip) {
+                    if cell.frame.minY >= tableView.contentOffset.y {
+                        return ip
+                    }
+                }
+            }
+        }
+        return nil
+    }
 }
 
 
@@ -65,7 +79,20 @@ extension SpotViewController : SpotViewInput {
             return
         }
         displayingAvatars = displayRequired
+        
+        let topVisibleIp = self.topmostVisibleIndexPath()
+        var desiredOffset: CGFloat?
+        if let indexPath = topVisibleIp {
+             desiredOffset = tableView.cellForRowAtIndexPath(indexPath)!.frame.minY - tableView.contentOffset.y
+            
+        }
+        
         tableView.reloadData()
+        
+        if let indexPath = topVisibleIp {
+            tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Top, animated: false)
+            tableView.contentOffset = CGPoint(x: tableView.contentOffset.x, y: tableView.contentOffset.y - desiredOffset!)
+        }
     }
 
     func displayItemsAbove(items: [SpotTweetItem]) {
