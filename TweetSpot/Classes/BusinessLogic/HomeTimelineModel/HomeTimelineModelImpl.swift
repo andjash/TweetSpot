@@ -56,14 +56,20 @@ class HomeTimelineModelImpl: NSObject, HomeTimelineModel {
         if !proceedWithLoadingDirection(.Forward) {
             return
         }
-        twitterDAO.getHomeTweets(maxId: nil, minId: homeLineTweets.first?.id, count: 20, success: {[weak self] (dtos) in
+        let count = homeLineTweets.count > 0 ? 200 : 20
+        twitterDAO.getHomeTweets(maxId: nil, minId: homeLineTweets.first?.id, count: count, success: {[weak self] (dtos) in
             guard let strongSelf = self else { return }
             if strongSelf.session?.state != .Opened { return }
             
             strongSelf.completeWithLoadingDirection(.Forward)
+            var resultDtos = dtos
             if dtos.count > 0 {
+                if (dtos.last == strongSelf.homeLineTweets.last) {
+                    resultDtos = Array(dtos[0...dtos.count - 2])
+                    //TODO: there are more tweets on server, load them
+                }
                 strongSelf.timelineStorage?.storeItemsAbove(dtos)
-                strongSelf.homeLineTweets = dtos + strongSelf.homeLineTweets
+                strongSelf.homeLineTweets = resultDtos + strongSelf.homeLineTweets
             }
             success?(dtos)
         }) {[weak self]  (err) in
