@@ -11,6 +11,7 @@ import UIKit
 class SpotTweetItemCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var avatarUnderlay: UIView!
     @IBOutlet weak var screenNameLabel: UILabel!
     @IBOutlet weak var tweetTextLabel: UILabel!
     @IBOutlet weak var avatarImageView: UIImageView!
@@ -37,6 +38,8 @@ class SpotTweetItemCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        avatarUnderlay.backgroundColor = UIColor(white: 0, alpha: 0.05)
+        avatarUnderlay.layer.cornerRadius = 3.0
         avatarImageView.layer.cornerRadius = 3.0
         avatarImageView.clipsToBounds = true
     }
@@ -49,21 +52,22 @@ class SpotTweetItemCell: UITableViewCell {
         screenNameLabel.text = "@\(item.screenName)"
         tweetTextLabel.text = item.text
         avatarImageView.image = nil
-        
+        avatarImageView.alpha = 0
         if displayAvatar {
             avatarContainerWidth.constant = 46
             avatarRightSpace.constant = 10
             if let img = item.avatar {
-                avatarImageView.backgroundColor = UIColor.clearColor()
                 avatarImageView.image = img
+                avatarImageView.alpha = 1
             } else {
                 item.avatarRetrievedCallback = {[weak self] in
                     if let strongSelf = self {
-                        strongSelf.avatarImageView.backgroundColor = UIColor.clearColor()
-                        strongSelf.avatarImageView?.image = strongSelf.currentItem?.avatar
+                        strongSelf.avatarImageView.image = strongSelf.currentItem?.avatar
+                        UIView.animateWithDuration(0.3, animations: { 
+                            strongSelf.avatarImageView.alpha = 1
+                        })
                     }
                 }
-                avatarImageView.backgroundColor = UIColor(white: 0, alpha: 0.1)
             }
         } else {
             avatarRightSpace.constant = 0
