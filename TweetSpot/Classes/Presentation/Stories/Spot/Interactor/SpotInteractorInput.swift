@@ -15,6 +15,7 @@ import Foundation
     func loadForwardRequested()
     func loadBackwardRequested()
     func requestDTOForItem(item: SpotTweetItem)
+    func requestCachedItems(completion: [SpotTweetItem]? -> ())
     func setPrefetchingEnabled(enabled: Bool)
 
 }

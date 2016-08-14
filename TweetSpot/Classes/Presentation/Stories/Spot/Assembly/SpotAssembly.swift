@@ -27,11 +27,15 @@ class SpotAssembly: TyphoonAssembly, RamblerInitialAssembly {
     dynamic func interactorSpotModule() -> AnyObject {
         return TyphoonDefinition.withClass(SpotInteractor.self) {
             (definition) in
+            
             definition.injectProperty("output", with: self.presenterSpotModule())
             definition.injectProperty("session", with: self.businessLogicAssembly.twitterSessionService())
             definition.injectProperty("homeTimelineModel", with: self.businessLogicAssembly.homeTimelineModel())
             definition.injectProperty("imagesService", with: self.coreServices.imagesService())            
             definition.injectProperty("settingsSvc", with: self.businessLogicAssembly.settingsService())
+            definition.injectProperty("mappingQueue", with: dispatch_queue_create("TSpotInteractor.mappingQueue", DISPATCH_QUEUE_SERIAL))
+            
+            
         }
     }
 

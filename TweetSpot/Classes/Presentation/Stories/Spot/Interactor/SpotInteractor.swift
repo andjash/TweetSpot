@@ -15,6 +15,7 @@ class SpotInteractor: NSObject, SpotInteractorInput {
     weak var homeTimelineModel: HomeTimelineModel!
     weak var imagesService: ImagesService!
     weak var settingsSvc: SettignsService!
+    var mappingQueue: dispatch_queue_t!
     
     let prefetchRepeatInterval = 60.0
     var prefetchInProgress = false
@@ -27,6 +28,15 @@ class SpotInteractor: NSObject, SpotInteractorInput {
         self.dateFormatter = NSDateFormatter()
         self.dateFormatter.dateFormat = "dd.MM.yy HH:mm"
         super.init()
+    }
+    
+    func requestCachedItems(completion: [SpotTweetItem]? -> ()) {
+        dispatch_async(mappingQueue) { 
+            let result = self.viewModelItemsFromDTOs(self.homeTimelineModel.homeLineTweets)
+            dispatch_async(dispatch_get_main_queue(), {
+                completion(result)
+            })
+        }
     }
     
     func requestIfNeedToShowAvatars() {
@@ -56,9 +66,13 @@ class SpotInteractor: NSObject, SpotInteractorInput {
         log.verbose("Load forward")
         disablePreviousPrefetchrequest()
         homeTimelineModel.loadForward({ (dtos) in
-            let result = self.viewModelItemsFromDTOs(dtos)
-            self.output.forwardItemsLoaded(result)
-            self.schedulePrefetchIfNeeded()
+            dispatch_async(self.mappingQueue) {
+                let result = self.viewModelItemsFromDTOs(dtos)
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.output.forwardItemsLoaded(result)
+                    self.schedulePrefetchIfNeeded()
+                })
+            }
         }) { (error) in
             self.output.forwardItemsLoaded([])
             log.debug("Error while loading forward")
@@ -69,11 +83,15 @@ class SpotInteractor: NSObject, SpotInteractorInput {
     func loadBackwardRequested() {
         log.verbose("Load backward")
         homeTimelineModel.loadBackward({ (dtos) in
-            let result = self.viewModelItemsFromDTOs(dtos)
-            if result.count == 0 {
-                self.output.handleNoMoreItemsAtBackward()
-            } else {
-                self.output.backwardItemsLoaded(result)
+            dispatch_async(self.mappingQueue) {
+                let result = self.viewModelItemsFromDTOs(dtos)
+                dispatch_async(dispatch_get_main_queue(), {
+                    if result.count == 0 {
+                        self.output.handleNoMoreItemsAtBackward()
+                    } else {
+                        self.output.backwardItemsLoaded(result)
+                    }
+                })
             }
         }) { (error) in
             self.output.backwardItemsLoaded([])
@@ -94,18 +112,21 @@ class SpotInteractor: NSObject, SpotInteractorInput {
         log.verbose("Prefetching")
         prefetchInProgress = true
         homeTimelineModel.loadForward({ (dtos) in
-            self.prefetchInProgress = false
-            let result = self.viewModelItemsFromDTOs(dtos)
-            if self.pendingForwardRequest {
-                self.pendingForwardRequest = false
-                self.output.forwardItemsLoaded(result)
-            } else {
-                if result.count > 0 {
-                    self.output.prefetchedItemsAvailable(result)
-                }
+            dispatch_async(self.mappingQueue) {
+                let result = self.viewModelItemsFromDTOs(dtos)
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.prefetchInProgress = false
+                    if self.pendingForwardRequest {
+                        self.pendingForwardRequest = false
+                        self.output.forwardItemsLoaded(result)
+                    } else {
+                        if result.count > 0 {
+                            self.output.prefetchedItemsAvailable(result)
+                        }
+                    }
+                    self.schedulePrefetchIfNeeded()
+                })
             }
-            
-            self.schedulePrefetchIfNeeded()
         }) { (error) in
             self.prefetchInProgress = false
             log.debug("Error while prefetching")
@@ -126,7 +147,7 @@ class SpotInteractor: NSObject, SpotInteractorInput {
         }
         return result
     }
-    
+
     private func promiseImageLoad(item: SpotTweetItem, urlString: String) {
         let promise = self.imagesService.imagePromiseForUrl(urlString.stringByReplacingOccurrencesOfString("_normal", withString: "_bigger"))
         promise.notifyCall = { (img, error) in

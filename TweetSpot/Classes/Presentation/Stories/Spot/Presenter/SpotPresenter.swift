@@ -14,16 +14,26 @@ class SpotPresenter: NSObject, SpotModuleInput  {
     var interactor: SpotInteractorInput!
     var router: SpotRouterInput!
     var hasItemsAtPast = true
+    var retrievingCahce = false
     var prefetchedItems: [SpotTweetItem] = []
+
 }
 
 
 extension SpotPresenter : SpotViewOutput {
     
     func viewIsReady() {
+        retrievingCahce = true
         view.setInfiniteScrollingEnabled(false)
-        view.showAboveLoading(enabled: true)
-        interactor.loadForwardRequested()
+        interactor.requestCachedItems { (items) in
+            if (items?.count ?? 0) > 0 {
+                self.view.setInfiniteScrollingEnabled(true)
+                self.view.displayItemsAbove(items!)
+            }
+            self.view.showAboveLoading(enabled: true)
+            self.interactor.loadForwardRequested()
+            self.retrievingCahce = false
+        }
     }
     
     func viewIsAboutToAppear() {
@@ -45,7 +55,9 @@ extension SpotPresenter : SpotViewOutput {
     }
     
     func loadAboveRequested() {
-        interactor.loadForwardRequested()
+        if !retrievingCahce {
+            interactor.loadForwardRequested()
+        }
     }
     
     func loadBelowRequested() {
