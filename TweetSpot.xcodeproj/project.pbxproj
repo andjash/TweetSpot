@@ -419,10 +419,10 @@
 			isa = PBXGroup;
 			children = (
 				553F7B611D5DBAD700541F38 /* Assembly */,
-				553F7B631D5DBAD700541F38 /* Interactor */,
-				553F7B671D5DBAD700541F38 /* Presenter */,
-				553F7B6A1D5DBAD700541F38 /* Router */,
 				553F7B6D1D5DBAD700541F38 /* View */,
+				553F7B671D5DBAD700541F38 /* Presenter */,
+				553F7B631D5DBAD700541F38 /* Interactor */,
+				553F7B6A1D5DBAD700541F38 /* Router */,
 			);
 			path = NavigationRoot;
 			sourceTree = "<group>";
@@ -438,9 +438,9 @@
 		553F7B631D5DBAD700541F38 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
-				553F7B641D5DBAD700541F38 /* NavigationRootInteractor.swift */,
 				553F7B651D5DBAD700541F38 /* NavigationRootInteractorInput.swift */,
 				553F7B661D5DBAD700541F38 /* NavigationRootInteractorOutput.swift */,
+				553F7B641D5DBAD700541F38 /* NavigationRootInteractor.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -457,8 +457,8 @@
 		553F7B6A1D5DBAD700541F38 /* Router */ = {
 			isa = PBXGroup;
 			children = (
-				553F7B6B1D5DBAD700541F38 /* NavigationRootRouter.swift */,
 				553F7B6C1D5DBAD700541F38 /* NavigationRootRouterInput.swift */,
+				553F7B6B1D5DBAD700541F38 /* NavigationRootRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -466,9 +466,9 @@
 		553F7B6D1D5DBAD700541F38 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				553F7B6E1D5DBAD700541F38 /* NavigationRootViewController.swift */,
 				553F7B6F1D5DBAD700541F38 /* NavigationRootViewInput.swift */,
 				553F7B701D5DBAD700541F38 /* NavigationRootViewOutput.swift */,
+				553F7B6E1D5DBAD700541F38 /* NavigationRootViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";

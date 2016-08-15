@@ -19,7 +19,7 @@ class NavigationRootPresenter: NSObject, NavigationRootModuleInput {
     
 }
 
-
+// MARK: NavigationRootViewOutput protocol
 extension NavigationRootPresenter : NavigationRootViewOutput {
     func viewIsReady() {
         
@@ -37,7 +37,7 @@ extension NavigationRootPresenter : NavigationRootViewOutput {
     }
 }
 
-
+// MARK: NavigationRootInteractorOutput protocol
 extension NavigationRootPresenter : NavigationRootInteractorOutput {
     
     func loginModuleRequired() {

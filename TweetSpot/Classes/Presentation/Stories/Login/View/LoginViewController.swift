@@ -50,6 +50,7 @@ class LoginViewController: UIViewController {
     }
 }
 
+// MARK: LoginViewInput protocol
 extension LoginViewController : LoginViewInput {
     
     func setupInitialState() {

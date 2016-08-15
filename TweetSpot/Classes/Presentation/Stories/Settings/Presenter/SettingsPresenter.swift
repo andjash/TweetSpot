@@ -16,6 +16,7 @@ class SettingsPresenter: NSObject, SettingsModuleInput {
    
 }
 
+// MARK: SettingsInteractorOutput protocol
 extension SettingsPresenter : SettingsInteractorOutput {    
     
     func needToUpdateWithSections(sections: [SettingsSection]) {
@@ -24,6 +25,7 @@ extension SettingsPresenter : SettingsInteractorOutput {
     
 }
 
+// MARK: SettingsViewOutput protocol
 extension SettingsPresenter : SettingsViewOutput {
     
     func viewIsReady() {

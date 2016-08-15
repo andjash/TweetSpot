@@ -55,8 +55,8 @@ class SpotInteractor: NSObject, SpotInteractorInput {
         }
     }
     
-    func requestIfNeedToShowAvatars() {
-        output.avatarsDisplay(required: self.settingsSvc.shouldDisplayUserAvatarsOnSpot)
+    func requestIfNeedToShowAvatars() -> Bool {
+        return self.settingsSvc.shouldDisplayUserAvatarsOnSpot
     }
     
     func sessionCloseRequested() {

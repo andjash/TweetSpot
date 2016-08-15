@@ -132,6 +132,7 @@ class TweetDetailsViewController: UIViewController {
 
 }
 
+// MARK: TweetDetailsViewInput protocol
 extension TweetDetailsViewController : TweetDetailsViewInput {
 
     func configureWithItem(item: TweetDetailsViewModel) {

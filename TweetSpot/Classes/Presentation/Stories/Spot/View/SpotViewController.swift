@@ -84,6 +84,7 @@ class SpotViewController: UIViewController {
     }
 }
 
+// MARK: SpotTableDataMangerDelegate protocol
 extension SpotViewController : SpotTableDataMangerDelegate {
     func triggeredPullToRefresh() {
         UIView.animateWithDuration(0.3, animations: {
@@ -98,6 +99,7 @@ extension SpotViewController : SpotTableDataMangerDelegate {
     }
 }
 
+// MARK: CommonTableDataManagerDelegate protocol
 extension SpotViewController : CommonTableDataManagerDelegate {
     func dataItemSelected(item: AnyObject) {
         if let tweet = item as? SpotTweetItem {
@@ -106,17 +108,14 @@ extension SpotViewController : CommonTableDataManagerDelegate {
     }
 }
 
-
+// MARK: SpotViewInput protocol
 extension SpotViewController : SpotViewInput {
-    
-    func setupInitialState() {
-    }  
     
     func setInfiniteScrollingEnabled(enabled: Bool) {
         tableDataManager.infiniteScrollEnabled = enabled
     }
     
-    func updateCellWithAvatars(displayRequired displayRequired: Bool) {
+    func updateCellsWithAvatars(displayRequired displayRequired: Bool) {
         if displayRequired == tableDataManager.displayingAvatars {
             return
         }
@@ -140,13 +139,8 @@ extension SpotViewController : SpotViewInput {
         tableDataManager.insertItemsAtBottom(items)
     }
     
-    
     func showAboveLoading(enabled enabled: Bool) {
         tableDataManager.showPullToRefreshAnimation(enabled)
-    }
-    
-    func showBelowLoading(enabled enabled: Bool) {
-        tableDataManager.showInfiniteScrollAnimation(enabled)
     }
     
     func showMoreItemsAvailable() {

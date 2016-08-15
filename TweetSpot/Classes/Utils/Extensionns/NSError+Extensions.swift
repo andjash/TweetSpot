@@ -27,8 +27,8 @@ extension NSError {
 }
 
 // MARK: TwitterDAO error descriptions
-
 extension NSError {
+    
     private func ts_twitterDAOErrorUserFriendlyDescription() -> String {
         switch code {
         case TwitterDAOError.InvalidSession.rawValue:
@@ -48,11 +48,13 @@ extension NSError {
             return "error_twitter_dao_unknown".ts_localized("Errors")
         }
     }
+    
 }
 
 
 // MARK: TwitterSession error descriptions
 extension NSError {
+    
     private func ts_twitterSessionErrorUserFriendlyDescription() -> String {
         switch code {
         case TwitterSessionError.SessionInvalidState.rawValue:
@@ -70,11 +72,13 @@ extension NSError {
             return "error_twitter_unknown".ts_localized("Errors")
         }
     }
+    
 }
 
 
 // MARK: SocialAccountsService error descriptions
 extension NSError {
+    
     private func ts_socialAccountsServiceErrorUserFriendlyDescription() -> String {
         switch code {
         case SocialAccountsServiceError.AccessDenied.rawValue:
@@ -90,4 +94,5 @@ extension NSError {
             return "error_socacc_unknown_error".ts_localized("Errors")
         }
     }
+    
 }

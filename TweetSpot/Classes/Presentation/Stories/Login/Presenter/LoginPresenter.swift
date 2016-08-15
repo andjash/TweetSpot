@@ -17,7 +17,8 @@ class LoginPresenter: NSObject, LoginModuleInput {
 
 }
 
-extension LoginPresenter : LoginViewOutput{
+// MARK: LoginViewOutput protocol
+extension LoginPresenter : LoginViewOutput {
     
     func viewIsReady() {
     }
@@ -44,6 +45,7 @@ extension LoginPresenter : LoginViewOutput{
     }
 }
 
+// MARK: LoginInteractorOutput protocol
 extension LoginPresenter : LoginInteractorOutput {
     
     func loginSuccess() {

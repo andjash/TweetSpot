@@ -9,6 +9,7 @@
 import UIKit
 
 extension String {
+    
     func ts_localized(table: String) -> String {
         return NSLocalizedString(self, tableName: table, bundle: NSBundle.mainBundle(), value: "", comment: "")
     }

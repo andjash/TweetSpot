@@ -11,12 +11,9 @@ import Foundation
 @objc protocol SpotInteractorOutput {
     
     func dtoFoundForItem(item: SpotTweetItem, dto: AnyObject?)
-    func avatarsDisplay(required required: Bool)
-    
     func forwardItemsLoaded(items: [SpotTweetItem])
     func backwardItemsLoaded(items: [SpotTweetItem])
-    
+    func handleNoMoreItemsAtBackward()    
     func prefetchedItemsAvailable(prefetchedItems: [SpotTweetItem])
     
-    func handleNoMoreItemsAtBackward()
 }

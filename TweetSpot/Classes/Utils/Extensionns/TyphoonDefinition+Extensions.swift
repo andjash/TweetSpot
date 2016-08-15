@@ -10,6 +10,7 @@ import Foundation
 import Typhoon
 
 extension TyphoonDefinition {
+    
     @nonobjc public func useInitializer(selector: String, handler: TyphoonMethod -> Void) {
         self.useInitializer(Selector(selector)) { handler($0) }
     }
@@ -22,4 +23,5 @@ extension TyphoonDefinition {
     @nonobjc public func injectProperty(selector: String, with: AnyObject!) {
         self.injectProperty(Selector(selector), with: with)
     }
+    
 }

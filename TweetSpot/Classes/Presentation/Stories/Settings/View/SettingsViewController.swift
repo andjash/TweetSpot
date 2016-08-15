@@ -60,7 +60,7 @@ class SettingsViewController: UIViewController, SettingsViewInput {
     }
 }
 
-
+// MARK: UITableViewDataSource protocol
 extension SettingsViewController : UITableViewDataSource {
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return sections?.count ?? 0
@@ -80,6 +80,7 @@ extension SettingsViewController : UITableViewDataSource {
     }
 }
 
+// MARK: UITableViewDelegate protocol
 extension SettingsViewController : UITableViewDelegate {
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {

@@ -18,7 +18,7 @@ class SpotPresenter: NSObject, SpotModuleInput  {
     var prefetchedItems: [SpotTweetItem] = []
 }
 
-
+// MARK: SpotViewOutput protocol
 extension SpotPresenter : SpotViewOutput {
     
     func viewIsReady() {
@@ -36,7 +36,7 @@ extension SpotPresenter : SpotViewOutput {
     }
     
     func viewIsAboutToAppear() {
-        interactor.requestIfNeedToShowAvatars()
+        view.updateCellsWithAvatars(displayRequired:interactor.requestIfNeedToShowAvatars())
         interactor.setPrefetchingEnabled(true)
     }
     
@@ -76,7 +76,7 @@ extension SpotPresenter : SpotViewOutput {
     }
 }
 
-
+// MARK: SpotInteractorOutput protocol
 extension SpotPresenter : SpotInteractorOutput {
     
     func prefetchedItemsAvailable(prefetchedItems: [SpotTweetItem]) {
@@ -89,11 +89,7 @@ extension SpotPresenter : SpotInteractorOutput {
             router.routeToTweetDetails(udto)
         }
     }
-    
-    func avatarsDisplay(required required: Bool) {
-        view.updateCellWithAvatars(displayRequired:required)
-    }
-    
+
     func forwardItemsLoaded(items: [SpotTweetItem]) {
         if items.count > 0 && hasItemsAtPast {
             view.setInfiniteScrollingEnabled(true)

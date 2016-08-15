@@ -24,8 +24,6 @@ import UIKit
     
     func showPullToRefreshAnimation(enabled: Bool)
     func showInfiniteScrollAnimation(enabled: Bool)
-    
-    
 }
 
 
