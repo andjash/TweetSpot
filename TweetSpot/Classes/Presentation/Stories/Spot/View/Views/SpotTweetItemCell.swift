@@ -9,6 +9,7 @@
 import UIKit
 
 class SpotTweetItemCell: UITableViewCell {
+    
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var avatarUnderlay: UIView!
@@ -21,6 +22,7 @@ class SpotTweetItemCell: UITableViewCell {
     var currentItem: SpotTweetItem?
     
     static func cellHeight(withItem item: SpotTweetItem, displayingAvatar: Bool, tableWidth: CGFloat) -> CGFloat {
+        // Improvement: Use autolayout cell prototype
         var result: CGFloat = 0
         if displayingAvatar {
             let textHeight = item.text.ts_height(withFont: UIFont(name: "HelveticaNeue", size: 14)!, constrainedToWidth: tableWidth - 10 - 10 - 36 - 10)

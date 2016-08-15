@@ -43,6 +43,7 @@
 		553F7BA41D5DD0EE00541F38 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553F7BA31D5DD0EE00541F38 /* String+Extensions.swift */; };
 		5554CE3A1D5FA99400F82966 /* SettingsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5554CE391D5FA99400F82966 /* SettingsStoryboard.storyboard */; };
 		5554CE3D1D5FAC0F00F82966 /* Settings.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5554CE3F1D5FAC0F00F82966 /* Settings.strings */; };
+		55ACBFC01D618B2D00E8C73D /* NSDateFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ACBFBF1D618B2D00E8C73D /* NSDateFormatter+Extensions.swift */; };
 		55B061BB1D5E1DA000490B44 /* Common.strings in Resources */ = {isa = PBXBuildFile; fileRef = 55B061BD1D5E1DA000490B44 /* Common.strings */; };
 		55B061C01D5E241300490B44 /* NSError+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B061BF1D5E241300490B44 /* NSError+Extensions.swift */; };
 		55B061C31D5E26E800490B44 /* Errors.strings in Resources */ = {isa = PBXBuildFile; fileRef = 55B061C51D5E26E800490B44 /* Errors.strings */; };
@@ -172,6 +173,7 @@
 		5554CE391D5FA99400F82966 /* SettingsStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SettingsStoryboard.storyboard; sourceTree = "<group>"; };
 		5554CE3E1D5FAC0F00F82966 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Settings.strings; sourceTree = "<group>"; };
 		5554CE401D5FAC1200F82966 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Settings.strings; sourceTree = "<group>"; };
+		55ACBFBF1D618B2D00E8C73D /* NSDateFormatter+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDateFormatter+Extensions.swift"; sourceTree = "<group>"; };
 		55B061BC1D5E1DA000490B44 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Common.strings; sourceTree = "<group>"; };
 		55B061BE1D5E1DA200490B44 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Common.strings; sourceTree = "<group>"; };
 		55B061BF1D5E241300490B44 /* NSError+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSError+Extensions.swift"; sourceTree = "<group>"; };
@@ -492,6 +494,7 @@
 				553F7BA31D5DD0EE00541F38 /* String+Extensions.swift */,
 				55B061BF1D5E241300490B44 /* NSError+Extensions.swift */,
 				55FB49961D5F77C700D0869C /* UIView+Extensions.swift */,
+				55ACBFBF1D618B2D00E8C73D /* NSDateFormatter+Extensions.swift */,
 			);
 			path = Extensionns;
 			sourceTree = "<group>";
@@ -1202,6 +1205,7 @@
 				55C5ABEC1D60975600CC5880 /* SpotTableDataManager.swift in Sources */,
 				58F2E8CC6F9A8469B85CA87B /* TweetDetailsAssembly.swift in Sources */,
 				91AD5F6E11B4005F5CA6C3FA /* TweetDetailsViewInput.swift in Sources */,
+				55ACBFC01D618B2D00E8C73D /* NSDateFormatter+Extensions.swift in Sources */,
 				9EA139DF179D039033C42B5E /* TweetDetailsViewOutput.swift in Sources */,
 				3DEBFDCD70C031FE145759FB /* TweetDetailsViewController.swift in Sources */,
 				7BA1F14764B7814C6FDB09E5 /* TweetDetailsModuleInput.swift in Sources */,

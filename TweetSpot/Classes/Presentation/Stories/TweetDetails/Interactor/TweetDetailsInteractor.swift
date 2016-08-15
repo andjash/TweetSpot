@@ -17,7 +17,7 @@ class TweetDetailsInteractor: NSObject, TweetDetailsInteractorInput {
     
     override init() {
         self.dateFormatter = NSDateFormatter()
-        self.dateFormatter.dateFormat = "dd.MM.yy HH:mm"
+        self.dateFormatter.ts_configureAsAppCommonFormatter()
         super.init()
     }
     
