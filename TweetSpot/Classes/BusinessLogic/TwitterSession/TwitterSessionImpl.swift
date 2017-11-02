@@ -12,8 +12,8 @@ import STTwitter
 
 class TwitterSessionImpl: NSObject, TwitterSession {
     
-    let consumerKey = "cmHKRFTgcsFGVMFb5JKMo68Qg"
-    let consumerSecret = "SW0fWVXir1DEKvo0tKxVqE3Q5piYge9WT8ien8juEzVgCgY3hr"
+    let consumerKey = "divRrYoRFOpqecu2KD5P5p3NU"
+    let consumerSecret = "gAEBVsG0gvru05zPYzM3EhQhGwVeh73lyvXdbUX2kUqyc1nrBJ"
     
     let webAuthHandler: TwitterWebAuthHandler
     var tokenStorage: TwitterSessionCredentialsStorage? {

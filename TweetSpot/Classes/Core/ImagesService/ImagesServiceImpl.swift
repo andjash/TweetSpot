@@ -27,7 +27,7 @@ class ImagesServiceImpl: NSObject, ImagesService {
         sgPromise?.onFail = { (error: NSError?, wasFatal: Bool) -> () in
             NotificationCenter.default.post(name: Notification.Name(rawValue: ImagesServiceConstants.didEndRetreivingImageNotification), object: self)
             promise.error = error
-        } as! SGCacheFetchFail
+        } as? SGCacheFetchFail
         
         return promise
     }
