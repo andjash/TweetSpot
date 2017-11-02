@@ -8,10 +8,9 @@
 
 import UIKit
 import RamblerTyphoonUtils
-import XCGLogger
+import Typhoon
 
-let log = XCGLogger.defaultInstance()
-
+let log = Logger()
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,27 +19,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     weak var twitterSessionWebAuthHandler: TwitterWebAuthHandler!
     
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        setupLoger()
-        return true
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+         return true
     }
     
     func initialAssemblies() -> [AnyObject] {
         let collector = RamblerInitialAssemblyCollector()
-        return collector.collectInitialAssemblyClasses()
-    }
-    
-    private func setupLoger() {
-        #if DEBUG
-            log.setup(.Debug, showThreadName: true, showLogLevel: true, showFileNames: true, showLineNumbers: true, writeToFile: nil)
-        #else
-            log.setup(.Severe, showThreadName: true, showLogLevel: true, showFileNames: true, showLineNumbers: true, writeToFile: nil)
-        #endif
+        return collector.collectInitialAssemblyClasses()! as [AnyObject]
     }
     
     
-    
-    func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool {
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool {
         if url.scheme == "tssession" {
             return twitterSessionWebAuthHandler.handleWebAuthCallback?(url) ?? false
         }        
@@ -48,3 +37,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
+
+class Logger {
+    
+    func verbose(_ str: String) {
+        print(str)
+    }
+    
+    func error(_ str: String) {
+        print(str)
+    }
+    
+    func severe(_ str: String) {
+        print(str)
+    }
+    
+    func debug(_ str: String) {
+        print(str)
+    }
+    
+}
+
+
+
+class TyphoonDefinitionWrapper {
+    
+    class func withClass(_ clazz: Swift.AnyClass!, configuration injections: @escaping (TyphoonDefinition) -> ()) -> AnyObject {
+        return TyphoonDefinition.withClass(clazz) {
+            (definition) in
+            injections(definition!)
+        } as AnyObject
+    }
+
+    
+}

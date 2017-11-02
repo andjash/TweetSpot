@@ -10,6 +10,6 @@ import Foundation
 
 @objc protocol TweetDetailsInteractorOutput {
     
-    func updateWithViewModelItem(item: TweetDetailsViewModel)
+    func updateWithViewModelItem(_ item: TweetDetailsViewModel)
 
 }

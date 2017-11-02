@@ -12,7 +12,7 @@ extension CAGradientLayer {
     
     static var ts_applicationPrimaryGradient: CAGradientLayer {
         let gLayer = CAGradientLayer()
-        gLayer.colors = [UIColor.ts_applicationSecondaryColor, UIColor.ts_applicationPrimaryColor.CGColor]
+        gLayer.colors = [UIColor.ts_applicationSecondaryColor, UIColor.ts_applicationPrimaryColor.cgColor]
         gLayer.locations = [0.0 , 1.0]
         gLayer.startPoint = CGPoint(x: 0, y: 0)
         gLayer.endPoint = CGPoint(x: 0, y: 2)

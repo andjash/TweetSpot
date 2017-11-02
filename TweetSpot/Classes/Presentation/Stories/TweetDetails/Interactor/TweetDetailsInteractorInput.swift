@@ -10,6 +10,6 @@ import Foundation
 
 @objc protocol TweetDetailsInteractorInput {
     
-    func requestViewModelForDTO(dto: AnyObject)
+    func requestViewModelForDTO(_ dto: AnyObject)
 
 }

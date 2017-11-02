@@ -19,7 +19,7 @@ class SettingsPresenter: NSObject, SettingsModuleInput {
 // MARK: SettingsInteractorOutput protocol
 extension SettingsPresenter : SettingsInteractorOutput {    
     
-    func needToUpdateWithSections(sections: [SettingsSection]) {
+    func needToUpdateWithSections(_ sections: [SettingsSection]) {
         view.showSettings(sections)
     }
     
@@ -32,7 +32,7 @@ extension SettingsPresenter : SettingsViewOutput {
        interactor.requestSettingsSections()
     }
     
-    func selectedItem(item: SettingsItem) {
+    func selectedItem(_ item: SettingsItem) {
         interactor.changeRequestForItem(item)
     }
     

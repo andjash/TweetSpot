@@ -9,5 +9,5 @@
 import Foundation
 
 @objc protocol TweetDTODeserializer {
-    func deserializeTweetDTOsFromObject(object: AnyObject) -> [TweetDTO]?
+    func deserializeTweetDTOsFromObject(_ object: AnyObject) -> [TweetDTO]?
 }

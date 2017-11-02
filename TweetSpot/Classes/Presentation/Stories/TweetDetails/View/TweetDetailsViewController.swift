@@ -29,9 +29,9 @@ class TweetDetailsViewController: UIViewController {
     // MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+        navigationController?.navigationBar.tintColor = UIColor.white
         navigationController?.navigationBar.barTintColor = UIColor.ts_applicationPrimaryColor
-        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]
         imagesContainer.backgroundColor = UIColor(white: 0, alpha: 0.05)
     
         blurImageView.layer.masksToBounds = true
@@ -58,7 +58,7 @@ class TweetDetailsViewController: UIViewController {
     
     // Private
     
-    func decorateWithItem(item: TweetDetailsViewModel) {
+    func decorateWithItem(_ item: TweetDetailsViewModel) {
         title = "@\(item.screenName)"
         
         if let small = item.smallAvatar {
@@ -89,34 +89,34 @@ class TweetDetailsViewController: UIViewController {
         textLabel.text = item.text
     }
     
-    func decorateWithSmallAvatar(img: UIImage?) {
+    func decorateWithSmallAvatar(_ img: UIImage?) {
         guard let image = img else { return }
         blurImageView.alpha = 0
         
         blurImageView.image = image
        
         if !UIAccessibilityIsReduceTransparencyEnabled() {
-            let blurEffect = UIBlurEffect(style: .Light)
+            let blurEffect = UIBlurEffect(style: .light)
             let blurEffectView = UIVisualEffectView(effect: blurEffect)
             blurEffectView.frame = blurImageView.bounds
-            blurEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+            blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
             blurImageView.addSubview(blurEffectView)
         }
-        UIView.animateWithDuration(0.3) {
+        UIView.animate(withDuration: 0.3, animations: {
             self.blurImageView.alpha = 1
-        }
+        }) 
     }
     
-    func decorateWithBigAvatar(img: UIImage?) {
+    func decorateWithBigAvatar(_ img: UIImage?) {
         guard let image = img else { return }
         profileImageView.alpha = 0
         
         profileImageView.image = image
         self.updateContentModeOnProfileImageView()
         
-        UIView.animateWithDuration(0.3) { 
+        UIView.animate(withDuration: 0.3, animations: { 
             self.profileImageView.alpha = 1
-        }
+        }) 
     }
     
     func updateContentModeOnProfileImageView() {
@@ -124,9 +124,9 @@ class TweetDetailsViewController: UIViewController {
         
         if image.size.width > profileImageView.frame.width ||
             image.size.height > profileImageView.frame.height {
-            profileImageView.contentMode = .ScaleAspectFit
+            profileImageView.contentMode = .scaleAspectFit
         } else {
-            profileImageView.contentMode = .Center
+            profileImageView.contentMode = .center
         }
     }
 
@@ -135,12 +135,12 @@ class TweetDetailsViewController: UIViewController {
 // MARK: TweetDetailsViewInput protocol
 extension TweetDetailsViewController : TweetDetailsViewInput {
 
-    func configureWithItem(item: TweetDetailsViewModel) {
+    func configureWithItem(_ item: TweetDetailsViewModel) {
         currentItem?.avatarRetrievedCallback = nil
         currentItem?.smallAvatarRetrievedCallback = nil
         currentItem = item
        
-        if isViewLoaded() {
+        if isViewLoaded {
             decorateWithItem(item)
         }
     }

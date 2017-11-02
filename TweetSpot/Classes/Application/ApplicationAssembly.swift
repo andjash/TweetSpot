@@ -13,18 +13,19 @@ class ApplicationAssembly: TyphoonAssembly, RamblerInitialAssembly {
     
     weak var businessLogicAssembly: BusinesLogicAssembly!
     
-    dynamic func appDelegate() -> AnyObject {
-        return TyphoonDefinition.withClass(AppDelegate.self) {
+    @objc dynamic func appDelegate() -> AnyObject {
+        
+        return TyphoonDefinitionWrapper.withClass(AppDelegate.self) {
             (definition) in
             definition.injectProperty("twitterSessionWebAuthHandler", with: self.businessLogicAssembly.twitterWebAuthHandler())
         }
     }
     
-    dynamic func networkActivityIndicatorManager() -> AnyObject {
-        return TyphoonDefinition.withClass(NetworkActivityIndicatorManagerImpl.self) {
+    @objc dynamic func networkActivityIndicatorManager() -> AnyObject {
+        return TyphoonDefinitionWrapper.withClass(NetworkActivityIndicatorManagerImpl.self) {
             (definition) in
             
-            definition.scope = TyphoonScope.Singleton
+            definition.scope = TyphoonScope.singleton
         }
     }
 }

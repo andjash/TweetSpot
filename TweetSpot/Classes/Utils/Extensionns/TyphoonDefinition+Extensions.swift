@@ -11,17 +11,17 @@ import Typhoon
 
 extension TyphoonDefinition {
     
-    @nonobjc public func useInitializer(selector: String, handler: TyphoonMethod -> Void) {
-        self.useInitializer(Selector(selector)) { handler($0) }
+    @nonobjc public func useInitializer(_ selector: String, handler: @escaping (TyphoonMethod) -> Void) {
+        self.useInitializer(selector) { handler($0) }
     }
-    @nonobjc public func injectMethod(selector: String, handler: TyphoonMethod -> Void) {
-        self.injectMethod(Selector(selector)) { handler($0) }
+    @nonobjc public func injectMethod(_ selector: String, handler: @escaping (TyphoonMethod) -> Void) {
+        self.injectMethod(selector) { handler($0) }
     }
-    @nonobjc public func injectProperty(sel: String) {
-        self.injectProperty(Selector(sel))
+    @nonobjc public func injectProperty(_ sel: String) {
+        self.injectProperty(NSSelectorFromString(sel))
     }
-    @nonobjc public func injectProperty(selector: String, with: AnyObject!) {
-        self.injectProperty(Selector(selector), with: with)
+    @nonobjc public func injectProperty(_ selector: String, with: AnyObject!) {
+        self.injectProperty(NSSelectorFromString(selector), with: with)
     }
     
 }

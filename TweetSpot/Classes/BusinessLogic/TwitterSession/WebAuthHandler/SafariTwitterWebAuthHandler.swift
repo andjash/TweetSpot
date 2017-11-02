@@ -10,29 +10,30 @@ import UIKit
 
 class SafariTwitterWebAuthHandler: NSObject, TwitterWebAuthHandler {
     
-    var pendingSuccessCallback: ((tokenVerificator: String) -> ())?
+    var pendingSuccessCallback: ((_ tokenVerificator: String) -> ())?
     var pendingErrorCallback: ((NSError) -> ())?
     var handlingWebAuth = false
     
     
     override init() {
         super.init()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SafariTwitterWebAuthHandler.appBecomeActive),
-                                                         name: UIApplicationDidBecomeActiveNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(SafariTwitterWebAuthHandler.appBecomeActive),
+                                                         name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
     }
     
     deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
     
-    func handleWebAuthRequest(url: NSURL, success: (tokenVerificator: String) -> (), failed: (NSError) -> ()) {
+    
+    func handleWebAuthRequest(_ url: URL, success: @escaping (_ tokenVerificator: String) -> (), failed: @escaping (NSError) -> ()) {
         handlingWebAuth = true
         pendingSuccessCallback = success
         pendingErrorCallback = failed
-        UIApplication.sharedApplication().openURL(url)
+        UIApplication.shared.openURL(url)
     }
     
-    func handleWebAuthCallback(url: NSURL) -> Bool {
+    func handleWebAuthCallback(_ url: URL) -> Bool {
         if !handlingWebAuth {
             log.severe("Web auth canceled")
             return false
@@ -45,32 +46,32 @@ class SafariTwitterWebAuthHandler: NSObject, TwitterWebAuthHandler {
         let oVer = params["oauth_verifier"]
         
         let errCallback : () -> () = {
-            self.pendingErrorCallback?(NSError(domain: TwitterSessionConstants.errorDomain, code: TwitterSessionError.WebAuthFailed.rawValue, userInfo: nil))
+            self.pendingErrorCallback?(NSError(domain: TwitterSessionConstants.errorDomain, code: TwitterSessionError.webAuthFailed.rawValue, userInfo: nil))
             self.pendingSuccessCallback = nil
             self.pendingErrorCallback = nil
             self.handlingWebAuth = false
         }
         
-        guard let _ = oToken, ver = oVer else {
+        guard let _ = oToken, let ver = oVer else {
             errCallback()
             return false
         }
         
-        pendingSuccessCallback?(tokenVerificator: ver)
+        pendingSuccessCallback?(ver)
         pendingSuccessCallback = nil
         pendingErrorCallback = nil
         handlingWebAuth = false
         return true
     }
     
-    func parametersDictFromWebAuthCallback(query: String?) -> [String : String] {
+    func parametersDictFromWebAuthCallback(_ query: String?) -> [String : String] {
         guard let queryString = query else {
             return [:]
         }
         
         var result : [String : String] = [:]
-        for component in queryString.componentsSeparatedByString("&") {
-            let pair = component.componentsSeparatedByString("=")
+        for component in queryString.components(separatedBy: "&") {
+            let pair = component.components(separatedBy: "=")
             
             if pair.count != 2 {
                 continue
@@ -81,10 +82,10 @@ class SafariTwitterWebAuthHandler: NSObject, TwitterWebAuthHandler {
         return result
     }
     
-    func appBecomeActive() {
+    @objc func appBecomeActive() {
         if handlingWebAuth {
             log.severe("App opened while web auth in progress. Discard auth flow")
-            self.pendingErrorCallback?(NSError(domain: TwitterSessionConstants.errorDomain, code: TwitterSessionError.WebAuthFailed.rawValue, userInfo: nil))
+            self.pendingErrorCallback?(NSError(domain: TwitterSessionConstants.errorDomain, code: TwitterSessionError.webAuthFailed.rawValue, userInfo: nil))
             self.pendingSuccessCallback = nil
             self.pendingErrorCallback = nil
             self.handlingWebAuth = false

@@ -11,11 +11,11 @@ import UIKit
 
 extension UIScrollView {
     
-    func ts_configurePullToRefresh(handler: () -> ()) {
-        self.addPullToRefreshWithActionHandler(handler, position: .Top)
-        self.pullToRefreshView.setCustomView(CustomPullToRefreshView.customPullToRefreshViewWithState(.ArrowUp), forState: .Triggered)
-        self.pullToRefreshView.setCustomView(CustomPullToRefreshView.customPullToRefreshViewWithState(.ArrowDown), forState: .Stopped)
-        self.pullToRefreshView.setCustomView(CustomPullToRefreshView.customPullToRefreshViewWithState(.Loading), forState: .Loading)
+    func ts_configurePullToRefresh(_ handler: @escaping () -> ()) {
+        self.addPullToRefresh(actionHandler: handler, position: .top)
+        self.pullToRefreshView.setCustom(CustomPullToRefreshView.customPullToRefreshViewWithState(.arrowUp), for: .triggered)
+        self.pullToRefreshView.setCustom(CustomPullToRefreshView.customPullToRefreshViewWithState(.arrowDown), for: .stopped)
+        self.pullToRefreshView.setCustom(CustomPullToRefreshView.customPullToRefreshViewWithState(.loading), for: .loading)
     }
     
 }
@@ -23,40 +23,40 @@ extension UIScrollView {
 class CustomPullToRefreshView: UIView {
     
     enum State {
-        case Loading
-        case ArrowUp
-        case ArrowDown
+        case loading
+        case arrowUp
+        case arrowDown
     }
     
-    var state = CustomPullToRefreshView.State.Loading
+    var state = CustomPullToRefreshView.State.loading
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var arrowImageView: UIImageView!
     
     
-    static func customPullToRefreshViewWithState(state: CustomPullToRefreshView.State) -> CustomPullToRefreshView {
+    static func customPullToRefreshViewWithState(_ state: CustomPullToRefreshView.State) -> CustomPullToRefreshView {
         let result: CustomPullToRefreshView = CustomPullToRefreshView.ts_loadFromDefaultNib()
         result.state = state
         
         switch state {
-        case .Loading:
-            result.arrowImageView.hidden = true
+        case .loading:
+            result.arrowImageView.isHidden = true
             result.activityIndicator.startAnimating()
-        case .ArrowUp:
+        case .arrowUp:
             result.arrowImageView.image = UIImage(named: "CommonArrowUp")
-            result.activityIndicator.hidden = true
-        case .ArrowDown:
+            result.activityIndicator.isHidden = true
+        case .arrowDown:
             result.arrowImageView.image = UIImage(named: "CommonArrowDown")
-            result.activityIndicator.hidden = true
+            result.activityIndicator.isHidden = true
         }
         return result
     }
     
     
-    override func willMoveToSuperview(newSuperview: UIView?) {
-        super.willMoveToSuperview(newSuperview)
+    override func willMove(toSuperview newSuperview: UIView?) {
+        super.willMove(toSuperview: newSuperview)
         let alpha: CGFloat = newSuperview == nil ? 0 : 1
-        UIView.animateWithDuration(0.3) { 
+        UIView.animate(withDuration: 0.3, animations: { 
             self.arrowImageView.alpha = alpha
-        }
+        }) 
     }
 }

@@ -24,7 +24,7 @@ class TweetDetailsPresenter: NSObject, TweetDetailsViewOutput {
 // MARK: TweetDetailsModuleInput protocol
 extension TweetDetailsPresenter : TweetDetailsModuleInput {
   
-    func configureWithDTO(tweetDTO: AnyObject) {
+    func configureWithDTO(_ tweetDTO: AnyObject) {
         interactor.requestViewModelForDTO(tweetDTO)
     }
 }
@@ -32,7 +32,7 @@ extension TweetDetailsPresenter : TweetDetailsModuleInput {
 // MARK: TweetDetailsInteractorOutput protocol
 extension TweetDetailsPresenter : TweetDetailsInteractorOutput {
     
-    func updateWithViewModelItem(item: TweetDetailsViewModel) {
+    func updateWithViewModelItem(_ item: TweetDetailsViewModel) {
         view.configureWithItem(item)
     }
 }

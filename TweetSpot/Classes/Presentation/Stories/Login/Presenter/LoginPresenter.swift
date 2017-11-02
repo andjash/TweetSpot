@@ -35,7 +35,7 @@ extension LoginPresenter : LoginViewOutput {
         }
     }
     
-    func choosenAccount(name: String?) {
+    func choosenAccount(_ name: String?) {
         if let username = name {
             interactor.loginWithChoosenAccount(username)
         } else {
@@ -52,13 +52,13 @@ extension LoginPresenter : LoginInteractorOutput {
         router.closeModule()
     }
     
-    func loginFailed(error: NSError) {
+    func loginFailed(_ error: NSError) {
         view.displayProgres(enabled: false) {
             self.view.displayError(error)
         }
     }
     
-    func chooseFromLocalAccountsWithNames(names: [String]) {
+    func chooseFromLocalAccountsWithNames(_ names: [String]) {
         self.view.displayAccountChooser(names)
     }
     

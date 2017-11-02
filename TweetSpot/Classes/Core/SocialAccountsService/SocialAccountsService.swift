@@ -11,8 +11,8 @@ import Accounts
 
 
 @objc enum SocialAccountsServiceError : Int {
-    case AccessDenied
-    case InnerError    
+    case accessDenied
+    case innerError    
 }
 
 struct SocialAccountsServiceConstants {
@@ -21,6 +21,6 @@ struct SocialAccountsServiceConstants {
 }
 
 @objc protocol SocialAccountsService {
-    func requestIOSTwitterAccouns(completion: ([ACAccount]) -> (), error: (NSError) -> ())
-    func requestAccountWithId(accountId: String) -> ACAccount?
+    func requestIOSTwitterAccouns(_ completion: @escaping ([ACAccount]) -> (), error: @escaping (NSError) -> ())
+    func requestAccountWithId(_ accountId: String) -> ACAccount?
 }

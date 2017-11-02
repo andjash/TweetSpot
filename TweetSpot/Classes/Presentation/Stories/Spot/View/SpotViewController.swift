@@ -27,16 +27,16 @@ class SpotViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "spot_title".ts_localized("Spot")
-        newTweetsButton.setTitle("spot_new_tweet_available".ts_localized("Spot"), forState: .Normal)
+        newTweetsButton.setTitle("spot_new_tweet_available".ts_localized("Spot"), for: UIControlState())
         newTweetsButton.layoutIfNeeded()
         newTweetsButton.backgroundColor = UIColor.ts_applicationPrimaryColor
         newTweetsButton.layer.cornerRadius = newTweetsButton.frame.height / 2
        
-        newTweetsButton.layer.shadowColor = UIColor.blackColor().CGColor
+        newTweetsButton.layer.shadowColor = UIColor.black.cgColor
         newTweetsButton.layer.shadowOffset = CGSize(width: 0, height: 5);
         newTweetsButton.layer.shadowRadius = 5;
         newTweetsButton.layer.shadowOpacity = 0.3;
-        newTweetsButton.layer.shadowPath = CGPathCreateWithRoundedRect(newTweetsButton.bounds, newTweetsButton.frame.height / 2, newTweetsButton.frame.height / 2, nil)
+        newTweetsButton.layer.shadowPath = CGPath(roundedRect: newTweetsButton.bounds, cornerWidth: newTweetsButton.frame.height / 2, cornerHeight: newTweetsButton.frame.height / 2, transform: nil)
         newTweetsButtonTopSpace.constant = -newTweetsButton.frame.height - newTweetsButton.layer.shadowOffset.height - newTweetsButton.layer.shadowRadius
         
         tableDataManager.attachTo(tableView)
@@ -45,49 +45,49 @@ class SpotViewController: UIViewController {
         output.viewIsReady()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         output.viewIsAboutToAppear()
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         output.viewIsAboutToDisappear()
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if let selected = tableView.indexPathForSelectedRow {
-            tableView.deselectRowAtIndexPath(selected, animated: true)
+            tableView.deselectRow(at: selected, animated: true)
         }
     }
 
     // MARK: Actions
     
-    @IBAction func quitAction(sender: AnyObject?) {
+    @IBAction func quitAction(_ sender: AnyObject?) {
         output.quitRequested()
     }
     
-    @IBAction func settingsAction(sender: AnyObject?) {
+    @IBAction func settingsAction(_ sender: AnyObject?) {
         output.settingsRequested()
     }
     
-    @IBAction func showNewTweetsAction(sender: AnyObject?) {
-        UIView.animateWithDuration(0.3, animations: {
+    @IBAction func showNewTweetsAction(_ sender: AnyObject?) {
+        UIView.animate(withDuration: 0.3, animations: {
             self.tableView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
             self.newTweetsButtonTopSpace.constant = -self.newTweetsButton.frame.height - self.newTweetsButton.layer.shadowOffset.height - self.newTweetsButton.layer.shadowRadius
             self.view.layoutIfNeeded()
-        }) { _ in
+        }, completion: { _ in
             self.tableDataManager.showPullToRefreshAnimation(true)
             self.output.showMoreItemsRequested()
-        }
+        }) 
     }
 }
 
 // MARK: SpotTableDataMangerDelegate protocol
 extension SpotViewController : SpotTableDataMangerDelegate {
     func triggeredPullToRefresh() {
-        UIView.animateWithDuration(0.3, animations: {
+        UIView.animate(withDuration: 0.3, animations: {
             self.newTweetsButtonTopSpace.constant = -self.newTweetsButton.frame.height - self.newTweetsButton.layer.shadowOffset.height - self.newTweetsButton.layer.shadowRadius
             self.view.layoutIfNeeded()
         })
@@ -101,7 +101,7 @@ extension SpotViewController : SpotTableDataMangerDelegate {
 
 // MARK: CommonTableDataManagerDelegate protocol
 extension SpotViewController : CommonTableDataManagerDelegate {
-    func dataItemSelected(item: AnyObject) {
+    func dataItemSelected(_ item: AnyObject) {
         if let tweet = item as? SpotTweetItem {
             output.didSelectItem(tweet)
         }
@@ -111,11 +111,11 @@ extension SpotViewController : CommonTableDataManagerDelegate {
 // MARK: SpotViewInput protocol
 extension SpotViewController : SpotViewInput {
     
-    func setInfiniteScrollingEnabled(enabled: Bool) {
+    func setInfiniteScrollingEnabled(_ enabled: Bool) {
         tableDataManager.infiniteScrollEnabled = enabled
     }
     
-    func updateCellsWithAvatars(displayRequired displayRequired: Bool) {
+    func updateCellsWithAvatars(displayRequired: Bool) {
         if displayRequired == tableDataManager.displayingAvatars {
             return
         }
@@ -131,20 +131,20 @@ extension SpotViewController : SpotViewInput {
         }
     }
     
-    func displayItemsAbove(items: [SpotTweetItem]) {
+    func displayItemsAbove(_ items: [SpotTweetItem]) {
         tableDataManager.insertItemsAtTop(items)
     }
     
-    func displayItemsBelow(items: [SpotTweetItem]) {
+    func displayItemsBelow(_ items: [SpotTweetItem]) {
         tableDataManager.insertItemsAtBottom(items)
     }
     
-    func showAboveLoading(enabled enabled: Bool) {
+    func showAboveLoading(enabled: Bool) {
         tableDataManager.showPullToRefreshAnimation(enabled)
     }
     
     func showMoreItemsAvailable() {
-        UIView.animateWithDuration(0.3, animations: {
+        UIView.animate(withDuration: 0.3, animations: {
             self.newTweetsButtonTopSpace.constant = 10
             self.view.layoutIfNeeded()
         })

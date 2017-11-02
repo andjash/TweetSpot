@@ -15,5 +15,5 @@ import Foundation
         Setup initial state of the view
     */
 
-    func configureWithItem(item: TweetDetailsViewModel)
+    func configureWithItem(_ item: TweetDetailsViewModel)
 }

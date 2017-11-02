@@ -17,27 +17,27 @@ class NavigationRootInteractor: NSObject, NavigationRootInteractorInput {
   
     func trackSessionToDecideNextModule() {
         switch session.state {
-        case .Opened:
+        case .opened:
             output.spotModuleRequired()
-        case .Closed:
+        case .closed:
             output.loginModuleRequired()
         default:
             trackingSesion = true
-            NSNotificationCenter.defaultCenter().addObserver(self,
+            NotificationCenter.default.addObserver(self,
                                                              selector: #selector(NavigationRootInteractor.sessionStateChanged),
-                                                             name: TwitterSessionConstants.stateChangedNotificaton, object: session)
+                                                             name: NSNotification.Name(rawValue: TwitterSessionConstants.stateChangedNotificaton), object: session)
             output.accountVerifyingUIRequired()
         }
     }
     
     
-    func sessionStateChanged() {
+    @objc func sessionStateChanged() {
         trackingSesion = false
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
         switch session.state {
-        case .Opened:
+        case .opened:
             output.spotModuleRequired()
-        case .Closed:
+        case .closed:
             output.loginModuleRequired()
         default:
             break

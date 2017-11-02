@@ -11,18 +11,18 @@ import Foundation
 
 class UserDefaultsSettingsService: NSObject {
     
-    private struct Keys {
+    fileprivate struct Keys {
         static let shouldDisplayUserAvatarsOnSpot = "shouldDisplayUserAvatarsOnSpot"
     }
     
 
-    let userDefaults: NSUserDefaults
+    let userDefaults: UserDefaults
     
-    init(userDefaults: NSUserDefaults) {
+    init(userDefaults: UserDefaults) {
         self.userDefaults = userDefaults
         
-        if userDefaults.objectForKey(Keys.shouldDisplayUserAvatarsOnSpot) == nil {
-            self.userDefaults.setBool(true, forKey: Keys.shouldDisplayUserAvatarsOnSpot)
+        if userDefaults.object(forKey: Keys.shouldDisplayUserAvatarsOnSpot) == nil {
+            self.userDefaults.set(true, forKey: Keys.shouldDisplayUserAvatarsOnSpot)
         }
        
         super.init()
@@ -30,10 +30,10 @@ class UserDefaultsSettingsService: NSObject {
     
     var shouldDisplayUserAvatarsOnSpot: Bool {
         get {
-            return self.userDefaults.boolForKey(Keys.shouldDisplayUserAvatarsOnSpot)
+            return self.userDefaults.bool(forKey: Keys.shouldDisplayUserAvatarsOnSpot)
         }
         set {
-            self.userDefaults.setBool(newValue, forKey: Keys.shouldDisplayUserAvatarsOnSpot)
+            self.userDefaults.set(newValue, forKey: Keys.shouldDisplayUserAvatarsOnSpot)
             self.userDefaults.synchronize()
         }
     }

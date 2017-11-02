@@ -7,7 +7,6 @@ target 'TweetSpot' do
   pod 'RamblerTyphoonUtils/AssemblyCollector'
   pod 'ViperMcFlurry' 
   pod 'STTwitter', '~> 0.2.5'
-  pod 'XCGLogger', '~> 3.3'
   pod 'SAMKeychain', :git => 'https://github.com/soffes/SAMKeychain.git', :commit => '80714c22e0f43de0be2134f99c0a0841f9ef066c'
   pod 'SVPullToRefresh', :git => 'https://github.com/samvermette/SVPullToRefresh.git', :commit => 'a5f9dfee86a27c4e994d7edf93d0768c881d58bb'
   pod 'SGImageCache', '~> 2.3.0'

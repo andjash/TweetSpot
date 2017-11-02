@@ -14,91 +14,91 @@ class BusinesLogicAssembly: TyphoonAssembly, RamblerInitialAssembly {
     
     var coreServices: CoreServicesAssembly!
     
-    dynamic func homeTimelineModel() -> AnyObject {
-        return TyphoonDefinition.withClass(HomeTimelineModelImpl.self) {
+    @objc dynamic func homeTimelineModel() -> AnyObject {
+        return TyphoonDefinitionWrapper.withClass(HomeTimelineModelImpl.self) {
             (definition) in
             definition.useInitializer(NSSelectorFromString("initWithTwitterDAO:")) {
                 (initializer) in
                 
-                initializer.injectParameterWith(self.twitterDAO())
+                initializer!.injectParameter(with: self.twitterDAO())
             }
             
             definition.injectProperty("timelineStorage", with: self.homeTimelineStorage())
             definition.injectProperty("session", with: self.twitterSessionService())
             
-            definition.scope = TyphoonScope.Singleton
+            definition.scope = TyphoonScope.singleton
         }
     }
     
-    dynamic func twitterSessionService() -> AnyObject {
-        return TyphoonDefinition.withClass(TwitterSessionImpl.self) {
+    @objc dynamic func twitterSessionService() -> AnyObject {
+        return TyphoonDefinitionWrapper.withClass(TwitterSessionImpl.self) {
             (definition) in
             definition.useInitializer(NSSelectorFromString("initWithWebAuthHandler:")) {
                 (initializer) in
                 
-                initializer.injectParameterWith(self.twitterWebAuthHandler())
+                initializer!.injectParameter(with: self.twitterWebAuthHandler())
             }
             
             definition.injectProperty("tokenStorage", with: self.twitterSessionCredentialsStorage())
-            definition.scope = TyphoonScope.Singleton
+            definition.scope = TyphoonScope.singleton
         }
     }
     
-    dynamic func settingsService() -> AnyObject {
-        return TyphoonDefinition.withClass(UserDefaultsSettingsService.self) {
+    @objc dynamic func settingsService() -> AnyObject {
+        return TyphoonDefinitionWrapper.withClass(UserDefaultsSettingsService.self) {
             (definition) in
             definition.useInitializer(NSSelectorFromString("initWithUserDefaults:")) {
                 (initializer) in
                 
-                initializer.injectParameterWith(NSUserDefaults.standardUserDefaults())
+                initializer!.injectParameter(with: UserDefaults.standard)
             }
-            definition.scope = TyphoonScope.Singleton
+            definition.scope = TyphoonScope.singleton
         }
     }
     
-    dynamic func twitterDAO() -> AnyObject {
-        return TyphoonDefinition.withClass(TwitterDAOImpl.self) {
+    @objc dynamic func twitterDAO() -> AnyObject {
+        return TyphoonDefinitionWrapper.withClass(TwitterDAOImpl.self) {
             (definition) in
             definition.useInitializer(NSSelectorFromString("initWithDeserializer:queue:")) {
                 (initializer) in
                 
-                initializer.injectParameterWith(self.tweetDTODeserializer())
-                initializer.injectParameterWith(dispatch_queue_create("TwitterDAOImpl.queue", DISPATCH_QUEUE_CONCURRENT))
+                initializer!.injectParameter(with: self.tweetDTODeserializer())
+                initializer!.injectParameter(with: DispatchQueue(label: "TwitterDAOImpl.queue", attributes: DispatchQueue.Attributes.concurrent))
             }
                         
             definition.injectProperty("session", with: self.twitterSessionService())
-            definition.scope = TyphoonScope.Singleton
+            definition.scope = TyphoonScope.singleton
         }
     }
     
-    dynamic func twitterSessionCredentialsStorage() -> AnyObject {
-        return TyphoonDefinition.withClass(KeychainSessionCredentialsStorage.self) {
+    @objc dynamic func twitterSessionCredentialsStorage() -> AnyObject {
+        return TyphoonDefinitionWrapper.withClass(KeychainSessionCredentialsStorage.self) {
             (definition) in
             definition.useInitializer(NSSelectorFromString("initWithAccountsService:")) {
                 (initializer) in
                 
-                initializer.injectParameterWith(self.coreServices.socialAccountsService())
+                initializer!.injectParameter(with: self.coreServices.socialAccountsService())
             }
-            definition.scope = TyphoonScope.Singleton
+            definition.scope = TyphoonScope.singleton
         }
     }
     
-    dynamic func twitterWebAuthHandler() -> AnyObject {
-        return TyphoonDefinition.withClass(SafariTwitterWebAuthHandler.self) {
+    @objc dynamic func twitterWebAuthHandler() -> AnyObject {
+        return TyphoonDefinitionWrapper.withClass(SafariTwitterWebAuthHandler.self) {
             (definition) in
             
-            definition.scope = TyphoonScope.Singleton
+            definition.scope = TyphoonScope.singleton
         }
     }
     
-    dynamic func tweetDTODeserializer() -> AnyObject {
-        return TyphoonDefinition.withClass(TweetDTODictionaryDeserializer.self) {
+    @objc dynamic func tweetDTODeserializer() -> AnyObject {
+        return TyphoonDefinitionWrapper.withClass(TweetDTODictionaryDeserializer.self) {
             (definition) in
         }
     }
     
-    dynamic func homeTimelineStorage() -> AnyObject {
-        return TyphoonDefinition.withClass(InMemoryHomeTimelineStorage.self) {
+    @objc dynamic func homeTimelineStorage() -> AnyObject {
+        return TyphoonDefinitionWrapper.withClass(InMemoryHomeTimelineStorage.self) {
             (definition) in
         }
     }

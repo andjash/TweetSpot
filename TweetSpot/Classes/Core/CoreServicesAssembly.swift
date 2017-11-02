@@ -12,19 +12,19 @@ import RamblerTyphoonUtils
 
 class CoreServicesAssembly: TyphoonAssembly, RamblerInitialAssembly {
     
-    dynamic func socialAccountsService() -> AnyObject {
-        return TyphoonDefinition.withClass(SocialAccountsServiceImpl.self) {
+    @objc dynamic func socialAccountsService() -> AnyObject {
+        return TyphoonDefinitionWrapper.withClass(SocialAccountsServiceImpl.self) {
             (definition) in
             
-            definition.scope = TyphoonScope.Singleton
+            definition.scope = TyphoonScope.singleton
         }
     }
     
-    dynamic func imagesService() -> AnyObject {
-        return TyphoonDefinition.withClass(ImagesServiceImpl.self) {
+    @objc dynamic func imagesService() -> AnyObject {
+        return TyphoonDefinitionWrapper.withClass(ImagesServiceImpl.self) {
             (definition) in
             
-            definition.scope = TyphoonScope.Singleton
+            definition.scope = TyphoonScope.singleton
         }
     }
     

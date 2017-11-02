@@ -12,6 +12,6 @@ import Foundation
     
     func loginWithIOSAccountRequested()
     func loginWithPasswordRequested()
-    func loginWithChoosenAccount(username: String)
+    func loginWithChoosenAccount(_ username: String)
     
 }

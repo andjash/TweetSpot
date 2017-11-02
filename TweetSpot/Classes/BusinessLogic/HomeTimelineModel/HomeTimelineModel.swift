@@ -9,10 +9,10 @@
 import Foundation
 
 @objc enum HomeTimelineModelLoadingDirection : Int {
-    case None = 0
-    case Forward
-    case Backward
-    case Both
+    case none = 0
+    case forward
+    case backward
+    case both
 }
 
 struct HomeTimelineModelConstants {    
@@ -25,6 +25,6 @@ struct HomeTimelineModelConstants {
     var homeLineTweets: [TweetDTO] { get }
     var loadingDirection: HomeTimelineModelLoadingDirection { get }
     
-    func loadForward(success: (([TweetDTO]) -> ())?, error: ((NSError) -> ())?)
-    func loadBackward(success: (([TweetDTO]) -> ())?, error: ((NSError) -> ())?)    
+    func loadForward(_ success: (([TweetDTO]) -> ())?, error: ((NSError) -> ())?)
+    func loadBackward(_ success: (([TweetDTO]) -> ())?, error: ((NSError) -> ())?)    
 }

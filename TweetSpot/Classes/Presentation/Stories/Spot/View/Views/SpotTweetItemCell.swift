@@ -46,7 +46,7 @@ class SpotTweetItemCell: UITableViewCell {
         avatarImageView.clipsToBounds = true
     }
     
-    func bindItem(item: SpotTweetItem, displayAvatar: Bool) {
+    func bindItem(_ item: SpotTweetItem, displayAvatar: Bool) {
         currentItem?.avatarRetrievedCallback = nil
         currentItem = item
         dateLabel.text = item.formattedPostDate
@@ -65,7 +65,7 @@ class SpotTweetItemCell: UITableViewCell {
                 item.avatarRetrievedCallback = {[weak self] in
                     if let strongSelf = self {
                         strongSelf.avatarImageView.image = strongSelf.currentItem?.avatar
-                        UIView.animateWithDuration(0.3, animations: { 
+                        UIView.animate(withDuration: 0.3, animations: { 
                             strongSelf.avatarImageView.alpha = 1
                         })
                     }

@@ -23,29 +23,29 @@ class FadeAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     }
     
     
-    func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
+    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return 0.3
     }
     
-    func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
-        let toViewController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)!;
+    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+        let toViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to)!;
         toViewController.view.alpha = 0.0;
         
-        toViewController.view.frame = (transitionContext.containerView()?.bounds)!
-        transitionContext.containerView()?.addSubview(toViewController.view)
+        toViewController.view.frame = (transitionContext.containerView.bounds)
+        transitionContext.containerView.addSubview(toViewController.view)
         
         
-        UIView.animateWithDuration(self.transitionDuration(transitionContext), animations: {
+        UIView.animate(withDuration: self.transitionDuration(using: transitionContext), animations: {
             toViewController.view.alpha = 1
-        }) { (completed) in
-            let success = !transitionContext.transitionWasCancelled();
+        }, completion: { (completed) in
+            let success = !transitionContext.transitionWasCancelled;
             
             if (self.presenting && !success) || (!self.presenting && success) {
                 toViewController.view.removeFromSuperview()
             }
             transitionContext.completeTransition(success)
             self.completion?()
-        }
+        }) 
     }
     
 }

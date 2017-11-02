@@ -10,9 +10,9 @@ import Foundation
 
 
 @objc protocol HomeTimelineStorage {
-    func storeItemsAbove(items: [TweetDTO])
-    func storeItemsBelow(items: [TweetDTO])
+    func storeItemsAbove(_ items: [TweetDTO])
+    func storeItemsBelow(_ items: [TweetDTO])
     
-    func restore(completion: ([TweetDTO]) -> ())
+    func restore(_ completion: ([TweetDTO]) -> ())
     func clearAll()
 }

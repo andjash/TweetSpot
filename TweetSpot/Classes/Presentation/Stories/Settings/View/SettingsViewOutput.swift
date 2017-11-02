@@ -16,6 +16,6 @@ import Foundation
     */
 
     func viewIsReady()
-    func selectedItem(item: SettingsItem)
+    func selectedItem(_ item: SettingsItem)
     func closeRequested()
 }

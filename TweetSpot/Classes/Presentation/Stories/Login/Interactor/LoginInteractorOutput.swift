@@ -11,7 +11,7 @@ import Foundation
 @objc protocol LoginInteractorOutput {
     
     func loginSuccess()
-    func loginFailed(error: NSError)
-    func chooseFromLocalAccountsWithNames(names: [String])
+    func loginFailed(_ error: NSError)
+    func chooseFromLocalAccountsWithNames(_ names: [String])
     
 }

@@ -9,17 +9,17 @@
 import Foundation
 
 class TweetDTODictionaryDeserializer: NSObject, TweetDTODeserializer {
-    func deserializeTweetDTOsFromObject(object: AnyObject) -> [TweetDTO]? {
+    func deserializeTweetDTOsFromObject(_ object: AnyObject) -> [TweetDTO]? {
         guard let arrayOfDicts = object as? NSArray else { return nil }
         
         var result: [TweetDTO] = []
-        let dateFormatter = NSDateFormatter.st_TwitterDateFormatter()
+        let dateFormatter = DateFormatter.st_Twitter()
         
         for dict in arrayOfDicts {
             guard let dict = dict as? NSDictionary else { continue }
             guard let id = dict["id_str"] as? String else { continue }
             guard let creationDateStr = dict["created_at"] as? String else { continue }
-            guard let creationDate =  dateFormatter.dateFromString(creationDateStr) else {continue}
+            guard let creationDate =  dateFormatter?.date(from: creationDateStr) else {continue}
             
             guard let text = dict["text"] as? String else { continue }
             

@@ -13,57 +13,61 @@ class TwitterDAOImpl: NSObject, TwitterDAO {
     
     weak var session: TwitterSession!
     let deserializer: TweetDTODeserializer
-    let workingQueue: dispatch_queue_t
+    let workingQueue: DispatchQueue
     var cancelationTokens: [String : STTwitterRequestProtocol] = [:]
     
-    init(deserializer: TweetDTODeserializer, queue: dispatch_queue_t) {
+    init(deserializer: TweetDTODeserializer, queue: DispatchQueue) {
         self.deserializer = deserializer
         self.workingQueue = queue
     }
     
     
-    func getHomeTweets(maxId maxId: String?, minId: String?, count: Int, success: ([TweetDTO]) -> (), error: (NSError) -> ()) {
-        if session.state != .Opened {
-            error(NSError(domain: TwitterDAOConstants.errorDomain, code: TwitterDAOError.SessionIsNotOpened.rawValue, userInfo: nil))
+    func getHomeTweets(maxId: String?, minId: String?, count: Int, success: @escaping ([TweetDTO]) -> (), error: @escaping (NSError) -> ()) {
+        if session.state != .opened {
+            error(NSError(domain: TwitterDAOConstants.errorDomain, code: TwitterDAOError.sessionIsNotOpened.rawValue, userInfo: nil))
             return
         }
         guard let twitterApi = session.apiAccessObject as? STTwitterAPI else {
-            error(NSError(domain: TwitterDAOConstants.errorDomain, code: TwitterDAOError.InvalidSession.rawValue, userInfo: nil))
+            error(NSError(domain: TwitterDAOConstants.errorDomain, code: TwitterDAOError.invalidSession.rawValue, userInfo: nil))
             return
         }
         
-        log.verbose("Requesting tweets: \n\tmaxId: \(maxId)\n\tminId: \(minId)\n\tcount: \(count)")
-        let uuid = NSUUID().UUIDString
-        let token = twitterApi.getStatusesHomeTimelineWithCount(String(count),
+        log.verbose("Requesting tweets: \n\tmaxId: \(String(describing: maxId))\n\tminId: \(String(describing: minId))\n\tcount: \(count)")
+        let uuid = UUID().uuidString
+        let token = twitterApi.getStatusesHomeTimeline(withCount: String(count),
                                                                 sinceID: minId,
                                                                 maxID: maxId,
                                                                 trimUser: false,
                                                                 excludeReplies: true,
                                                                 contributorDetails: false,
-                                                                includeEntities: false,
+                                                                includeEntities: false, useExtendedTweetMode: false,
         successBlock: { (statuses) in
             self.cancelationTokens[uuid] = nil
+            guard let statuses = statuses else {
+                error(NSError(domain: TwitterDAOConstants.errorDomain, code: TwitterDAOError.noData.rawValue, userInfo: nil))
+                return
+            }
+            
             log.verbose("Loaded \(statuses.count)")
             
-            dispatch_async(self.workingQueue, {
+            self.workingQueue.async(execute: {
                 
-                let tweets = self.deserializer.deserializeTweetDTOsFromObject(statuses)
-                log.verbose("Parsed \(tweets?.count)")
-              
-                dispatch_async(dispatch_get_main_queue(), {
-                    
+                let tweets = self.deserializer.deserializeTweetDTOsFromObject(statuses as AnyObject)
+                log.verbose("Parsed \(String(describing: tweets?.count))")
+                
+                DispatchQueue.main.async {
                     if let tweetDTOs = tweets {
                         success(tweetDTOs)
                     } else {
-                        error(NSError(domain: TwitterDAOConstants.errorDomain, code: TwitterDAOError.UnableToParseServerResponse.rawValue, userInfo: nil))
+                        error(NSError(domain: TwitterDAOConstants.errorDomain, code: TwitterDAOError.unableToParseServerResponse.rawValue, userInfo: nil))
                     }
-                })
+                }
             })
         }) { (err) in
-            log.error("Error while requestin tweets: \(err)")
+            log.error("Error while requestin tweets: \(String(describing: err))")
             error(NSError(domain: TwitterDAOConstants.errorDomain,
-                            code: TwitterDAOError.InnerError.rawValue,
-                        userInfo: [TwitterDAOConstants.innerErrorUserInfoKey : err]))
+                            code: TwitterDAOError.innerError.rawValue,
+                        userInfo: [TwitterDAOConstants.innerErrorUserInfoKey : err!]))
         }
         cancelationTokens[uuid] = token
     }

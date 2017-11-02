@@ -23,8 +23,8 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loginWithIOSButton.setTitle("login_with_ios_button_title".ts_localized("Login"), forState: .Normal)
-        loginWithPasswordButton.setTitle("login_with_pass_button_title".ts_localized("Login"), forState: .Normal)
+        loginWithIOSButton.setTitle("login_with_ios_button_title".ts_localized("Login"), for: UIControlState())
+        loginWithPasswordButton.setTitle("login_with_pass_button_title".ts_localized("Login"), for: UIControlState())
         
 
         let gLayer = CAGradientLayer.ts_applicationPrimaryGradient
@@ -41,11 +41,11 @@ class LoginViewController: UIViewController {
 
     // MARK: Actions
     
-    @IBAction func enterWithIOSAccountAction(sender: AnyObject?) {
+    @IBAction func enterWithIOSAccountAction(_ sender: AnyObject?) {
         output.loginWithIosAccountTapped()
     }
 
-    @IBAction func enterWithPasswordAction(sender: AnyObject?) {
+    @IBAction func enterWithPasswordAction(_ sender: AnyObject?) {
         output.loginWithPasswordTapped()
     }
 }
@@ -56,55 +56,55 @@ extension LoginViewController : LoginViewInput {
     func setupInitialState() {
     }
     
-    func displayProgres(enabled enabled: Bool, completion: () -> ()) {
+    func displayProgres(enabled: Bool, completion: @escaping () -> ()) {
         if enabled {
-            UIView.animateWithDuration(0.3, animations: {
+            UIView.animate(withDuration: 0.3, animations: {
                 self.loginWithIOSButton.alpha = 0
                 self.loginWithPasswordButton.alpha = 0
-            }) { (completed) in
+            }, completion: { (completed) in
                 self.activityIndicator.startAnimating()
-                UIView.animateWithDuration(0.3, animations: {
+                UIView.animate(withDuration: 0.3, animations: {
                     self.activityIndicator.alpha = 1
                     }, completion: { (completed) in
                         completion()
                 })
-            }
+            }) 
         } else {
-            UIView.animateWithDuration(0.3, animations: {
+            UIView.animate(withDuration: 0.3, animations: {
                 self.activityIndicator.alpha = 0
-            }) { (completed) in
+            }, completion: { (completed) in
                 self.activityIndicator.stopAnimating()
-                UIView.animateWithDuration(0.3, animations: {
+                UIView.animate(withDuration: 0.3, animations: {
                     self.loginWithIOSButton.alpha = 1
                     self.loginWithPasswordButton.alpha = 1
                     }, completion: { (completed) in
                         completion()
                 })
-            }
+            }) 
         }
     }
     
-    func displayError(error: NSError) {
-        let alert = UIAlertController(title: "common_error".ts_localized("Common"), message: error.ts_userFriendlyDescription, preferredStyle: .Alert)
-        let okActinon = UIAlertAction(title: "common_ok".ts_localized("Common"), style: .Cancel, handler: nil)
+    func displayError(_ error: NSError) {
+        let alert = UIAlertController(title: "common_error".ts_localized("Common"), message: error.ts_userFriendlyDescription, preferredStyle: .alert)
+        let okActinon = UIAlertAction(title: "common_ok".ts_localized("Common"), style: .cancel, handler: nil)
         alert.addAction(okActinon)
-        self.presentViewController(alert, animated: true, completion: nil)
+        self.present(alert, animated: true, completion: nil)
     }
     
-    func displayAccountChooser(accounts: [String]) {
-        let alert = UIAlertController(title: "login_account_chooser_title".ts_localized("Login"), message: nil, preferredStyle: .ActionSheet)
+    func displayAccountChooser(_ accounts: [String]) {
+        let alert = UIAlertController(title: "login_account_chooser_title".ts_localized("Login"), message: nil, preferredStyle: .actionSheet)
         
         for name in accounts {
-            let action = UIAlertAction(title: name, style: .Default, handler: {(action) in
+            let action = UIAlertAction(title: name, style: .default, handler: {(action) in
                 self.output.choosenAccount(name)
             })
             alert.addAction(action)
         }
-        let cancelAction = UIAlertAction(title: "common_cancel".ts_localized("Common"), style: .Cancel, handler: {(action) in
+        let cancelAction = UIAlertAction(title: "common_cancel".ts_localized("Common"), style: .cancel, handler: {(action) in
             self.output.choosenAccount(nil)
         })
         alert.addAction(cancelAction)        
-        self.presentViewController(alert, animated: true, completion: nil)
+        self.present(alert, animated: true, completion: nil)
     }
 }
 

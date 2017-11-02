@@ -11,6 +11,6 @@ import Foundation
 @objc protocol SettingsInteractorInput {
     
     func requestSettingsSections()
-    func changeRequestForItem(item: SettingsItem)
+    func changeRequestForItem(_ item: SettingsItem)
     
 }

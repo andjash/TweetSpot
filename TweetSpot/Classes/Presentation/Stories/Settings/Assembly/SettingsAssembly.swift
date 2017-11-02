@@ -14,28 +14,28 @@ class SettingsAssembly: TyphoonAssembly, RamblerInitialAssembly {
     
     var businessLogic: BusinesLogicAssembly!
 
-    dynamic func viewSettingsModule() -> AnyObject {
-        return TyphoonDefinition.withClass(SettingsViewController.self) {
+    @objc dynamic func viewSettingsModule() -> AnyObject {
+        return TyphoonDefinitionWrapper.withClass(SettingsViewController.self) {
             (definition) in
             definition.injectProperty("output", with: self.presenterSettingsModule())
             definition.injectProperty("moduleInput", with: self.presenterSettingsModule())          
         }
     }
 
-    dynamic func interactorSettingsModule() -> AnyObject {
-        return TyphoonDefinition.withClass(SettingsInteractor.self) {
+    @objc dynamic func interactorSettingsModule() -> AnyObject {
+        return TyphoonDefinitionWrapper.withClass(SettingsInteractor.self) {
             (definition) in
             definition.useInitializer(NSSelectorFromString("initWithSettingsSvc:")) {
                 (initializer) in
                 
-                initializer.injectParameterWith(self.businessLogic.settingsService())
+                initializer!.injectParameter(with: self.businessLogic.settingsService())
             }
             definition.injectProperty("output", with: self.presenterSettingsModule())
         }                              
     }
 
-    dynamic func presenterSettingsModule() -> AnyObject {
-        return TyphoonDefinition.withClass(SettingsPresenter.self) {
+    @objc dynamic func presenterSettingsModule() -> AnyObject {
+        return TyphoonDefinitionWrapper.withClass(SettingsPresenter.self) {
             (definition) in
             definition.injectProperty("view", with: self.viewSettingsModule())
             definition.injectProperty("interactor", with: self.interactorSettingsModule())          
@@ -43,8 +43,8 @@ class SettingsAssembly: TyphoonAssembly, RamblerInitialAssembly {
         }
     }
 
-    dynamic func routerSettingsModule() -> AnyObject {
-        return TyphoonDefinition.withClass(SettingsRouter.self) {
+    @objc dynamic func routerSettingsModule() -> AnyObject {
+        return TyphoonDefinitionWrapper.withClass(SettingsRouter.self) {
             (definition) in
             definition.injectProperty("transitionHandler", with: self.viewSettingsModule())       
         }

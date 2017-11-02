@@ -63,7 +63,7 @@ extension SpotPresenter : SpotViewOutput {
         interactor.loadBackwardRequested()
     }
     
-    func didSelectItem(item: SpotTweetItem) {
+    func didSelectItem(_ item: SpotTweetItem) {
         interactor.requestDTOForItem(item)
     }
     
@@ -71,7 +71,7 @@ extension SpotPresenter : SpotViewOutput {
         interactor.loadForwardRequested()
     }
     
-    func avatarsLoadRequestedForItems(items: [SpotTweetItem]) {
+    func avatarsLoadRequestedForItems(_ items: [SpotTweetItem]) {
         interactor.requestImagesForItems(items)
     }
 }
@@ -79,18 +79,18 @@ extension SpotPresenter : SpotViewOutput {
 // MARK: SpotInteractorOutput protocol
 extension SpotPresenter : SpotInteractorOutput {
     
-    func prefetchedItemsAvailable(prefetchedItems: [SpotTweetItem]) {
+    func prefetchedItemsAvailable(_ prefetchedItems: [SpotTweetItem]) {
         self.prefetchedItems += prefetchedItems
         view.showMoreItemsAvailable()
     }
     
-    func dtoFoundForItem(item: SpotTweetItem, dto: AnyObject?) {
+    func dtoFoundForItem(_ item: SpotTweetItem, dto: AnyObject?) {
         if let udto = dto {
             router.routeToTweetDetails(udto)
         }
     }
 
-    func forwardItemsLoaded(items: [SpotTweetItem]) {
+    func forwardItemsLoaded(_ items: [SpotTweetItem]) {
         if items.count > 0 && hasItemsAtPast {
             view.setInfiniteScrollingEnabled(true)
         }
@@ -98,7 +98,7 @@ extension SpotPresenter : SpotInteractorOutput {
         prefetchedItems.removeAll()
     }
     
-    func backwardItemsLoaded(items: [SpotTweetItem]) {
+    func backwardItemsLoaded(_ items: [SpotTweetItem]) {
         view.displayItemsBelow(items)
     }
     

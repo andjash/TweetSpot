@@ -9,10 +9,11 @@
 import Foundation
 
 @objc enum TwitterDAOError : Int {
-    case InvalidSession
-    case SessionIsNotOpened
-    case UnableToParseServerResponse
-    case InnerError
+    case invalidSession
+    case sessionIsNotOpened
+    case noData
+    case unableToParseServerResponse
+    case innerError
 }
 
 struct TwitterDAOConstants {
@@ -23,7 +24,7 @@ struct TwitterDAOConstants {
 }
 
 @objc protocol TwitterDAO {
-    func getHomeTweets(maxId maxId: String?, minId: String?, count: Int, success: ([TweetDTO]) -> (), error: (NSError) -> ())
+    func getHomeTweets(maxId: String?, minId: String?, count: Int, success: @escaping ([TweetDTO]) -> (), error: @escaping (NSError) -> ())
     
     func cancelAllRequests()
 }

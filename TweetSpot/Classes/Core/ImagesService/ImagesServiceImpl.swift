@@ -11,23 +11,23 @@ import SGImageCache
 
 class ImagesServiceImpl: NSObject, ImagesService {
     
-    func imagePromiseForUrl(urlString: String) -> ImageRetrievePromise {
+    func imagePromiseForUrl(_ urlString: String) -> ImageRetrievePromise {
         let promise = ImageRetrievePromise(urlString: urlString)
-        NSNotificationCenter.defaultCenter().postNotificationName(ImagesServiceConstants.didStartRetreivingImageNotification, object: self)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: ImagesServiceConstants.didStartRetreivingImageNotification), object: self)
         let sgPromise = SGImageCache.getImageForURL(urlString)
         
-        sgPromise.swiftThen({ object in
-            NSNotificationCenter.defaultCenter().postNotificationName(ImagesServiceConstants.didEndRetreivingImageNotification, object: self)
+        _ = sgPromise?.swiftThen({ object in
+            NotificationCenter.default.post(name: Notification.Name(rawValue: ImagesServiceConstants.didEndRetreivingImageNotification), object: self)
             if let image = object as? UIImage {
                 promise.image = image
             }
             return nil
         })
         
-        sgPromise.onFail = { (error: NSError?, wasFatal: Bool) -> () in
-            NSNotificationCenter.defaultCenter().postNotificationName(ImagesServiceConstants.didEndRetreivingImageNotification, object: self)
+        sgPromise?.onFail = { (error: NSError?, wasFatal: Bool) -> () in
+            NotificationCenter.default.post(name: Notification.Name(rawValue: ImagesServiceConstants.didEndRetreivingImageNotification), object: self)
             promise.error = error
-        }
+        } as! SGCacheFetchFail
         
         return promise
     }
@@ -37,12 +37,12 @@ class ImagesServiceImpl: NSObject, ImagesService {
 
 private extension PMKPromise {
     
-    private func objCBlockFromPromiseClosure(closure: (AnyObject) -> (PMKPromise?)) -> AnyObject {
-        return unsafeBitCast(closure as @convention(block) (AnyObject) -> (PMKPromise?), AnyObject.self)
+    func objCBlockFromPromiseClosure(_ closure: @escaping (AnyObject) -> (PMKPromise?)) -> AnyObject {
+        return unsafeBitCast(closure as @convention(block) (AnyObject) -> (PMKPromise?), to: AnyObject.self)
     }
     
-    func swiftThen(closure: (AnyObject) -> (PMKPromise?)) -> PMKPromise {
-        return self.then()(objCBlockFromPromiseClosure(closure))
+    func swiftThen(_ closure: @escaping (AnyObject) -> (PMKPromise?)) -> PMKPromise {
+        return self.then()(objCBlockFromPromiseClosure(closure))!
     }
 }
 

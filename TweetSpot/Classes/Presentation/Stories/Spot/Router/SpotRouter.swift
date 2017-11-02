@@ -18,13 +18,13 @@ class SpotRouter: NSObject, SpotRouterInput {
     }
     
     func routeToSettingsModule() {
-        transitionHandler.openModuleUsingSegue?("SpotToSettingsSegue").thenChainUsingBlock { (input) -> RamblerViperModuleOutput! in
+        transitionHandler.openModule?(usingSegue: "SpotToSettingsSegue").thenChain { (input) -> RamblerViperModuleOutput! in
             return nil
         }
     }
     
-    func routeToTweetDetails(withDTO: AnyObject) {
-        transitionHandler.openModuleUsingSegue?("SpotToTweetDetailsSegue").thenChainUsingBlock { (input) -> RamblerViperModuleOutput! in
+    func routeToTweetDetails(_ withDTO: AnyObject) {
+        transitionHandler.openModule?(usingSegue: "SpotToTweetDetailsSegue").thenChain { (input) -> RamblerViperModuleOutput! in
             if let tweetModuleInput = input as? TweetDetailsModuleInput {
                 tweetModuleInput.configureWithDTO(withDTO)
             }

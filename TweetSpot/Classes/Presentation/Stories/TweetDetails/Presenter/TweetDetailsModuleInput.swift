@@ -10,6 +10,6 @@ import Foundation
 
 @objc protocol TweetDetailsModuleInput {
     
-    func configureWithDTO(tweetDTO: AnyObject)
+    func configureWithDTO(_ tweetDTO: AnyObject)
 
 }

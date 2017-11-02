@@ -14,13 +14,13 @@ class NavigationRootRouter: NSObject, NavigationRootRouterInput {
 	weak var transitionHandler: RamblerViperModuleTransitionHandlerProtocol!
     
     func routeToLogin() {
-        transitionHandler.openModuleUsingSegue?("RootToLoginSegue").thenChainUsingBlock { (input) -> RamblerViperModuleOutput! in
+        transitionHandler.openModule?(usingSegue: "RootToLoginSegue").thenChain { (input) -> RamblerViperModuleOutput! in
             return nil
         }
     }
     
     func routeToSpot() {
-        transitionHandler.openModuleUsingSegue?("RootToSpotSegue").thenChainUsingBlock { (input) -> RamblerViperModuleOutput! in
+        transitionHandler.openModule?(usingSegue: "RootToSpotSegue").thenChain { (input) -> RamblerViperModuleOutput! in
             return nil
         }
     }

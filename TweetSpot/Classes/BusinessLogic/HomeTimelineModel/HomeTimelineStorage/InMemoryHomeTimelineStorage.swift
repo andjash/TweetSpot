@@ -12,15 +12,15 @@ class InMemoryHomeTimelineStorage: NSObject, HomeTimelineStorage {
     
     var allItems: [TweetDTO] = []
     
-    func storeItemsAbove(items: [TweetDTO]) {
+    func storeItemsAbove(_ items: [TweetDTO]) {
         allItems = items + allItems
         
     }
-    func storeItemsBelow(items: [TweetDTO]) {
+    func storeItemsBelow(_ items: [TweetDTO]) {
         allItems += items
     }
     
-    func restore(completion: ([TweetDTO]) -> ()) {
+    func restore(_ completion: ([TweetDTO]) -> ()) {
         completion(allItems)
     }
     

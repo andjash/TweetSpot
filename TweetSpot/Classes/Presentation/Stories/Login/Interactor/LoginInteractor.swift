@@ -36,7 +36,7 @@ class LoginInteractor: NSObject, LoginInteractorInput {
         })
     }
     
-    func loginWithChoosenAccount(username: String) {
+    func loginWithChoosenAccount(_ username: String) {
         guard let accs = accounts else { return }
         for acc in accs {
             if acc.username == username {

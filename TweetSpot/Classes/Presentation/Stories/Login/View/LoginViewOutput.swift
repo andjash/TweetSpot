@@ -19,6 +19,6 @@ import Foundation
     
     func loginWithIosAccountTapped()
     func loginWithPasswordTapped()
-    func choosenAccount(name: String?)
+    func choosenAccount(_ name: String?)
     
 }

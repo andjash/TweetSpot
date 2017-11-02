@@ -9,6 +9,6 @@
 import Foundation
 
 @objc protocol TwitterWebAuthHandler {
-    func handleWebAuthRequest(url: NSURL, success: (tokenVerificator: String) -> (), failed: (NSError) -> ())
-    optional func handleWebAuthCallback(url: NSURL) -> Bool
+    func handleWebAuthRequest(_ url: URL, success: @escaping (_ tokenVerificator: String) -> (), failed: @escaping (NSError) -> ())
+    @objc optional func handleWebAuthCallback(_ url: URL) -> Bool
 }

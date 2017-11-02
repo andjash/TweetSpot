@@ -36,12 +36,12 @@ class NavigationRootViewController: UIViewController  {
         output.viewIsReady()
     }
 
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         output.viewIsAppeared()
     }
     
-    override func viewDidDisappear(animated: Bool) {
+    override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         verifyingLabel.alpha = 0
         activityIndicator.alpha = 0
@@ -59,26 +59,26 @@ extension NavigationRootViewController : NavigationRootViewInput {
         
     }
     
-    func showAppLaunchAnimation(completion: () -> ()) {
-        UIView.animateWithDuration(0.5, animations: {
+    func showAppLaunchAnimation(_ completion: @escaping () -> ()) {
+        UIView.animate(withDuration: 0.5, animations: {
             self.gradientView.alpha = 1
             self.titleLabel.alpha = 0
-        }) { (completed) in
-            UIView.animateWithDuration(0.4, animations: {
+        }, completion: { (completed) in
+            UIView.animate(withDuration: 0.4, animations: {
                 self.birdLabelHorizontalAlign.constant = -self.view.frame.width * 2 / 3
                 self.view.setNeedsLayout()
                 self.view.layoutIfNeeded()
             }, completion: { (completed) in
                     completion()
             })
-        }
+        }) 
     }
     
     func showAccountVerifyingUI() {
         activityIndicator.startAnimating()
-        UIView.animateWithDuration(0.3) {
+        UIView.animate(withDuration: 0.3, animations: {
             self.verifyingLabel.alpha = 1
             self.activityIndicator.alpha = 1
-        }
+        }) 
     }
 }

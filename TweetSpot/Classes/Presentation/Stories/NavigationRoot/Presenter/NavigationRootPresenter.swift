@@ -14,8 +14,8 @@ class NavigationRootPresenter: NSObject, NavigationRootModuleInput {
     var interactor: NavigationRootInteractorInput!
     var router: NavigationRootRouterInput!
     
-    private var viewIsAppearedOnce = false
-    private var verifyinaccountShown = false
+    fileprivate var viewIsAppearedOnce = false
+    fileprivate var verifyinaccountShown = false
     
 }
 
@@ -42,8 +42,8 @@ extension NavigationRootPresenter : NavigationRootInteractorOutput {
     
     func loginModuleRequired() {
         if verifyinaccountShown {
-            let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(0.5 * Double(NSEC_PER_SEC)))
-            dispatch_after(delayTime, dispatch_get_main_queue()) {
+            let delayTime = DispatchTime.now() + Double(Int64(0.5 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+            DispatchQueue.main.asyncAfter(deadline: delayTime) {
                self.router.routeToLogin()
             }
         } else {
@@ -53,8 +53,8 @@ extension NavigationRootPresenter : NavigationRootInteractorOutput {
     
     func spotModuleRequired() {
         if verifyinaccountShown {
-            let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(0.5 * Double(NSEC_PER_SEC)))
-            dispatch_after(delayTime, dispatch_get_main_queue()) {
+            let delayTime = DispatchTime.now() + Double(Int64(0.5 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+            DispatchQueue.main.asyncAfter(deadline: delayTime) {
                 self.router.routeToSpot()
             }
         } else {

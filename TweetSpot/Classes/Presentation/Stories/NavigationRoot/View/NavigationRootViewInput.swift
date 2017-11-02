@@ -16,6 +16,6 @@ import Foundation
     */
 
     func setupInitialState()
-    func showAppLaunchAnimation(completion: () -> ())
+    func showAppLaunchAnimation(_ completion: @escaping () -> ())
     func showAccountVerifyingUI()
 }

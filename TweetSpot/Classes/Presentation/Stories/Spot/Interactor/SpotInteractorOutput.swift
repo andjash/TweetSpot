@@ -10,10 +10,10 @@ import Foundation
 
 @objc protocol SpotInteractorOutput {
     
-    func dtoFoundForItem(item: SpotTweetItem, dto: AnyObject?)
-    func forwardItemsLoaded(items: [SpotTweetItem])
-    func backwardItemsLoaded(items: [SpotTweetItem])
+    func dtoFoundForItem(_ item: SpotTweetItem, dto: AnyObject?)
+    func forwardItemsLoaded(_ items: [SpotTweetItem])
+    func backwardItemsLoaded(_ items: [SpotTweetItem])
     func handleNoMoreItemsAtBackward()    
-    func prefetchedItemsAvailable(prefetchedItems: [SpotTweetItem])
+    func prefetchedItemsAvailable(_ prefetchedItems: [SpotTweetItem])
     
 }

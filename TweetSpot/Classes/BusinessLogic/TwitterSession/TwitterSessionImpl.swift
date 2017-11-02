@@ -18,17 +18,17 @@ class TwitterSessionImpl: NSObject, TwitterSession {
     let webAuthHandler: TwitterWebAuthHandler
     var tokenStorage: TwitterSessionCredentialsStorage? {
         didSet {
-            if state != .Opened {
+            if state != .opened {
                 restoreSessionState()
             }
         }
     }
-    var state: TwitterSessionState = .Closed {
+    var state: TwitterSessionState = .closed {
         didSet {
             if state == oldValue {
                 return
             }
-            NSNotificationCenter.defaultCenter().postNotificationName(TwitterSessionConstants.stateChangedNotificaton,
+            NotificationCenter.default.post(name: Notification.Name(rawValue: TwitterSessionConstants.stateChangedNotificaton),
                                                                       object: self,
                                                                       userInfo: [TwitterSessionConstants.stateOldUserInfoKey : oldValue.rawValue,
                                                                                  TwitterSessionConstants.stateNewUserInfoKey : state.rawValue])
@@ -50,39 +50,39 @@ class TwitterSessionImpl: NSObject, TwitterSession {
         super.init()
     }
     
-    func openSessionWihtIOSAccount(account: ACAccount, success: () -> (), error: (NSError) -> ()) {
+    func openSessionWihtIOSAccount(_ account: ACAccount, success: @escaping () -> (), error: @escaping (NSError) -> ()) {
         
         switch state {
-        case .Opened, .Progress:
+        case .opened, .progress:
             log.error("Trying to open Twitter session while session is in invalid state")
-            error(NSError(domain: TwitterSessionConstants.errorDomain, code: TwitterSessionError.SessionInvalidState.rawValue, userInfo: nil))
+            error(NSError(domain: TwitterSessionConstants.errorDomain, code: TwitterSessionError.sessionInvalidState.rawValue, userInfo: nil))
             return
         default:
             break
         }
         
-        state = .Progress
-        twitterApi = STTwitterAPI.twitterAPIOSWithAccount(account, delegate: self)
-        twitterApi?.verifyCredentialsWithUserSuccessBlock({ (username, userID) in
-            self.state = .Opened
+        state = .progress
+        twitterApi = STTwitterAPI.twitterAPIOS(with: account, delegate: self)
+        twitterApi?.verifyCredentials(userSuccessBlock: { (username, userID) in
+            self.state = .opened
             self.tokenStorage?.clearStorage()
             self.tokenStorage?.storeIOSAccount(account)
             success()
         }, errorBlock: { (err) in
             error(self.wrapInnerError(err))
-        })
+        } as! (Error?) -> Void)
     }
    
     
     func closeSession() {
         tokenStorage?.clearStorage()
         twitterApi = nil
-        state = .Closed
+        state = .closed
     }
     
-    func wrapInnerError(error: NSError) -> NSError {
+    func wrapInnerError(_ error: NSError) -> NSError {
         return NSError(domain: TwitterSessionConstants.errorDomain,
-                       code: TwitterSessionError.SessionCreationInnerError.rawValue,
+                       code: TwitterSessionError.sessionCreationInnerError.rawValue,
                        userInfo: [TwitterSessionConstants.innerErrorUserInfoKey : error])
     }
 }
@@ -91,45 +91,45 @@ class TwitterSessionImpl: NSObject, TwitterSession {
 // MARK: Web auth flow
 extension TwitterSessionImpl {
     
-    func openSessionWihtLoginPassword(success: () -> (), error: (NSError) -> ()) {
+    func openSessionWihtLoginPassword(_ success: @escaping () -> (), error: @escaping (NSError) -> ()) {
         switch state {
-        case .Opened, .Progress:
+        case .opened, .progress:
             log.error("Trying to open Twitter session while session is in invalid state")
-            error(NSError(domain: TwitterSessionConstants.errorDomain, code: TwitterSessionError.SessionInvalidState.rawValue, userInfo: nil))
+            error(NSError(domain: TwitterSessionConstants.errorDomain, code: TwitterSessionError.sessionInvalidState.rawValue, userInfo: nil))
             return
         default:
             break
         }
-        state = .Progress
-        twitterApi = STTwitterAPI(OAuthConsumerKey: consumerKey, consumerSecret: consumerSecret)
-        twitterApi?.postTokenRequest({ (url, oauthToken) in self.proceedWithWebAuth(url, success: success, error: error) },
+        state = .progress
+        twitterApi = STTwitterAPI(oAuthConsumerKey: consumerKey, consumerSecret: consumerSecret)
+        twitterApi?.postTokenRequest({ (url, oauthToken) in self.proceedWithWebAuth(url!, success: success, error: error) },
                                      authenticateInsteadOfAuthorize: false,
                                      forceLogin: true,
                                      screenName: nil,
                                      oauthCallback: "tssession://twitter_access_tokens/",
                                      errorBlock: { (err) in
-                                        self.state = .Closed
-                                        error(self.wrapInnerError(err))
+                                        self.state = .closed
+                                        error(self.wrapInnerError(err! as NSError))
                                      })
     }
     
     
-    func proceedWithWebAuth(url: NSURL, success: () -> (), error: (NSError) -> ()) {
+    func proceedWithWebAuth(_ url: URL, success: @escaping () -> (), error: @escaping (NSError) -> ()) {
         webAuthHandler.handleWebAuthRequest(url, success: {(tokenVerificator) in
-            self.twitterApi?.postAccessTokenRequestWithPIN(tokenVerificator, successBlock: { (token, secret, userId, userName) in
+            self.twitterApi?.postAccessTokenRequest(withPIN: tokenVerificator, successBlock: { (token, secret, userId, userName) in
                 self.oAuthAccessToken = token
                 self.oAuthAccessTokenSecret = secret
                 self.tokenStorage?.clearStorage()
                 self.tokenStorage?.storeOAuthToken(token)
                 self.tokenStorage?.storeOAuthTokenSecret(secret)
-                self.state = .Opened
+                self.state = .opened
                 success()
             }, errorBlock: { (err) in
-                self.state = .Closed
-                error(NSError(domain: TwitterSessionConstants.errorDomain, code: TwitterSessionError.WebAuthFailed.rawValue, userInfo: nil))
+                self.state = .closed
+                error(NSError(domain: TwitterSessionConstants.errorDomain, code: TwitterSessionError.webAuthFailed.rawValue, userInfo: nil))
             })
         }) {(err) in
-            self.state = .Closed
+            self.state = .closed
             error(err)
         }
     }
@@ -137,9 +137,9 @@ extension TwitterSessionImpl {
 }
 
 extension TwitterSessionImpl : STTwitterAPIOSProtocol {
-    func twitterAPI(twitterAPI: STTwitterAPI!, accountWasInvalidated invalidatedAccount: ACAccount!) {
+    func twitterAPI(_ twitterAPI: STTwitterAPI!, accountWasInvalidated invalidatedAccount: ACAccount!) {
         log.severe("iOS account invalidated. Close session")
-        state = .Closed
+        state = .closed
         tokenStorage?.clearStorage()
     }
 }
@@ -148,37 +148,37 @@ extension TwitterSessionImpl : STTwitterAPIOSProtocol {
 private extension TwitterSessionImpl {
     
     func restoreSessionState() {
-        state = .Progress
+        state = .progress
         
         let verifyCallback : () -> () = {
-            self.twitterApi?.verifyCredentialsWithUserSuccessBlock({ (first, second) in
-                self.state = .Opened
+            self.twitterApi?.verifyCredentials(userSuccessBlock: { (first, second) in
+                self.state = .opened
             }, errorBlock: { (err) in
-                self.state = .Closed
+                self.state = .closed
                 self.twitterApi = nil
             })
         }
         
         self.tryToRestoreLocalAccount(verifyCallback) {
             self.tryToRestorePasswordAccount(verifyCallback , error: {
-                    self.state = .Closed
+                    self.state = .closed
             })
         }
     }
     
-    func tryToRestoreLocalAccount(success: () -> (), error: () -> ()) {
+    func tryToRestoreLocalAccount(_ success: () -> (), error: () -> ()) {
         if let account = tokenStorage?.restoreIOSAccount() {
-            twitterApi = STTwitterAPI.twitterAPIOSWithAccount(account, delegate: self)
+            twitterApi = STTwitterAPI.twitterAPIOS(with: account, delegate: self)
             success()
         } else {
             error()
         }
     }
     
-    func tryToRestorePasswordAccount(success: () -> (), error: () -> ()) {
-        state = .Progress
-        if let token = tokenStorage?.restoreOAuthToken(), secret = tokenStorage?.restoreOAuthTokenSecret() {
-            twitterApi = STTwitterAPI(OAuthConsumerKey: consumerKey,
+    func tryToRestorePasswordAccount(_ success: () -> (), error: () -> ()) {
+        state = .progress
+        if let token = tokenStorage?.restoreOAuthToken(), let secret = tokenStorage?.restoreOAuthTokenSecret() {
+            twitterApi = STTwitterAPI(oAuthConsumerKey: consumerKey,
                                       consumerSecret: consumerSecret,
                                       oauthToken: token, oauthTokenSecret: secret)
             success()

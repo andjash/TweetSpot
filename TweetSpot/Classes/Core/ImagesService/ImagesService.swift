@@ -14,7 +14,7 @@ struct ImagesServiceConstants {
 }
 
 @objc protocol ImagesService {
-    func imagePromiseForUrl(urlString: String) -> ImageRetrievePromise
+    func imagePromiseForUrl(_ urlString: String) -> ImageRetrievePromise
 }
 
 class ImageRetrievePromise: NSObject {
@@ -44,7 +44,7 @@ class ImageRetrievePromise: NSObject {
         }
     }
     
-    private func tryToNotify() {
+    fileprivate func tryToNotify() {
         if let notifyCall = notifyCall {
             if error != nil || image != nil {
                 notifyCall(image, error)

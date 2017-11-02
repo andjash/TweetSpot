@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension NSDateFormatter {
+extension DateFormatter {
 
     func ts_configureAsAppCommonFormatter() {
         dateFormat = "dd.MM.yy HH:mm"

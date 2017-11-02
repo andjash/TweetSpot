@@ -11,32 +11,32 @@ import Accounts
 
 class SocialAccountsServiceImpl: NSObject, SocialAccountsService {
 
-    private let accountStore: ACAccountStore
+    fileprivate let accountStore: ACAccountStore
     
     override init() {
         accountStore = ACAccountStore()
         super.init()
     }
     
-    func requestIOSTwitterAccouns(completion: ([ACAccount]) -> (), error: (NSError) -> ()) {
+    func requestIOSTwitterAccouns(_ completion: @escaping ([ACAccount]) -> (), error: @escaping (NSError) -> ()) {
         
-        let accountType = accountStore.accountTypeWithAccountTypeIdentifier(ACAccountTypeIdentifierTwitter)
+        let accountType = accountStore.accountType(withAccountTypeIdentifier: ACAccountTypeIdentifierTwitter)
         
-        accountStore.requestAccessToAccountsWithType(accountType, options: nil) {(granted, err) in
-            dispatch_async(dispatch_get_main_queue(), { 
+        accountStore.requestAccessToAccounts(with: accountType, options: nil) {(granted, err) in
+            DispatchQueue.main.async(execute: { 
                 if !granted {
-                    error(NSError(domain: SocialAccountsServiceConstants.errorDomain, code: SocialAccountsServiceError.AccessDenied.rawValue, userInfo: nil))
+                    error(NSError(domain: SocialAccountsServiceConstants.errorDomain, code: SocialAccountsServiceError.accessDenied.rawValue, userInfo: nil))
                     return
                 }
                 
                 if err != nil {
                     error(NSError(domain: SocialAccountsServiceConstants.errorDomain,
-                        code: SocialAccountsServiceError.InnerError.rawValue,
-                        userInfo: [SocialAccountsServiceConstants.innerErrorUserInfoKey : err]))
+                        code: SocialAccountsServiceError.innerError.rawValue,
+                        userInfo: [SocialAccountsServiceConstants.innerErrorUserInfoKey : err!]))
                     
                 }
                 
-                if let accounts = self.accountStore.accountsWithAccountType(accountType) as? [ACAccount] {
+                if let accounts = self.accountStore.accounts(with: accountType) as? [ACAccount] {
                     completion(accounts)
                 } else {
                     completion([])
@@ -45,9 +45,9 @@ class SocialAccountsServiceImpl: NSObject, SocialAccountsService {
         }
     }
     
-    func requestAccountWithId(accountId: String) -> ACAccount? {
+    func requestAccountWithId(_ accountId: String) -> ACAccount? {
         for account in accountStore.accounts {
-            if account.identifier == accountId {
+            if (account as AnyObject).identifier == accountId {
                 return account as? ACAccount
             }
         }

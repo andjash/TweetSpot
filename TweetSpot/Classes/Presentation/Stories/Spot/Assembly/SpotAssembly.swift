@@ -15,8 +15,8 @@ class SpotAssembly: TyphoonAssembly, RamblerInitialAssembly {
     weak var businessLogicAssembly: BusinesLogicAssembly!
     weak var coreServices: CoreServicesAssembly!
     
-    dynamic func viewSpotModule() -> AnyObject {
-        return TyphoonDefinition.withClass(SpotViewController.self) {
+    @objc dynamic func viewSpotModule() -> AnyObject {
+        return TyphoonDefinitionWrapper.withClass(SpotViewController.self) {
             (definition) in
             definition.injectProperty("output", with: self.presenterSpotModule())
             definition.injectProperty("moduleInput", with: self.presenterSpotModule())
@@ -24,8 +24,8 @@ class SpotAssembly: TyphoonAssembly, RamblerInitialAssembly {
         }
     }
 
-    dynamic func interactorSpotModule() -> AnyObject {
-        return TyphoonDefinition.withClass(SpotInteractor.self) {
+    @objc dynamic func interactorSpotModule() -> AnyObject {
+        return TyphoonDefinitionWrapper.withClass(SpotInteractor.self) {
             (definition) in
             
             definition.injectProperty("output", with: self.presenterSpotModule())
@@ -33,14 +33,14 @@ class SpotAssembly: TyphoonAssembly, RamblerInitialAssembly {
             definition.injectProperty("homeTimelineModel", with: self.businessLogicAssembly.homeTimelineModel())
             definition.injectProperty("imagesService", with: self.coreServices.imagesService())            
             definition.injectProperty("settingsSvc", with: self.businessLogicAssembly.settingsService())
-            definition.injectProperty("mappingQueue", with: dispatch_queue_create("TSpotInteractor.mappingQueue", DISPATCH_QUEUE_SERIAL))
+            definition.injectProperty("mappingQueue", with: DispatchQueue(label: "TSpotInteractor.mappingQueue", attributes: []))
             
             
         }
     }
 
-    dynamic func presenterSpotModule() -> AnyObject {
-        return TyphoonDefinition.withClass(SpotPresenter.self) {
+    @objc dynamic func presenterSpotModule() -> AnyObject {
+        return TyphoonDefinitionWrapper.withClass(SpotPresenter.self) {
             (definition) in
             definition.injectProperty("view", with: self.viewSpotModule())
             definition.injectProperty("interactor", with: self.interactorSpotModule())          
@@ -48,15 +48,15 @@ class SpotAssembly: TyphoonAssembly, RamblerInitialAssembly {
         }
     }
 
-    dynamic func routerSpotModule() -> AnyObject {
-        return TyphoonDefinition.withClass(SpotRouter.self) {
+    @objc dynamic func routerSpotModule() -> AnyObject {
+        return TyphoonDefinitionWrapper.withClass(SpotRouter.self) {
             (definition) in
             definition.injectProperty("transitionHandler", with: self.viewSpotModule())       
         }
     }
     
-    dynamic func spotTableDataManger() -> AnyObject {
-        return TyphoonDefinition.withClass(SpotTableDataManagerImpl.self) {
+    @objc dynamic func spotTableDataManger() -> AnyObject {
+        return TyphoonDefinitionWrapper.withClass(SpotTableDataManagerImpl.self) {
             (definition) in
         }
     }

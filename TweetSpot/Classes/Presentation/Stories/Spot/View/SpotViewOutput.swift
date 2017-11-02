@@ -26,6 +26,6 @@ import Foundation
     func loadAboveRequested()
     func loadBelowRequested()
     
-    func didSelectItem(item: SpotTweetItem)
-    func avatarsLoadRequestedForItems(items: [SpotTweetItem])
+    func didSelectItem(_ item: SpotTweetItem)
+    func avatarsLoadRequestedForItems(_ items: [SpotTweetItem])
 }

@@ -10,13 +10,13 @@ import Foundation
 
 class TweetDTO : NSObject {
     let id: String
-    let creationDate: NSDate
+    let creationDate: Date
     let text: String
     let userName: String
     let screenName: String
     let avatarUrlStr: String
     
-    init(id: String, creationDate: NSDate, text: String, userName: String, screenName: String, avatarUrlString: String) {
+    init(id: String, creationDate: Date, text: String, userName: String, screenName: String, avatarUrlString: String) {
         self.id = id
         self.creationDate = creationDate
         self.text = text
@@ -29,14 +29,13 @@ class TweetDTO : NSObject {
         return id.hash
     }
     
-    override func isEqual(object: AnyObject?) -> Bool {
+    override func isEqual(_ object: Any?) -> Bool {
+        guard let object = object as? TweetDTO else { return false }
+        
         if self === object {
             return true
         }
-        
-        if let other = object as? TweetDTO {
-            return self.id == other.id
-        }
-        return false
+  
+        return id == object.id
     }
 }

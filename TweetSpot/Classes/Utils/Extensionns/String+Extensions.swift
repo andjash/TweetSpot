@@ -10,14 +10,14 @@ import UIKit
 
 extension String {
     
-    func ts_localized(table: String) -> String {
-        return NSLocalizedString(self, tableName: table, bundle: NSBundle.mainBundle(), value: "", comment: "")
+    func ts_localized(_ table: String) -> String {
+        return NSLocalizedString(self, tableName: table, bundle: Bundle.main, value: "", comment: "")
     }
     
     func ts_height(withFont font: UIFont, constrainedToWidth: CGFloat) -> CGFloat {
-        let rect = (self as NSString).boundingRectWithSize(CGSize(width: constrainedToWidth, height: CGFloat.max),
-                                                           options: .UsesLineFragmentOrigin,
-                                                           attributes: [NSFontAttributeName : font],
+        let rect = (self as NSString).boundingRect(with: CGSize(width: constrainedToWidth, height: CGFloat.greatestFiniteMagnitude),
+                                                           options: .usesLineFragmentOrigin,
+                                                           attributes: [NSAttributedStringKey.font : font],
                                                            context: nil)
         return ceil(rect.height)
     }

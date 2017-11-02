@@ -14,24 +14,24 @@ class NavigationRootAssembly: TyphoonAssembly, RamblerInitialAssembly {
     
     weak var businessLogicAssembly: BusinesLogicAssembly!
    
-    dynamic func viewNavigationRootModule() -> AnyObject {
-        return TyphoonDefinition.withClass(NavigationRootViewController.self) {
+    @objc dynamic func viewNavigationRootModule() -> AnyObject {
+        return TyphoonDefinitionWrapper.withClass(NavigationRootViewController.self) {
             (definition) in
             definition.injectProperty("output", with: self.presenterNavigationRootModule())
             definition.injectProperty("moduleInput", with: self.presenterNavigationRootModule())          
         }
     }
 
-    dynamic func interactorNavigationRootModule() -> AnyObject {
-        return TyphoonDefinition.withClass(NavigationRootInteractor.self) {
+    @objc dynamic func interactorNavigationRootModule() -> AnyObject {
+        return TyphoonDefinitionWrapper.withClass(NavigationRootInteractor.self) {
             (definition) in
             definition.injectProperty("output", with: self.presenterNavigationRootModule())
             definition.injectProperty("session", with: self.businessLogicAssembly.twitterSessionService())
         }
     }
 
-    dynamic func presenterNavigationRootModule() -> AnyObject {
-        return TyphoonDefinition.withClass(NavigationRootPresenter.self) {
+    @objc dynamic func presenterNavigationRootModule() -> AnyObject {
+        return TyphoonDefinitionWrapper.withClass(NavigationRootPresenter.self) {
             (definition) in
             definition.injectProperty("view", with: self.viewNavigationRootModule())
             definition.injectProperty("interactor", with: self.interactorNavigationRootModule())          
@@ -39,8 +39,8 @@ class NavigationRootAssembly: TyphoonAssembly, RamblerInitialAssembly {
         }
     }
 
-    dynamic func routerNavigationRootModule() -> AnyObject {
-        return TyphoonDefinition.withClass(NavigationRootRouter.self) {
+    @objc dynamic func routerNavigationRootModule() -> AnyObject {
+        return TyphoonDefinitionWrapper.withClass(NavigationRootRouter.self) {
             (definition) in
             definition.injectProperty("transitionHandler", with: self.viewNavigationRootModule())       
         }

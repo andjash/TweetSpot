@@ -11,9 +11,9 @@ import UIKit
 extension UIView {
     
     static func ts_loadFromDefaultNib<T>() -> T! {
-        let nibViews  = NSBundle.mainBundle().loadNibNamed(String(self), owner: nil, options: nil)
-        if !nibViews.isEmpty {
-            if let result = nibViews.first as? T {
+        let nibViews  = Bundle.main.loadNibNamed(String(describing: self), owner: nil, options: nil)
+        if !(nibViews?.isEmpty)! {
+            if let result = nibViews?.first as? T {
                 return result;
             }
         }

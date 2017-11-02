@@ -11,7 +11,7 @@ import Foundation
 class SettingsInteractor: NSObject, SettingsInteractorInput {
     
     enum SettingId : Int {
-        case ShowSpotAvatars = 0
+        case showSpotAvatars = 0
     }
     
     let settingsSvc: SettignsService
@@ -22,7 +22,7 @@ class SettingsInteractor: NSObject, SettingsInteractorInput {
     init(settingsSvc: SettignsService) {
         self.settingsSvc = settingsSvc
         let section1 = SettingsSection(name: "settings_spot_section_title".ts_localized("Settings"), items:
-            [SwitchSettingsItem(id: SettingId.ShowSpotAvatars.rawValue, name: "settings_spot_show_avatars".ts_localized("Settings"),
+            [SwitchSettingsItem(id: SettingId.showSpotAvatars.rawValue, name: "settings_spot_show_avatars".ts_localized("Settings"),
                                                                         value: settingsSvc.shouldDisplayUserAvatarsOnSpot)])
         sections = [section1]
         super.init()
@@ -33,7 +33,7 @@ class SettingsInteractor: NSObject, SettingsInteractorInput {
         output.needToUpdateWithSections(sections)
     }
     
-    func changeRequestForItem(item: SettingsItem) {
+    func changeRequestForItem(_ item: SettingsItem) {
         switch item.id {
         case 0:
             if let item = item as? SwitchSettingsItem {
@@ -45,7 +45,7 @@ class SettingsInteractor: NSObject, SettingsInteractorInput {
         }
     }
     
-    private func updateSwitch(forItem item: SwitchSettingsItem) {
+    fileprivate func updateSwitch(forItem item: SwitchSettingsItem) {
         var possibleTargetSection: SettingsSection?
         
         outerLoop: for section in sections {
@@ -69,7 +69,7 @@ class SettingsInteractor: NSObject, SettingsInteractorInput {
         }
         
         let newSection = SettingsSection(name: targetSection.name, items: newItems)
-        sections[sections.indexOf(targetSection)!] = newSection
+        sections[sections.index(of: targetSection)!] = newSection
         output.needToUpdateWithSections(sections)
     }
     

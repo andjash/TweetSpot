@@ -11,12 +11,12 @@ import Foundation
 @objc protocol SpotInteractorInput {
     
     func requestIfNeedToShowAvatars() -> Bool
-    func requestImagesForItems(items: [SpotTweetItem])
+    func requestImagesForItems(_ items: [SpotTweetItem])
     func sessionCloseRequested()
     func loadForwardRequested()
     func loadBackwardRequested()
-    func requestDTOForItem(item: SpotTweetItem)
-    func requestCachedItems(completion: [SpotTweetItem]? -> ())
-    func setPrefetchingEnabled(enabled: Bool)
+    func requestDTOForItem(_ item: SpotTweetItem)
+    func requestCachedItems(_ completion: @escaping ([SpotTweetItem]?) -> ())
+    func setPrefetchingEnabled(_ enabled: Bool)
 
 }

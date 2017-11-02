@@ -10,11 +10,11 @@ import Foundation
 
 @objc protocol SpotViewInput {
     
-    func updateCellsWithAvatars(displayRequired displayRequired: Bool)
-    func displayItemsAbove(items: [SpotTweetItem])
-    func displayItemsBelow(items: [SpotTweetItem])
-    func showAboveLoading(enabled enabled: Bool)
-    func setInfiniteScrollingEnabled(enabled: Bool)
+    func updateCellsWithAvatars(displayRequired: Bool)
+    func displayItemsAbove(_ items: [SpotTweetItem])
+    func displayItemsBelow(_ items: [SpotTweetItem])
+    func showAboveLoading(enabled: Bool)
+    func setInfiniteScrollingEnabled(_ enabled: Bool)
     func showMoreItemsAvailable()
 
 }

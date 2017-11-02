@@ -15,19 +15,19 @@ class FadeInSegue: UIStoryboardSegue, UIViewControllerTransitioningDelegate {
     
      override func perform() {
         let delegate = FadeTransitionDelegate()
-        objc_setAssociatedObject(destinationViewController, &associationHandle, delegate, .OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-        destinationViewController.transitioningDelegate = delegate
-        sourceViewController.presentViewController(self.destinationViewController, animated: true, completion: nil)
+        objc_setAssociatedObject(destination, &associationHandle, delegate, .OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        destination.transitioningDelegate = delegate
+        source.present(self.destination, animated: true, completion: nil)
     }
 }
 
 private class FadeTransitionDelegate: NSObject, UIViewControllerTransitioningDelegate {
     
-    @objc func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    @objc func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return FadeAnimator(presenting: true)
     }
     
-    @objc func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    @objc func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return FadeAnimator(presenting: false, completion: {
             objc_setAssociatedObject(dismissed,  &associationHandle, nil, .OBJC_ASSOCIATION_RETAIN_NONATOMIC);
         })

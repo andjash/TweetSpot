@@ -12,6 +12,6 @@ import Foundation
     
     func closeModule()
     func routeToSettingsModule()
-    func routeToTweetDetails(withDTO: AnyObject)
+    func routeToTweetDetails(_ withDTO: AnyObject)
     
 }
