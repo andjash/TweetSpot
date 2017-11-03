@@ -6,8 +6,7 @@
 //  Copyright © 2016 Andrey Yashnev. All rights reserved.
 //
 
-import Foundation
-import ViperMcFlurry
+import UIKit
 
 class NavigationRootRouter: NSObject {
 
@@ -16,11 +15,13 @@ class NavigationRootRouter: NSObject {
     // MARK: - Input
     
     final func routeToLogin() {
-        sourceController.performSegue("RootToLoginSegue")
+        sourceController.ts_openController(LoginViewController.self, storyboardId: "RootToLoginSegue") { (c) in
+        }
     }
     
     final func routeToSpot() {
-        sourceController.performSegue("RootToSpotSegue")
+        sourceController.ts_openController(SpotViewController.self, storyboardId: "RootToSpotSegue") { (c) in
+        }
     }
 
 }

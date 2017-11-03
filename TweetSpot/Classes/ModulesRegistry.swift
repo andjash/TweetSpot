@@ -20,6 +20,7 @@ final class ModulesRegistry: AYRegistry {
             component.activate()
         }
         register(initCall: { ApplicationRegistry() })
+        register(lifetime: .singleton(lazy: false), initCall: { PresentationRegistry() })
     }
 }
 

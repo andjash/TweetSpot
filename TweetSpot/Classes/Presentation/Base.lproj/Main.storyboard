@@ -82,21 +82,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
-        <!--LoginStoryboard-->
+        <!--Login-->
         <scene sceneID="UQD-RG-7tz">
             <objects>
-                <viewControllerPlaceholder storyboardName="LoginStoryboard" id="caw-C4-LcB" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Login" id="caw-C4-LcB" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kHH-D4-eLR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1056" y="295"/>
+            <point key="canvasLocation" x="823" y="-49"/>
         </scene>
-        <!--SpotStoryboard-->
+        <!--Spot-->
         <scene sceneID="BJ3-0V-IMx">
             <objects>
-                <viewControllerPlaceholder storyboardName="SpotStoryboard" id="GD2-SO-K6W" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Spot" id="GD2-SO-K6W" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hxs-Nc-xzQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1053.5" y="471"/>
+            <point key="canvasLocation" x="820" y="94"/>
         </scene>
     </scenes>
 </document>

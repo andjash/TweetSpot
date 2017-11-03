@@ -12,11 +12,10 @@ import Accounts
 
 class KeychainSessionCredentialsStorage: NSObject, TwitterSessionCredentialsStorage {
     
-    let accountsSvc: SocialAccountsService
+    var accountsSvc: SocialAccountsService!
     let bundleId : String
     
-    init(accountsService: SocialAccountsService) {
-        self.accountsSvc = accountsService
+    override init() {
         self.bundleId = (Bundle.main.object(forInfoDictionaryKey: String(kCFBundleIdentifierKey)) as? String) ?? "KeychainSessionCredentialsStorage.BundleID"
         super.init()
     }

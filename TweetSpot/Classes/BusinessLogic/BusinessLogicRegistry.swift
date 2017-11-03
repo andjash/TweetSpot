@@ -39,8 +39,14 @@ final class BusinessLogicRegistry: AYRegistry {
             component.session = self.resolve() as TwitterSession
         }
         
+        register(initCall: { KeychainSessionCredentialsStorage() as TwitterSessionCredentialsStorage}) { protocolRef in
+            guard let component = protocolRef as? KeychainSessionCredentialsStorage else { return }
+            component.accountsSvc = self.coreServicesRegistry.resolve() as SocialAccountsService
+        }
+        
         register(initCall: { UserDefaultsSettingsService(userDefaults: UserDefaults.standard) as SettingsService})
         register(initCall: { SafariTwitterWebAuthHandler() as TwitterWebAuthHandler})
+        register(initCall: { TweetDTODictionaryDeserializer() as TweetDTODeserializer})        
         register(initCall: { InMemoryHomeTimelineStorage() as HomeTimelineStorage})
     }
 }

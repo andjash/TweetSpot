@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="JeN-bs-q7d">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="4io-e0-8PO">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="JeN-bs-q7d" customClass="LoginViewController" customModule="TweetSpot" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JWP-SQ-hLT"/>
+                        <viewControllerLayoutGuide type="bottom" id="pDr-dL-Kzu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="F5g-Hj-vmK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A69-6c-z7s">
+                                <rect key="frame" x="87.5" y="283.5" width="200" height="40"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="P8g-fn-6DZ"/>
+                                    <constraint firstAttribute="width" constant="200" id="QQW-w3-WWh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <state key="normal" title="Login with IOS account">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="enterWithIOSAccountAction:" destination="JeN-bs-q7d" eventType="touchUpInside" id="XcE-C0-vbu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="twL-17-hO0">
+                                <rect key="frame" x="87.5" y="343.5" width="200" height="40"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Wjx-dP-zpF"/>
+                                    <constraint firstAttribute="height" constant="40" id="YIH-i5-MgG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <state key="normal" title="Login with password">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="enterWithPasswordAction:" destination="JeN-bs-q7d" eventType="touchUpInside" id="X4Z-kJ-I85"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView opaque="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="lGi-qn-WKK">
+                                <rect key="frame" x="177.5" y="323.5" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.74509803919999995" green="0.34509803919999998" blue="0.41176470590000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="lGi-qn-WKK" firstAttribute="centerY" secondItem="F5g-Hj-vmK" secondAttribute="centerY" id="1Ks-10-AwL"/>
+                            <constraint firstItem="A69-6c-z7s" firstAttribute="bottom" secondItem="F5g-Hj-vmK" secondAttribute="centerY" constant="-10" id="S6o-ay-hzW"/>
+                            <constraint firstItem="lGi-qn-WKK" firstAttribute="centerX" secondItem="F5g-Hj-vmK" secondAttribute="centerX" id="czV-FM-XBr"/>
+                            <constraint firstItem="A69-6c-z7s" firstAttribute="centerX" secondItem="F5g-Hj-vmK" secondAttribute="centerX" id="lNV-qg-G3y"/>
+                            <constraint firstItem="twL-17-hO0" firstAttribute="top" secondItem="F5g-Hj-vmK" secondAttribute="centerY" constant="10" id="qkB-tH-cJ1"/>
+                            <constraint firstItem="twL-17-hO0" firstAttribute="centerX" secondItem="F5g-Hj-vmK" secondAttribute="centerX" id="w4U-xu-Aqw"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="lGi-qn-WKK" id="cWg-fB-OIx"/>
+                        <outlet property="loginWithIOSButton" destination="A69-6c-z7s" id="tn1-Vk-Miy"/>
+                        <outlet property="loginWithPasswordButton" destination="twL-17-hO0" id="hu4-CC-tGx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="apN-jV-wRA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="602" y="309"/>
+        </scene>
+    </scenes>
+</document>
