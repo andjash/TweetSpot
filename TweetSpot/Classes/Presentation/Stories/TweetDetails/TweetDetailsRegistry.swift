@@ -22,7 +22,7 @@ final class TweetDetailsRegistry: LazyRegistry {
     // MARK: Private
     
     override func lazyRegistration() {
-        let businessLogicRegistry = ModulesRegistry.shared.resolve() as BusinessLogicRegistry
+        let coreRegistry = ModulesRegistry.shared.resolve() as CoreServicesRegistry
         
         register(lifetime: .objectGraph, initCall: { TweetDetailsPresenter() }) { component in
             component.view = self.resolve() as TweetDetailsViewController
@@ -31,7 +31,7 @@ final class TweetDetailsRegistry: LazyRegistry {
         
         register(lifetime: .objectGraph, initCall: { TweetDetailsInteractor() }) { component in
             component.output = self.resolve() as TweetDetailsPresenter
-            component.imagesService = businessLogicRegistry.resolve() as ImagesService
+            component.imagesService = coreRegistry.resolve() as ImagesService
         }
     }
 }

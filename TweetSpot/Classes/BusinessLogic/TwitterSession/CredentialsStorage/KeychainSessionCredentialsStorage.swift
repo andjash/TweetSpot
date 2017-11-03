@@ -15,9 +15,8 @@ final class KeychainSessionCredentialsStorage: TwitterSessionCredentialsStorage 
     final var accountsSvc: SocialAccountsService!
     final let bundleId : String
     
-    override init() {
-        self.bundleId = (Bundle.main.object(forInfoDictionaryKey: String(kCFBundleIdentifierKey)) as? String) ?? "KeychainSessionCredentialsStorage.BundleID"
-        super.init()
+    init() {
+        bundleId = (Bundle.main.object(forInfoDictionaryKey: String(kCFBundleIdentifierKey)) as? String) ?? "KeychainSessionCredentialsStorage.BundleID"
     }
     
     final let oauthTokenStoringKey = "oauthTokenStoringKey"

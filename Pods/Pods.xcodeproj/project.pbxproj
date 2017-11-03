@@ -298,7 +298,7 @@
 		0544A60B8BB0E6D4988F5C4C594DFE55 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
 		05DBE48CA9E9EF54C03C9A4C31EB3563 /* SGHTTPRequest.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SGHTTPRequest.xcconfig; sourceTree = "<group>"; };
 		06021AB7FC8517F081B63E8C3DE5C3B0 /* SVPullToRefresh-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SVPullToRefresh-umbrella.h"; sourceTree = "<group>"; };
-		0605D4171253CF934C7CEB040F37C413 /* AYRegistry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AYRegistry.framework; path = AYRegistry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0605D4171253CF934C7CEB040F37C413 /* AYRegistry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AYRegistry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0702A9F29AF483D6CF27D8B26979B507 /* NSError+STTwitter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSError+STTwitter.h"; path = "STTwitter/NSError+STTwitter.h"; sourceTree = "<group>"; };
 		08406A69F6149C8B4E0947A22E0B71CE /* AFImageDownloader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFImageDownloader.h; path = "UIKit+AFNetworking/AFImageDownloader.h"; sourceTree = "<group>"; };
 		0C0547E5D096D5E6B9DAB67E3D685EAA /* SGHTTPRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SGHTTPRequest.m; path = SGHTTPRequest/Core/SGHTTPRequest.m; sourceTree = "<group>"; };
@@ -310,7 +310,7 @@
 		132B5456583ADC0301A8DF9DFD1A755E /* STTwitterRequestProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STTwitterRequestProtocol.h; path = STTwitter/STTwitterRequestProtocol.h; sourceTree = "<group>"; };
 		13B95B09BC67CCEB9A8AF8A56C1E28D6 /* MGBlockWrapper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MGBlockWrapper.m; path = MGEvents/MGBlockWrapper.m; sourceTree = "<group>"; };
 		15C0B3090FCA066467478F6765073638 /* UIImageView+SGImageCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+SGImageCache.m"; sourceTree = "<group>"; };
-		15D3727B1690A4BCEBB0F65E8B5B34C0 /* SGImageCache.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SGImageCache.framework; path = SGImageCache.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		15D3727B1690A4BCEBB0F65E8B5B34C0 /* SGImageCache.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SGImageCache.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		182B7F0FAB5982FCEF451C86D6DB715E /* AFNetworking-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AFNetworking-prefix.pch"; sourceTree = "<group>"; };
 		18B75179C781BC8C65306FF32DA01C6C /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+AFNetworking.m"; path = "UIKit+AFNetworking/UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
 		191E27694C1A7AB80CB5D1C6D3B59243 /* STHTTPRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = STHTTPRequest.m; path = STTwitter/Vendor/STHTTPRequest.m; sourceTree = "<group>"; };
@@ -329,7 +329,7 @@
 		292A668E5ADB78400F7103EFCF063F66 /* UIControl+MGEvents.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIControl+MGEvents.h"; path = "MGEvents/UIControl+MGEvents.h"; sourceTree = "<group>"; };
 		295D74059BFCE5F673DC1F081DA8BF12 /* STTwitterAPI.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STTwitterAPI.h; path = STTwitter/STTwitterAPI.h; sourceTree = "<group>"; };
 		2BF1A5C7F7E674AFF5BD1D5F089A77AA /* PromiseKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PromiseKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2C1DAB5A74076151C4788F27FF4F38FA /* SVPullToRefresh.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SVPullToRefresh.modulemap; sourceTree = "<group>"; };
+		2C1DAB5A74076151C4788F27FF4F38FA /* SVPullToRefresh.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SVPullToRefresh.modulemap; sourceTree = "<group>"; };
 		2D198271A63BC38F4EE776537E714BE4 /* SGHTTPRequest-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SGHTTPRequest-umbrella.h"; sourceTree = "<group>"; };
 		2D2CC4774CF5F0F64409B39E6DB2BC10 /* SAMKeychain-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SAMKeychain-dummy.m"; sourceTree = "<group>"; };
 		2D4EA8019BE2F604DBE967F68AE6B230 /* Pods-TweetSpot-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TweetSpot-resources.sh"; sourceTree = "<group>"; };
@@ -341,15 +341,15 @@
 		31768ED04AFEF77678BE98743260F879 /* fwd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = fwd.h; path = objc/PromiseKit/fwd.h; sourceTree = "<group>"; };
 		32049CE4A28D08BA49A4CDDB9917E72E /* STTwitterStreamParser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STTwitterStreamParser.h; path = STTwitter/STTwitterStreamParser.h; sourceTree = "<group>"; };
 		3271F5B0E45F3D3D382D212466716ABD /* SAMKeychainQuery.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SAMKeychainQuery.m; path = Sources/SAMKeychainQuery.m; sourceTree = "<group>"; };
-		344621028ACBAF7CCAED1238BE47A470 /* PromiseKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = PromiseKit.modulemap; sourceTree = "<group>"; };
+		344621028ACBAF7CCAED1238BE47A470 /* PromiseKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = PromiseKit.modulemap; sourceTree = "<group>"; };
 		34CBF33F05E5566A4C616A011F24E072 /* STTwitterOSRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STTwitterOSRequest.h; path = STTwitter/STTwitterOSRequest.h; sourceTree = "<group>"; };
 		39223D8BF20891D20DE2C48825A89467 /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLRequestSerialization.m; path = AFNetworking/AFURLRequestSerialization.m; sourceTree = "<group>"; };
 		39B60753D9CFADC2B0FADC09A873A4F4 /* MGEvents-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MGEvents-umbrella.h"; sourceTree = "<group>"; };
 		3AAA4FA354B71209F29B4858E3B7D3FB /* SGImageCache-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SGImageCache-umbrella.h"; sourceTree = "<group>"; };
 		3BD7E4B433D266D05439D191D3F525B9 /* AYRegistry-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AYRegistry-dummy.m"; sourceTree = "<group>"; };
-		3C0B2FD9ED22E03861CF247C9D72E6A8 /* Pods-TweetSpot.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-TweetSpot.modulemap"; sourceTree = "<group>"; };
+		3C0B2FD9ED22E03861CF247C9D72E6A8 /* Pods-TweetSpot.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-TweetSpot.modulemap"; sourceTree = "<group>"; };
 		3CD708441AF93727FDABEE8A210DF2EE /* PMKPromise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PMKPromise.m; path = objc/PMKPromise.m; sourceTree = "<group>"; };
-		3D7D6016E39CA6EDAB19E2BAB8334245 /* MGEvents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MGEvents.framework; path = MGEvents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D7D6016E39CA6EDAB19E2BAB8334245 /* MGEvents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MGEvents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E641E4EF0071A7400A4C685ED6B6AEC /* UIButton+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+AFNetworking.m"; path = "UIKit+AFNetworking/UIButton+AFNetworking.m"; sourceTree = "<group>"; };
 		3E9A43ACD6C0ABAC17EBA5D840B03B62 /* SVPullToRefresh.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SVPullToRefresh.xcconfig; sourceTree = "<group>"; };
 		410B2843FB8D3B85954E176CFCF6C5EA /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Accounts.framework; sourceTree = DEVELOPER_DIR; };
@@ -359,13 +359,13 @@
 		45CFF3094BD6FEEC3FAA50D80BF568D7 /* PromiseKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PromiseKit.h; path = objc/PromiseKit.h; sourceTree = "<group>"; };
 		4724A5FCF3EAA875936F5FDD84F1EABE /* SGActivityIndicator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SGActivityIndicator.h; path = SGHTTPRequest/UI/SGActivityIndicator.h; sourceTree = "<group>"; };
 		486CD1176EFB14F8FA140CF320570026 /* SGHTTPRequest-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SGHTTPRequest-prefix.pch"; sourceTree = "<group>"; };
-		493139643366B985008E2E9B5FBA582C /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AFNetworking.framework; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		493139643366B985008E2E9B5FBA582C /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5148BC0323749218869F19F4F07DBEC9 /* UIControl+MGEvents.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIControl+MGEvents.m"; path = "MGEvents/UIControl+MGEvents.m"; sourceTree = "<group>"; };
 		51F5EFE1E7F2DAB1F7B13235BE0F8F37 /* UIKit+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIKit+AFNetworking.h"; path = "UIKit+AFNetworking/UIKit+AFNetworking.h"; sourceTree = "<group>"; };
 		51FAD502FE717CA67B9138AAE165969D /* AYRegistry+Storyboard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "AYRegistry+Storyboard.swift"; path = "AYRegistry/Classes/AYRegistry+Storyboard.swift"; sourceTree = "<group>"; };
 		52B404C3BF8D88C06B1338C657906319 /* MGEvents.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MGEvents.xcconfig; sourceTree = "<group>"; };
 		549A60CDDBA8EB1557D9C4935127A6C3 /* SGHTTPRequest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SGHTTPRequest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5741B2BAB9B66B5BBCC550F21671A222 /* SVPullToRefresh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SVPullToRefresh.framework; path = SVPullToRefresh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5741B2BAB9B66B5BBCC550F21671A222 /* SVPullToRefresh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SVPullToRefresh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		57D94F5CF858375D93F7A17494E327E2 /* UIRefreshControl+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIRefreshControl+AFNetworking.m"; path = "UIKit+AFNetworking/UIRefreshControl+AFNetworking.m"; sourceTree = "<group>"; };
 		5B4328D2433CE2ABEC2001CF85D1FFE5 /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLRequestSerialization.h; path = AFNetworking/AFURLRequestSerialization.h; sourceTree = "<group>"; };
 		5BE674FAFCE8CB226D388A6D52BB914E /* SAMKeychain-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SAMKeychain-umbrella.h"; sourceTree = "<group>"; };
@@ -373,7 +373,7 @@
 		5C1C104794670913F96FCC3066BA2B1E /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFNetworkActivityIndicatorManager.m; path = "UIKit+AFNetworking/AFNetworkActivityIndicatorManager.m"; sourceTree = "<group>"; };
 		5CBA74EF83E0992617AAE327B0851270 /* AFAutoPurgingImageCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFAutoPurgingImageCache.h; path = "UIKit+AFNetworking/AFAutoPurgingImageCache.h"; sourceTree = "<group>"; };
 		5EDE5D5290180765EDAF14C0B44456F5 /* SAMKeychain.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SAMKeychain.h; path = Sources/SAMKeychain.h; sourceTree = "<group>"; };
-		5F2FE83E36FE36CFB2E908109F805BE8 /* SGHTTPRequest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SGHTTPRequest.framework; path = SGHTTPRequest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F2FE83E36FE36CFB2E908109F805BE8 /* SGHTTPRequest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SGHTTPRequest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FA77C7E761E0E3DB8E05CDEE8A6D281 /* STTwitterHTML.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STTwitterHTML.h; path = STTwitter/STTwitterHTML.h; sourceTree = "<group>"; };
 		62853B72EB767762FE6E2C101505291A /* SGHTTPRequestDebug.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SGHTTPRequestDebug.m; path = SGHTTPRequest/Core/Debug/SGHTTPRequestDebug.m; sourceTree = "<group>"; };
 		6353AD6FB0880E4C11D493620FBC1105 /* NSString+SGHTTPRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+SGHTTPRequest.m"; path = "SGHTTPRequest/Core/Categories/NSString+SGHTTPRequest.m"; sourceTree = "<group>"; };
@@ -383,10 +383,10 @@
 		68C8936F5D39CF529AAB2E5BF8C39E35 /* STTwitter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STTwitter.h; path = STTwitter/STTwitter.h; sourceTree = "<group>"; };
 		6AEFCDACDD065B2680C80B1D9115923D /* SGImageCachePrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SGImageCachePrivate.h; sourceTree = "<group>"; };
 		6B4AA2440A12B6DBFE6AEDB690732419 /* AFSecurityPolicy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFSecurityPolicy.m; path = AFNetworking/AFSecurityPolicy.m; sourceTree = "<group>"; };
-		6B5ABFB76E81C5D89BAD9B0FEE7A4564 /* AYRegistry.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = AYRegistry.modulemap; sourceTree = "<group>"; };
+		6B5ABFB76E81C5D89BAD9B0FEE7A4564 /* AYRegistry.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = AYRegistry.modulemap; sourceTree = "<group>"; };
 		6DD18D2D51B1317E6067716EF8C5ABB8 /* Pods-TweetSpot-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TweetSpot-acknowledgements.plist"; sourceTree = "<group>"; };
-		6FAEAF47EDF72616F2BD2D192E6DA0D3 /* Pods_TweetSpot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TweetSpot.framework; path = "Pods-TweetSpot.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		707F80A8BE8605A40302E8C72A7BB3DF /* AFNetworking.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = AFNetworking.modulemap; sourceTree = "<group>"; };
+		6FAEAF47EDF72616F2BD2D192E6DA0D3 /* Pods_TweetSpot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TweetSpot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		707F80A8BE8605A40302E8C72A7BB3DF /* AFNetworking.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = AFNetworking.modulemap; sourceTree = "<group>"; };
 		70F236E8CC0D3F07E9CC1A26712648F7 /* SVPullToRefresh-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SVPullToRefresh-dummy.m"; sourceTree = "<group>"; };
 		72B5BC1C99EE5EA0CACF4AC16216033D /* SAMKeychainQuery.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SAMKeychainQuery.h; path = Sources/SAMKeychainQuery.h; sourceTree = "<group>"; };
 		73838D3DF14209DC91794B9887983471 /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLResponseSerialization.h; path = AFNetworking/AFURLResponseSerialization.h; sourceTree = "<group>"; };
@@ -415,16 +415,16 @@
 		883ACACAD9C663C74771EA5DA7F3D5FE /* SGHTTPRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SGHTTPRequest.h; path = SGHTTPRequest/Core/SGHTTPRequest.h; sourceTree = "<group>"; };
 		89395004A947B8580433728CBFAFB2C4 /* AFNetworking-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AFNetworking-dummy.m"; sourceTree = "<group>"; };
 		8AD680277ECFDD22259755DC48EA5512 /* SGCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SGCache.m; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9406C19BC513D2508CAB2AB065A441D6 /* UIImageView+SGImageCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIImageView+SGImageCache.h"; sourceTree = "<group>"; };
 		9860D1A6C43B16F14621819301EAD15A /* SAMKeychain-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SAMKeychain-prefix.pch"; sourceTree = "<group>"; };
-		98C126CAF0F2372B1129EF3458412EC3 /* SAMKeychain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SAMKeychain.framework; path = SAMKeychain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		98C126CAF0F2372B1129EF3458412EC3 /* SAMKeychain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SAMKeychain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		992D52E4C28F55F697CF69A52DF09784 /* NSObject+MGEvents.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+MGEvents.m"; path = "MGEvents/NSObject+MGEvents.m"; sourceTree = "<group>"; };
 		9967F0E202BB3E817A7C86F300A003DA /* MGEvents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MGEvents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A007991A328EDDA1E5B30143B17D412 /* SVPullToRefresh-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SVPullToRefresh-prefix.pch"; sourceTree = "<group>"; };
-		9A73E1C1C06DE3D786BA4E27681301D1 /* SGHTTPRequest.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SGHTTPRequest.modulemap; sourceTree = "<group>"; };
-		9CE18972825AFDDE6AB60071CE66792F /* MGEvents.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = MGEvents.modulemap; sourceTree = "<group>"; };
-		9D1D467A756E0B8C9EA2F43ACDEAF9B7 /* STTwitter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = STTwitter.framework; path = STTwitter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A73E1C1C06DE3D786BA4E27681301D1 /* SGHTTPRequest.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SGHTTPRequest.modulemap; sourceTree = "<group>"; };
+		9CE18972825AFDDE6AB60071CE66792F /* MGEvents.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = MGEvents.modulemap; sourceTree = "<group>"; };
+		9D1D467A756E0B8C9EA2F43ACDEAF9B7 /* STTwitter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = STTwitter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DBB0EC8AFE6215939C6A97741C461EC /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFHTTPSessionManager.h; path = AFNetworking/AFHTTPSessionManager.h; sourceTree = "<group>"; };
 		9E7C21023729BA6A86471361E16797DD /* NSDateFormatter+STTwitter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDateFormatter+STTwitter.m"; path = "STTwitter/NSDateFormatter+STTwitter.m"; sourceTree = "<group>"; };
 		A2C56D34186B6CD8C4BEE243757E1278 /* SGJSONSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SGJSONSerialization.m; path = SGHTTPRequest/Core/JSONSerialization/SGJSONSerialization.m; sourceTree = "<group>"; };
@@ -460,7 +460,7 @@
 		CB9F3BF16ECA92D28E068FC3E2F1246A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		CDF24295B218F0BCF5E0A55CEC537EED /* SGImageCache.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SGImageCache.xcconfig; sourceTree = "<group>"; };
 		CE80100C7CE9446C885B142B0FF6CB84 /* SGImageCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SGImageCache.h; sourceTree = "<group>"; };
-		CF7F539C43C9C4A042F238F5E39FFDF6 /* STTwitter.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = STTwitter.modulemap; sourceTree = "<group>"; };
+		CF7F539C43C9C4A042F238F5E39FFDF6 /* STTwitter.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = STTwitter.modulemap; sourceTree = "<group>"; };
 		CFED673AA255B0A1D169F11E15F7A6BB /* SGActivityIndicator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SGActivityIndicator.m; path = SGHTTPRequest/UI/SGActivityIndicator.m; sourceTree = "<group>"; };
 		D39488882D5094C5C82F7900CBE524A8 /* AFNetworking.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AFNetworking.xcconfig; sourceTree = "<group>"; };
 		D497502736A73DAFA875078E70BDF527 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -476,7 +476,7 @@
 		E4562B250D864D610787C7E1E4AB047E /* SGFileCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SGFileCache.m; path = SGHTTPRequest/Core/Cache/SGFileCache.m; sourceTree = "<group>"; };
 		E50B040E58B90C22FC8B5DB48BB580AA /* AYRegistry-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AYRegistry-umbrella.h"; sourceTree = "<group>"; };
 		E52EB0D9E93BE7A18383C1574B6EA2E9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		E53DBAED0ADFF1525F239DEA51FA690C /* SGImageCache.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SGImageCache.modulemap; sourceTree = "<group>"; };
+		E53DBAED0ADFF1525F239DEA51FA690C /* SGImageCache.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SGImageCache.modulemap; sourceTree = "<group>"; };
 		E76BFBA74470AFB7ED8DA696E0CA33BC /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7B9C880F937563AEE269F01E36FB7B2 /* PromiseKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PromiseKit-dummy.m"; sourceTree = "<group>"; };
 		E924CD1EA0739CDE7EC93EDC59FAFFDB /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Twitter.framework; sourceTree = DEVELOPER_DIR; };
@@ -497,14 +497,14 @@
 		F67FB23D73E9DACDA9DC721F65910F49 /* AFNetworking-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AFNetworking-umbrella.h"; sourceTree = "<group>"; };
 		F73A18C42A6C89715E919D177DD18DBF /* NSObject+SGHTTPRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+SGHTTPRequest.h"; path = "SGHTTPRequest/Core/Categories/NSObject+SGHTTPRequest.h"; sourceTree = "<group>"; };
 		F8097B4A84BF493CB2DB894174D9D766 /* JSONSyntaxHighlight.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSONSyntaxHighlight.h; path = STTwitter/Vendor/JSONSyntaxHighlight.h; sourceTree = "<group>"; };
-		FA2D83312E05D471F1F04AFD7D4B42EA /* SAMKeychain.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SAMKeychain.modulemap; sourceTree = "<group>"; };
+		FA2D83312E05D471F1F04AFD7D4B42EA /* SAMKeychain.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SAMKeychain.modulemap; sourceTree = "<group>"; };
 		FABB7CF8929E5D0DB37FC2086BAAEA44 /* STTwitter.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = STTwitter.xcconfig; sourceTree = "<group>"; };
 		FD607C8C4F60EB50EAB7F0DBAF12EAEF /* SAMKeychain.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SAMKeychain.m; path = Sources/SAMKeychain.m; sourceTree = "<group>"; };
 		FD71880646312C41C6977D09D6F4A53F /* SGImageCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SGImageCache.m; sourceTree = "<group>"; };
 		FE3A9509E3A3F09140CB9E5078565012 /* STHTTPRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STHTTPRequest.h; path = STTwitter/Vendor/STHTTPRequest.h; sourceTree = "<group>"; };
 		FE732797448F008E21932127EEAB4D58 /* UIButton+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+AFNetworking.h"; path = "UIKit+AFNetworking/UIButton+AFNetworking.h"; sourceTree = "<group>"; };
 		FEA38A84BB1F769A618BEC60077AC198 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FFFB52BCEE273601E73E8C5CA6B22DA1 /* PromiseKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PromiseKit.framework; path = PromiseKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFFB52BCEE273601E73E8C5CA6B22DA1 /* PromiseKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PromiseKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -655,7 +655,6 @@
 				A67F1B7A20EA3EBBF6CC419BF0BB9AF9 /* STTwitterStreamParser.m */,
 				458B43DC27C04C352DE620719059A453 /* Support Files */,
 			);
-			name = STTwitter;
 			path = STTwitter;
 			sourceTree = "<group>";
 		};
@@ -694,7 +693,6 @@
 				A7B38F57B5C25ECC5EB55E502AAF1C74 /* Support Files */,
 				29498FCE89983762B62539FBF8267F79 /* UIKit */,
 			);
-			name = SGHTTPRequest;
 			path = SGHTTPRequest;
 			sourceTree = "<group>";
 		};
@@ -716,7 +714,6 @@
 				5148BC0323749218869F19F4F07DBEC9 /* UIControl+MGEvents.m */,
 				CE5905EECC7E9F94773A214B41B31497 /* Support Files */,
 			);
-			name = MGEvents;
 			path = MGEvents;
 			sourceTree = "<group>";
 		};
@@ -741,7 +738,6 @@
 				5D8103202754B42C5D162D1B4A137889 /* Resources */,
 				736A2196868F19BC4D36EFAEE80E6599 /* Support Files */,
 			);
-			name = SAMKeychain;
 			path = SAMKeychain;
 			sourceTree = "<group>";
 		};
@@ -769,7 +765,6 @@
 				15C0B3090FCA066467478F6765073638 /* UIImageView+SGImageCache.m */,
 				D1988833E2B64FD6AC996131A4FA96B9 /* Support Files */,
 			);
-			name = SGImageCache;
 			path = SGImageCache;
 			sourceTree = "<group>";
 		};
@@ -779,7 +774,6 @@
 				879E8DD51918ADFE5FC1C597BC866C6E /* Promise */,
 				C14412A834C930AC48E341AF8C3E4AB4 /* Support Files */,
 			);
-			name = PromiseKit;
 			path = PromiseKit;
 			sourceTree = "<group>";
 		};
@@ -799,7 +793,6 @@
 				51FAD502FE717CA67B9138AAE165969D /* AYRegistry+Storyboard.swift */,
 				A474BCE1F64B13763D1079AB47C88233 /* Support Files */,
 			);
-			name = AYRegistry;
 			path = AYRegistry;
 			sourceTree = "<group>";
 		};
@@ -853,7 +846,6 @@
 				C31634A0FF17592AA9B59EECF3B45B31 /* UIScrollView+SVPullToRefresh.m */,
 				8296F975414047C0023F53CAE9EB3277 /* Support Files */,
 			);
-			name = SVPullToRefresh;
 			path = SVPullToRefresh;
 			sourceTree = "<group>";
 		};
@@ -1079,7 +1071,6 @@
 				8DBD2BC360F76B88C93486761B891A99 /* Support Files */,
 				7DD0F0B1A4D108FF02CC30914102ABD4 /* UIKit */,
 			);
-			name = AFNetworking;
 			path = AFNetworking;
 			sourceTree = "<group>";
 		};
@@ -1458,7 +1449,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0900;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -2187,6 +2178,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
