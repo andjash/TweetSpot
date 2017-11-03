@@ -14,8 +14,8 @@ extension String {
         return NSLocalizedString(self, tableName: table, bundle: Bundle.main, value: "", comment: "")
     }
     
-    func ts_height(withFont font: UIFont, constrainedToWidth: CGFloat) -> CGFloat {
-        let rect = (self as NSString).boundingRect(with: CGSize(width: constrainedToWidth, height: CGFloat.greatestFiniteMagnitude),
+    func ts_height(with font: UIFont, constrained width: CGFloat) -> CGFloat {
+        let rect = (self as NSString).boundingRect(with: CGSize(width: width, height: CGFloat.greatestFiniteMagnitude),
                                                            options: .usesLineFragmentOrigin,
                                                            attributes: [NSAttributedStringKey.font : font],
                                                            context: nil)

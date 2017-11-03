@@ -9,16 +9,16 @@
 import Foundation
 import Accounts
 
-@objc enum TwitterSessionState : Int {
+enum TwitterSessionState : Int {
     case closed
     case progress
     case opened
 }
 
-@objc enum TwitterSessionError : Int {
+enum TwitterSessionError : Error {
     case sessionInvalidState
-    case sessionCreationInnerError
-    case webAuthFailed    
+    case webAuthFailed
+    case innerError(Error)
 }
 
 struct TwitterSessionConstants {
@@ -31,12 +31,11 @@ struct TwitterSessionConstants {
 }
 
 
-@objc protocol TwitterSession {
-    
+protocol TwitterSession: class {
     var state: TwitterSessionState { get }
-    @objc optional var apiAccessObject: AnyObject? { get }
+    var apiAccessObject: AnyObject? { get }
     
-    func openSessionWihtIOSAccount(_ account: ACAccount, success: @escaping () -> (), error: @escaping (NSError) -> ())
-    func openSessionWihtLoginPassword(_ success: @escaping () -> (), error: @escaping (NSError) -> ())
+    func openSession(with account: ACAccount, success: @escaping () -> (), error: @escaping (TwitterSessionError) -> ())
+    func openSessionWihtLoginPassword(_ success: @escaping () -> (), error: @escaping (TwitterSessionError) -> ())
     func closeSession()
 }

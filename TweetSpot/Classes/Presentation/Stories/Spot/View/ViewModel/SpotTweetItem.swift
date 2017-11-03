@@ -8,15 +8,15 @@
 
 import UIKit
 
-class SpotTweetItem: NSObject {
-    let id: String
-    let formattedPostDate: String
-    let text: String
-    let userName: String
-    let screenName: String
+final class SpotTweetItem {
+    final let id: String
+    final let formattedPostDate: String
+    final let text: String
+    final let userName: String
+    final let screenName: String
     
-    var avatar: UIImage?
-    var avatarRetrievedCallback: (() -> ())?
+    final var avatar: UIImage?
+    final var avatarRetrievedCallback: (() -> ())?
     
     init(id: String, formattedPostDate: String, text: String, userName: String, screenName: String) {
         self.id = id

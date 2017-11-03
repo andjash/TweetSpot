@@ -9,7 +9,7 @@
 import Foundation
 import Accounts
 
-final class LoginInteractor: NSObject {
+final class LoginInteractor {
 
     final weak var output: LoginPresenter!
     final weak var socAccountsService: SocialAccountsService!
@@ -39,7 +39,7 @@ final class LoginInteractor: NSObject {
         guard let accs = accounts else { return }
         for acc in accs {
             if acc.username == username {
-                self.twitterSession.openSessionWihtIOSAccount(acc, success: {
+                self.twitterSession.openSession(with: acc, success: {
                     self.output.loginSuccess()
                 }, error: { (error) in
                     self.output.loginFailed(error)

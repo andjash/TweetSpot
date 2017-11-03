@@ -8,20 +8,18 @@
 
 import UIKit
 
-class NavigationRootRouter: NSObject {
+final class NavigationRootRouter {
 
-	weak var sourceController: UIViewController!
+	final weak var sourceController: UIViewController!
     
     // MARK: - Input
     
     final func routeToLogin() {
-        sourceController.ts_openController(LoginViewController.self, storyboardId: "RootToLoginSegue") { (c) in
-        }
+        sourceController.ts_openController(LoginViewController.self, storyboardId: "RootToLoginSegue") { (c) in }
     }
     
     final func routeToSpot() {
-        sourceController.ts_openController(SpotViewController.self, storyboardId: "RootToSpotSegue") { (c) in
-        }
+        sourceController.ts_openController(SpotViewController.self, storyboardId: "RootToSpotSegue") { (c) in }
     }
 
 }

@@ -11,7 +11,7 @@ import UIKit
 class SafariTwitterWebAuthHandler: NSObject, TwitterWebAuthHandler {
     
     var pendingSuccessCallback: ((_ tokenVerificator: String) -> ())?
-    var pendingErrorCallback: ((NSError) -> ())?
+    var pendingErrorCallback: ((TwitterSessionError) -> ())?
     var handlingWebAuth = false
     
     
@@ -26,7 +26,7 @@ class SafariTwitterWebAuthHandler: NSObject, TwitterWebAuthHandler {
     }
     
     
-    func handleWebAuthRequest(_ url: URL, success: @escaping (_ tokenVerificator: String) -> (), failed: @escaping (NSError) -> ()) {
+    func handleWebAuthRequest(_ url: URL, success: @escaping (_ tokenVerificator: String) -> (), failed: @escaping (TwitterSessionError) -> ()) {
         handlingWebAuth = true
         pendingSuccessCallback = success
         pendingErrorCallback = failed
@@ -46,7 +46,7 @@ class SafariTwitterWebAuthHandler: NSObject, TwitterWebAuthHandler {
         let oVer = params["oauth_verifier"]
         
         let errCallback : () -> () = {
-            self.pendingErrorCallback?(NSError(domain: TwitterSessionConstants.errorDomain, code: TwitterSessionError.webAuthFailed.rawValue, userInfo: nil))
+            self.pendingErrorCallback?(TwitterSessionError.webAuthFailed)
             self.pendingSuccessCallback = nil
             self.pendingErrorCallback = nil
             self.handlingWebAuth = false
@@ -85,7 +85,7 @@ class SafariTwitterWebAuthHandler: NSObject, TwitterWebAuthHandler {
     @objc func appBecomeActive() {
         if handlingWebAuth {
             log.severe("App opened while web auth in progress. Discard auth flow")
-            self.pendingErrorCallback?(NSError(domain: TwitterSessionConstants.errorDomain, code: TwitterSessionError.webAuthFailed.rawValue, userInfo: nil))
+            self.pendingErrorCallback?(TwitterSessionError.webAuthFailed)
             self.pendingSuccessCallback = nil
             self.pendingErrorCallback = nil
             self.handlingWebAuth = false

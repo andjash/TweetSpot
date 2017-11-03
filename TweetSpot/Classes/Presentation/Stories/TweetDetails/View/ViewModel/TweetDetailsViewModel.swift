@@ -8,18 +8,18 @@
 
 import UIKit
 
-class TweetDetailsViewModel: NSObject {
-    let id: String
-    let formattedPostDate: String
-    let text: String
-    let userName: String
-    let screenName: String
+final class TweetDetailsViewModel {
+    final let id: String
+    final let formattedPostDate: String
+    final let text: String
+    final let userName: String
+    final let screenName: String
     
-    var smallAvatar: UIImage?
-    var smallAvatarRetrievedCallback: (() -> ())?
+    final var smallAvatar: UIImage?
+    final var smallAvatarRetrievedCallback: (() -> ())?
     
-    var bigAvatar: UIImage?
-    var avatarRetrievedCallback: (() -> ())?
+    final var bigAvatar: UIImage?
+    final var avatarRetrievedCallback: (() -> ())?
     
     init(id: String, formattedPostDate: String, text: String, userName: String, screenName: String) {
         self.id = id

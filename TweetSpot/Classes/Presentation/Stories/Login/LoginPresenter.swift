@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class LoginPresenter: NSObject {
+final class LoginPresenter {
 
     final weak var view: LoginViewController!
     final var interactor: LoginInteractor!
@@ -32,8 +32,7 @@ final class LoginPresenter: NSObject {
         if let username = name {
             interactor.loginWithChoosenAccount(username)
         } else {
-            view.displayProgres(enabled: false, completion: {
-            })
+            view.displayProgres(enabled: false) {}
         }
     }
     
@@ -43,7 +42,7 @@ final class LoginPresenter: NSObject {
         router.closeModule()
     }
     
-    final func loginFailed(_ error: NSError) {
+    final func loginFailed(_ error: Error) {
         view.displayProgres(enabled: false) {
             self.view.displayError(error)
         }

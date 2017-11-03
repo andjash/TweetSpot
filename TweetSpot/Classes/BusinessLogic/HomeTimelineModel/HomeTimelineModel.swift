@@ -8,8 +8,8 @@
 
 import Foundation
 
-@objc enum HomeTimelineModelLoadingDirection : Int {
-    case none = 0
+enum HomeTimelineModelLoadingDirection: Int {
+    case none
     case forward
     case backward
     case both
@@ -21,10 +21,10 @@ struct HomeTimelineModelConstants {
     static let loadingDirectionChangedNewDirectionUserInfoKey = "HomeTimelineModelConstants.loadingDirectionChangedNewDirectionUserInfoKey"
 }
 
-@objc protocol HomeTimelineModel {
+protocol HomeTimelineModel: class {
     var homeLineTweets: [TweetDTO] { get }
     var loadingDirection: HomeTimelineModelLoadingDirection { get }
     
-    func loadForward(_ success: (([TweetDTO]) -> ())?, error: ((NSError) -> ())?)
-    func loadBackward(_ success: (([TweetDTO]) -> ())?, error: ((NSError) -> ())?)    
+    func loadForward(_ success: (([TweetDTO]) -> ())?, error: ((Error) -> ())?)
+    func loadBackward(_ success: (([TweetDTO]) -> ())?, error: ((Error) -> ())?)
 }

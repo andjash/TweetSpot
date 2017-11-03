@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class TweetDetailsPresenter: NSObject {
+final class TweetDetailsPresenter {
 
     final weak var view: TweetDetailsViewController!
     final var interactor: TweetDetailsInteractor!

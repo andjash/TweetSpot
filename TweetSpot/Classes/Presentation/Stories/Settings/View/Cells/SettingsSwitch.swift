@@ -8,6 +8,6 @@
 
 import UIKit
 
-class SettingsSwitch: UISwitch {
-    var associatedItem: SettingsItem?
+final class SettingsSwitch: UISwitch {
+    final var associatedItem: SettingsItem?
 }

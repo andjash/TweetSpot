@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class SpotPresenter: NSObject  {
+final class SpotPresenter  {
 
     final weak var view: SpotViewController!
     final var interactor: SpotInteractor!

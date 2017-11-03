@@ -11,9 +11,9 @@ import AYRegistry
 
 class LazyRegistry: AYRegistry {
     
-    private var lazyregistryDone = false
+    private final var lazyregistryDone = false
     
-    // Protected
+    // MAKR: - Protected
     
     func initiateLazyRegistration() {
         if (lazyregistryDone) {

@@ -10,14 +10,12 @@ import Foundation
 
 import UIKit
 
-@objc protocol CommonTableDataManagerDelegate {
+protocol CommonTableDataManagerDelegate: class {
     func dataItemSelected(_ item: AnyObject)
 }
 
-@objc protocol CommonTableDataManager: UITableViewDataSource, UITableViewDelegate {
+protocol CommonTableDataManager: class, UITableViewDataSource, UITableViewDelegate {
     weak var delegate: CommonTableDataManagerDelegate? {get set}
-    func attachTo(_ tableView: UITableView)
-    func reloadWithData(_ data: [AnyObject])
+    func attach(to tableView: UITableView)
+    func reload(with data: [AnyObject])
 }
-
-

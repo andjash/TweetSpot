@@ -11,13 +11,13 @@ import SVPullToRefresh
 
 class SpotViewController: UIViewController, SpotTableDataMangerDelegate, CommonTableDataManagerDelegate {
 
-    var output: SpotPresenter!
+    final var output: SpotPresenter!
     
-    var tableDataManager: SpotTableDataManager!
+    final var tableDataManager: SpotTableDataManager!
     
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var newTweetsButton: UIButton!
-    @IBOutlet weak var newTweetsButtonTopSpace: NSLayoutConstraint!
+    @IBOutlet final weak var tableView: UITableView!
+    @IBOutlet final weak var newTweetsButton: UIButton!
+    @IBOutlet final weak var newTweetsButtonTopSpace: NSLayoutConstraint!
     
     // MARK: Life cycle
     override func viewDidLoad() {
@@ -35,7 +35,7 @@ class SpotViewController: UIViewController, SpotTableDataMangerDelegate, CommonT
         newTweetsButton.layer.shadowPath = CGPath(roundedRect: newTweetsButton.bounds, cornerWidth: newTweetsButton.frame.height / 2, cornerHeight: newTweetsButton.frame.height / 2, transform: nil)
         newTweetsButtonTopSpace.constant = -newTweetsButton.frame.height - newTweetsButton.layer.shadowOffset.height - newTweetsButton.layer.shadowRadius
         
-        tableDataManager.attachTo(tableView)
+        tableDataManager.attach(to: tableView)
         tableDataManager.spotDelegate = self
         tableDataManager.delegate = self
         output.viewIsReady()
@@ -60,15 +60,15 @@ class SpotViewController: UIViewController, SpotTableDataMangerDelegate, CommonT
 
     // MARK: Actions
     
-    @IBAction func quitAction(_ sender: AnyObject?) {
+    @IBAction final func quitAction(_ sender: AnyObject?) {
         output.quitRequested()
     }
     
-    @IBAction func settingsAction(_ sender: AnyObject?) {
+    @IBAction final func settingsAction(_ sender: AnyObject?) {
         output.settingsRequested()
     }
     
-    @IBAction func showNewTweetsAction(_ sender: AnyObject?) {
+    @IBAction final func showNewTweetsAction(_ sender: AnyObject?) {
         UIView.animate(withDuration: 0.3, animations: {
             self.tableView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
             self.newTweetsButtonTopSpace.constant = -self.newTweetsButton.frame.height - self.newTweetsButton.layer.shadowOffset.height - self.newTweetsButton.layer.shadowRadius
@@ -82,10 +82,10 @@ class SpotViewController: UIViewController, SpotTableDataMangerDelegate, CommonT
     // MARK: - SpotTableDataManagerDelegate
     
     final func triggeredPullToRefresh() {
-        UIView.animate(withDuration: 0.3, animations: {
+        UIView.animate(withDuration: 0.3) {
             self.newTweetsButtonTopSpace.constant = -self.newTweetsButton.frame.height - self.newTweetsButton.layer.shadowOffset.height - self.newTweetsButton.layer.shadowRadius
             self.view.layoutIfNeeded()
-        })
+        }
         output.loadAboveRequested()
     }
     
@@ -119,7 +119,7 @@ class SpotViewController: UIViewController, SpotTableDataMangerDelegate, CommonT
         
         tableDataManager.displayingAvatars = displayRequired
         if let all = tableDataManager.allItems {
-            tableDataManager.reloadWithData(all)
+            tableDataManager.reload(with: all)
         }
     }
     

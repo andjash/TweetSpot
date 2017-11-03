@@ -8,10 +8,9 @@
 
 import UIKit
 
-
 private var associationHandle: UInt8 = 0
 
-class FadeInSegue: UIStoryboardSegue, UIViewControllerTransitioningDelegate {
+final class FadeInSegue: UIStoryboardSegue, UIViewControllerTransitioningDelegate {
     
      override func perform() {
         let delegate = FadeTransitionDelegate()
@@ -21,13 +20,13 @@ class FadeInSegue: UIStoryboardSegue, UIViewControllerTransitioningDelegate {
     }
 }
 
-private class FadeTransitionDelegate: NSObject, UIViewControllerTransitioningDelegate {
+private final class FadeTransitionDelegate: NSObject, UIViewControllerTransitioningDelegate {
     
-    @objc func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return FadeAnimator(presenting: true)
     }
     
-    @objc func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return FadeAnimator(presenting: false, completion: {
             objc_setAssociatedObject(dismissed,  &associationHandle, nil, .OBJC_ASSOCIATION_RETAIN_NONATOMIC);
         })

@@ -22,10 +22,8 @@
 		5554CE3D1D5FAC0F00F82966 /* Settings.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5554CE3F1D5FAC0F00F82966 /* Settings.strings */; };
 		55ACBFC01D618B2D00E8C73D /* NSDateFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ACBFBF1D618B2D00E8C73D /* NSDateFormatter+Extensions.swift */; };
 		55B061BB1D5E1DA000490B44 /* Common.strings in Resources */ = {isa = PBXBuildFile; fileRef = 55B061BD1D5E1DA000490B44 /* Common.strings */; };
-		55B061C01D5E241300490B44 /* NSError+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B061BF1D5E241300490B44 /* NSError+Extensions.swift */; };
 		55B061C31D5E26E800490B44 /* Errors.strings in Resources */ = {isa = PBXBuildFile; fileRef = 55B061C51D5E26E800490B44 /* Errors.strings */; };
-		55B061F21D5F1C7100490B44 /* TweetDTODeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B061DF1D5F1C7100490B44 /* TweetDTODeserializer.swift */; };
-		55B061F31D5F1C7100490B44 /* TweetDTODictionaryDeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B061E01D5F1C7100490B44 /* TweetDTODictionaryDeserializer.swift */; };
+		55B061F31D5F1C7100490B44 /* TweetDTODeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B061E01D5F1C7100490B44 /* TweetDTODeserializer.swift */; };
 		55B061F41D5F1C7100490B44 /* TwitterDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B061E11D5F1C7100490B44 /* TwitterDAO.swift */; };
 		55B061F51D5F1C7100490B44 /* TwitterDAOImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B061E21D5F1C7100490B44 /* TwitterDAOImpl.swift */; };
 		55B061F61D5F1C7100490B44 /* KeychainSessionCredentialsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B061E51D5F1C7100490B44 /* KeychainSessionCredentialsStorage.swift */; };
@@ -94,6 +92,8 @@
 		CC8FC7331FAC69E600BEDDCC /* TweetDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8FC72F1FAC69E600BEDDCC /* TweetDetailsPresenter.swift */; };
 		CC8FC7341FAC69E600BEDDCC /* TweetDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8FC7301FAC69E600BEDDCC /* TweetDetailsInteractor.swift */; };
 		CC8FC7361FAC69E600BEDDCC /* TweetDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC8FC7321FAC69E600BEDDCC /* TweetDetails.storyboard */; };
+		CCAA5E6E1FACED74004F611A /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAA5E6D1FACED74004F611A /* Logger.swift */; };
+		CCAA5E701FACF54F004F611A /* Error+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAA5E6F1FACF54F004F611A /* Error+Extensions.swift */; };
 		E22165F574FFBCDDB26ED371 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3F605FE74D6C946DE2BDB2 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -116,11 +116,9 @@
 		55ACBFBF1D618B2D00E8C73D /* NSDateFormatter+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDateFormatter+Extensions.swift"; sourceTree = "<group>"; };
 		55B061BC1D5E1DA000490B44 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Common.strings; sourceTree = "<group>"; };
 		55B061BE1D5E1DA200490B44 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Common.strings; sourceTree = "<group>"; };
-		55B061BF1D5E241300490B44 /* NSError+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSError+Extensions.swift"; sourceTree = "<group>"; };
 		55B061C41D5E26E800490B44 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Errors.strings; sourceTree = "<group>"; };
 		55B061C61D5E26EB00490B44 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Errors.strings; sourceTree = "<group>"; };
-		55B061DF1D5F1C7100490B44 /* TweetDTODeserializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetDTODeserializer.swift; sourceTree = "<group>"; };
-		55B061E01D5F1C7100490B44 /* TweetDTODictionaryDeserializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetDTODictionaryDeserializer.swift; sourceTree = "<group>"; };
+		55B061E01D5F1C7100490B44 /* TweetDTODeserializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetDTODeserializer.swift; sourceTree = "<group>"; };
 		55B061E11D5F1C7100490B44 /* TwitterDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterDAO.swift; sourceTree = "<group>"; };
 		55B061E21D5F1C7100490B44 /* TwitterDAOImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterDAOImpl.swift; sourceTree = "<group>"; };
 		55B061E51D5F1C7100490B44 /* KeychainSessionCredentialsStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainSessionCredentialsStorage.swift; sourceTree = "<group>"; };
@@ -194,6 +192,8 @@
 		CC8FC72F1FAC69E600BEDDCC /* TweetDetailsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetDetailsPresenter.swift; sourceTree = "<group>"; };
 		CC8FC7301FAC69E600BEDDCC /* TweetDetailsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetDetailsInteractor.swift; sourceTree = "<group>"; };
 		CC8FC7321FAC69E600BEDDCC /* TweetDetails.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TweetDetails.storyboard; sourceTree = "<group>"; };
+		CCAA5E6D1FACED74004F611A /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		CCAA5E6F1FACF54F004F611A /* Error+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+Extensions.swift"; sourceTree = "<group>"; };
 		EC908E15534B9C55897CC48D /* Pods_TweetSpot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TweetSpot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEEBF983C6D999B04D27BE91 /* Pods-TweetSpot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TweetSpot.release.xcconfig"; path = "Pods/Target Support Files/Pods-TweetSpot/Pods-TweetSpot.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -346,10 +346,10 @@
 				553F7B8F1D5DBF2D00541F38 /* UIColor+Extensions.swift */,
 				553F7B911D5DC8E800541F38 /* CAGradientLayer+Extensions.swift */,
 				553F7BA31D5DD0EE00541F38 /* String+Extensions.swift */,
-				55B061BF1D5E241300490B44 /* NSError+Extensions.swift */,
 				55FB49961D5F77C700D0869C /* UIView+Extensions.swift */,
 				55ACBFBF1D618B2D00E8C73D /* NSDateFormatter+Extensions.swift */,
 				CC8FC71F1FAC582B00BEDDCC /* UIViewController+Extensions.swift */,
+				CCAA5E6F1FACF54F004F611A /* Error+Extensions.swift */,
 			);
 			path = Extensionns;
 			sourceTree = "<group>";
@@ -444,8 +444,7 @@
 		55B061DE1D5F1C7100490B44 /* Serialization */ = {
 			isa = PBXGroup;
 			children = (
-				55B061DF1D5F1C7100490B44 /* TweetDTODeserializer.swift */,
-				55B061E01D5F1C7100490B44 /* TweetDTODictionaryDeserializer.swift */,
+				55B061E01D5F1C7100490B44 /* TweetDTODeserializer.swift */,
 			);
 			path = Serialization;
 			sourceTree = "<group>";
@@ -485,6 +484,7 @@
 				CC8FC6F31FAC45EA00BEDDCC /* CoreServicesRegistry.swift */,
 				55B061EE1D5F1C7100490B44 /* SocialAccountsService */,
 				55FB499A1D5F7C6200D0869C /* ImagesService */,
+				CCAA5E6C1FACED66004F611A /* Logger */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -684,6 +684,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		CCAA5E6C1FACED66004F611A /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				CCAA5E6D1FACED74004F611A /* Logger.swift */,
+			);
+			path = Logger;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -849,7 +857,6 @@
 				55C5ABE21D6065A800CC5880 /* CustomPullToRefreshView.swift in Sources */,
 				CC8FC6FE1FAC4B9900BEDDCC /* PresentationRegistry.swift in Sources */,
 				553F7B901D5DBF2D00541F38 /* UIColor+Extensions.swift in Sources */,
-				55B061F21D5F1C7100490B44 /* TweetDTODeserializer.swift in Sources */,
 				55C5ABDA1D6052E200CC5880 /* SettingsSwitch.swift in Sources */,
 				55B0620B1D5F4ED100490B44 /* InMemoryHomeTimelineStorage.swift in Sources */,
 				553F7B8E1D5DBB5900541F38 /* AppDelegate.swift in Sources */,
@@ -865,6 +872,7 @@
 				553F7BA41D5DD0EE00541F38 /* String+Extensions.swift in Sources */,
 				55B062041D5F20D000490B44 /* TweetDTO.swift in Sources */,
 				55B062091D5F4E1D00490B44 /* HomeTimelineStorage.swift in Sources */,
+				CCAA5E6E1FACED74004F611A /* Logger.swift in Sources */,
 				55B061F41D5F1C7100490B44 /* TwitterDAO.swift in Sources */,
 				55FB499C1D5F7C8200D0869C /* ImagesService.swift in Sources */,
 				55B061F61D5F1C7100490B44 /* KeychainSessionCredentialsStorage.swift in Sources */,
@@ -882,12 +890,11 @@
 				55B061F81D5F1C7100490B44 /* TwitterSession.swift in Sources */,
 				CC8FC6F21FAC457600BEDDCC /* main.swift in Sources */,
 				553F7B981D5DC9B900541F38 /* FadeAnimator.swift in Sources */,
-				55B061F31D5F1C7100490B44 /* TweetDTODictionaryDeserializer.swift in Sources */,
+				55B061F31D5F1C7100490B44 /* TweetDTODeserializer.swift in Sources */,
 				55C5ABD11D60452700CC5880 /* SettingsCell.swift in Sources */,
 				55C5ABCC1D6042EC00CC5880 /* SettingsService.swift in Sources */,
 				55B0620E1D5F517400490B44 /* SpotTweetItem.swift in Sources */,
 				55C5ABCE1D60437500CC5880 /* UserDefaultsSettingsService.swift in Sources */,
-				55B061C01D5E241300490B44 /* NSError+Extensions.swift in Sources */,
 				CC8FC6FC1FAC4A9F00BEDDCC /* ApplicationRegistry.swift in Sources */,
 				55C5ABE61D606ABE00CC5880 /* TweetDetailsViewModel.swift in Sources */,
 				BC54F40AE5A8825639068669 /* SpotViewController.swift in Sources */,
@@ -909,6 +916,7 @@
 				CC8FC6F41FAC45EA00BEDDCC /* CoreServicesRegistry.swift in Sources */,
 				55C5ABEC1D60975600CC5880 /* SpotTableDataManager.swift in Sources */,
 				CC8FC7131FAC502600BEDDCC /* LoginPresenter.swift in Sources */,
+				CCAA5E701FACF54F004F611A /* Error+Extensions.swift in Sources */,
 				55ACBFC01D618B2D00E8C73D /* NSDateFormatter+Extensions.swift in Sources */,
 				CC8FC6F61FAC467900BEDDCC /* BusinessLogicRegistry.swift in Sources */,
 				3DEBFDCD70C031FE145759FB /* TweetDetailsViewController.swift in Sources */,

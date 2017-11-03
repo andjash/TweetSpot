@@ -8,16 +8,15 @@
 
 import Foundation
 
-final class TweetDetailsInteractor: NSObject {
+final class TweetDetailsInteractor {
 
     final weak var output: TweetDetailsPresenter!
     final weak var imagesService: ImagesService?
     final let dateFormatter: DateFormatter
     
-    override init() {
-        self.dateFormatter = DateFormatter()
-        self.dateFormatter.ts_configureAsAppCommonFormatter()
-        super.init()
+    init() {
+        dateFormatter = DateFormatter()
+        dateFormatter.ts_configureAsAppCommonFormatter()
     }
     
     // MARK: - Input

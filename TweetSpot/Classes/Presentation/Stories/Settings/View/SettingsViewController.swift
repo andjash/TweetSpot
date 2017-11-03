@@ -10,13 +10,13 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
-    var output: SettingsPresenter!
+    final var output: SettingsPresenter!
     
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var closeButton: UIBarButtonItem!    
+    @IBOutlet final weak var tableView: UITableView!
+    @IBOutlet final weak var closeButton: UIBarButtonItem!
     
-    var sections: [SettingsSection]?
-    var switchToItemMapping: [UISwitch : SettingsItem]?
+    final var sections: [SettingsSection]?
+    final var switchToItemMapping: [UISwitch : SettingsItem]?
     
     fileprivate static let switchAssociationKey = "SettingsViewController.SwitchToSettingsItem"
     
@@ -35,14 +35,14 @@ class SettingsViewController: UIViewController {
 
     // MARK: - Actions
     
-    @IBAction func closeAction(_ sender: AnyObject?) {
+    @IBAction final func closeAction(_ sender: AnyObject?) {
         output.closeRequested()
     }
     
     
     // MARK: - Private
     
-    @objc func switchChanged(_ sender: AnyObject?) {
+    @objc final func switchChanged(_ sender: AnyObject?) {
         if let swtch = sender as? SettingsSwitch,
                let item = swtch.associatedItem {
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(0.2 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)) {
@@ -53,7 +53,7 @@ class SettingsViewController: UIViewController {
 
     // MARK: View input
 
-    func showSettings(_ sections: [SettingsSection]) {
+    final func show(_ sections: [SettingsSection]) {
         self.sections = sections
         tableView.reloadData()
     }
@@ -61,7 +61,9 @@ class SettingsViewController: UIViewController {
 }
 
 // MARK: - UITableViewDataSource protocol
+
 extension SettingsViewController : UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return sections?.count ?? 0
     }
@@ -85,7 +87,7 @@ extension SettingsViewController : UITableViewDataSource {
 extension SettingsViewController : UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return SettingsCell.cellHeight(withItem: sections![indexPath.section].items[indexPath.row], tableWidth: tableView.frame.width)
+        return SettingsCell.cellHeight(with: sections![indexPath.section].items[indexPath.row], tableWidth: tableView.frame.width)
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

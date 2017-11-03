@@ -8,12 +8,12 @@
 
 import UIKit
 
-@objc protocol SpotTableDataMangerDelegate {
+protocol SpotTableDataMangerDelegate: class {
     func triggeredPullToRefresh()
     func triggeredInfiteScroll()
 }
 
-@objc protocol SpotTableDataManager : CommonTableDataManager {
+protocol SpotTableDataManager: class, CommonTableDataManager {
     weak var spotDelegate: SpotTableDataMangerDelegate? {get set}
     var displayingAvatars: Bool { get set }
     var allItems: [SpotTweetItem]? { get }
@@ -28,22 +28,22 @@ import UIKit
 
 
 
-class SpotTableDataManagerImpl: NSObject, SpotTableDataManager {
+final class SpotTableDataManagerImpl: NSObject, SpotTableDataManager {
     
-    weak var delegate: CommonTableDataManagerDelegate?
-    weak var spotDelegate: SpotTableDataMangerDelegate?
-    weak var tableView: UITableView!
-    var infiniteScrollEnabled: Bool = false {
+    final weak var delegate: CommonTableDataManagerDelegate?
+    final weak var spotDelegate: SpotTableDataMangerDelegate?
+    final weak var tableView: UITableView!
+    final var infiniteScrollEnabled: Bool = false {
         didSet {
             tableView.infiniteScrollingView.enabled = infiniteScrollEnabled
             tableView.infiniteScrollingView.stopAnimating()
         }
     }
     
-    var allItems: [SpotTweetItem]?
-    var displayingAvatars = true
+    final var allItems: [SpotTweetItem]?
+    final var displayingAvatars = true
     
-    func attachTo(_ tableView: UITableView) {
+    final func attach(to tableView: UITableView) {
         self.tableView = tableView
         tableView.delegate = self;
         tableView.dataSource = self;
@@ -57,20 +57,20 @@ class SpotTableDataManagerImpl: NSObject, SpotTableDataManager {
         }
     }
     
-    func reloadWithData(_ data: [AnyObject]) {
+    final func reload(with data: [AnyObject]) {
         allItems = data as? [SpotTweetItem]
         displayItemsWithoutScrolling(nil, newItemsAtBottom: nil, prevItems: allItems)
     }
     
-    func insertItemsAtTop(_ items: [SpotTweetItem]) {
-        if items.count == 0 {
+    final func insertItemsAtTop(_ items: [SpotTweetItem]) {
+        guard items.count > 0 else {
             tableView.pullToRefreshView.stopAnimating()
             return
         }
         
         let contentOffsetBefore = tableView.contentOffset
         let contentInsetBefore = tableView.contentInset
-        self.tableView.pullToRefreshView.stopAnimating()
+        tableView.pullToRefreshView.stopAnimating()
         let contentInsetAfter = tableView.contentInset
         
         tableView.layer.removeAllAnimations()
@@ -82,12 +82,12 @@ class SpotTableDataManagerImpl: NSObject, SpotTableDataManager {
         tableView.contentInset = contentInsetAfter
     }
     
-    func insertItemsAtBottom(_ items: [SpotTweetItem]) {
+    final func insertItemsAtBottom(_ items: [SpotTweetItem]) {
         tableView.infiniteScrollingView.stopAnimating()
         displayItemsWithoutScrolling(nil, newItemsAtBottom: items, prevItems: allItems)
     }
     
-    func updateCellWithAvatars(displayRequired: Bool) {
+    final func updateCellWithAvatars(displayRequired: Bool) {
         if displayingAvatars == displayRequired {
             return
         }
@@ -95,17 +95,17 @@ class SpotTableDataManagerImpl: NSObject, SpotTableDataManager {
         displayItemsWithoutScrolling(nil, newItemsAtBottom: nil, prevItems: allItems)
     }
     
-    func showPullToRefreshAnimation(_ enabled: Bool) {
+    final func showPullToRefreshAnimation(_ enabled: Bool) {
          enabled ? tableView.pullToRefreshView.startAnimating() : tableView.pullToRefreshView.stopAnimating()
     }
     
-    func showInfiniteScrollAnimation(_ enabled: Bool) {
+    final func showInfiniteScrollAnimation(_ enabled: Bool) {
         enabled ? tableView.infiniteScrollingView.startAnimating() : tableView.infiniteScrollingView.stopAnimating()
     }
     
-    // MARK: Private
+    // MARK: - Private
     
-    fileprivate func topmostVisibleIndexPath() -> IndexPath? {
+    final fileprivate func topmostVisibleIndexPath() -> IndexPath? {
         if let paths = tableView.indexPathsForVisibleRows {
             for ip in paths {
                 if let cell = tableView.cellForRow(at: ip) {
@@ -118,7 +118,7 @@ class SpotTableDataManagerImpl: NSObject, SpotTableDataManager {
         return nil
     }
     
-    func displayItemsWithoutScrolling(_ newItemsAtTop: [SpotTweetItem]?, newItemsAtBottom: [SpotTweetItem]?, prevItems: [SpotTweetItem]?) {
+    final func displayItemsWithoutScrolling(_ newItemsAtTop: [SpotTweetItem]?, newItemsAtBottom: [SpotTweetItem]?, prevItems: [SpotTweetItem]?) {
         let topVisibleIp = topmostVisibleIndexPath()
         var desiredOffset: CGFloat?
         if let indexPath = topVisibleIp {
@@ -134,7 +134,10 @@ class SpotTableDataManagerImpl: NSObject, SpotTableDataManager {
             tableView.scrollToRow(at: newIp, at: .top, animated: false)
             tableView.contentOffset = CGPoint(x: tableView.contentOffset.x, y: tableView.contentOffset.y - desiredOffset!)
         }
-    }}
+    }
+    
+    
+}
 
 extension SpotTableDataManagerImpl : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -143,16 +146,16 @@ extension SpotTableDataManagerImpl : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SpotTweetItemCell") as! SpotTweetItemCell
-        cell.bindItem(allItems![indexPath.row], displayAvatar: displayingAvatars)
+        cell.bind(allItems![indexPath.row], displayAvatar: displayingAvatars)
         return cell
     }
 }
 
 
-extension SpotTableDataManagerImpl : UITabBarDelegate {
+extension SpotTableDataManagerImpl : UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return SpotTweetItemCell.cellHeight(withItem: allItems![indexPath.row], displayingAvatar: displayingAvatars, tableWidth: tableView.frame.width)
+        return SpotTweetItemCell.cellHeight(with: allItems![indexPath.row], displayingAvatar: displayingAvatars, tableWidth: tableView.frame.width)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

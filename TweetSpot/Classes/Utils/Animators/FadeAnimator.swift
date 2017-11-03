@@ -8,10 +8,10 @@
 
 import UIKit
 
-class FadeAnimator: NSObject, UIViewControllerAnimatedTransitioning {
+final class FadeAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     
-    let presenting: Bool
-    let completion: (() -> ())?
+    private final let presenting: Bool
+    private final let completion: (() -> ())?
     
     convenience init(presenting: Bool) {
         self.init(presenting: presenting, completion: nil)
@@ -22,6 +22,7 @@ class FadeAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         self.completion = completion
     }
     
+    // MARK: - UIViewControllerAnimatedTransitioning
     
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return 0.3

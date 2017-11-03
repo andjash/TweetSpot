@@ -8,19 +8,17 @@
 
 import UIKit
 
-class NavigationRootViewController: UIViewController  {
+final class NavigationRootViewController: UIViewController  {
 
-    var output: NavigationRootPresenter!
+    final var output: NavigationRootPresenter!
     
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var birdLabel: UILabel!
-    @IBOutlet weak var birdLabelHorizontalAlign: NSLayoutConstraint!
-    @IBOutlet weak var verifyingLabel: UILabel!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    
-    @IBOutlet weak var gradientView: UIView!
-    
-    weak var gradientLayer: CAGradientLayer!
+    @IBOutlet final weak var titleLabel: UILabel!
+    @IBOutlet final weak var birdLabel: UILabel!
+    @IBOutlet final weak var birdLabelHorizontalAlign: NSLayoutConstraint!
+    @IBOutlet final weak var verifyingLabel: UILabel!
+    @IBOutlet final weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet final weak var gradientView: UIView!
+    final weak var gradientLayer: CAGradientLayer!
     
     // MARK: - Life cycle
     

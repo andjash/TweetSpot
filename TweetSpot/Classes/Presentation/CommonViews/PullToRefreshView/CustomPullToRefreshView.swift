@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 extension UIScrollView {
     
     func ts_configurePullToRefresh(_ handler: @escaping () -> ()) {
@@ -20,7 +19,7 @@ extension UIScrollView {
     
 }
 
-class CustomPullToRefreshView: UIView {
+final class CustomPullToRefreshView: UIView {
     
     enum State {
         case loading
@@ -28,10 +27,9 @@ class CustomPullToRefreshView: UIView {
         case arrowDown
     }
     
-    var state = CustomPullToRefreshView.State.loading
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    @IBOutlet weak var arrowImageView: UIImageView!
-    
+    private final var state = CustomPullToRefreshView.State.loading
+    @IBOutlet final weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet final weak var arrowImageView: UIImageView!
     
     static func customPullToRefreshViewWithState(_ state: CustomPullToRefreshView.State) -> CustomPullToRefreshView {
         let result: CustomPullToRefreshView = CustomPullToRefreshView.ts_loadFromDefaultNib()
@@ -51,6 +49,7 @@ class CustomPullToRefreshView: UIView {
         return result
     }
     
+    // MARK: - UIView
     
     override func willMove(toSuperview newSuperview: UIView?) {
         super.willMove(toSuperview: newSuperview)

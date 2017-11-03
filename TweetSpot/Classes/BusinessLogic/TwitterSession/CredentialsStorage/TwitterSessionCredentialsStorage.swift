@@ -9,10 +9,10 @@
 import Foundation
 import Accounts
 
-@objc protocol TwitterSessionCredentialsStorage {
-    func storeOAuthToken(_ token: String?)
-    func storeOAuthTokenSecret(_ tokenSecret: String?)
-    func storeIOSAccount(_ account: ACAccount)
+protocol TwitterSessionCredentialsStorage: class {
+    func store(OAuthToken token: String?)
+    func store(OAuthTokenSecret tokenSecret: String?)
+    func store(IOSAccount account: ACAccount)
     
     func restoreOAuthToken() -> String?
     func restoreOAuthTokenSecret() -> String?

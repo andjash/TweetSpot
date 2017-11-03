@@ -9,27 +9,27 @@
 import Foundation
 import UIKit
 
-fileprivate class SegueConfigurationHolder<T: UIViewController>: NSObject {
-    let closure: (UIViewController) -> ()
-    
-    init(closure: @escaping (UIViewController) -> ()) {
-        self.closure = closure
-    }
-}
-
 extension UIViewController {
     
-    fileprivate class Holder: NSObject {
+    private final class SegueConfigurationHolder<T: UIViewController>: NSObject {
+        let closure: (UIViewController) -> ()
+        
+        init(closure: @escaping (UIViewController) -> ()) {
+            self.closure = closure
+        }
+    }
+    
+    private final class Holder: NSObject {
         static var shared = Holder()
         
-        var storyboardInjections: [String : (Any) -> ()] = [:]
+        final var storyboardInjections: [String : (Any) -> ()] = [:]
         
         override init() {
             super.init()
             swizzlePrepareForSegue()
         }
         
-        private func swizzlePrepareForSegue() {
+        private final func swizzlePrepareForSegue() {
             let originalSelector = #selector(UIViewController.prepare(for:sender:))
             let swizzledSelector = #selector(UIViewController.ts_swizzledPrepareForSegue(segue:sender:))
             
@@ -41,7 +41,7 @@ extension UIViewController {
         
     }
     
-    @objc func ts_swizzledPrepareForSegue(segue: UIStoryboardSegue, sender: Any?) {
+    @objc private func ts_swizzledPrepareForSegue(segue: UIStoryboardSegue, sender: Any?) {
         if let configHolder = sender as? SegueConfigurationHolder {
             configHolder.closure(segue.destination)
         }
@@ -49,7 +49,7 @@ extension UIViewController {
     }
     
     
-    func ts_openController<T: UIViewController>(_ type: T.Type, storyboardId: String, configuration: @escaping (T) -> ()) {
+    final func ts_openController<T: UIViewController>(_ type: T.Type, storyboardId: String, configuration: @escaping (T) -> ()) {
         let _ = Holder.shared
         self.performSegue(withIdentifier: storyboardId, sender: SegueConfigurationHolder(closure: { controller in
             if let casted = controller as? T {
@@ -61,7 +61,7 @@ extension UIViewController {
         }))
     }
     
-    func ts_closeController(animated: Bool) {
+    final func ts_closeController(animated: Bool) {
         if let navController = self.parent as? UINavigationController, navController.viewControllers.count > 1 {
             navController.popViewController(animated: true)
         } else if let _ = self.presentingViewController {

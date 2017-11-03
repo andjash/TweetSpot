@@ -8,23 +8,23 @@
 
 import Foundation
 
-class NavigationRootPresenter: NSObject {
+final class NavigationRootPresenter {
 
-    weak var view: NavigationRootViewController!
-    var interactor: NavigationRootInteractor!
-    var router: NavigationRootRouter!
+    final weak var view: NavigationRootViewController!
+    final var interactor: NavigationRootInteractor!
+    final var router: NavigationRootRouter!
     
-    private var viewIsAppearedOnce = false
-    private var verifyinaccountShown = false
+    private final var viewIsAppearedOnce = false
+    private final var verifyinaccountShown = false
     
     
     // MARK: - View output
     
     final func viewIsAppeared() {
         if !viewIsAppearedOnce {
-            view.showAppLaunchAnimation({
+            view.showAppLaunchAnimation {
                 self.interactor.trackSessionToDecideNextModule()
-            })
+            }
             viewIsAppearedOnce = true
         } else {
             interactor.trackSessionToDecideNextModule()
@@ -35,8 +35,7 @@ class NavigationRootPresenter: NSObject {
     
     final func loginModuleRequired() {
         if verifyinaccountShown {
-            let delayTime = DispatchTime.now() + Double(Int64(0.5 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
-            DispatchQueue.main.asyncAfter(deadline: delayTime) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 self.router.routeToLogin()
             }
         } else {
@@ -46,8 +45,7 @@ class NavigationRootPresenter: NSObject {
     
     final func spotModuleRequired() {
         if verifyinaccountShown {
-            let delayTime = DispatchTime.now() + Double(Int64(0.5 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
-            DispatchQueue.main.asyncAfter(deadline: delayTime) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 self.router.routeToSpot()
             }
         } else {

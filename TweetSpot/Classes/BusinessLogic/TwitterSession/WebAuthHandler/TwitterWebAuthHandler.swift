@@ -8,7 +8,7 @@
 
 import Foundation
 
-@objc protocol TwitterWebAuthHandler {
-    func handleWebAuthRequest(_ url: URL, success: @escaping (_ tokenVerificator: String) -> (), failed: @escaping (NSError) -> ())
-    @objc optional func handleWebAuthCallback(_ url: URL) -> Bool
+protocol TwitterWebAuthHandler: class {
+    func handleWebAuthRequest(_ url: URL, success: @escaping (_ tokenVerificator: String) -> (), failed: @escaping (TwitterSessionError) -> ())
+    func handleWebAuthCallback(_ url: URL) -> Bool
 }

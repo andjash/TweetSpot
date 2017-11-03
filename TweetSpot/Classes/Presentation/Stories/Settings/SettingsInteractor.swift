@@ -8,9 +8,9 @@
 
 import Foundation
 
-class SettingsInteractor: NSObject {
+class SettingsInteractor {
     
-    enum SettingId : Int {
+    private enum SettingId : Int {
         case showSpotAvatars = 0
     }
     
@@ -26,11 +26,11 @@ class SettingsInteractor: NSObject {
     final weak var output: SettingsPresenter!
     final var sections: [SettingsSection] = []
   
-    func requestSettingsSections() {
+    final func requestSettingsSections() {
         output.needToUpdateWithSections(sections)
     }
     
-    func changeRequestForItem(_ item: SettingsItem) {
+    final func changeRequestForItem(_ item: SettingsItem) {
         switch item.id {
         case 0:
             if let item = item as? SwitchSettingsItem {
@@ -42,19 +42,23 @@ class SettingsInteractor: NSObject {
         }
     }
     
-    fileprivate func updateSwitch(forItem item: SwitchSettingsItem) {
+    // MARK: - Private
+    
+    private final func updateSwitch(forItem item: SwitchSettingsItem) {
         var possibleTargetSection: SettingsSection?
+        var targetSectionIndex: Int?
         
-        outerLoop: for section in sections {
+        outerLoop: for (index, section) in sections.enumerated() {
             for secItem in section.items {
                 if secItem.id == item.id {
+                    targetSectionIndex = index
                     possibleTargetSection = section
                     break outerLoop
                 }
             }
         }
         
-        guard let targetSection = possibleTargetSection else {return}
+        guard let targetSection = possibleTargetSection, let sectionIndex = targetSectionIndex else {return}
         
         var newItems: [SettingsItem] = []
         for oldItem in targetSection.items {
@@ -66,7 +70,8 @@ class SettingsInteractor: NSObject {
         }
         
         let newSection = SettingsSection(name: targetSection.name, items: newItems)
-        sections[sections.index(of: targetSection)!] = newSection
+        
+        sections[sectionIndex] = newSection
         output.needToUpdateWithSections(sections)
     }
     

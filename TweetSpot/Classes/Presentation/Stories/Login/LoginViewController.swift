@@ -10,13 +10,13 @@ import UIKit
 
 final class LoginViewController: UIViewController {
 
-    var output: LoginPresenter!
+    final var output: LoginPresenter!
     
-    @IBOutlet weak var loginWithIOSButton: UIButton!
-    @IBOutlet weak var loginWithPasswordButton: UIButton!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet final weak var loginWithIOSButton: UIButton!
+    @IBOutlet final weak var loginWithPasswordButton: UIButton!
+    @IBOutlet final weak var activityIndicator: UIActivityIndicatorView!
     
-    weak var gradientLayer: CAGradientLayer!
+    final weak var gradientLayer: CAGradientLayer!
     
     // MARK: - Life cycle
     
@@ -67,36 +67,36 @@ final class LoginViewController: UIViewController {
         }
     }
     
-    final func displayError(_ error: NSError) {
-        let alert = UIAlertController(title: "common_error".ts_localized("Common"), message: error.ts_userFriendlyDescription, preferredStyle: .alert)
+    final func displayError(_ error: Error) {
+        let alert = UIAlertController(title: "common_error".ts_localized("Common"), message: error.ts_uiDescription, preferredStyle: .alert)
         let okActinon = UIAlertAction(title: "common_ok".ts_localized("Common"), style: .cancel, handler: nil)
         alert.addAction(okActinon)
-        self.present(alert, animated: true, completion: nil)
+        present(alert, animated: true, completion: nil)
     }
     
     final func displayAccountChooser(_ accounts: [String]) {
         let alert = UIAlertController(title: "login_account_chooser_title".ts_localized("Login"), message: nil, preferredStyle: .actionSheet)
         
         for name in accounts {
-            let action = UIAlertAction(title: name, style: .default, handler: {(action) in
+            let action = UIAlertAction(title: name, style: .default) { action in
                 self.output.choosenAccount(name)
-            })
+            }
             alert.addAction(action)
         }
-        let cancelAction = UIAlertAction(title: "common_cancel".ts_localized("Common"), style: .cancel, handler: {(action) in
+        let cancelAction = UIAlertAction(title: "common_cancel".ts_localized("Common"), style: .cancel) { action in
             self.output.choosenAccount(nil)
-        })
+        }
         alert.addAction(cancelAction)
         self.present(alert, animated: true, completion: nil)
     }
     
     // MARK: - Actions
     
-    @IBAction func enterWithIOSAccountAction(_ sender: AnyObject?) {
+    @IBAction final func enterWithIOSAccountAction(_ sender: AnyObject?) {
         output.loginWithIosAccountTapped()
     }
 
-    @IBAction func enterWithPasswordAction(_ sender: AnyObject?) {
+    @IBAction final func enterWithPasswordAction(_ sender: AnyObject?) {
         output.loginWithPasswordTapped()
     }
     

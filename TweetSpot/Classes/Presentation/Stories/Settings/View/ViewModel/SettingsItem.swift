@@ -8,31 +8,23 @@
 
 import Foundation
 
-class SettingsSection: NSObject {
+struct SettingsSection {
     let name: String
     let items: [SettingsItem]
-    
-    init(name: String, items: [SettingsItem]) {
-        self.name = name
-        self.items = items
-    }
 }
 
-class SettingsItem : NSObject {
+protocol SettingsItem {
+    var id: Int { get }
+    var name: String { get }
+}
+
+struct PlainItem: SettingsItem {
     let id: Int
     let name: String
-    
-    init(id: Int, name: String) {
-        self.id = id
-        self.name = name
-    }
 }
 
-class SwitchSettingsItem : SettingsItem {
+struct SwitchSettingsItem: SettingsItem {
+    let id: Int
+    let name: String
     let value: Bool
-    
-    init(id: Int, name: String, value: Bool) {
-        self.value = value
-        super.init(id: id, name: name)
-    }
 }

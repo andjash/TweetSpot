@@ -8,13 +8,13 @@
 
 import UIKit
 
-class SettingsCell: UITableViewCell {
+final class SettingsCell: UITableViewCell {
 
-    @IBOutlet weak var settingTitleLabel: UILabel!
-    @IBOutlet weak var valueSwitch: SettingsSwitch!
+    @IBOutlet final weak var settingTitleLabel: UILabel!
+    @IBOutlet final weak var valueSwitch: SettingsSwitch!
     
-    static func cellHeight(withItem item: SettingsItem, tableWidth: CGFloat) -> CGFloat {
-        let textHeight = item.name.ts_height(withFont: UIFont(name: "HelveticaNeue", size: 15)!, constrainedToWidth: tableWidth - 15 - 30 - 31 - 15)
+    static func cellHeight(with item: SettingsItem, tableWidth: CGFloat) -> CGFloat {
+        let textHeight = item.name.ts_height(with: UIFont(name: "HelveticaNeue", size: 15)!, constrained: tableWidth - 15 - 30 - 31 - 15)
         return max(10 + textHeight + 10 + 1, 44)
     }
 }

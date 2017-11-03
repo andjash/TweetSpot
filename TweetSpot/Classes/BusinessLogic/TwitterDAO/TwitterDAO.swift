@@ -8,12 +8,12 @@
 
 import Foundation
 
-@objc enum TwitterDAOError : Int {
+enum TwitterDAOError: Error {
     case invalidSession
     case sessionIsNotOpened
     case noData
     case unableToParseServerResponse
-    case innerError
+    case innerError(Error)
 }
 
 struct TwitterDAOConstants {
@@ -23,8 +23,7 @@ struct TwitterDAOConstants {
     static let taskEndNotification = "TwitterDAOConstants.taskEndNotification"
 }
 
-@objc protocol TwitterDAO {
-    func getHomeTweets(maxId: String?, minId: String?, count: Int, success: @escaping ([TweetDTO]) -> (), error: @escaping (NSError) -> ())
-    
+protocol TwitterDAO: class {
+    func getHomeTweets(maxId: String?, minId: String?, count: Int, success: @escaping ([TweetDTO]) -> (), error: @escaping (TwitterDAOError) -> ())
     func cancelAllRequests()
 }

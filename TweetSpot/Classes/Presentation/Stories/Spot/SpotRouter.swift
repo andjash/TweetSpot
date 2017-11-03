@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class SpotRouter: NSObject {
+final class SpotRouter {
 
 	final weak var sourceController: UIViewController!
 

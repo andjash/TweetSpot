@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class SettingsPresenter: NSObject {
+final class SettingsPresenter {
   
     final weak var view: SettingsViewController!
     final var interactor: SettingsInteractor!
@@ -17,7 +17,7 @@ final class SettingsPresenter: NSObject {
     // MARK: - Interactor output
     
     final func needToUpdateWithSections(_ sections: [SettingsSection]) {
-        view.showSettings(sections)
+        view.show(sections)
     }
     
     // MARK: - View output

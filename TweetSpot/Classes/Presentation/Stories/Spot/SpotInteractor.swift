@@ -8,6 +8,7 @@
 
 import Foundation
 
+// NSObject inheritance for debounce
 final class SpotInteractor: NSObject {
 
     final weak var output: SpotPresenter!
@@ -25,20 +26,20 @@ final class SpotInteractor: NSObject {
     final let dateFormatter: DateFormatter
     
     override init() {
-        self.dateFormatter = DateFormatter()
-        self.dateFormatter.ts_configureAsAppCommonFormatter()
+        dateFormatter = DateFormatter()
+        dateFormatter.ts_configureAsAppCommonFormatter()
         super.init()
     }
     
     // MARK: - Input
     
     final func requestCachedItems(_ completion: @escaping ([SpotTweetItem]?) -> ()) {
-        let dtos = self.homeTimelineModel.homeLineTweets
+        let dtos = homeTimelineModel.homeLineTweets
         mappingQueue.async { 
             let result = self.viewModelItemsFromDTOs(dtos)
-            DispatchQueue.main.async(execute: {
+            DispatchQueue.main.async {
                 completion(result)
-            })
+            }
         }
     }
     
@@ -51,14 +52,14 @@ final class SpotInteractor: NSObject {
             }
             for item in items {
                 if let url = dict[item.id] {
-                self.promiseImageLoad(item, urlString: url)
+                    self.promiseImageLoad(item, urlString: url)
                 }
             }
         }
     }
     
     final func requestIfNeedToShowAvatars() -> Bool {
-        return self.settingsSvc.shouldDisplayUserAvatarsOnSpot
+        return settingsSvc.shouldDisplayUserAvatarsOnSpot
     }
     
     final func sessionCloseRequested() {
@@ -86,10 +87,10 @@ final class SpotInteractor: NSObject {
         homeTimelineModel.loadForward({ (dtos) in
             self.mappingQueue.async {
                 let result = self.viewModelItemsFromDTOs(dtos)
-                DispatchQueue.main.async(execute: {
+                DispatchQueue.main.async {
                     self.output.forwardItemsLoaded(result)
                     self.schedulePrefetchIfNeeded()
-                })
+                }
             }
         }) { (error) in
             self.output.forwardItemsLoaded([])
@@ -103,13 +104,13 @@ final class SpotInteractor: NSObject {
         homeTimelineModel.loadBackward({ (dtos) in
             self.mappingQueue.async {
                 let result = self.viewModelItemsFromDTOs(dtos)
-                DispatchQueue.main.async(execute: {
+                DispatchQueue.main.async {
                     if result.count == 0 {
                         self.output.handleNoMoreItemsAtBackward()
                     } else {
                         self.output.backwardItemsLoaded(result)
                     }
-                })
+                }
             }
         }) { (error) in
             self.output.backwardItemsLoaded([])
@@ -120,7 +121,7 @@ final class SpotInteractor: NSObject {
     final func setPrefetchingEnabled(_ enabled: Bool) {
         prefetchingIsOn = enabled
         if enabled {
-            self.schedulePrefetchIfNeeded()
+            schedulePrefetchIfNeeded()
         } else {
             disablePreviousPrefetchrequest()
         }
@@ -134,7 +135,7 @@ final class SpotInteractor: NSObject {
         homeTimelineModel.loadForward({ (dtos) in
             self.mappingQueue.async {
                 let result = self.viewModelItemsFromDTOs(dtos)
-                DispatchQueue.main.async(execute: {
+                DispatchQueue.main.async {
                     self.prefetchInProgress = false
                     if self.pendingForwardRequest {
                         self.pendingForwardRequest = false
@@ -145,7 +146,7 @@ final class SpotInteractor: NSObject {
                         }
                     }
                     self.schedulePrefetchIfNeeded()
-                })
+                }
             }
         }) { (error) in
             self.prefetchInProgress = false
@@ -158,7 +159,7 @@ final class SpotInteractor: NSObject {
         var result: [SpotTweetItem] = []
         for dto in dtos {
             let item = SpotTweetItem(id: dto.id,
-                                     formattedPostDate: self.dateFormatter.string(from: dto.creationDate as Date),
+                                     formattedPostDate: dateFormatter.string(from: dto.creationDate as Date),
                                      text: dto.text,
                                      userName: dto.userName,
                                      screenName: dto.screenName)
@@ -169,9 +170,8 @@ final class SpotInteractor: NSObject {
     }
 
     final private func promiseImageLoad(_ item: SpotTweetItem, urlString: String) {
-        if !self.settingsSvc.shouldDisplayUserAvatarsOnSpot {
-            return
-        }
+        guard settingsSvc.shouldDisplayUserAvatarsOnSpot else { return }
+        
         let promise = imagesService.imagePromiseForUrl(urlString.replacingOccurrences(of: "_normal", with: "_bigger"))
         promise.notifyCall = { (img, error) in
             if let image = img {
@@ -187,11 +187,11 @@ final class SpotInteractor: NSObject {
     final private func schedulePrefetchIfNeeded() {
         if prefetchingIsOn {
             NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(SpotInteractor.prefetchItems), object: nil)
-            self.perform(#selector(SpotInteractor.prefetchItems), with: nil, afterDelay: self.prefetchRepeatInterval)
+            perform(#selector(prefetchItems), with: nil, afterDelay: prefetchRepeatInterval)
         }
     }
     
     final private func disablePreviousPrefetchrequest() {
-        NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(SpotInteractor.prefetchItems), object: nil)
+        NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(prefetchItems), object: nil)
     }
 }

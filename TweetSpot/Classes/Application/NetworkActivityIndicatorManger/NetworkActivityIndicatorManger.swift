@@ -8,37 +8,40 @@
 
 import UIKit
 
-@objc protocol NetworkActivityIndicatorManager {
+protocol NetworkActivityIndicatorManager: class {
     func increaseNetworkActivityIndication()
     func decreaseNetworkActivityIndication()
 }
 
-class NetworkActivityIndicatorManagerImpl: NSObject, NetworkActivityIndicatorManager {
+final class NetworkActivityIndicatorManagerImpl: NSObject, NetworkActivityIndicatorManager {
     
-    fileprivate var networkActivityIndicationCount =  0
+    private final var networkActivityIndicationCount =  0
     
     override init() {
         super.init()
         NotificationCenter.default.addObserver(self,
-                                                         selector: #selector(NetworkActivityIndicatorManagerImpl.sessionStateChanged),
-                                                         name: NSNotification.Name(rawValue: TwitterSessionConstants.stateChangedNotificaton), object: nil)
+                                               selector: #selector(sessionStateChanged),
+                                               name: NSNotification.Name(rawValue: TwitterSessionConstants.stateChangedNotificaton), object: nil)
         NotificationCenter.default.addObserver(self,
-                                                         selector: #selector(NetworkActivityIndicatorManagerImpl.timelineModelStateChanged),
-                                                         name: NSNotification.Name(rawValue: HomeTimelineModelConstants.loadingDirectionChangedNotification), object: nil)
+                                               selector: #selector(timelineModelStateChanged),
+                                               name: NSNotification.Name(rawValue: HomeTimelineModelConstants.loadingDirectionChangedNotification), object: nil)
         
         NotificationCenter.default.addObserver(self,
-                                                         selector: #selector(NetworkActivityIndicatorManagerImpl.increaseNetworkActivityIndication),
-                                                         name: NSNotification.Name(rawValue: ImagesServiceConstants.didStartRetreivingImageNotification), object: nil)
+                                               selector: #selector(increaseNetworkActivityIndication),
+                                               name: NSNotification.Name(rawValue: ImagesServiceConstants.didStartRetreivingImageNotification), object: nil)
         NotificationCenter.default.addObserver(self,
-                                                         selector: #selector(NetworkActivityIndicatorManagerImpl.decreaseNetworkActivityIndication),
-                                                         name: NSNotification.Name(rawValue: ImagesServiceConstants.didEndRetreivingImageNotification), object: nil)     
+                                               selector: #selector(decreaseNetworkActivityIndication),
+                                               name: NSNotification.Name(rawValue: ImagesServiceConstants.didEndRetreivingImageNotification), object: nil)
     }
     
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
     
-    func increaseNetworkActivityIndication() {
+    
+    // MARK: NetworkActivityIndicatorManager
+    
+    @objc final func increaseNetworkActivityIndication() {
         DispatchQueue.main.async {
             self.networkActivityIndicationCount += 1
             NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(NetworkActivityIndicatorManagerImpl.updateNetworkActivityIndicator), object: nil)
@@ -46,7 +49,7 @@ class NetworkActivityIndicatorManagerImpl: NSObject, NetworkActivityIndicatorMan
         }
     }
     
-    func decreaseNetworkActivityIndication() {
+    @objc final func decreaseNetworkActivityIndication() {
         DispatchQueue.main.async {
             self.networkActivityIndicationCount -= 1
             if self.networkActivityIndicationCount < 0 {
@@ -58,14 +61,16 @@ class NetworkActivityIndicatorManagerImpl: NSObject, NetworkActivityIndicatorMan
         
     }
     
-    @objc func updateNetworkActivityIndicator() {
+    // MARK: - Private
+    
+    @objc private final func updateNetworkActivityIndicator() {
         DispatchQueue.main.async {
             UIApplication.shared.isNetworkActivityIndicatorVisible = self.networkActivityIndicationCount > 0
         }
     }
     
     
-    @objc func sessionStateChanged(_ notification: Notification) {
+    @objc private final func sessionStateChanged(_ notification: Notification) {
         if let new = notification.userInfo?[TwitterSessionConstants.stateNewUserInfoKey] as? Int,
                let old = notification.userInfo?[TwitterSessionConstants.stateOldUserInfoKey] as? Int  {
             if new == TwitterSessionState.progress.rawValue {
@@ -76,12 +81,12 @@ class NetworkActivityIndicatorManagerImpl: NSObject, NetworkActivityIndicatorMan
         }
     }
     
-    @objc func timelineModelStateChanged(_ notification: Notification) {
+    @objc private final func timelineModelStateChanged(_ notification: Notification) {
         if let new = notification.userInfo?[HomeTimelineModelConstants.loadingDirectionChangedNewDirectionUserInfoKey] as? Int,
                let old = notification.userInfo?[HomeTimelineModelConstants.loadingDirectionChangedOldDirectionUserInfoKey] as? Int  {
-            if new == HomeTimelineModelLoadingDirection.none.rawValue {
+            if HomeTimelineModelLoadingDirection(rawValue: new) == HomeTimelineModelLoadingDirection.none {
                 decreaseNetworkActivityIndication()
-            } else if old == HomeTimelineModelLoadingDirection.none.rawValue {
+            } else if HomeTimelineModelLoadingDirection(rawValue: old) == HomeTimelineModelLoadingDirection.none {
                 increaseNetworkActivityIndication()
             }
         }

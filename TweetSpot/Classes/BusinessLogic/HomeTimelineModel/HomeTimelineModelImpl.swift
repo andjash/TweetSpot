@@ -44,7 +44,7 @@ class HomeTimelineModelImpl: NSObject, HomeTimelineModel {
         }
     }
     
-    func loadForward(_ success: (([TweetDTO]) -> ())?, error: ((NSError) -> ())?) {
+    func loadForward(_ success: (([TweetDTO]) -> ())?, error: ((Error) -> ())?) {
         if !proceedWithLoadingDirection(.forward) {
             return
         }
@@ -78,7 +78,7 @@ class HomeTimelineModelImpl: NSObject, HomeTimelineModel {
     }
     
     
-    func loadBackward(_ success: (([TweetDTO]) -> ())?, error: ((NSError) -> ())?) {
+    func loadBackward(_ success: (([TweetDTO]) -> ())?, error: ((Error) -> ())?) {
         if !proceedWithLoadingDirection(.backward) {
             return
         }

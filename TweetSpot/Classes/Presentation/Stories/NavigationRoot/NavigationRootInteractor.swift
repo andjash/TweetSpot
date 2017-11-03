@@ -8,12 +8,12 @@
 
 import Foundation
 
-class NavigationRootInteractor: NSObject {
+final class NavigationRootInteractor {
 
-    weak var output: NavigationRootPresenter!
-    weak var session: TwitterSession!
+    final weak var output: NavigationRootPresenter!
+    final weak var session: TwitterSession!
     
-    var trackingSesion = false
+    final var trackingSesion = false
     
     @objc private final func sessionStateChanged() {
         trackingSesion = false
@@ -39,7 +39,7 @@ class NavigationRootInteractor: NSObject {
         default:
             trackingSesion = true
             NotificationCenter.default.addObserver(self,
-                                                   selector: #selector(NavigationRootInteractor.sessionStateChanged),
+                                                   selector: #selector(sessionStateChanged),
                                                    name: NSNotification.Name(rawValue: TwitterSessionConstants.stateChangedNotificaton), object: session)
             output.accountVerifyingUIRequired()
         }

@@ -9,13 +9,11 @@
 import UIKit
 import AYRegistry
 
-let log = Logger()
+final class AppDelegate: UIResponder, UIApplicationDelegate {
 
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
-    var window: UIWindow?
+    final var window: UIWindow?
     
-    let twitterSessionWebAuthHandler: TwitterWebAuthHandler =  (ModulesRegistry.shared.resolve() as BusinessLogicRegistry).resolve()
+    final let twitterSessionWebAuthHandler: TwitterWebAuthHandler =  (ModulesRegistry.shared.resolve() as BusinessLogicRegistry).resolve()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         AYRegistry.enable()
@@ -24,29 +22,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool {
         if url.scheme == "tssession" {
-            return twitterSessionWebAuthHandler.handleWebAuthCallback?(url) ?? false
+            return twitterSessionWebAuthHandler.handleWebAuthCallback(url)
         }        
         return false
     }
 }
 
 
-class Logger {
-    
-    func verbose(_ str: String) {
-        print(str)
-    }
-    
-    func error(_ str: String) {
-        print(str)
-    }
-    
-    func severe(_ str: String) {
-        print(str)
-    }
-    
-    func debug(_ str: String) {
-        print(str)
-    }
-    
-}
+
