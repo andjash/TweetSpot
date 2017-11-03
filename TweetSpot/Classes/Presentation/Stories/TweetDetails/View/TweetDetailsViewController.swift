@@ -10,7 +10,7 @@ import UIKit
 
 class TweetDetailsViewController: UIViewController {
 
-    var output: TweetDetailsViewOutput!
+    final var output: TweetDetailsPresenter!
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var scrollContentheight: NSLayoutConstraint!
@@ -26,7 +26,7 @@ class TweetDetailsViewController: UIViewController {
     var currentItem: TweetDetailsViewModel?
     
 
-    // MARK: Life cycle
+    // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.tintColor = UIColor.white
@@ -40,7 +40,6 @@ class TweetDetailsViewController: UIViewController {
         if let item = currentItem {
             decorateWithItem(item)
         }
-        output.viewIsReady()
     }
     
     override func viewDidLayoutSubviews() {
@@ -56,7 +55,19 @@ class TweetDetailsViewController: UIViewController {
         
     }
     
-    // Private
+    // MARK: - Input
+    
+    final func configureWithItem(_ item: TweetDetailsViewModel) {
+        currentItem?.avatarRetrievedCallback = nil
+        currentItem?.smallAvatarRetrievedCallback = nil
+        currentItem = item
+        
+        if isViewLoaded {
+            decorateWithItem(item)
+        }
+    }
+    
+    // MARK: - Private
     
     func decorateWithItem(_ item: TweetDetailsViewModel) {
         title = "@\(item.screenName)"
@@ -130,18 +141,4 @@ class TweetDetailsViewController: UIViewController {
         }
     }
 
-}
-
-// MARK: TweetDetailsViewInput protocol
-extension TweetDetailsViewController : TweetDetailsViewInput {
-
-    func configureWithItem(_ item: TweetDetailsViewModel) {
-        currentItem?.avatarRetrievedCallback = nil
-        currentItem?.smallAvatarRetrievedCallback = nil
-        currentItem = item
-       
-        if isViewLoaded {
-            decorateWithItem(item)
-        }
-    }
 }

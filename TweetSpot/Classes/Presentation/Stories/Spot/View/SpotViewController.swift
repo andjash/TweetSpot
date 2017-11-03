@@ -9,19 +9,15 @@
 import UIKit
 import SVPullToRefresh
 
-class SpotViewController: UIViewController {
+class SpotViewController: UIViewController, SpotTableDataMangerDelegate, CommonTableDataManagerDelegate {
 
-    var output: SpotViewOutput!
+    var output: SpotPresenter!
     
     var tableDataManager: SpotTableDataManager!
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var newTweetsButton: UIButton!
     @IBOutlet weak var newTweetsButtonTopSpace: NSLayoutConstraint!
-    
-    deinit {
-        log.debug("Deinit on \(self)")
-    }
     
     // MARK: Life cycle
     override func viewDidLoad() {
@@ -82,11 +78,10 @@ class SpotViewController: UIViewController {
             self.output.showMoreItemsRequested()
         }) 
     }
-}
-
-// MARK: SpotTableDataMangerDelegate protocol
-extension SpotViewController : SpotTableDataMangerDelegate {
-    func triggeredPullToRefresh() {
+    
+    // MARK: - SpotTableDataManagerDelegate
+    
+    final func triggeredPullToRefresh() {
         UIView.animate(withDuration: 0.3, animations: {
             self.newTweetsButtonTopSpace.constant = -self.newTweetsButton.frame.height - self.newTweetsButton.layer.shadowOffset.height - self.newTweetsButton.layer.shadowRadius
             self.view.layoutIfNeeded()
@@ -94,28 +89,25 @@ extension SpotViewController : SpotTableDataMangerDelegate {
         output.loadAboveRequested()
     }
     
-    func triggeredInfiteScroll() {
+    final func triggeredInfiteScroll() {
         output.loadBelowRequested()
     }
-}
-
-// MARK: CommonTableDataManagerDelegate protocol
-extension SpotViewController : CommonTableDataManagerDelegate {
-    func dataItemSelected(_ item: AnyObject) {
+    
+    // MARK: - CommonTableDataManagerDelegate
+    
+    final func dataItemSelected(_ item: AnyObject) {
         if let tweet = item as? SpotTweetItem {
             output.didSelectItem(tweet)
         }
     }
-}
-
-// MARK: SpotViewInput protocol
-extension SpotViewController : SpotViewInput {
     
-    func setInfiniteScrollingEnabled(_ enabled: Bool) {
+    // MARK: - View input
+    
+    final func setInfiniteScrollingEnabled(_ enabled: Bool) {
         tableDataManager.infiniteScrollEnabled = enabled
     }
     
-    func updateCellsWithAvatars(displayRequired: Bool) {
+    final func updateCellsWithAvatars(displayRequired: Bool) {
         if displayRequired == tableDataManager.displayingAvatars {
             return
         }
@@ -131,11 +123,11 @@ extension SpotViewController : SpotViewInput {
         }
     }
     
-    func displayItemsAbove(_ items: [SpotTweetItem]) {
+    final func displayItemsAbove(_ items: [SpotTweetItem]) {
         tableDataManager.insertItemsAtTop(items)
     }
     
-    func displayItemsBelow(_ items: [SpotTweetItem]) {
+    final func displayItemsBelow(_ items: [SpotTweetItem]) {
         tableDataManager.insertItemsAtBottom(items)
     }
     
@@ -144,9 +136,9 @@ extension SpotViewController : SpotViewInput {
     }
     
     func showMoreItemsAvailable() {
-        UIView.animate(withDuration: 0.3, animations: {
+        UIView.animate(withDuration: 0.3) {
             self.newTweetsButtonTopSpace.constant = 10
             self.view.layoutIfNeeded()
-        })
+        }
     }
 }

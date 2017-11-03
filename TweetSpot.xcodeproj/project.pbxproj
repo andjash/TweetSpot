@@ -7,47 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00ED40C1B3A1B86EC86EED9E /* LoginRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29201C8450BEB5508DF0EFB8 /* LoginRouterInput.swift */; };
-		0C600FEF96A9DAA29AFE29DA /* LoginViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E57FCA510F2E64268DFFB1 /* LoginViewInput.swift */; };
 		10DE3B91554135AC09E28FDA /* Pods_TweetSpot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC908E15534B9C55897CC48D /* Pods_TweetSpot.framework */; };
-		26948A3752703CA02E0F26F3 /* SpotAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1533EF6AD255C678255946D /* SpotAssembly.swift */; };
-		2F6B9B3145F852C644E231A5 /* LoginInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C492B261654B8E581FA4DA1 /* LoginInteractorOutput.swift */; };
-		30CB8096BD97B4118A1F3575 /* SettingsModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1BFE5D7DEE9456F1ED6AC3 /* SettingsModuleInput.swift */; };
-		3CB6F2D1B911272743922AEB /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAA5A84F566ADC6C923BB15 /* LoginRouter.swift */; };
 		3DEBFDCD70C031FE145759FB /* TweetDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE01D010498E276BCAFB5AF0 /* TweetDetailsViewController.swift */; };
-		43D39CCE68291FA56D85DCD9 /* LoginInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A352E74613D34DF29C9D509E /* LoginInteractorInput.swift */; };
-		4D2AE8BBF63A3ECA88039CF5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925AB2EC06AA8DF3F1E9FAA4 /* LoginViewController.swift */; };
 		553F7B7A1D5DBAD700541F38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 553F7B5B1D5DBAD700541F38 /* LaunchScreen.storyboard */; };
 		553F7B7B1D5DBAD700541F38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 553F7B5D1D5DBAD700541F38 /* Main.storyboard */; };
-		553F7B7C1D5DBAD700541F38 /* NavigationRootAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553F7B621D5DBAD700541F38 /* NavigationRootAssembly.swift */; };
-		553F7B7D1D5DBAD700541F38 /* NavigationRootInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553F7B641D5DBAD700541F38 /* NavigationRootInteractor.swift */; };
-		553F7B7E1D5DBAD700541F38 /* NavigationRootInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553F7B651D5DBAD700541F38 /* NavigationRootInteractorInput.swift */; };
-		553F7B7F1D5DBAD700541F38 /* NavigationRootInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553F7B661D5DBAD700541F38 /* NavigationRootInteractorOutput.swift */; };
-		553F7B801D5DBAD700541F38 /* NavigationRootModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553F7B681D5DBAD700541F38 /* NavigationRootModuleInput.swift */; };
-		553F7B811D5DBAD700541F38 /* NavigationRootPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553F7B691D5DBAD700541F38 /* NavigationRootPresenter.swift */; };
-		553F7B821D5DBAD700541F38 /* NavigationRootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553F7B6B1D5DBAD700541F38 /* NavigationRootRouter.swift */; };
-		553F7B831D5DBAD700541F38 /* NavigationRootRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553F7B6C1D5DBAD700541F38 /* NavigationRootRouterInput.swift */; };
-		553F7B841D5DBAD700541F38 /* NavigationRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553F7B6E1D5DBAD700541F38 /* NavigationRootViewController.swift */; };
-		553F7B851D5DBAD700541F38 /* NavigationRootViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553F7B6F1D5DBAD700541F38 /* NavigationRootViewInput.swift */; };
-		553F7B861D5DBAD700541F38 /* NavigationRootViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553F7B701D5DBAD700541F38 /* NavigationRootViewOutput.swift */; };
-		553F7B871D5DBAD700541F38 /* TyphoonDefinition+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553F7B731D5DBAD700541F38 /* TyphoonDefinition+Extensions.swift */; };
 		553F7B881D5DBAD700541F38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 553F7B761D5DBAD700541F38 /* Assets.xcassets */; };
-		553F7B8B1D5DBB3100541F38 /* ApplicationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553F7B8A1D5DBB3100541F38 /* ApplicationAssembly.swift */; };
 		553F7B8E1D5DBB5900541F38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553F7B8D1D5DBB5900541F38 /* AppDelegate.swift */; };
 		553F7B901D5DBF2D00541F38 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553F7B8F1D5DBF2D00541F38 /* UIColor+Extensions.swift */; };
 		553F7B921D5DC8E800541F38 /* CAGradientLayer+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553F7B911D5DC8E800541F38 /* CAGradientLayer+Extensions.swift */; };
 		553F7B951D5DC98600541F38 /* FadeInSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553F7B941D5DC98600541F38 /* FadeInSegue.swift */; };
 		553F7B981D5DC9B900541F38 /* FadeAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553F7B971D5DC9B900541F38 /* FadeAnimator.swift */; };
-		553F7B9B1D5DCA0700541F38 /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 553F7B9A1D5DCA0700541F38 /* LoginStoryboard.storyboard */; };
 		553F7B9F1D5DD0C500541F38 /* Login.strings in Resources */ = {isa = PBXBuildFile; fileRef = 553F7BA11D5DD0C500541F38 /* Login.strings */; };
 		553F7BA41D5DD0EE00541F38 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553F7BA31D5DD0EE00541F38 /* String+Extensions.swift */; };
-		5554CE3A1D5FA99400F82966 /* SettingsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5554CE391D5FA99400F82966 /* SettingsStoryboard.storyboard */; };
 		5554CE3D1D5FAC0F00F82966 /* Settings.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5554CE3F1D5FAC0F00F82966 /* Settings.strings */; };
 		55ACBFC01D618B2D00E8C73D /* NSDateFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ACBFBF1D618B2D00E8C73D /* NSDateFormatter+Extensions.swift */; };
 		55B061BB1D5E1DA000490B44 /* Common.strings in Resources */ = {isa = PBXBuildFile; fileRef = 55B061BD1D5E1DA000490B44 /* Common.strings */; };
 		55B061C01D5E241300490B44 /* NSError+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B061BF1D5E241300490B44 /* NSError+Extensions.swift */; };
 		55B061C31D5E26E800490B44 /* Errors.strings in Resources */ = {isa = PBXBuildFile; fileRef = 55B061C51D5E26E800490B44 /* Errors.strings */; };
-		55B061F11D5F1C7100490B44 /* BusinesLogicAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B061DC1D5F1C7100490B44 /* BusinesLogicAssembly.swift */; };
 		55B061F21D5F1C7100490B44 /* TweetDTODeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B061DF1D5F1C7100490B44 /* TweetDTODeserializer.swift */; };
 		55B061F31D5F1C7100490B44 /* TweetDTODictionaryDeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B061E01D5F1C7100490B44 /* TweetDTODictionaryDeserializer.swift */; };
 		55B061F41D5F1C7100490B44 /* TwitterDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B061E11D5F1C7100490B44 /* TwitterDAO.swift */; };
@@ -58,7 +34,6 @@
 		55B061F91D5F1C7100490B44 /* TwitterSessionImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B061E81D5F1C7100490B44 /* TwitterSessionImpl.swift */; };
 		55B061FA1D5F1C7100490B44 /* SafariTwitterWebAuthHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B061EA1D5F1C7100490B44 /* SafariTwitterWebAuthHandler.swift */; };
 		55B061FB1D5F1C7100490B44 /* TwitterWebAuthHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B061EB1D5F1C7100490B44 /* TwitterWebAuthHandler.swift */; };
-		55B061FC1D5F1C7100490B44 /* CoreServicesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B061ED1D5F1C7100490B44 /* CoreServicesAssembly.swift */; };
 		55B061FD1D5F1C7100490B44 /* SocialAccountsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B061EF1D5F1C7100490B44 /* SocialAccountsService.swift */; };
 		55B061FE1D5F1C7100490B44 /* SocialAccountsServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B061F01D5F1C7100490B44 /* SocialAccountsServiceImpl.swift */; };
 		55B062011D5F206000490B44 /* HomeTimelineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B062001D5F206000490B44 /* HomeTimelineModel.swift */; };
@@ -73,7 +48,6 @@
 		55C5ABD11D60452700CC5880 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C5ABD01D60452700CC5880 /* SettingsCell.swift */; };
 		55C5ABD41D60479500CC5880 /* SettingsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C5ABD31D60479500CC5880 /* SettingsItem.swift */; };
 		55C5ABDA1D6052E200CC5880 /* SettingsSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C5ABD91D6052E200CC5880 /* SettingsSwitch.swift */; };
-		55C5ABDD1D60656900CC5880 /* TweetDetailsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55C5ABDC1D60656900CC5880 /* TweetDetailsStoryboard.storyboard */; };
 		55C5ABE21D6065A800CC5880 /* CustomPullToRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C5ABE01D6065A800CC5880 /* CustomPullToRefreshView.swift */; };
 		55C5ABE31D6065A800CC5880 /* CustomPullToRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55C5ABE11D6065A800CC5880 /* CustomPullToRefreshView.xib */; };
 		55C5ABE61D606ABE00CC5880 /* TweetDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C5ABE51D606ABE00CC5880 /* TweetDetailsViewModel.swift */; };
@@ -81,96 +55,62 @@
 		55C5ABEC1D60975600CC5880 /* SpotTableDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C5ABEB1D60975600CC5880 /* SpotTableDataManager.swift */; };
 		55C5ABEF1D60AF4A00CC5880 /* Spot.strings in Resources */ = {isa = PBXBuildFile; fileRef = 55C5ABF11D60AF4A00CC5880 /* Spot.strings */; };
 		55C5ABF51D60E49400CC5880 /* NetworkActivityIndicatorManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C5ABF41D60E49400CC5880 /* NetworkActivityIndicatorManger.swift */; };
-		55DF60A01D5E0EB9006B7BFD /* SpotStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55DF609F1D5E0EB9006B7BFD /* SpotStoryboard.storyboard */; };
 		55DF60A31D5E1305006B7BFD /* Root.strings in Resources */ = {isa = PBXBuildFile; fileRef = 55DF60A51D5E1305006B7BFD /* Root.strings */; };
 		55FB49971D5F77C700D0869C /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FB49961D5F77C700D0869C /* UIView+Extensions.swift */; };
 		55FB49991D5F797900D0869C /* Common.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55FB49981D5F797900D0869C /* Common.xcassets */; };
 		55FB499C1D5F7C8200D0869C /* ImagesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FB499B1D5F7C8200D0869C /* ImagesService.swift */; };
 		55FB499E1D5F81DE00D0869C /* ImagesServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FB499D1D5F81DE00D0869C /* ImagesServiceImpl.swift */; };
-		58F2E8CC6F9A8469B85CA87B /* TweetDetailsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FC8BAFA43162033AF82ACD /* TweetDetailsAssembly.swift */; };
-		5A1475A3FE5EACDCE10FE72C /* SpotPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5502AA9DE96ADBACD2C9FA /* SpotPresenter.swift */; };
-		5E1C4BE8DA3AF9D19CF00FB5 /* LoginViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34178EC6BAD21268D642847C /* LoginViewOutput.swift */; };
-		63D4587548BBE2D1980ED093 /* LoginModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CA2E1B4D8C00A745E46D00 /* LoginModuleInput.swift */; };
-		6CE3F3A2AEEB632F21896C52 /* SpotInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BBE4A0DEABAC414A12DEE4 /* SpotInteractor.swift */; };
-		7811E6CEE05ACFD1C67211B6 /* TweetDetailsInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56EB9947DEBA35509D39EC5 /* TweetDetailsInteractorInput.swift */; };
-		7BA1F14764B7814C6FDB09E5 /* TweetDetailsModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0416FB27715EFF75EB667CD9 /* TweetDetailsModuleInput.swift */; };
-		7D2FC4F9704577721D05786D /* SpotRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFD46A8040FA8173AF67C04 /* SpotRouterInput.swift */; };
-		807BE0890FDF402135ECA260 /* TweetDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64E0B013C3EA17A47E4EFCE /* TweetDetailsRouter.swift */; };
-		83F4D4977031771F7340A51B /* SettingsInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DD815CE826943688925EBF /* SettingsInteractorInput.swift */; };
-		89A5EA3E8FB2B71C188BCBC2 /* SpotViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A5CFB753636A2A51814640 /* SpotViewInput.swift */; };
-		8B0BB1BC173A2621710BD1E5 /* SpotRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56550706EB12ABDBF670E767 /* SpotRouter.swift */; };
-		8B57E6C3F171152B97CBF72E /* SettingsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F531EDAAE5C91A9C41E0DA9 /* SettingsInteractor.swift */; };
-		91AD5F6E11B4005F5CA6C3FA /* TweetDetailsViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335A569F930B23C3372580EB /* TweetDetailsViewInput.swift */; };
-		9EA139DF179D039033C42B5E /* TweetDetailsViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAA4C16199A10206A664349 /* TweetDetailsViewOutput.swift */; };
-		A1B879E5EF6B9F52760EEC10 /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2123B717ACB7CBB2C88FF353 /* SettingsPresenter.swift */; };
-		A25CF1873E3B46F54C608B38 /* SettingsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496428D9201872AC52459D45 /* SettingsAssembly.swift */; };
-		A8668A4869942910B58DD3B7 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFA1CFD2DBF26E79CEFB095 /* LoginInteractor.swift */; };
-		AA980C2CF2068FCCC89E1D76 /* TweetDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC072AF7976E9E37FAA56C59 /* TweetDetailsPresenter.swift */; };
-		AB98F04A505E2A46396142AB /* TweetDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1620A2B7BBB6DF9A079FE5 /* TweetDetailsInteractor.swift */; };
-		ADA98A49BE72D177873B5AAA /* SpotViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8A1BFAC036269E32C63A58 /* SpotViewOutput.swift */; };
-		B170FC28CC725F41329FC907 /* SettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1352DDDD24B1C4BD3ED5D656 /* SettingsRouter.swift */; };
 		BC54F40AE5A8825639068669 /* SpotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F613BFCD7AC396EEAF3620 /* SpotViewController.swift */; };
-		BD53F9ED1E63C00AF7E2BB0D /* TweetDetailsInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FAC8AEE5A5AC06FDD4A7B3 /* TweetDetailsInteractorOutput.swift */; };
-		BFCC38F19671FC8CBDF46812 /* SpotInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1890C23C6A5E68AD70AC51 /* SpotInteractorInput.swift */; };
-		C2B66D6AF2DCD980C2338BA7 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2C826A2427286160339FEE /* LoginPresenter.swift */; };
-		D606B5C4423C7A5C906D18E4 /* LoginAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = C854C7EC496D353EA5482B82 /* LoginAssembly.swift */; };
-		D6C506638FD61C6797A39973 /* SettingsInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0E20E37E2407E03D4BEEC4 /* SettingsInteractorOutput.swift */; };
-		D84202F7B916307157C3BAAA /* TweetDetailsRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E836BC42C57F0773D56B7C3D /* TweetDetailsRouterInput.swift */; };
-		DAE1C8871E14774C4D355249 /* SpotModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477AC3ACCB25F4E2FB31112C /* SpotModuleInput.swift */; };
-		DEE913AD37DF7D8A886F8449 /* SettingsViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F80B3961DAB717ADBDE92E7 /* SettingsViewOutput.swift */; };
+		CC8FC6F01FAC453300BEDDCC /* ModulesRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8FC6EF1FAC453300BEDDCC /* ModulesRegistry.swift */; };
+		CC8FC6F21FAC457600BEDDCC /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8FC6F11FAC457600BEDDCC /* main.swift */; };
+		CC8FC6F41FAC45EA00BEDDCC /* CoreServicesRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8FC6F31FAC45EA00BEDDCC /* CoreServicesRegistry.swift */; };
+		CC8FC6F61FAC467900BEDDCC /* BusinessLogicRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8FC6F51FAC467900BEDDCC /* BusinessLogicRegistry.swift */; };
+		CC8FC6FA1FAC4A7F00BEDDCC /* LazyRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8FC6F91FAC4A7F00BEDDCC /* LazyRegistry.swift */; };
+		CC8FC6FC1FAC4A9F00BEDDCC /* ApplicationRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8FC6FB1FAC4A9F00BEDDCC /* ApplicationRegistry.swift */; };
+		CC8FC6FE1FAC4B9900BEDDCC /* PresentationRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8FC6FD1FAC4B9900BEDDCC /* PresentationRegistry.swift */; };
+		CC8FC7001FAC4BCD00BEDDCC /* NavigationRootRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8FC6FF1FAC4BCD00BEDDCC /* NavigationRootRegistry.swift */; };
+		CC8FC7021FAC4C6900BEDDCC /* NavigationRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8FC7011FAC4C6900BEDDCC /* NavigationRootViewController.swift */; };
+		CC8FC7041FAC4D0400BEDDCC /* NavigationRootPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8FC7031FAC4D0400BEDDCC /* NavigationRootPresenter.swift */; };
+		CC8FC7071FAC4DE500BEDDCC /* NavigationRootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8FC7051FAC4DE400BEDDCC /* NavigationRootRouter.swift */; };
+		CC8FC7081FAC4DE500BEDDCC /* NavigationRootInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8FC7061FAC4DE400BEDDCC /* NavigationRootInteractor.swift */; };
+		CC8FC70A1FAC4F9000BEDDCC /* LoginModuleRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8FC7091FAC4F9000BEDDCC /* LoginModuleRegistry.swift */; };
+		CC8FC7101FAC502600BEDDCC /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8FC70B1FAC502600BEDDCC /* LoginRouter.swift */; };
+		CC8FC7111FAC502600BEDDCC /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC8FC70C1FAC502600BEDDCC /* Login.storyboard */; };
+		CC8FC7121FAC502600BEDDCC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8FC70D1FAC502600BEDDCC /* LoginViewController.swift */; };
+		CC8FC7131FAC502600BEDDCC /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8FC70E1FAC502600BEDDCC /* LoginPresenter.swift */; };
+		CC8FC7141FAC502600BEDDCC /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8FC70F1FAC502600BEDDCC /* LoginInteractor.swift */; };
+		CC8FC7161FAC53DF00BEDDCC /* SpotModuleRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8FC7151FAC53DF00BEDDCC /* SpotModuleRegistry.swift */; };
+		CC8FC71A1FAC54AF00BEDDCC /* SpotPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8FC7171FAC54AF00BEDDCC /* SpotPresenter.swift */; };
+		CC8FC71B1FAC54AF00BEDDCC /* SpotRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8FC7181FAC54AF00BEDDCC /* SpotRouter.swift */; };
+		CC8FC71C1FAC54AF00BEDDCC /* SpotInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8FC7191FAC54AF00BEDDCC /* SpotInteractor.swift */; };
+		CC8FC71E1FAC55F900BEDDCC /* Spot.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC8FC71D1FAC55F900BEDDCC /* Spot.storyboard */; };
+		CC8FC7201FAC582B00BEDDCC /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8FC71F1FAC582B00BEDDCC /* UIViewController+Extensions.swift */; };
+		CC8FC7241FAC67BE00BEDDCC /* SettingsModuleRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8FC7231FAC67BE00BEDDCC /* SettingsModuleRegistry.swift */; };
+		CC8FC7291FAC688100BEDDCC /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8FC7251FAC688100BEDDCC /* SettingsPresenter.swift */; };
+		CC8FC72A1FAC688100BEDDCC /* SettingsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8FC7261FAC688100BEDDCC /* SettingsInteractor.swift */; };
+		CC8FC72B1FAC688100BEDDCC /* SettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8FC7271FAC688100BEDDCC /* SettingsRouter.swift */; };
+		CC8FC72C1FAC688100BEDDCC /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC8FC7281FAC688100BEDDCC /* Settings.storyboard */; };
+		CC8FC72E1FAC69B200BEDDCC /* TweetDetailsRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8FC72D1FAC69B200BEDDCC /* TweetDetailsRegistry.swift */; };
+		CC8FC7331FAC69E600BEDDCC /* TweetDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8FC72F1FAC69E600BEDDCC /* TweetDetailsPresenter.swift */; };
+		CC8FC7341FAC69E600BEDDCC /* TweetDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8FC7301FAC69E600BEDDCC /* TweetDetailsInteractor.swift */; };
+		CC8FC7361FAC69E600BEDDCC /* TweetDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC8FC7321FAC69E600BEDDCC /* TweetDetails.storyboard */; };
 		E22165F574FFBCDDB26ED371 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3F605FE74D6C946DE2BDB2 /* SettingsViewController.swift */; };
-		EDE8915DBE0DAC09F17619DD /* SpotInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6080CD2E4CAF76E04B9E8C /* SpotInteractorOutput.swift */; };
-		F69CF8817A032DB34028AB70 /* SettingsRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F208E365063F4FDA2A37669 /* SettingsRouterInput.swift */; };
-		FFD93E55F00C1AFE64DAF9BE /* SettingsViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA03D2B2CD415B41F7F28CF8 /* SettingsViewInput.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0416FB27715EFF75EB667CD9 /* TweetDetailsModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TweetDetailsModuleInput.swift; sourceTree = "<group>"; };
-		0C492B261654B8E581FA4DA1 /* LoginInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginInteractorOutput.swift; sourceTree = "<group>"; };
-		1352DDDD24B1C4BD3ED5D656 /* SettingsRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsRouter.swift; sourceTree = "<group>"; };
-		13FAC8AEE5A5AC06FDD4A7B3 /* TweetDetailsInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TweetDetailsInteractorOutput.swift; sourceTree = "<group>"; };
-		16A5CFB753636A2A51814640 /* SpotViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SpotViewInput.swift; sourceTree = "<group>"; };
-		1E1BFE5D7DEE9456F1ED6AC3 /* SettingsModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsModuleInput.swift; sourceTree = "<group>"; };
-		2123B717ACB7CBB2C88FF353 /* SettingsPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
-		29201C8450BEB5508DF0EFB8 /* LoginRouterInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginRouterInput.swift; sourceTree = "<group>"; };
-		2B1620A2B7BBB6DF9A079FE5 /* TweetDetailsInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TweetDetailsInteractor.swift; sourceTree = "<group>"; };
-		2DAA5A84F566ADC6C923BB15 /* LoginRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
-		2FFD46A8040FA8173AF67C04 /* SpotRouterInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SpotRouterInput.swift; sourceTree = "<group>"; };
-		31CA2E1B4D8C00A745E46D00 /* LoginModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginModuleInput.swift; sourceTree = "<group>"; };
-		335A569F930B23C3372580EB /* TweetDetailsViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TweetDetailsViewInput.swift; sourceTree = "<group>"; };
-		34178EC6BAD21268D642847C /* LoginViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginViewOutput.swift; sourceTree = "<group>"; };
-		477AC3ACCB25F4E2FB31112C /* SpotModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SpotModuleInput.swift; sourceTree = "<group>"; };
-		48FC8BAFA43162033AF82ACD /* TweetDetailsAssembly.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TweetDetailsAssembly.swift; sourceTree = "<group>"; };
-		496428D9201872AC52459D45 /* SettingsAssembly.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsAssembly.swift; sourceTree = "<group>"; };
-		49DD815CE826943688925EBF /* SettingsInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsInteractorInput.swift; sourceTree = "<group>"; };
 		553F7B2E1D5DB71200541F38 /* TweetSpot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TweetSpot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		553F7B5C1D5DBAD700541F38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		553F7B5E1D5DBAD700541F38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		553F7B621D5DBAD700541F38 /* NavigationRootAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationRootAssembly.swift; sourceTree = "<group>"; };
-		553F7B641D5DBAD700541F38 /* NavigationRootInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationRootInteractor.swift; sourceTree = "<group>"; };
-		553F7B651D5DBAD700541F38 /* NavigationRootInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationRootInteractorInput.swift; sourceTree = "<group>"; };
-		553F7B661D5DBAD700541F38 /* NavigationRootInteractorOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationRootInteractorOutput.swift; sourceTree = "<group>"; };
-		553F7B681D5DBAD700541F38 /* NavigationRootModuleInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationRootModuleInput.swift; sourceTree = "<group>"; };
-		553F7B691D5DBAD700541F38 /* NavigationRootPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationRootPresenter.swift; sourceTree = "<group>"; };
-		553F7B6B1D5DBAD700541F38 /* NavigationRootRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationRootRouter.swift; sourceTree = "<group>"; };
-		553F7B6C1D5DBAD700541F38 /* NavigationRootRouterInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationRootRouterInput.swift; sourceTree = "<group>"; };
-		553F7B6E1D5DBAD700541F38 /* NavigationRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationRootViewController.swift; sourceTree = "<group>"; };
-		553F7B6F1D5DBAD700541F38 /* NavigationRootViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationRootViewInput.swift; sourceTree = "<group>"; };
-		553F7B701D5DBAD700541F38 /* NavigationRootViewOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationRootViewOutput.swift; sourceTree = "<group>"; };
-		553F7B731D5DBAD700541F38 /* TyphoonDefinition+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TyphoonDefinition+Extensions.swift"; sourceTree = "<group>"; };
 		553F7B761D5DBAD700541F38 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		553F7B781D5DBAD700541F38 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		553F7B8A1D5DBB3100541F38 /* ApplicationAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationAssembly.swift; sourceTree = "<group>"; };
 		553F7B8D1D5DBB5900541F38 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		553F7B8F1D5DBF2D00541F38 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		553F7B911D5DC8E800541F38 /* CAGradientLayer+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CAGradientLayer+Extensions.swift"; sourceTree = "<group>"; };
 		553F7B941D5DC98600541F38 /* FadeInSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeInSegue.swift; sourceTree = "<group>"; };
 		553F7B971D5DC9B900541F38 /* FadeAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeAnimator.swift; sourceTree = "<group>"; };
-		553F7B9A1D5DCA0700541F38 /* LoginStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginStoryboard.storyboard; sourceTree = "<group>"; };
 		553F7BA01D5DD0C500541F38 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Login.strings; sourceTree = "<group>"; };
 		553F7BA21D5DD0D200541F38 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Login.strings; sourceTree = "<group>"; };
 		553F7BA31D5DD0EE00541F38 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
-		5554CE391D5FA99400F82966 /* SettingsStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SettingsStoryboard.storyboard; sourceTree = "<group>"; };
 		5554CE3E1D5FAC0F00F82966 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Settings.strings; sourceTree = "<group>"; };
 		5554CE401D5FAC1200F82966 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Settings.strings; sourceTree = "<group>"; };
 		55ACBFBF1D618B2D00E8C73D /* NSDateFormatter+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDateFormatter+Extensions.swift"; sourceTree = "<group>"; };
@@ -179,7 +119,6 @@
 		55B061BF1D5E241300490B44 /* NSError+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSError+Extensions.swift"; sourceTree = "<group>"; };
 		55B061C41D5E26E800490B44 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Errors.strings; sourceTree = "<group>"; };
 		55B061C61D5E26EB00490B44 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Errors.strings; sourceTree = "<group>"; };
-		55B061DC1D5F1C7100490B44 /* BusinesLogicAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinesLogicAssembly.swift; sourceTree = "<group>"; };
 		55B061DF1D5F1C7100490B44 /* TweetDTODeserializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetDTODeserializer.swift; sourceTree = "<group>"; };
 		55B061E01D5F1C7100490B44 /* TweetDTODictionaryDeserializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetDTODictionaryDeserializer.swift; sourceTree = "<group>"; };
 		55B061E11D5F1C7100490B44 /* TwitterDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterDAO.swift; sourceTree = "<group>"; };
@@ -190,7 +129,6 @@
 		55B061E81D5F1C7100490B44 /* TwitterSessionImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterSessionImpl.swift; sourceTree = "<group>"; };
 		55B061EA1D5F1C7100490B44 /* SafariTwitterWebAuthHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafariTwitterWebAuthHandler.swift; sourceTree = "<group>"; };
 		55B061EB1D5F1C7100490B44 /* TwitterWebAuthHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterWebAuthHandler.swift; sourceTree = "<group>"; };
-		55B061ED1D5F1C7100490B44 /* CoreServicesAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreServicesAssembly.swift; sourceTree = "<group>"; };
 		55B061EF1D5F1C7100490B44 /* SocialAccountsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialAccountsService.swift; sourceTree = "<group>"; };
 		55B061F01D5F1C7100490B44 /* SocialAccountsServiceImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialAccountsServiceImpl.swift; sourceTree = "<group>"; };
 		55B062001D5F206000490B44 /* HomeTimelineModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTimelineModel.swift; sourceTree = "<group>"; };
@@ -205,7 +143,6 @@
 		55C5ABD01D60452700CC5880 /* SettingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 		55C5ABD31D60479500CC5880 /* SettingsItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsItem.swift; sourceTree = "<group>"; };
 		55C5ABD91D6052E200CC5880 /* SettingsSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsSwitch.swift; sourceTree = "<group>"; };
-		55C5ABDC1D60656900CC5880 /* TweetDetailsStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TweetDetailsStoryboard.storyboard; sourceTree = "<group>"; };
 		55C5ABE01D6065A800CC5880 /* CustomPullToRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPullToRefreshView.swift; sourceTree = "<group>"; };
 		55C5ABE11D6065A800CC5880 /* CustomPullToRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomPullToRefreshView.xib; sourceTree = "<group>"; };
 		55C5ABE51D606ABE00CC5880 /* TweetDetailsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetDetailsViewModel.swift; sourceTree = "<group>"; };
@@ -214,41 +151,50 @@
 		55C5ABF01D60AF4A00CC5880 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Spot.strings; sourceTree = "<group>"; };
 		55C5ABF21D60AF4C00CC5880 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Spot.strings; sourceTree = "<group>"; };
 		55C5ABF41D60E49400CC5880 /* NetworkActivityIndicatorManger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkActivityIndicatorManger.swift; sourceTree = "<group>"; };
-		55DF609F1D5E0EB9006B7BFD /* SpotStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SpotStoryboard.storyboard; sourceTree = "<group>"; };
 		55DF60A41D5E1305006B7BFD /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Root.strings; sourceTree = "<group>"; };
 		55DF60A61D5E1309006B7BFD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Root.strings; sourceTree = "<group>"; };
 		55FB49961D5F77C700D0869C /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		55FB49981D5F797900D0869C /* Common.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Common.xcassets; sourceTree = "<group>"; };
 		55FB499B1D5F7C8200D0869C /* ImagesService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagesService.swift; sourceTree = "<group>"; };
 		55FB499D1D5F81DE00D0869C /* ImagesServiceImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagesServiceImpl.swift; sourceTree = "<group>"; };
-		56550706EB12ABDBF670E767 /* SpotRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SpotRouter.swift; sourceTree = "<group>"; };
-		5C1890C23C6A5E68AD70AC51 /* SpotInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SpotInteractorInput.swift; sourceTree = "<group>"; };
 		6AADD66E20488720C9693357 /* Pods-TweetSpot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TweetSpot.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TweetSpot/Pods-TweetSpot.debug.xcconfig"; sourceTree = "<group>"; };
-		6F208E365063F4FDA2A37669 /* SettingsRouterInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsRouterInput.swift; sourceTree = "<group>"; };
-		73E57FCA510F2E64268DFFB1 /* LoginViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginViewInput.swift; sourceTree = "<group>"; };
-		7AAA4C16199A10206A664349 /* TweetDetailsViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TweetDetailsViewOutput.swift; sourceTree = "<group>"; };
 		7B3F605FE74D6C946DE2BDB2 /* SettingsViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		7F531EDAAE5C91A9C41E0DA9 /* SettingsInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsInteractor.swift; sourceTree = "<group>"; };
-		8F80B3961DAB717ADBDE92E7 /* SettingsViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsViewOutput.swift; sourceTree = "<group>"; };
-		925AB2EC06AA8DF3F1E9FAA4 /* LoginViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		A352E74613D34DF29C9D509E /* LoginInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginInteractorInput.swift; sourceTree = "<group>"; };
-		A64E0B013C3EA17A47E4EFCE /* TweetDetailsRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TweetDetailsRouter.swift; sourceTree = "<group>"; };
-		AB2C826A2427286160339FEE /* LoginPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		BE01D010498E276BCAFB5AF0 /* TweetDetailsViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TweetDetailsViewController.swift; sourceTree = "<group>"; };
-		C56EB9947DEBA35509D39EC5 /* TweetDetailsInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TweetDetailsInteractorInput.swift; sourceTree = "<group>"; };
 		C5F613BFCD7AC396EEAF3620 /* SpotViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SpotViewController.swift; sourceTree = "<group>"; };
-		C854C7EC496D353EA5482B82 /* LoginAssembly.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginAssembly.swift; sourceTree = "<group>"; };
-		CA03D2B2CD415B41F7F28CF8 /* SettingsViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsViewInput.swift; sourceTree = "<group>"; };
-		CF0E20E37E2407E03D4BEEC4 /* SettingsInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsInteractorOutput.swift; sourceTree = "<group>"; };
-		D1533EF6AD255C678255946D /* SpotAssembly.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SpotAssembly.swift; sourceTree = "<group>"; };
-		D7BBE4A0DEABAC414A12DEE4 /* SpotInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SpotInteractor.swift; sourceTree = "<group>"; };
-		DA5502AA9DE96ADBACD2C9FA /* SpotPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SpotPresenter.swift; sourceTree = "<group>"; };
-		DA8A1BFAC036269E32C63A58 /* SpotViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SpotViewOutput.swift; sourceTree = "<group>"; };
-		DC072AF7976E9E37FAA56C59 /* TweetDetailsPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TweetDetailsPresenter.swift; sourceTree = "<group>"; };
-		E836BC42C57F0773D56B7C3D /* TweetDetailsRouterInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TweetDetailsRouterInput.swift; sourceTree = "<group>"; };
+		CC8FC6EF1FAC453300BEDDCC /* ModulesRegistry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModulesRegistry.swift; sourceTree = "<group>"; };
+		CC8FC6F11FAC457600BEDDCC /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		CC8FC6F31FAC45EA00BEDDCC /* CoreServicesRegistry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreServicesRegistry.swift; sourceTree = "<group>"; };
+		CC8FC6F51FAC467900BEDDCC /* BusinessLogicRegistry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessLogicRegistry.swift; sourceTree = "<group>"; };
+		CC8FC6F91FAC4A7F00BEDDCC /* LazyRegistry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyRegistry.swift; sourceTree = "<group>"; };
+		CC8FC6FB1FAC4A9F00BEDDCC /* ApplicationRegistry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationRegistry.swift; sourceTree = "<group>"; };
+		CC8FC6FD1FAC4B9900BEDDCC /* PresentationRegistry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationRegistry.swift; sourceTree = "<group>"; };
+		CC8FC6FF1FAC4BCD00BEDDCC /* NavigationRootRegistry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRootRegistry.swift; sourceTree = "<group>"; };
+		CC8FC7011FAC4C6900BEDDCC /* NavigationRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationRootViewController.swift; sourceTree = "<group>"; };
+		CC8FC7031FAC4D0400BEDDCC /* NavigationRootPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationRootPresenter.swift; sourceTree = "<group>"; };
+		CC8FC7051FAC4DE400BEDDCC /* NavigationRootRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationRootRouter.swift; sourceTree = "<group>"; };
+		CC8FC7061FAC4DE400BEDDCC /* NavigationRootInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationRootInteractor.swift; sourceTree = "<group>"; };
+		CC8FC7091FAC4F9000BEDDCC /* LoginModuleRegistry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModuleRegistry.swift; sourceTree = "<group>"; };
+		CC8FC70B1FAC502600BEDDCC /* LoginRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
+		CC8FC70C1FAC502600BEDDCC /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		CC8FC70D1FAC502600BEDDCC /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		CC8FC70E1FAC502600BEDDCC /* LoginPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		CC8FC70F1FAC502600BEDDCC /* LoginInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
+		CC8FC7151FAC53DF00BEDDCC /* SpotModuleRegistry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotModuleRegistry.swift; sourceTree = "<group>"; };
+		CC8FC7171FAC54AF00BEDDCC /* SpotPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotPresenter.swift; sourceTree = "<group>"; };
+		CC8FC7181FAC54AF00BEDDCC /* SpotRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotRouter.swift; sourceTree = "<group>"; };
+		CC8FC7191FAC54AF00BEDDCC /* SpotInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotInteractor.swift; sourceTree = "<group>"; };
+		CC8FC71D1FAC55F900BEDDCC /* Spot.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Spot.storyboard; sourceTree = "<group>"; };
+		CC8FC71F1FAC582B00BEDDCC /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		CC8FC7231FAC67BE00BEDDCC /* SettingsModuleRegistry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModuleRegistry.swift; sourceTree = "<group>"; };
+		CC8FC7251FAC688100BEDDCC /* SettingsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
+		CC8FC7261FAC688100BEDDCC /* SettingsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsInteractor.swift; sourceTree = "<group>"; };
+		CC8FC7271FAC688100BEDDCC /* SettingsRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsRouter.swift; sourceTree = "<group>"; };
+		CC8FC7281FAC688100BEDDCC /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		CC8FC72D1FAC69B200BEDDCC /* TweetDetailsRegistry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetDetailsRegistry.swift; sourceTree = "<group>"; };
+		CC8FC72F1FAC69E600BEDDCC /* TweetDetailsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetDetailsPresenter.swift; sourceTree = "<group>"; };
+		CC8FC7301FAC69E600BEDDCC /* TweetDetailsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetDetailsInteractor.swift; sourceTree = "<group>"; };
+		CC8FC7321FAC69E600BEDDCC /* TweetDetails.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TweetDetails.storyboard; sourceTree = "<group>"; };
 		EC908E15534B9C55897CC48D /* Pods_TweetSpot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TweetSpot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		ED6080CD2E4CAF76E04B9E8C /* SpotInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SpotInteractorOutput.swift; sourceTree = "<group>"; };
-		EDFA1CFD2DBF26E79CEFB095 /* LoginInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
 		FEEBF983C6D999B04D27BE91 /* Pods-TweetSpot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TweetSpot.release.xcconfig"; path = "Pods/Target Support Files/Pods-TweetSpot/Pods-TweetSpot.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -276,8 +222,6 @@
 		091E9AAA975A308A8E08C891 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				CA03D2B2CD415B41F7F28CF8 /* SettingsViewInput.swift */,
-				8F80B3961DAB717ADBDE92E7 /* SettingsViewOutput.swift */,
 				7B3F605FE74D6C946DE2BDB2 /* SettingsViewController.swift */,
 				55C5ABD21D60477F00CC5880 /* ViewModel */,
 				55C5ABCF1D6044E500CC5880 /* Cells */,
@@ -288,59 +232,14 @@
 		0DD28DA4FF14D9B7FFD5EB13 /* Spot */ = {
 			isa = PBXGroup;
 			children = (
-				33F82352914B3644AF6F83C4 /* Assembly */,
+				CC8FC7151FAC53DF00BEDDCC /* SpotModuleRegistry.swift */,
+				CC8FC7191FAC54AF00BEDDCC /* SpotInteractor.swift */,
+				CC8FC7171FAC54AF00BEDDCC /* SpotPresenter.swift */,
+				CC8FC7181FAC54AF00BEDDCC /* SpotRouter.swift */,
 				ACF99832BD108FA63541BB11 /* View */,
-				42EF396A6229174720316E7A /* Presenter */,
-				B28A989935F981E65FE9027D /* Interactor */,
-				108245B72894E04D6ADC73D6 /* Router */,
-				55DF609E1D5E0EAB006B7BFD /* Storyboard */,
+				CC8FC71D1FAC55F900BEDDCC /* Spot.storyboard */,
 			);
 			path = Spot;
-			sourceTree = "<group>";
-		};
-		108245B72894E04D6ADC73D6 /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				2FFD46A8040FA8173AF67C04 /* SpotRouterInput.swift */,
-				56550706EB12ABDBF670E767 /* SpotRouter.swift */,
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
-		17EAF3A27CA0702F6D0AE48B /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				E836BC42C57F0773D56B7C3D /* TweetDetailsRouterInput.swift */,
-				A64E0B013C3EA17A47E4EFCE /* TweetDetailsRouter.swift */,
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
-		33F82352914B3644AF6F83C4 /* Assembly */ = {
-			isa = PBXGroup;
-			children = (
-				D1533EF6AD255C678255946D /* SpotAssembly.swift */,
-			);
-			path = Assembly;
-			sourceTree = "<group>";
-		};
-		42EF396A6229174720316E7A /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				477AC3ACCB25F4E2FB31112C /* SpotModuleInput.swift */,
-				DA5502AA9DE96ADBACD2C9FA /* SpotPresenter.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		4D1BA1B8A7CCB74D123E095B /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-				C56EB9947DEBA35509D39EC5 /* TweetDetailsInteractorInput.swift */,
-				13FAC8AEE5A5AC06FDD4A7B3 /* TweetDetailsInteractorOutput.swift */,
-				2B1620A2B7BBB6DF9A079FE5 /* TweetDetailsInteractor.swift */,
-			);
-			path = Interactor;
 			sourceTree = "<group>";
 		};
 		553F7B251D5DB71200541F38 = {
@@ -374,6 +273,7 @@
 		553F7B571D5DBAD700541F38 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				CC8FC6EF1FAC453300BEDDCC /* ModulesRegistry.swift */,
 				553F7B711D5DBAD700541F38 /* Utils */,
 				553F7B5A1D5DBAD700541F38 /* Presentation */,
 				553F7B581D5DBAD700541F38 /* Application */,
@@ -386,7 +286,7 @@
 		553F7B581D5DBAD700541F38 /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				553F7B8A1D5DBB3100541F38 /* ApplicationAssembly.swift */,
+				CC8FC6FB1FAC4A9F00BEDDCC /* ApplicationRegistry.swift */,
 				553F7B8C1D5DBB4D00541F38 /* AppDelegate */,
 				55C5ABF31D60E48000CC5880 /* NetworkActivityIndicatorManger */,
 			);
@@ -396,6 +296,8 @@
 		553F7B5A1D5DBAD700541F38 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				CC8FC6F91FAC4A7F00BEDDCC /* LazyRegistry.swift */,
+				CC8FC6FD1FAC4B9900BEDDCC /* PresentationRegistry.swift */,
 				55C5ABDE1D6065A800CC5880 /* CommonViews */,
 				553F7B5F1D5DBAD700541F38 /* Stories */,
 				553F7B5B1D5DBAD700541F38 /* LaunchScreen.storyboard */,
@@ -419,59 +321,13 @@
 		553F7B601D5DBAD700541F38 /* NavigationRoot */ = {
 			isa = PBXGroup;
 			children = (
-				553F7B611D5DBAD700541F38 /* Assembly */,
-				553F7B6D1D5DBAD700541F38 /* View */,
-				553F7B671D5DBAD700541F38 /* Presenter */,
-				553F7B631D5DBAD700541F38 /* Interactor */,
-				553F7B6A1D5DBAD700541F38 /* Router */,
+				CC8FC6FF1FAC4BCD00BEDDCC /* NavigationRootRegistry.swift */,
+				CC8FC7011FAC4C6900BEDDCC /* NavigationRootViewController.swift */,
+				CC8FC7031FAC4D0400BEDDCC /* NavigationRootPresenter.swift */,
+				CC8FC7061FAC4DE400BEDDCC /* NavigationRootInteractor.swift */,
+				CC8FC7051FAC4DE400BEDDCC /* NavigationRootRouter.swift */,
 			);
 			path = NavigationRoot;
-			sourceTree = "<group>";
-		};
-		553F7B611D5DBAD700541F38 /* Assembly */ = {
-			isa = PBXGroup;
-			children = (
-				553F7B621D5DBAD700541F38 /* NavigationRootAssembly.swift */,
-			);
-			path = Assembly;
-			sourceTree = "<group>";
-		};
-		553F7B631D5DBAD700541F38 /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-				553F7B651D5DBAD700541F38 /* NavigationRootInteractorInput.swift */,
-				553F7B661D5DBAD700541F38 /* NavigationRootInteractorOutput.swift */,
-				553F7B641D5DBAD700541F38 /* NavigationRootInteractor.swift */,
-			);
-			path = Interactor;
-			sourceTree = "<group>";
-		};
-		553F7B671D5DBAD700541F38 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				553F7B681D5DBAD700541F38 /* NavigationRootModuleInput.swift */,
-				553F7B691D5DBAD700541F38 /* NavigationRootPresenter.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		553F7B6A1D5DBAD700541F38 /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				553F7B6C1D5DBAD700541F38 /* NavigationRootRouterInput.swift */,
-				553F7B6B1D5DBAD700541F38 /* NavigationRootRouter.swift */,
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
-		553F7B6D1D5DBAD700541F38 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				553F7B6F1D5DBAD700541F38 /* NavigationRootViewInput.swift */,
-				553F7B701D5DBAD700541F38 /* NavigationRootViewOutput.swift */,
-				553F7B6E1D5DBAD700541F38 /* NavigationRootViewController.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		553F7B711D5DBAD700541F38 /* Utils */ = {
@@ -487,13 +343,13 @@
 		553F7B721D5DBAD700541F38 /* Extensionns */ = {
 			isa = PBXGroup;
 			children = (
-				553F7B731D5DBAD700541F38 /* TyphoonDefinition+Extensions.swift */,
 				553F7B8F1D5DBF2D00541F38 /* UIColor+Extensions.swift */,
 				553F7B911D5DC8E800541F38 /* CAGradientLayer+Extensions.swift */,
 				553F7BA31D5DD0EE00541F38 /* String+Extensions.swift */,
 				55B061BF1D5E241300490B44 /* NSError+Extensions.swift */,
 				55FB49961D5F77C700D0869C /* UIView+Extensions.swift */,
 				55ACBFBF1D618B2D00E8C73D /* NSDateFormatter+Extensions.swift */,
+				CC8FC71F1FAC582B00BEDDCC /* UIViewController+Extensions.swift */,
 			);
 			path = Extensionns;
 			sourceTree = "<group>";
@@ -520,6 +376,7 @@
 			isa = PBXGroup;
 			children = (
 				553F7B781D5DBAD700541F38 /* Info.plist */,
+				CC8FC6F11FAC457600BEDDCC /* main.swift */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -548,14 +405,6 @@
 			path = Animators;
 			sourceTree = "<group>";
 		};
-		553F7B991D5DC9FC00541F38 /* Stroryboard */ = {
-			isa = PBXGroup;
-			children = (
-				553F7B9A1D5DCA0700541F38 /* LoginStoryboard.storyboard */,
-			);
-			path = Stroryboard;
-			sourceTree = "<group>";
-		};
 		553F7B9C1D5DD07100541F38 /* Strings */ = {
 			isa = PBXGroup;
 			children = (
@@ -569,18 +418,10 @@
 			path = Strings;
 			sourceTree = "<group>";
 		};
-		5554CE381D5FA97500F82966 /* Storyboard */ = {
-			isa = PBXGroup;
-			children = (
-				5554CE391D5FA99400F82966 /* SettingsStoryboard.storyboard */,
-			);
-			path = Storyboard;
-			sourceTree = "<group>";
-		};
 		55B061DB1D5F1C7100490B44 /* BusinessLogic */ = {
 			isa = PBXGroup;
 			children = (
-				55B061DC1D5F1C7100490B44 /* BusinesLogicAssembly.swift */,
+				CC8FC6F51FAC467900BEDDCC /* BusinessLogicRegistry.swift */,
 				55B061DD1D5F1C7100490B44 /* TwitterDAO */,
 				55B061E31D5F1C7100490B44 /* TwitterSession */,
 				55B061FF1D5F204700490B44 /* HomeTimelineModel */,
@@ -641,7 +482,7 @@
 		55B061EC1D5F1C7100490B44 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				55B061ED1D5F1C7100490B44 /* CoreServicesAssembly.swift */,
+				CC8FC6F31FAC45EA00BEDDCC /* CoreServicesRegistry.swift */,
 				55B061EE1D5F1C7100490B44 /* SocialAccountsService */,
 				55FB499A1D5F7C6200D0869C /* ImagesService */,
 			);
@@ -726,14 +567,6 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		55C5ABDB1D60655900CC5880 /* Storyboard */ = {
-			isa = PBXGroup;
-			children = (
-				55C5ABDC1D60656900CC5880 /* TweetDetailsStoryboard.storyboard */,
-			);
-			path = Storyboard;
-			sourceTree = "<group>";
-		};
 		55C5ABDE1D6065A800CC5880 /* CommonViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -776,14 +609,6 @@
 			path = NetworkActivityIndicatorManger;
 			sourceTree = "<group>";
 		};
-		55DF609E1D5E0EAB006B7BFD /* Storyboard */ = {
-			isa = PBXGroup;
-			children = (
-				55DF609F1D5E0EB9006B7BFD /* SpotStoryboard.storyboard */,
-			);
-			path = Storyboard;
-			sourceTree = "<group>";
-		};
 		55FB499A1D5F7C6200D0869C /* ImagesService */ = {
 			isa = PBXGroup;
 			children = (
@@ -801,60 +626,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		828C968F17755E240CD399AC /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				29201C8450BEB5508DF0EFB8 /* LoginRouterInput.swift */,
-				2DAA5A84F566ADC6C923BB15 /* LoginRouter.swift */,
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
-		88A4604A08CECFA59EB44D32 /* Assembly */ = {
-			isa = PBXGroup;
-			children = (
-				48FC8BAFA43162033AF82ACD /* TweetDetailsAssembly.swift */,
-			);
-			path = Assembly;
-			sourceTree = "<group>";
-		};
-		98428096C66F8C9C53A48047 /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-				A352E74613D34DF29C9D509E /* LoginInteractorInput.swift */,
-				0C492B261654B8E581FA4DA1 /* LoginInteractorOutput.swift */,
-				EDFA1CFD2DBF26E79CEFB095 /* LoginInteractor.swift */,
-			);
-			path = Interactor;
-			sourceTree = "<group>";
-		};
-		988181E11E5ED5FBBECED2AB /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				1E1BFE5D7DEE9456F1ED6AC3 /* SettingsModuleInput.swift */,
-				2123B717ACB7CBB2C88FF353 /* SettingsPresenter.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		9E57476CF744D16066EA6DBA /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				31CA2E1B4D8C00A745E46D00 /* LoginModuleInput.swift */,
-				AB2C826A2427286160339FEE /* LoginPresenter.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
 		A1E4A9681499E3A34BA17852 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				A9C186A9A3243CE327A14B85 /* Assembly */,
-				D08A3CA01F560D0A3EA83B51 /* View */,
-				9E57476CF744D16066EA6DBA /* Presenter */,
-				98428096C66F8C9C53A48047 /* Interactor */,
-				828C968F17755E240CD399AC /* Router */,
-				553F7B991D5DC9FC00541F38 /* Stroryboard */,
+				CC8FC7091FAC4F9000BEDDCC /* LoginModuleRegistry.swift */,
+				CC8FC70D1FAC502600BEDDCC /* LoginViewController.swift */,
+				CC8FC70E1FAC502600BEDDCC /* LoginPresenter.swift */,
+				CC8FC70F1FAC502600BEDDCC /* LoginInteractor.swift */,
+				CC8FC70B1FAC502600BEDDCC /* LoginRouter.swift */,
+				CC8FC70C1FAC502600BEDDCC /* Login.storyboard */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -862,29 +642,19 @@
 		A1F48237BA22D5D0C9C72894 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				D174ABA05A8C20CF15F215E8 /* Assembly */,
+				CC8FC7231FAC67BE00BEDDCC /* SettingsModuleRegistry.swift */,
+				CC8FC7251FAC688100BEDDCC /* SettingsPresenter.swift */,
+				CC8FC7261FAC688100BEDDCC /* SettingsInteractor.swift */,
+				CC8FC7271FAC688100BEDDCC /* SettingsRouter.swift */,
+				CC8FC7281FAC688100BEDDCC /* Settings.storyboard */,
 				091E9AAA975A308A8E08C891 /* View */,
-				988181E11E5ED5FBBECED2AB /* Presenter */,
-				E8108CFF21E3AC852187E56D /* Interactor */,
-				E1334447AFC77E3CCFD32A16 /* Router */,
-				5554CE381D5FA97500F82966 /* Storyboard */,
 			);
 			path = Settings;
-			sourceTree = "<group>";
-		};
-		A9C186A9A3243CE327A14B85 /* Assembly */ = {
-			isa = PBXGroup;
-			children = (
-				C854C7EC496D353EA5482B82 /* LoginAssembly.swift */,
-			);
-			path = Assembly;
 			sourceTree = "<group>";
 		};
 		ACF99832BD108FA63541BB11 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				16A5CFB753636A2A51814640 /* SpotViewInput.swift */,
-				DA8A1BFAC036269E32C63A58 /* SpotViewOutput.swift */,
 				C5F613BFCD7AC396EEAF3620 /* SpotViewController.swift */,
 				55B0620C1D5F515900490B44 /* ViewModel */,
 				55B0620F1D5F539C00490B44 /* Views */,
@@ -893,25 +663,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		B28A989935F981E65FE9027D /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-				5C1890C23C6A5E68AD70AC51 /* SpotInteractorInput.swift */,
-				ED6080CD2E4CAF76E04B9E8C /* SpotInteractorOutput.swift */,
-				D7BBE4A0DEABAC414A12DEE4 /* SpotInteractor.swift */,
-			);
-			path = Interactor;
-			sourceTree = "<group>";
-		};
 		BAB51879103A3A41523F1C1A /* TweetDetails */ = {
 			isa = PBXGroup;
 			children = (
-				88A4604A08CECFA59EB44D32 /* Assembly */,
+				CC8FC72D1FAC69B200BEDDCC /* TweetDetailsRegistry.swift */,
+				CC8FC72F1FAC69E600BEDDCC /* TweetDetailsPresenter.swift */,
+				CC8FC7301FAC69E600BEDDCC /* TweetDetailsInteractor.swift */,
+				CC8FC7321FAC69E600BEDDCC /* TweetDetails.storyboard */,
 				C10A8F1F323EC2460C6AD679 /* View */,
-				E06150167218E0A18977992F /* Presenter */,
-				4D1BA1B8A7CCB74D123E095B /* Interactor */,
-				17EAF3A27CA0702F6D0AE48B /* Router */,
-				55C5ABDB1D60655900CC5880 /* Storyboard */,
 			);
 			path = TweetDetails;
 			sourceTree = "<group>";
@@ -919,58 +678,10 @@
 		C10A8F1F323EC2460C6AD679 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				335A569F930B23C3372580EB /* TweetDetailsViewInput.swift */,
-				7AAA4C16199A10206A664349 /* TweetDetailsViewOutput.swift */,
 				BE01D010498E276BCAFB5AF0 /* TweetDetailsViewController.swift */,
 				55C5ABE41D606AAE00CC5880 /* ViewModel */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		D08A3CA01F560D0A3EA83B51 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				73E57FCA510F2E64268DFFB1 /* LoginViewInput.swift */,
-				34178EC6BAD21268D642847C /* LoginViewOutput.swift */,
-				925AB2EC06AA8DF3F1E9FAA4 /* LoginViewController.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		D174ABA05A8C20CF15F215E8 /* Assembly */ = {
-			isa = PBXGroup;
-			children = (
-				496428D9201872AC52459D45 /* SettingsAssembly.swift */,
-			);
-			path = Assembly;
-			sourceTree = "<group>";
-		};
-		E06150167218E0A18977992F /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				0416FB27715EFF75EB667CD9 /* TweetDetailsModuleInput.swift */,
-				DC072AF7976E9E37FAA56C59 /* TweetDetailsPresenter.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		E1334447AFC77E3CCFD32A16 /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				6F208E365063F4FDA2A37669 /* SettingsRouterInput.swift */,
-				1352DDDD24B1C4BD3ED5D656 /* SettingsRouter.swift */,
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
-		E8108CFF21E3AC852187E56D /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-				49DD815CE826943688925EBF /* SettingsInteractorInput.swift */,
-				CF0E20E37E2407E03D4BEEC4 /* SettingsInteractorOutput.swift */,
-				7F531EDAAE5C91A9C41E0DA9 /* SettingsInteractor.swift */,
-			);
-			path = Interactor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1037,19 +748,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC8FC72C1FAC688100BEDDCC /* Settings.storyboard in Resources */,
 				55C5ABEF1D60AF4A00CC5880 /* Spot.strings in Resources */,
-				553F7B9B1D5DCA0700541F38 /* LoginStoryboard.storyboard in Resources */,
 				553F7B7A1D5DBAD700541F38 /* LaunchScreen.storyboard in Resources */,
 				553F7B881D5DBAD700541F38 /* Assets.xcassets in Resources */,
 				55C5ABE31D6065A800CC5880 /* CustomPullToRefreshView.xib in Resources */,
-				55DF60A01D5E0EB9006B7BFD /* SpotStoryboard.storyboard in Resources */,
 				553F7B9F1D5DD0C500541F38 /* Login.strings in Resources */,
+				CC8FC7111FAC502600BEDDCC /* Login.storyboard in Resources */,
+				CC8FC7361FAC69E600BEDDCC /* TweetDetails.storyboard in Resources */,
 				553F7B7B1D5DBAD700541F38 /* Main.storyboard in Resources */,
 				5554CE3D1D5FAC0F00F82966 /* Settings.strings in Resources */,
-				5554CE3A1D5FA99400F82966 /* SettingsStoryboard.storyboard in Resources */,
 				55FB49991D5F797900D0869C /* Common.xcassets in Resources */,
-				55C5ABDD1D60656900CC5880 /* TweetDetailsStoryboard.storyboard in Resources */,
 				55DF60A31D5E1305006B7BFD /* Root.strings in Resources */,
+				CC8FC71E1FAC55F900BEDDCC /* Spot.storyboard in Resources */,
 				55B061C31D5E26E800490B44 /* Errors.strings in Resources */,
 				55B061BB1D5E1DA000490B44 /* Common.strings in Resources */,
 			);
@@ -1066,32 +777,26 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-TweetSpot/Pods-TweetSpot-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/AYRegistry/AYRegistry.framework",
 				"${BUILT_PRODUCTS_DIR}/MGEvents/MGEvents.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
-				"${BUILT_PRODUCTS_DIR}/RamblerTyphoonUtils/RamblerTyphoonUtils.framework",
 				"${BUILT_PRODUCTS_DIR}/SAMKeychain/SAMKeychain.framework",
 				"${BUILT_PRODUCTS_DIR}/SGHTTPRequest/SGHTTPRequest.framework",
 				"${BUILT_PRODUCTS_DIR}/SGImageCache/SGImageCache.framework",
 				"${BUILT_PRODUCTS_DIR}/STTwitter/STTwitter.framework",
 				"${BUILT_PRODUCTS_DIR}/SVPullToRefresh/SVPullToRefresh.framework",
-				"${BUILT_PRODUCTS_DIR}/Typhoon/Typhoon.framework",
-				"${BUILT_PRODUCTS_DIR}/ViperMcFlurry/ViperMcFlurry.framework",
-				"${BUILT_PRODUCTS_DIR}/XCGLogger/XCGLogger.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AYRegistry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MGEvents.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RamblerTyphoonUtils.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SAMKeychain.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SGHTTPRequest.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SGImageCache.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/STTwitter.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVPullToRefresh.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Typhoon.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ViperMcFlurry.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XCGLogger.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1113,7 +818,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FBB78CE276A00D26C8391FCE /* [CP] Copy Pods Resources */ = {
@@ -1138,105 +843,78 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC8FC71C1FAC54AF00BEDDCC /* SpotInteractor.swift in Sources */,
 				55B062011D5F206000490B44 /* HomeTimelineModel.swift in Sources */,
 				553F7B951D5DC98600541F38 /* FadeInSegue.swift in Sources */,
-				553F7B7F1D5DBAD700541F38 /* NavigationRootInteractorOutput.swift in Sources */,
 				55C5ABE21D6065A800CC5880 /* CustomPullToRefreshView.swift in Sources */,
+				CC8FC6FE1FAC4B9900BEDDCC /* PresentationRegistry.swift in Sources */,
 				553F7B901D5DBF2D00541F38 /* UIColor+Extensions.swift in Sources */,
-				553F7B831D5DBAD700541F38 /* NavigationRootRouterInput.swift in Sources */,
 				55B061F21D5F1C7100490B44 /* TweetDTODeserializer.swift in Sources */,
 				55C5ABDA1D6052E200CC5880 /* SettingsSwitch.swift in Sources */,
 				55B0620B1D5F4ED100490B44 /* InMemoryHomeTimelineStorage.swift in Sources */,
-				553F7B821D5DBAD700541F38 /* NavigationRootRouter.swift in Sources */,
-				553F7B8B1D5DBB3100541F38 /* ApplicationAssembly.swift in Sources */,
 				553F7B8E1D5DBB5900541F38 /* AppDelegate.swift in Sources */,
-				553F7B871D5DBAD700541F38 /* TyphoonDefinition+Extensions.swift in Sources */,
+				CC8FC7021FAC4C6900BEDDCC /* NavigationRootViewController.swift in Sources */,
+				CC8FC7341FAC69E600BEDDCC /* TweetDetailsInteractor.swift in Sources */,
 				55B061FA1D5F1C7100490B44 /* SafariTwitterWebAuthHandler.swift in Sources */,
+				CC8FC7121FAC502600BEDDCC /* LoginViewController.swift in Sources */,
 				55B062111D5F53B400490B44 /* SpotTweetItemCell.swift in Sources */,
 				55B061FD1D5F1C7100490B44 /* SocialAccountsService.swift in Sources */,
+				CC8FC7071FAC4DE500BEDDCC /* NavigationRootRouter.swift in Sources */,
 				55B061FB1D5F1C7100490B44 /* TwitterWebAuthHandler.swift in Sources */,
 				553F7B921D5DC8E800541F38 /* CAGradientLayer+Extensions.swift in Sources */,
-				553F7B7E1D5DBAD700541F38 /* NavigationRootInteractorInput.swift in Sources */,
 				553F7BA41D5DD0EE00541F38 /* String+Extensions.swift in Sources */,
-				553F7B7C1D5DBAD700541F38 /* NavigationRootAssembly.swift in Sources */,
-				553F7B801D5DBAD700541F38 /* NavigationRootModuleInput.swift in Sources */,
-				553F7B811D5DBAD700541F38 /* NavigationRootPresenter.swift in Sources */,
 				55B062041D5F20D000490B44 /* TweetDTO.swift in Sources */,
-				553F7B841D5DBAD700541F38 /* NavigationRootViewController.swift in Sources */,
 				55B062091D5F4E1D00490B44 /* HomeTimelineStorage.swift in Sources */,
 				55B061F41D5F1C7100490B44 /* TwitterDAO.swift in Sources */,
-				553F7B861D5DBAD700541F38 /* NavigationRootViewOutput.swift in Sources */,
-				553F7B851D5DBAD700541F38 /* NavigationRootViewInput.swift in Sources */,
 				55FB499C1D5F7C8200D0869C /* ImagesService.swift in Sources */,
-				553F7B7D1D5DBAD700541F38 /* NavigationRootInteractor.swift in Sources */,
-				D606B5C4423C7A5C906D18E4 /* LoginAssembly.swift in Sources */,
 				55B061F61D5F1C7100490B44 /* KeychainSessionCredentialsStorage.swift in Sources */,
-				0C600FEF96A9DAA29AFE29DA /* LoginViewInput.swift in Sources */,
-				5E1C4BE8DA3AF9D19CF00FB5 /* LoginViewOutput.swift in Sources */,
+				CC8FC7161FAC53DF00BEDDCC /* SpotModuleRegistry.swift in Sources */,
+				CC8FC70A1FAC4F9000BEDDCC /* LoginModuleRegistry.swift in Sources */,
 				55FB499E1D5F81DE00D0869C /* ImagesServiceImpl.swift in Sources */,
-				4D2AE8BBF63A3ECA88039CF5 /* LoginViewController.swift in Sources */,
-				63D4587548BBE2D1980ED093 /* LoginModuleInput.swift in Sources */,
-				55B061FC1D5F1C7100490B44 /* CoreServicesAssembly.swift in Sources */,
+				CC8FC7201FAC582B00BEDDCC /* UIViewController+Extensions.swift in Sources */,
 				55C5ABF51D60E49400CC5880 /* NetworkActivityIndicatorManger.swift in Sources */,
-				C2B66D6AF2DCD980C2338BA7 /* LoginPresenter.swift in Sources */,
 				55B061F51D5F1C7100490B44 /* TwitterDAOImpl.swift in Sources */,
 				55B061FE1D5F1C7100490B44 /* SocialAccountsServiceImpl.swift in Sources */,
+				CC8FC72E1FAC69B200BEDDCC /* TweetDetailsRegistry.swift in Sources */,
+				CC8FC7041FAC4D0400BEDDCC /* NavigationRootPresenter.swift in Sources */,
+				CC8FC7101FAC502600BEDDCC /* LoginRouter.swift in Sources */,
 				55B061F91D5F1C7100490B44 /* TwitterSessionImpl.swift in Sources */,
 				55B061F81D5F1C7100490B44 /* TwitterSession.swift in Sources */,
+				CC8FC6F21FAC457600BEDDCC /* main.swift in Sources */,
 				553F7B981D5DC9B900541F38 /* FadeAnimator.swift in Sources */,
-				43D39CCE68291FA56D85DCD9 /* LoginInteractorInput.swift in Sources */,
 				55B061F31D5F1C7100490B44 /* TweetDTODictionaryDeserializer.swift in Sources */,
-				55B061F11D5F1C7100490B44 /* BusinesLogicAssembly.swift in Sources */,
-				2F6B9B3145F852C644E231A5 /* LoginInteractorOutput.swift in Sources */,
 				55C5ABD11D60452700CC5880 /* SettingsCell.swift in Sources */,
-				A8668A4869942910B58DD3B7 /* LoginInteractor.swift in Sources */,
-				00ED40C1B3A1B86EC86EED9E /* LoginRouterInput.swift in Sources */,
 				55C5ABCC1D6042EC00CC5880 /* SettingsService.swift in Sources */,
 				55B0620E1D5F517400490B44 /* SpotTweetItem.swift in Sources */,
-				3CB6F2D1B911272743922AEB /* LoginRouter.swift in Sources */,
 				55C5ABCE1D60437500CC5880 /* UserDefaultsSettingsService.swift in Sources */,
 				55B061C01D5E241300490B44 /* NSError+Extensions.swift in Sources */,
+				CC8FC6FC1FAC4A9F00BEDDCC /* ApplicationRegistry.swift in Sources */,
 				55C5ABE61D606ABE00CC5880 /* TweetDetailsViewModel.swift in Sources */,
-				26948A3752703CA02E0F26F3 /* SpotAssembly.swift in Sources */,
-				89A5EA3E8FB2B71C188BCBC2 /* SpotViewInput.swift in Sources */,
-				ADA98A49BE72D177873B5AAA /* SpotViewOutput.swift in Sources */,
 				BC54F40AE5A8825639068669 /* SpotViewController.swift in Sources */,
 				55FB49971D5F77C700D0869C /* UIView+Extensions.swift in Sources */,
-				DAE1C8871E14774C4D355249 /* SpotModuleInput.swift in Sources */,
-				5A1475A3FE5EACDCE10FE72C /* SpotPresenter.swift in Sources */,
+				CC8FC6FA1FAC4A7F00BEDDCC /* LazyRegistry.swift in Sources */,
+				CC8FC7141FAC502600BEDDCC /* LoginInteractor.swift in Sources */,
+				CC8FC7241FAC67BE00BEDDCC /* SettingsModuleRegistry.swift in Sources */,
+				CC8FC72B1FAC688100BEDDCC /* SettingsRouter.swift in Sources */,
 				55B061F71D5F1C7100490B44 /* TwitterSessionCredentialsStorage.swift in Sources */,
-				BFCC38F19671FC8CBDF46812 /* SpotInteractorInput.swift in Sources */,
 				55B062061D5F22A700490B44 /* HomeTimelineModelImpl.swift in Sources */,
-				EDE8915DBE0DAC09F17619DD /* SpotInteractorOutput.swift in Sources */,
-				6CE3F3A2AEEB632F21896C52 /* SpotInteractor.swift in Sources */,
-				7D2FC4F9704577721D05786D /* SpotRouterInput.swift in Sources */,
-				8B0BB1BC173A2621710BD1E5 /* SpotRouter.swift in Sources */,
+				CC8FC71B1FAC54AF00BEDDCC /* SpotRouter.swift in Sources */,
+				CC8FC7291FAC688100BEDDCC /* SettingsPresenter.swift in Sources */,
 				55C5ABD41D60479500CC5880 /* SettingsItem.swift in Sources */,
-				A25CF1873E3B46F54C608B38 /* SettingsAssembly.swift in Sources */,
-				FFD93E55F00C1AFE64DAF9BE /* SettingsViewInput.swift in Sources */,
-				DEE913AD37DF7D8A886F8449 /* SettingsViewOutput.swift in Sources */,
+				CC8FC7001FAC4BCD00BEDDCC /* NavigationRootRegistry.swift in Sources */,
 				E22165F574FFBCDDB26ED371 /* SettingsViewController.swift in Sources */,
-				30CB8096BD97B4118A1F3575 /* SettingsModuleInput.swift in Sources */,
-				A1B879E5EF6B9F52760EEC10 /* SettingsPresenter.swift in Sources */,
-				83F4D4977031771F7340A51B /* SettingsInteractorInput.swift in Sources */,
-				D6C506638FD61C6797A39973 /* SettingsInteractorOutput.swift in Sources */,
-				8B57E6C3F171152B97CBF72E /* SettingsInteractor.swift in Sources */,
-				F69CF8817A032DB34028AB70 /* SettingsRouterInput.swift in Sources */,
-				B170FC28CC725F41329FC907 /* SettingsRouter.swift in Sources */,
+				CC8FC71A1FAC54AF00BEDDCC /* SpotPresenter.swift in Sources */,
+				CC8FC7331FAC69E600BEDDCC /* TweetDetailsPresenter.swift in Sources */,
+				CC8FC7081FAC4DE500BEDDCC /* NavigationRootInteractor.swift in Sources */,
+				CC8FC6F41FAC45EA00BEDDCC /* CoreServicesRegistry.swift in Sources */,
 				55C5ABEC1D60975600CC5880 /* SpotTableDataManager.swift in Sources */,
-				58F2E8CC6F9A8469B85CA87B /* TweetDetailsAssembly.swift in Sources */,
-				91AD5F6E11B4005F5CA6C3FA /* TweetDetailsViewInput.swift in Sources */,
+				CC8FC7131FAC502600BEDDCC /* LoginPresenter.swift in Sources */,
 				55ACBFC01D618B2D00E8C73D /* NSDateFormatter+Extensions.swift in Sources */,
-				9EA139DF179D039033C42B5E /* TweetDetailsViewOutput.swift in Sources */,
+				CC8FC6F61FAC467900BEDDCC /* BusinessLogicRegistry.swift in Sources */,
 				3DEBFDCD70C031FE145759FB /* TweetDetailsViewController.swift in Sources */,
-				7BA1F14764B7814C6FDB09E5 /* TweetDetailsModuleInput.swift in Sources */,
-				AA980C2CF2068FCCC89E1D76 /* TweetDetailsPresenter.swift in Sources */,
-				7811E6CEE05ACFD1C67211B6 /* TweetDetailsInteractorInput.swift in Sources */,
-				BD53F9ED1E63C00AF7E2BB0D /* TweetDetailsInteractorOutput.swift in Sources */,
-				AB98F04A505E2A46396142AB /* TweetDetailsInteractor.swift in Sources */,
+				CC8FC6F01FAC453300BEDDCC /* ModulesRegistry.swift in Sources */,
 				55C5ABE91D60972B00CC5880 /* CommonTableDataManager.swift in Sources */,
-				D84202F7B916307157C3BAAA /* TweetDetailsRouterInput.swift in Sources */,
-				807BE0890FDF402135ECA260 /* TweetDetailsRouter.swift in Sources */,
+				CC8FC72A1FAC688100BEDDCC /* SettingsInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

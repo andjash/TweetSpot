@@ -12,15 +12,10 @@ import STTwitter
 class TwitterDAOImpl: NSObject, TwitterDAO {
     
     weak var session: TwitterSession!
-    let deserializer: TweetDTODeserializer
-    let workingQueue: DispatchQueue
+    var deserializer: TweetDTODeserializer!
+    var workingQueue: DispatchQueue!
+    
     var cancelationTokens: [String : STTwitterRequestProtocol] = [:]
-    
-    init(deserializer: TweetDTODeserializer, queue: DispatchQueue) {
-        self.deserializer = deserializer
-        self.workingQueue = queue
-    }
-    
     
     func getHomeTweets(maxId: String?, minId: String?, count: Int, success: @escaping ([TweetDTO]) -> (), error: @escaping (NSError) -> ()) {
         if session.state != .opened {

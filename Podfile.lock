@@ -14,9 +14,9 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - AYRegistry (0.1.3)
   - MGEvents (1.1.0)
   - PromiseKit/Promise (1.7.2)
-  - RamblerTyphoonUtils/AssemblyCollector (1.5.0)
   - SAMKeychain (1.5.0)
   - SGHTTPRequest (1.8.2):
     - AFNetworking (~> 3.0)
@@ -37,19 +37,13 @@ PODS:
     - SGHTTPRequest (~> 1.7)
   - STTwitter (0.2.6)
   - SVPullToRefresh (0.4.1)
-  - Typhoon (3.4.9):
-    - Typhoon/no-arc (= 3.4.9)
-  - Typhoon/no-arc (3.4.9)
-  - ViperMcFlurry (1.5.2)
 
 DEPENDENCIES:
-  - RamblerTyphoonUtils/AssemblyCollector
+  - AYRegistry
   - SAMKeychain (from `https://github.com/soffes/SAMKeychain.git`, commit `80714c22e0f43de0be2134f99c0a0841f9ef066c`)
   - SGImageCache (~> 2.3.0)
   - STTwitter (~> 0.2.5)
   - SVPullToRefresh (from `https://github.com/samvermette/SVPullToRefresh.git`, commit `a5f9dfee86a27c4e994d7edf93d0768c881d58bb`)
-  - Typhoon (~> 3.4.8)
-  - ViperMcFlurry
 
 EXTERNAL SOURCES:
   SAMKeychain:
@@ -69,17 +63,15 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  AYRegistry: ac95b4d35cced415e67b66d450e889e59e4164d9
   MGEvents: 04c4c5b49a420a4895c5bb676ccc708311176d14
   PromiseKit: 102844c7b5ccff53f693e0710365c445d8df3871
-  RamblerTyphoonUtils: 08a6b5592e045a490cd4550aa9ea4a581308d482
   SAMKeychain: 1fc9ae02f576365395758b12888c84704eebc423
   SGHTTPRequest: 619ea47680a7fefb9a5fd242ef27abd36fe2c72f
   SGImageCache: 85612f41878e9f5f9097d7eb6c18427a0fe227e5
   STTwitter: 30ee2f79eff78c3d633a1edc869e97db9c9ead59
   SVPullToRefresh: ba2e718695a43253d8bea6852d2960097dc15d8c
-  Typhoon: dbbbdeb868ac1e11908fc3e17b119a976471f07a
-  ViperMcFlurry: 701bc3ad8d188b1f1e157ec0ddf4e77184de88b5
 
-PODFILE CHECKSUM: 9921943244be45f27d4dba77d6ebd083cb66e487
+PODFILE CHECKSUM: a02f3dbe063dd0be43340129da9cb513733256cf
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.3.1

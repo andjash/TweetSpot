@@ -8,9 +8,9 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController, SettingsViewInput {
+class SettingsViewController: UIViewController {
 
-    var output: SettingsViewOutput!
+    var output: SettingsPresenter!
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var closeButton: UIBarButtonItem!    
@@ -20,7 +20,8 @@ class SettingsViewController: UIViewController, SettingsViewInput {
     
     fileprivate static let switchAssociationKey = "SettingsViewController.SwitchToSettingsItem"
     
-    // MARK: Life cycle
+    // MARK: - Life cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.tintColor = UIColor.white
@@ -32,14 +33,14 @@ class SettingsViewController: UIViewController, SettingsViewInput {
         output.viewIsReady()
     }
 
-    // MARK: Actions
+    // MARK: - Actions
     
     @IBAction func closeAction(_ sender: AnyObject?) {
         output.closeRequested()
     }
     
     
-    // MARK Private
+    // MARK: - Private
     
     @objc func switchChanged(_ sender: AnyObject?) {
         if let swtch = sender as? SettingsSwitch,
@@ -50,17 +51,16 @@ class SettingsViewController: UIViewController, SettingsViewInput {
         }
     }
 
-    // MARK: SettingsViewInput
-    func setupInitialState() {
-    }
-    
+    // MARK: View input
+
     func showSettings(_ sections: [SettingsSection]) {
         self.sections = sections
         tableView.reloadData()
     }
+    
 }
 
-// MARK: UITableViewDataSource protocol
+// MARK: - UITableViewDataSource protocol
 extension SettingsViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return sections?.count ?? 0
@@ -80,7 +80,8 @@ extension SettingsViewController : UITableViewDataSource {
     }
 }
 
-// MARK: UITableViewDelegate protocol
+// MARK: - UITableViewDelegate protocol
+
 extension SettingsViewController : UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

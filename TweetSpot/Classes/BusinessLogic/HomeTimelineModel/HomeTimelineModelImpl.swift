@@ -11,8 +11,8 @@ import Foundation
 class HomeTimelineModelImpl: NSObject, HomeTimelineModel {
     
     weak var session: TwitterSession?
+    var twitterDAO: TwitterDAO!
     
-    let twitterDAO: TwitterDAO
     var timelineStorage: HomeTimelineStorage? {
         didSet {
             loadingDirection = .both
@@ -24,8 +24,7 @@ class HomeTimelineModelImpl: NSObject, HomeTimelineModel {
         }
     }
     
-    init(twitterDAO: TwitterDAO) {
-        self.twitterDAO = twitterDAO
+    override init() {
         super.init()
         NotificationCenter.default.addObserver(self, selector: #selector(HomeTimelineModelImpl.sessionStateChanged),
                                                          name: NSNotification.Name(rawValue: TwitterSessionConstants.stateChangedNotificaton), object: nil)
