@@ -8,24 +8,19 @@
 
 import Foundation
 
-class NavigationRootPresenter: NSObject, NavigationRootModuleInput {
+class NavigationRootPresenter: NSObject {
 
-    weak var view: NavigationRootViewInput!
-    var interactor: NavigationRootInteractorInput!
-    var router: NavigationRootRouterInput!
+    weak var view: NavigationRootViewController!
+    var interactor: NavigationRootInteractor!
+    var router: NavigationRootRouter!
     
-    fileprivate var viewIsAppearedOnce = false
-    fileprivate var verifyinaccountShown = false
+    private var viewIsAppearedOnce = false
+    private var verifyinaccountShown = false
     
-}
-
-// MARK: NavigationRootViewOutput protocol
-extension NavigationRootPresenter : NavigationRootViewOutput {
-    func viewIsReady() {
-        
-    }
     
-    func viewIsAppeared() {
+    // MARK: - View output
+    
+    final func viewIsAppeared() {
         if !viewIsAppearedOnce {
             view.showAppLaunchAnimation({
                 self.interactor.trackSessionToDecideNextModule()
@@ -35,23 +30,21 @@ extension NavigationRootPresenter : NavigationRootViewOutput {
             interactor.trackSessionToDecideNextModule()
         }
     }
-}
-
-// MARK: NavigationRootInteractorOutput protocol
-extension NavigationRootPresenter : NavigationRootInteractorOutput {
     
-    func loginModuleRequired() {
+    // MARK: - Interactor output
+    
+    final func loginModuleRequired() {
         if verifyinaccountShown {
             let delayTime = DispatchTime.now() + Double(Int64(0.5 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
             DispatchQueue.main.asyncAfter(deadline: delayTime) {
-               self.router.routeToLogin()
+                self.router.routeToLogin()
             }
         } else {
             router.routeToLogin()
         }
     }
     
-    func spotModuleRequired() {
+    final func spotModuleRequired() {
         if verifyinaccountShown {
             let delayTime = DispatchTime.now() + Double(Int64(0.5 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
             DispatchQueue.main.asyncAfter(deadline: delayTime) {
@@ -62,8 +55,9 @@ extension NavigationRootPresenter : NavigationRootInteractorOutput {
         }
     }
     
-    func accountVerifyingUIRequired() {
+    final func accountVerifyingUIRequired() {
         verifyinaccountShown = true
         view.showAccountVerifyingUI()
     }
+    
 }

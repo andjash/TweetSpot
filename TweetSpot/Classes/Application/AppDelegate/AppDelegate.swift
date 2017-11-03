@@ -12,12 +12,11 @@ import Typhoon
 
 let log = Logger()
 
-@UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-    weak var twitterSessionWebAuthHandler: TwitterWebAuthHandler!
+    weak var twitterSessionWebAuthHandler: TwitterWebAuthHandler =  (ModulesRegistry.shared.resolve() as BusinessLogicRegistry).resolve()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
          return true

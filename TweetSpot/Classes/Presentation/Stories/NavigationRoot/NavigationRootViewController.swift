@@ -10,7 +10,7 @@ import UIKit
 
 class NavigationRootViewController: UIViewController  {
 
-    var output: NavigationRootViewOutput!
+    var output: NavigationRootPresenter!
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var birdLabel: UILabel!
@@ -18,13 +18,12 @@ class NavigationRootViewController: UIViewController  {
     @IBOutlet weak var verifyingLabel: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    
-    
     @IBOutlet weak var gradientView: UIView!
     
     weak var gradientLayer: CAGradientLayer!
     
-    // MARK: Life cycle
+    // MARK: - Life cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.ts_applicationPrimaryColor
@@ -33,7 +32,6 @@ class NavigationRootViewController: UIViewController  {
         let gLayer = CAGradientLayer.ts_applicationPrimaryGradient
         gradientView.layer.addSublayer(gLayer)
         gradientLayer = gLayer
-        output.viewIsReady()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -51,15 +49,10 @@ class NavigationRootViewController: UIViewController  {
         super.viewDidLayoutSubviews()
         gradientLayer?.frame = gradientView.bounds
     }
-
-}
-
-extension NavigationRootViewController : NavigationRootViewInput {
-    func setupInitialState() {
-        
-    }
     
-    func showAppLaunchAnimation(_ completion: @escaping () -> ()) {
+    // MARK: - Input
+    
+    final func showAppLaunchAnimation(_ completion: @escaping () -> ()) {
         UIView.animate(withDuration: 0.5, animations: {
             self.gradientView.alpha = 1
             self.titleLabel.alpha = 0
@@ -69,16 +62,16 @@ extension NavigationRootViewController : NavigationRootViewInput {
                 self.view.setNeedsLayout()
                 self.view.layoutIfNeeded()
             }, completion: { (completed) in
-                    completion()
+                completion()
             })
-        }) 
+        })
     }
     
-    func showAccountVerifyingUI() {
+    final func showAccountVerifyingUI() {
         activityIndicator.startAnimating()
-        UIView.animate(withDuration: 0.3, animations: {
+        UIView.animate(withDuration: 0.3) {
             self.verifyingLabel.alpha = 1
             self.activityIndicator.alpha = 1
-        }) 
+        }
     }
 }

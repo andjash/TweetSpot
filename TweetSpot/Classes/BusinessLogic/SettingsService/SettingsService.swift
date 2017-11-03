@@ -8,6 +8,6 @@
 
 import Foundation
 
-@objc protocol SettignsService {    
+@objc protocol SettingsService {    
     var shouldDisplayUserAvatarsOnSpot: Bool { get set }
 }

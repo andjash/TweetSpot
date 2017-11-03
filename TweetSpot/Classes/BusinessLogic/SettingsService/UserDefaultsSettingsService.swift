@@ -9,7 +9,7 @@
 import Foundation
 
 
-class UserDefaultsSettingsService: NSObject {
+class UserDefaultsSettingsService: NSObject, SettingsService {
     
     fileprivate struct Keys {
         static let shouldDisplayUserAvatarsOnSpot = "shouldDisplayUserAvatarsOnSpot"

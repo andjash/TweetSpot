@@ -3,6 +3,7 @@ use_frameworks!
 inhibit_all_warnings!
 
 target 'TweetSpot' do
+  pod 'AYRegistry' 
   pod 'Typhoon', '~> 3.4.8'
   pod 'RamblerTyphoonUtils/AssemblyCollector'
   pod 'ViperMcFlurry' 

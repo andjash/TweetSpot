@@ -12,10 +12,11 @@ import STTwitter
 
 class TwitterSessionImpl: NSObject, TwitterSession {
     
+    var webAuthHandler: TwitterWebAuthHandler!
+    
     let consumerKey = "divRrYoRFOpqecu2KD5P5p3NU"
     let consumerSecret = "gAEBVsG0gvru05zPYzM3EhQhGwVeh73lyvXdbUX2kUqyc1nrBJ"
     
-    let webAuthHandler: TwitterWebAuthHandler
     var tokenStorage: TwitterSessionCredentialsStorage? {
         didSet {
             if state != .opened {
@@ -44,12 +45,7 @@ class TwitterSessionImpl: NSObject, TwitterSession {
     var apiAccessObject: AnyObject?
     var oAuthAccessToken: String?
     var oAuthAccessTokenSecret: String?
-    
-    init(webAuthHandler: TwitterWebAuthHandler) {
-        self.webAuthHandler = webAuthHandler
-        super.init()
-    }
-    
+ 
     func openSessionWihtIOSAccount(_ account: ACAccount, success: @escaping () -> (), error: @escaping (NSError) -> ()) {
         
         switch state {
