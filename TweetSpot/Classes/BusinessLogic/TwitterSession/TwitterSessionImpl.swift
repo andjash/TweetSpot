@@ -30,11 +30,10 @@ final class TwitterSessionImpl: NSObject, TwitterSession {
             if state == oldValue {
                 return
             }
-            NotificationCenter.default.post(name: Notification.Name(rawValue: TwitterSessionConstants.stateChangedNotificaton),
-                                                                      object: self,
-                                                                      userInfo: [TwitterSessionConstants.stateOldUserInfoKey : oldValue.rawValue,
-                                                                                 TwitterSessionConstants.stateNewUserInfoKey : state.rawValue])
-           
+            NotificationCenter.default.post(name: TwitterSessionConstants.stateChangedNotificaton,
+                                            object: self,
+                                            userInfo: [TwitterSessionConstants.stateOldUserInfoKey : oldValue.rawValue,
+                                                       TwitterSessionConstants.stateNewUserInfoKey : state.rawValue])
         }
     }
     
@@ -50,7 +49,6 @@ final class TwitterSessionImpl: NSObject, TwitterSession {
     final var oAuthAccessTokenSecret: String?
  
     final func openSession(with account: ACAccount, success: @escaping () -> (), error: @escaping (TwitterSessionError) -> ()) {
-        
         switch state {
         case .opened, .progress:
             log.error("Trying to open Twitter session while session is in invalid state")
@@ -62,24 +60,29 @@ final class TwitterSessionImpl: NSObject, TwitterSession {
         
         state = .progress
         twitterApi = STTwitterAPI.twitterAPIOS(with: account, delegate: self)
-        twitterApi?.verifyCredentials(userSuccessBlock: { (username, userID) in
+        twitterApi?.verifyCredentials(userSuccessBlock: { username, userID in
             self.state = .opened
             self.tokenStorage?.clearStorage()
             self.tokenStorage?.store(IOSAccount: account)
             success()
-        }, errorBlock: { (err) in
-            error(self.wrapInnerError(err))
-        } as! (Error?) -> Void)
+        }, errorBlock: { err in
+            guard let actualError = err else {
+                error(TwitterSessionError.unknown)
+                return
+            }
+            error(TwitterSessionError.innerError(actualError))
+        })
     }
-   
     
-    func closeSession() {
+    final func closeSession() {
         tokenStorage?.clearStorage()
         twitterApi = nil
         state = .closed
     }
     
-    func wrapInnerError(_ error: NSError) -> TwitterSessionError {
+    // MARK: - Private
+    
+    private final func wrapInnerError(_ error: NSError) -> TwitterSessionError {
         return TwitterSessionError.innerError(error)
     }
 }

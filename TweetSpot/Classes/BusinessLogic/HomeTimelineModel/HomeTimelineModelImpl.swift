@@ -8,55 +8,57 @@
 
 import Foundation
 
-class HomeTimelineModelImpl: NSObject, HomeTimelineModel {
+final class HomeTimelineModelImpl: HomeTimelineModel {
     
-    weak var session: TwitterSession?
-    var twitterDAO: TwitterDAO!
+    final weak var session: TwitterSession?
+    final var twitterDAO: TwitterDAO!
     
-    var timelineStorage: HomeTimelineStorage? {
+    final var timelineStorage: HomeTimelineStorage? {
         didSet {
             loadingDirection = .both
-            timelineStorage?.restore({[weak self] (dtos) in
-                guard let sself = self else { return }
-                sself.homeLineTweets = dtos
-                sself.loadingDirection = .none
-            })
+            timelineStorage?.restore { [weak self] dtos in
+                guard let `self` = self else { return }
+                self.homeLineTweets = dtos
+                self.loadingDirection = .none
+            }
         }
     }
     
-    override init() {
-        super.init()
+    var homeLineTweets: [TweetDTO] = []
+    var loadingDirection: HomeTimelineModelLoadingDirection = .none {
+        didSet {
+            NotificationCenter.default.post(name: HomeTimelineModelConstants.loadingDirectionChangedNotification,
+                                            object: self,
+                                            userInfo: [HomeTimelineModelConstants.loadingDirectionChangedOldDirectionUserInfoKey : oldValue.rawValue,
+                                                       HomeTimelineModelConstants.loadingDirectionChangedNewDirectionUserInfoKey : loadingDirection.rawValue])
+        }
+    }
+    
+    init() {
         NotificationCenter.default.addObserver(self, selector: #selector(HomeTimelineModelImpl.sessionStateChanged),
-                                                         name: NSNotification.Name(rawValue: TwitterSessionConstants.stateChangedNotificaton), object: nil)
+                                               name: TwitterSessionConstants.stateChangedNotificaton, object: nil)
     }
     
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
     
-    var homeLineTweets: [TweetDTO] = []     
-    var loadingDirection: HomeTimelineModelLoadingDirection = .none {
-        didSet {
-            NotificationCenter.default.post(name: Notification.Name(rawValue: HomeTimelineModelConstants.loadingDirectionChangedNotification),
-                                                                      object: self,
-                                                                      userInfo: [HomeTimelineModelConstants.loadingDirectionChangedOldDirectionUserInfoKey : oldValue.rawValue,
-                                                                                 HomeTimelineModelConstants.loadingDirectionChangedNewDirectionUserInfoKey : loadingDirection.rawValue])
-        }
-    }
+    // MARK: - HomeTimelineModel
     
-    func loadForward(_ success: (([TweetDTO]) -> ())?, error: ((Error) -> ())?) {
-        if !proceedWithLoadingDirection(.forward) {
+    final func loadForward(_ success: (([TweetDTO]) -> ())?, error: ((Error) -> ())?) {
+        guard proceedWithLoadingDirection(.forward) else {
             return
         }
+        
         let count = homeLineTweets.count > 0 ? 200 : 20
         twitterDAO.getHomeTweets(maxId: nil, minId: homeLineTweets.first?.id, count: count, success: {[weak self] (dtos) in
-            guard let strongSelf = self else { return }
-            if strongSelf.session?.state != .opened { return }
+            guard let `self` = self else { return }
+            if self.session?.state != .opened { return }
             
-            strongSelf.completeWithLoadingDirection(.forward)
+            self.completeWithLoadingDirection(.forward)
             var resultDtos = dtos
             if dtos.count > 0 {
-                if (dtos.last == strongSelf.homeLineTweets.last) {
+                if (dtos.last?.id == self.homeLineTweets.last?.id) {
                     if dtos.count > 1 {
                        resultDtos = Array(dtos[0...dtos.count - 2])
                     } else {
@@ -64,62 +66,60 @@ class HomeTimelineModelImpl: NSObject, HomeTimelineModel {
                     }
                     //TODO: there are more tweets on server, load them
                 }
-                strongSelf.timelineStorage?.storeItemsAbove(dtos)
-                strongSelf.homeLineTweets = resultDtos + strongSelf.homeLineTweets
+                self.timelineStorage?.storeItemsAbove(dtos)
+                self.homeLineTweets = resultDtos + self.homeLineTweets
             }
             success?(dtos)
-        }) {[weak self]  (err) in
-            guard let strongSelf = self else { return }
-            if strongSelf.session?.state != .opened { return }
+        }) { [weak self]  err in
+            guard let `self` = self else { return }
+            guard self.session?.state == .opened else { return }
             
-            strongSelf.completeWithLoadingDirection(.backward)
+            self.completeWithLoadingDirection(.backward)
             error?(err)
         }
     }
     
     
-    func loadBackward(_ success: (([TweetDTO]) -> ())?, error: ((Error) -> ())?) {
-        if !proceedWithLoadingDirection(.backward) {
-            return
-        }
+    final func loadBackward(_ success: (([TweetDTO]) -> ())?, error: ((Error) -> ())?) {
+        guard proceedWithLoadingDirection(.backward) else { return }
     
         twitterDAO.getHomeTweets(maxId: homeLineTweets.last?.id, minId: nil, count: 20, success: {[weak self] (dtos) in
-            guard let strongSelf = self else { return }
-            if strongSelf.session?.state != .opened { return }
+            guard let `self` = self else { return }
+            guard self.session?.state == .opened else { return }
             
-            strongSelf.completeWithLoadingDirection(.backward)
+            self.completeWithLoadingDirection(.backward)
             var resultDtos = dtos
             if dtos.count > 0 {
-                if (dtos.first == strongSelf.homeLineTweets.last) {
+                if dtos.first?.id == self.homeLineTweets.last?.id {
                     if dtos.count > 1 {
                         resultDtos = Array(dtos[1...dtos.count - 1])
                     } else {
                         resultDtos = []
                     }
                 }
-                strongSelf.timelineStorage?.storeItemsBelow(dtos)
-                strongSelf.homeLineTweets += resultDtos
+                self.timelineStorage?.storeItemsBelow(dtos)
+                self.homeLineTweets += resultDtos
             }
             success?(resultDtos)
-        }) {[weak self]  (err) in
-            guard let strongSelf = self else { return }
-            if strongSelf.session?.state != .opened { return }
+        }) { [weak self]  err in
+            guard let `self` = self else { return }
+            guard self.session?.state == .opened else { return }
             
-            strongSelf.completeWithLoadingDirection(.backward)
+            self.completeWithLoadingDirection(.backward)
             error?(err)
         }
     }
     
-    @objc func sessionStateChanged() {
-        if self.session?.state == .closed {
+    // MARK: - Private
+    
+    @objc private final func sessionStateChanged() {
+        if session?.state == .closed {
             homeLineTweets = []
             twitterDAO.cancelAllRequests()
         }
     }
     
-    // MARK: Private
-    
-    func proceedWithLoadingDirection(_ direction: HomeTimelineModelLoadingDirection) -> Bool {
+    private final func proceedWithLoadingDirection(_ direction: HomeTimelineModelLoadingDirection) -> Bool {
         if direction == .forward {
             switch loadingDirection {
             case .forward, .both:
@@ -145,7 +145,7 @@ class HomeTimelineModelImpl: NSObject, HomeTimelineModel {
         }
     }
     
-    func completeWithLoadingDirection(_ direction: HomeTimelineModelLoadingDirection) {
+    private final func completeWithLoadingDirection(_ direction: HomeTimelineModelLoadingDirection) {
         if direction == .forward {
             switch loadingDirection {
             case .both:

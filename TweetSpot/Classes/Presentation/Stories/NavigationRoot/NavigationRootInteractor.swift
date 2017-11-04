@@ -40,7 +40,7 @@ final class NavigationRootInteractor {
             trackingSesion = true
             NotificationCenter.default.addObserver(self,
                                                    selector: #selector(sessionStateChanged),
-                                                   name: NSNotification.Name(rawValue: TwitterSessionConstants.stateChangedNotificaton), object: session)
+                                                   name: TwitterSessionConstants.stateChangedNotificaton, object: session)
             output.accountVerifyingUIRequired()
         }
     }

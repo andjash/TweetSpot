@@ -21,8 +21,7 @@ final class TweetDetailsInteractor {
     
     // MARK: - Input
     
-    final func requestViewModelForDTO(_ dtoObj: AnyObject) {
-        guard let dto = dtoObj as? TweetDTO else { return }
+    final func requestViewModelForDTO(_ dto: TweetDTO) {
         let result = TweetDetailsViewModel(id: dto.id,
                                            formattedPostDate: dateFormatter.string(from: dto.creationDate as Date),
                                            text: dto.text,
@@ -37,7 +36,7 @@ final class TweetDetailsInteractor {
     final private func promiseImagesLoad(_ item: TweetDetailsViewModel, dto: TweetDTO) {
         guard let imagesService = imagesService else { return }
         
-        let smallPromise = imagesService.imagePromiseForUrl(dto.avatarUrlStr.replacingOccurrences(of: "_normal", with: "_bigger"))
+        let smallPromise = imagesService.imagePromise(with: dto.avatarUrlStr.replacingOccurrences(of: "_normal", with: "_bigger"))
         smallPromise.notifyCall = { (img, error) in
             if let image = img {
                 item.smallAvatar = image
@@ -47,7 +46,7 @@ final class TweetDetailsInteractor {
             }
         }
         
-        let bigPromise = imagesService.imagePromiseForUrl(dto.avatarUrlStr.replacingOccurrences(of: "_normal", with: ""))
+        let bigPromise = imagesService.imagePromise(with: dto.avatarUrlStr.replacingOccurrences(of: "_normal", with: ""))
         bigPromise.notifyCall = { (img, error) in
             if let image = img {
                 item.bigAvatar = image

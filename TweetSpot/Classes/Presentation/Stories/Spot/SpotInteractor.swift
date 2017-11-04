@@ -172,7 +172,7 @@ final class SpotInteractor: NSObject {
     final private func promiseImageLoad(_ item: SpotTweetItem, urlString: String) {
         guard settingsSvc.shouldDisplayUserAvatarsOnSpot else { return }
         
-        let promise = imagesService.imagePromiseForUrl(urlString.replacingOccurrences(of: "_normal", with: "_bigger"))
+        let promise = imagesService.imagePromise(with: urlString.replacingOccurrences(of: "_normal", with: "_bigger"))
         promise.notifyCall = { (img, error) in
             if let image = img {
                 item.avatar = image

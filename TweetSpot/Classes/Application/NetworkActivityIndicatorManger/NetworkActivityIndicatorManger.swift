@@ -21,17 +21,17 @@ final class NetworkActivityIndicatorManagerImpl: NSObject, NetworkActivityIndica
         super.init()
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(sessionStateChanged),
-                                               name: NSNotification.Name(rawValue: TwitterSessionConstants.stateChangedNotificaton), object: nil)
+                                               name: TwitterSessionConstants.stateChangedNotificaton, object: nil)
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(timelineModelStateChanged),
-                                               name: NSNotification.Name(rawValue: HomeTimelineModelConstants.loadingDirectionChangedNotification), object: nil)
+                                               name: HomeTimelineModelConstants.loadingDirectionChangedNotification, object: nil)
         
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(increaseNetworkActivityIndication),
-                                               name: NSNotification.Name(rawValue: ImagesServiceConstants.didStartRetreivingImageNotification), object: nil)
+                                               name: ImagesServiceConstants.didStartRetreivingImageNotification, object: nil)
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(decreaseNetworkActivityIndication),
-                                               name: NSNotification.Name(rawValue: ImagesServiceConstants.didEndRetreivingImageNotification), object: nil)
+                                               name: ImagesServiceConstants.didEndRetreivingImageNotification, object: nil)
     }
     
     deinit {

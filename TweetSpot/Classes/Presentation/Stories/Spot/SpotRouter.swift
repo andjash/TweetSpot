@@ -22,7 +22,7 @@ final class SpotRouter {
         sourceController.performSegue(withIdentifier: "SpotToSettingsSegue", sender: nil)
     }
     
-    final func routeToTweetDetails(_ withDTO: AnyObject) {
+    final func routeToTweetDetails(_ withDTO: TweetDTO) {
         sourceController.ts_openController(TweetDetailsViewController.self, storyboardId: "SpotToTweetDetailsSegue") { (c) in
             c.output.configureWithDTO(withDTO)
         }

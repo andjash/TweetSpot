@@ -23,19 +23,19 @@ extension Error {
 
 }
 
-// MARK: TwitterDAO error descriptions
+// MARK: - TwitterDAO error descriptions
 
 extension TwitterDAOError: FriendlyError {
     
     var ts_userFriendlyDescription: String {
         switch self {
-        case TwitterDAOError.invalidSession:
+        case .invalidSession:
             return "error_twitter_dao_invalid_session".ts_localized("Errors")
-        case TwitterDAOError.sessionIsNotOpened:
+        case .sessionIsNotOpened:
             return "error_twitter_dao_session_not_open".ts_localized("Errors")
-        case TwitterDAOError.unableToParseServerResponse:
+        case .unableToParseServerResponse:
             return "error_twitter_dao_unable_parse_response".ts_localized("Errors")
-        case TwitterDAOError.innerError(let error):
+        case .innerError(let error):
             if let err = error as? FriendlyError {
                 return err.ts_userFriendlyDescription
             }
@@ -48,45 +48,42 @@ extension TwitterDAOError: FriendlyError {
     
 }
 
+// MARK: - TwitterSession error descriptions
 
-// MARK: TwitterSession error descriptions
 extension TwitterSessionError: FriendlyError {
     
     var ts_userFriendlyDescription: String {
         switch self {
-        case TwitterSessionError.sessionInvalidState:
+        case .sessionInvalidState:
             return "error_twitter_session_invalid_state".ts_localized("Errors")
-        case TwitterSessionError.webAuthFailed:
+        case .webAuthFailed:
             return "error_twitter_web_auth_failed".ts_localized("Errors")
-        case TwitterSessionError.innerError(let error):
+        case .innerError(let error):
             if let err = error as? FriendlyError {
                 return err.ts_userFriendlyDescription
             }
             return error.localizedDescription
+        case .unknown:
+            return "error_twitter_unknown".ts_localized("Errors")
         }
     }
-    
 }
 
+// MARK: - SocialAccountsService error descriptions
 
-// MARK: SocialAccountsService error descriptions
-//extension NSError {
-//
-//    fileprivate func ts_socialAccountsServiceErrorUserFriendlyDescription() -> String {
-//        switch code {
-//        case SocialAccountsServiceError.accessDenied.rawValue:
-//            return "error_socacc_access_denied".ts_localized("Errors")
-//        case SocialAccountsServiceError.innerError.rawValue:
-//            let innerErr = (self.userInfo[SocialAccountsServiceConstants.innerErrorUserInfoKey] as? NSError)
-//            if let innerDescr = innerErr?.localizedDescription {
-//                return innerDescr
-//            } else {
-//                return "error_socacc_inner_error".ts_localized("Errors")
-//            }
-//        default:
-//            return "error_socacc_unknown_error".ts_localized("Errors")
-//        }
-//    }
-//
-//}
-
+extension SocialAccountsServiceError: FriendlyError {
+    
+    var ts_userFriendlyDescription: String {
+        switch self {
+        case .accessDenied:
+            return "error_socacc_access_denied".ts_localized("Errors")
+        case .innerError(let inner):
+            if let err = inner as? FriendlyError {
+                return err.ts_userFriendlyDescription
+            }
+            return inner.localizedDescription
+        default:
+            return "error_socacc_unknown_error".ts_localized("Errors")
+        }
+    }
+}

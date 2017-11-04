@@ -16,7 +16,7 @@ enum HomeTimelineModelLoadingDirection: Int {
 }
 
 struct HomeTimelineModelConstants {    
-    static let loadingDirectionChangedNotification = "HomeTimelineModelConstants.loadingDirectionChangedNotification"
+    static let loadingDirectionChangedNotification = Notification.Name("HomeTimelineModelConstants.loadingDirectionChangedNotification")
     static let loadingDirectionChangedOldDirectionUserInfoKey = "HomeTimelineModelConstants.loadingDirectionChangedOldDirectionUserInfoKey"
     static let loadingDirectionChangedNewDirectionUserInfoKey = "HomeTimelineModelConstants.loadingDirectionChangedNewDirectionUserInfoKey"
 }

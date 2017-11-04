@@ -15,7 +15,7 @@ final class TweetDetailsPresenter {
    
     // MARK: - Module input
     
-    final func configureWithDTO(_ tweetDTO: AnyObject) {
+    final func configureWithDTO(_ tweetDTO: TweetDTO) {
         interactor.requestViewModelForDTO(tweetDTO)
     }
     

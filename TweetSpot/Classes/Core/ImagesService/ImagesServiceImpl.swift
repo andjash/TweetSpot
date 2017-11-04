@@ -9,15 +9,15 @@
 import Foundation
 import SGImageCache
 
-class ImagesServiceImpl: NSObject, ImagesService {
+final class ImagesServiceImpl: ImagesService {
     
-    func imagePromiseForUrl(_ urlString: String) -> ImageRetrievePromise {
+    func imagePromise(with urlString: String) -> ImageRetrievePromise {
         let promise = ImageRetrievePromise(urlString: urlString)
-        NotificationCenter.default.post(name: Notification.Name(rawValue: ImagesServiceConstants.didStartRetreivingImageNotification), object: self)
+        NotificationCenter.default.post(name: ImagesServiceConstants.didStartRetreivingImageNotification, object: self)
         let sgPromise = SGImageCache.getImageForURL(urlString)
         
         _ = sgPromise?.swiftThen({ object in
-            NotificationCenter.default.post(name: Notification.Name(rawValue: ImagesServiceConstants.didEndRetreivingImageNotification), object: self)
+            NotificationCenter.default.post(name: ImagesServiceConstants.didEndRetreivingImageNotification, object: self)
             if let image = object as? UIImage {
                 promise.image = image
             }
@@ -25,7 +25,7 @@ class ImagesServiceImpl: NSObject, ImagesService {
         })
         
         sgPromise?.onFail = { (error: NSError?, wasFatal: Bool) -> () in
-            NotificationCenter.default.post(name: Notification.Name(rawValue: ImagesServiceConstants.didEndRetreivingImageNotification), object: self)
+            NotificationCenter.default.post(name: ImagesServiceConstants.didEndRetreivingImageNotification, object: self)
             promise.error = error
         } as? SGCacheFetchFail
         

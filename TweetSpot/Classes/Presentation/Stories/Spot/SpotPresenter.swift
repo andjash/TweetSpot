@@ -80,7 +80,7 @@ final class SpotPresenter  {
         view.showMoreItemsAvailable()
     }
     
-    final func dtoFoundForItem(_ item: SpotTweetItem, dto: AnyObject?) {
+    final func dtoFoundForItem(_ item: SpotTweetItem, dto: TweetDTO?) {
         if let udto = dto {
             router.routeToTweetDetails(udto)
         }

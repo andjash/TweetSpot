@@ -9,42 +9,41 @@
 import UIKit
 
 struct ImagesServiceConstants {
-    static let didStartRetreivingImageNotification = "ImagesServiceConstants.didStartRetreivingImageNotification"
-    static let didEndRetreivingImageNotification = "ImagesServiceConstants.didEndRetreivingImageNotification"
+    static let didStartRetreivingImageNotification = Notification.Name("ImagesServiceConstants.didStartRetreivingImageNotification")
+    static let didEndRetreivingImageNotification = Notification.Name("ImagesServiceConstants.didEndRetreivingImageNotification")
 }
 
-@objc protocol ImagesService {
-    func imagePromiseForUrl(_ urlString: String) -> ImageRetrievePromise
+protocol ImagesService: class {
+    func imagePromise(with urlString: String) -> ImageRetrievePromise
 }
 
-class ImageRetrievePromise: NSObject {
+final class ImageRetrievePromise {
     
-    let imageUrlString: String
+    private final let imageUrlString: String
     
     init(urlString: String) {
         self.imageUrlString = urlString
-        super.init()
     }
     
-    var image: UIImage? {
+    final var image: UIImage? {
         didSet {
             tryToNotify()
         }
     }
     
-    var error: NSError? {
+    final var error: Error? {
         didSet {
             tryToNotify()
         }
     }
     
-    var notifyCall: ((UIImage?, NSError?) -> ())? {
+    final var notifyCall: ((UIImage?, Error?) -> ())? {
         didSet {
             tryToNotify()
         }
     }
     
-    fileprivate func tryToNotify() {
+    private final func tryToNotify() {
         if let notifyCall = notifyCall {
             if error != nil || image != nil {
                 notifyCall(image, error)

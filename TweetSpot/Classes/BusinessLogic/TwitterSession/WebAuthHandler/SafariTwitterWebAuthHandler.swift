@@ -8,15 +8,13 @@
 
 import UIKit
 
-class SafariTwitterWebAuthHandler: NSObject, TwitterWebAuthHandler {
+final class SafariTwitterWebAuthHandler: TwitterWebAuthHandler {
     
-    var pendingSuccessCallback: ((_ tokenVerificator: String) -> ())?
-    var pendingErrorCallback: ((TwitterSessionError) -> ())?
-    var handlingWebAuth = false
+    private final var pendingSuccessCallback: ((_ tokenVerificator: String) -> ())?
+    private final var pendingErrorCallback: ((TwitterSessionError) -> ())?
+    private final var handlingWebAuth = false
     
-    
-    override init() {
-        super.init()
+    init() {
         NotificationCenter.default.addObserver(self, selector: #selector(SafariTwitterWebAuthHandler.appBecomeActive),
                                                          name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
     }
@@ -25,16 +23,17 @@ class SafariTwitterWebAuthHandler: NSObject, TwitterWebAuthHandler {
         NotificationCenter.default.removeObserver(self)
     }
     
+    // MARK: - TwitterWebAuthHandler
     
-    func handleWebAuthRequest(_ url: URL, success: @escaping (_ tokenVerificator: String) -> (), failed: @escaping (TwitterSessionError) -> ()) {
+    final func handleWebAuthRequest(_ url: URL, success: @escaping (_ tokenVerificator: String) -> (), failed: @escaping (TwitterSessionError) -> ()) {
         handlingWebAuth = true
         pendingSuccessCallback = success
         pendingErrorCallback = failed
         UIApplication.shared.openURL(url)
     }
     
-    func handleWebAuthCallback(_ url: URL) -> Bool {
-        if !handlingWebAuth {
+    final func handleWebAuthCallback(_ url: URL) -> Bool {
+        guard handlingWebAuth else {
             log.severe("Web auth canceled")
             return false
         }
@@ -64,7 +63,9 @@ class SafariTwitterWebAuthHandler: NSObject, TwitterWebAuthHandler {
         return true
     }
     
-    func parametersDictFromWebAuthCallback(_ query: String?) -> [String : String] {
+    // MARK: - Private
+    
+    private final func parametersDictFromWebAuthCallback(_ query: String?) -> [String : String] {
         guard let queryString = query else {
             return [:]
         }
@@ -82,13 +83,13 @@ class SafariTwitterWebAuthHandler: NSObject, TwitterWebAuthHandler {
         return result
     }
     
-    @objc func appBecomeActive() {
+    @objc private final func appBecomeActive() {
         if handlingWebAuth {
             log.severe("App opened while web auth in progress. Discard auth flow")
-            self.pendingErrorCallback?(TwitterSessionError.webAuthFailed)
-            self.pendingSuccessCallback = nil
-            self.pendingErrorCallback = nil
-            self.handlingWebAuth = false
+            pendingErrorCallback?(TwitterSessionError.webAuthFailed)
+            pendingSuccessCallback = nil
+            pendingErrorCallback = nil
+            handlingWebAuth = false
         }
     }
 

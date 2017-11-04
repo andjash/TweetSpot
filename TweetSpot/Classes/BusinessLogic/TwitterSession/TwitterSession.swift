@@ -18,14 +18,12 @@ enum TwitterSessionState : Int {
 enum TwitterSessionError : Error {
     case sessionInvalidState
     case webAuthFailed
+    case unknown
     case innerError(Error)
 }
 
 struct TwitterSessionConstants {
-    static let errorDomain = "TwitterSessionConstants.errorDomain"
-    static let innerErrorUserInfoKey = "TwitterSessionConstants.innerErrorUserInfoKey"
-    
-    static let stateChangedNotificaton = "TwitterSessionConstants.stateChangedNotificaton"
+    static let stateChangedNotificaton = Notification.Name("TwitterSessionConstants.stateChangedNotificaton")
     static let stateOldUserInfoKey = "TwitterSessionConstants.stateOldUserInfoKey"
     static let stateNewUserInfoKey = "TwitterSessionConstants.stateNewUserInfoKey"
 }
